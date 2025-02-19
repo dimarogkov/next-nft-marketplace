@@ -5,7 +5,9 @@ interface Props extends HTMLAttributes<HTMLParagraphElement>, RefAttributes<HTML
 }
 
 const ErrorMessage: FC<Props> = forwardRef<HTMLParagraphElement, Props>(({ className = '', ...props }, ref) => {
-    return <p ref={ref} {...props} className={`w-full font-medium text-sm text-red ${className}`} />;
+    const errorMessageClasses = 'relative w-full font-medium text-sm text-red';
+
+    return <p ref={ref} {...props} className={`${errorMessageClasses} ${className}`} />;
 });
 
 ErrorMessage.displayName = 'ErrorMessage';

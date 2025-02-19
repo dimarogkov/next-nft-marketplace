@@ -13,6 +13,10 @@ const InputPassword: FC<Props> = forwardRef<HTMLInputElement, Props>(
         const [isPasswordVisible, setIsPasswordVisible] = useState(false);
         const inputRef = useRef<HTMLInputElement | null>(null);
 
+        const inputPasswordClasses = 'relative group flex items-center w-full height-btn';
+        const buttonClasses = 'absolute right-0 flex items-center justify-center w-[60px] h-full';
+        const iconClasses = 'size-5 stroke-1 text-gray2';
+
         const handleClick = () => setIsPasswordVisible((prevState) => !prevState);
 
         const handleMouseDown = (e: MouseEvent) => {
@@ -23,26 +27,17 @@ const InputPassword: FC<Props> = forwardRef<HTMLInputElement, Props>(
         const handleBlur = () => !isPasswordVisible && setIsPasswordVisible(false);
 
         return (
-            <div ref={ref} className={`relative flex items-center w-full h-10 ${className}`}>
+            <div ref={ref} className={`${inputPasswordClasses} ${className}`}>
                 <Input
                     ref={inputRef}
                     {...props}
                     onBlur={handleBlur}
                     type={isPasswordVisible ? 'text' : 'password'}
-                    className={`pr-10 ${classNameInput}`}
+                    className={`pr-[60px] ${classNameInput}`}
                 />
 
-                <button
-                    type='button'
-                    onClick={handleClick}
-                    onMouseDown={handleMouseDown}
-                    className='absolute right-0 flex items-center justify-center w-10 h-full'
-                >
-                    {!isPasswordVisible ? (
-                        <EyeOff className='size-5 stroke-1' />
-                    ) : (
-                        <Eye className='size-5 stroke-1' />
-                    )}
+                <button type='button' onClick={handleClick} onMouseDown={handleMouseDown} className={buttonClasses}>
+                    {!isPasswordVisible ? <EyeOff className={iconClasses} /> : <Eye className={iconClasses} />}
                 </button>
             </div>
         );

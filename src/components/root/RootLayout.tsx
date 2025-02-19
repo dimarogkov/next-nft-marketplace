@@ -9,7 +9,7 @@ const RootLayout: FC<Props> = ({ children }) => {
     return (
         <>
             <Header />
-            <main className='relative w-full max-w-screen-2xl p-5 m-auto'>{children}</main>
+            <main className='relative w-full max-w-[1064px] px-5 m-auto'>{children}</main>
         </>
     );
 };

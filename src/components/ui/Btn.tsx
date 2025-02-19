@@ -1,28 +1,41 @@
-import { ButtonHTMLAttributes, FC, forwardRef, RefAttributes } from 'react';
+import { ButtonHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import { EnumBtn } from '@/src/types/enums';
+import { LucideProps } from 'lucide-react';
 import cn from 'classnames';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<HTMLButtonElement> {
+    icon?: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>;
     btnType?: EnumBtn;
     className?: string;
 }
 
 const Btn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
-    ({ className = '', btnType = EnumBtn.default, ...props }, ref) => {
+    ({ icon: Icon, btnType = EnumBtn.default, className = '', ...props }, ref) => {
+        const btnClasses =
+            'flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-5 md:px-8 rounded-md sm:transition-all sm:duration-300 sm:will-change-transform';
+
+        const hoverClasses = 'sm:hover:translate-x-[-2px] sm:hover:translate-y-[-2px]';
+        const activeClasses = 'sm:active:translate-x-[2px] sm:active:translate-y-[2px]';
+
+        const iconClasses = {
+            [EnumBtn.default as string]: 'text-white',
+            [EnumBtn.outline as string]: 'text-purple',
+        };
+
         return (
             <button
                 ref={ref}
                 {...props}
-                className={cn(
-                    `flex items-center justify-center gap-2 w-full sm:w-fit sm:min-w-32 lg:min-w-36 h-10 lg:h-11 font-media px-4 rounded transition-opacity duration-300 hover:opacity-80 ${className}`,
-                    {
-                        'bg-gray text-white pointer-events-none': props.disabled,
-                        'bg-blue text-white': !props.disabled && btnType === EnumBtn.default,
-                        'border-2 border-blue text-blue': !props.disabled && btnType === EnumBtn.outline,
-                        'bg-black/25 text-white': !props.disabled && btnType === EnumBtn.disabled,
-                    }
-                )}
-            />
+                className={cn(`${btnClasses} ${hoverClasses} ${activeClasses} ${className}`, {
+                    'bg-gray text-white/50 pointer-events-none': props.disabled,
+                    'bg-purple text-white': !props.disabled && btnType === EnumBtn.default,
+                    'border-2 border-purple text-white': !props.disabled && btnType === EnumBtn.outline,
+                })}
+            >
+                {Icon && <Icon className={cn('size-5', iconClasses[btnType], { 'opacity-50': props.disabled })} />}
+
+                <span>{props.children}</span>
+            </button>
         );
     }
 );

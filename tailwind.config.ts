@@ -15,6 +15,7 @@ const config: Config = {
                 gray2: '#858584',
                 white: '#fff',
                 purple: '#a259ff',
+                red: '#da4934',
             },
         },
     },
