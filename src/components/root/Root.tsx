@@ -8,9 +8,11 @@ type Props = {
 };
 
 const Root: FC<Props> = ({ children }) => {
+    const bodyClasses = 'flex flex-col min-h-screen text-white';
+
     return (
         <html lang='en' suppressHydrationWarning>
-            <body className={work_sans.className}>{children}</body>
+            <body className={`${bodyClasses} ${work_sans.className}`}>{children}</body>
         </html>
     );
 };

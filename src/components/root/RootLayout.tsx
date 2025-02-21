@@ -6,10 +6,12 @@ type Props = {
 };
 
 const RootLayout: FC<Props> = ({ children }) => {
+    const mainClasses = 'relative flex flex-col grow w-full max-w-[1064px] px-4 sm:px-5 m-auto';
+
     return (
         <>
             <Header />
-            <main className='relative w-full max-w-[1064px] px-4 sm:px-5 m-auto'>{children}</main>
+            <main className={mainClasses}>{children}</main>
         </>
     );
 };

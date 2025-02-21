@@ -10,19 +10,27 @@ type Props = {
 };
 
 const Error: FC<Props> = ({ error, reset = () => {} }) => {
+    const sectionClasses = 'relative flex items-center justify-center grow w-full';
+    const blockClasses = 'w-full sm:max-w-[500px] text-center pb-24';
+
+    const titleClasses = 'line-clamp-2 mb-2 sm:mb-3 last:mb-0';
+    const textClasses = 'mb-5 last:mb-0';
+    const spanClasses = 'font-medium text-purple';
+    const linkClasses = 'm-auto';
+
     return (
-        <section className='relative flex items-center justify-center w-full height-full'>
-            <div className='w-full sm:max-w-[500px] text-center pb-24'>
-                <Title titleType={EnumTitle.h2} className='line-clamp-2 mb-2 sm:mb-3 last:mb-0'>
+        <section className={sectionClasses}>
+            <div className={blockClasses}>
+                <Title titleType={EnumTitle.h2} className={titleClasses}>
                     {error?.message}
                 </Title>
 
-                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
+                <Text textType={EnumText.large} className={textClasses}>
                     Oops, something went wrong. We couldn&apos;t load the page. Please click the&nbsp;
-                    <span className='font-medium text-purple'>&apos;Retry&apos;</span> button.
+                    <span className={spanClasses}>&apos;Retry&apos;</span> button.
                 </Text>
 
-                <Btn icon={RotateCw} onClick={() => reset()} className='m-auto'>
+                <Btn icon={RotateCw} onClick={() => reset()} className={linkClasses}>
                     Retry
                 </Btn>
             </div>

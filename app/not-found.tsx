@@ -9,19 +9,27 @@ export const metadata: Metadata = {
 };
 
 const NotFoundPage = () => {
+    const sectionClasses = 'relative flex items-center justify-center grow w-full';
+    const blockClasses = 'w-full sm:max-w-[500px] text-center pb-24';
+
+    const titleClasses = 'mb-2 sm:mb-3 last:mb-0';
+    const textClasses = 'mb-5 last:mb-0';
+    const spanClasses = 'font-medium text-purple';
+    const linkClasses = 'm-auto';
+
     return (
-        <section className='relative flex items-center justify-center w-full height-full'>
-            <div className='w-full sm:max-w-[500px] text-center pb-24'>
-                <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
+        <section className={sectionClasses}>
+            <div className={blockClasses}>
+                <Title titleType={EnumTitle.h2} className={titleClasses}>
                     Page not Found
                 </Title>
 
-                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
+                <Text textType={EnumText.large} className={textClasses}>
                     It seems that the page you are looking for no longer exists or has been moved. Please check the URL
-                    for any mistakes or return to the <span className='font-medium text-purple'>homepage</span>.
+                    for any mistakes or return to the <span className={spanClasses}>homepage</span>.
                 </Text>
 
-                <BtnLink href={PATHS.HOME} icon={ArrowLeft} className='m-auto'>
+                <BtnLink href={PATHS.HOME} icon={ArrowLeft} className={linkClasses}>
                     Go Home
                 </BtnLink>
             </div>
