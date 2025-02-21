@@ -1,5 +1,5 @@
 import { PATHS } from './paths';
-import { ILink } from '../types/interfaces/link';
+import { ILink } from '../types/interfaces/Link';
 
 export const headerLinks: ILink[] = [
     {
