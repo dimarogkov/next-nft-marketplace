@@ -17,7 +17,7 @@ const Error: FC<Props> = ({ error, reset = () => {} }) => {
                     {error?.message}
                 </Title>
 
-                <Text textType={EnumText.large} className='mb-6 last:mb-0'>
+                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
                     Oops, something went wrong. We couldn&apos;t load the page. Please click the&nbsp;
                     <span className='font-medium text-purple'>&apos;Retry&apos;</span> button.
                 </Text>

@@ -15,10 +15,10 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<H
 const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
     ({ href, target, icon: Icon, btnType = EnumBtn.default, className = '', ...props }, ref) => {
         const btnLinkClasses =
-            'flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-5 md:px-8 rounded-md sm:transition-all sm:duration-300 sm:will-change-transform';
+            'flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 sm:px-5 md:px-8 rounded-md transition-all duration-300 will-change-transform';
 
-        const hoverClasses = 'sm:hover:translate-x-[-2px] sm:hover:translate-y-[-2px]';
-        const activeClasses = 'sm:active:translate-x-[2px] sm:active:translate-y-[2px]';
+        const hoverClasses = 'hover:translate-x-[-2px] hover:translate-y-[-2px]';
+        const activeClasses = 'active:translate-x-[2px] active:translate-y-[2px]';
 
         const btnLinkTypeClasses = {
             [EnumBtn.default as string]: 'bg-purple text-white',

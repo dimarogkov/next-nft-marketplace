@@ -13,8 +13,9 @@ const InputPassword: FC<Props> = forwardRef<HTMLInputElement, Props>(
         const [isPasswordVisible, setIsPasswordVisible] = useState(false);
         const inputRef = useRef<HTMLInputElement | null>(null);
 
-        const inputPasswordClasses = 'relative group flex items-center w-full height-btn';
-        const buttonClasses = 'absolute right-0 flex items-center justify-center w-[60px] h-full';
+        const blockClasses = 'relative group flex items-center w-full height-btn';
+        const inputClasses = 'pr-[52px] sm:pr-[60px]';
+        const buttonClasses = 'absolute right-0 flex items-center justify-center w-[52px] sm:w-[60px] h-full';
         const iconClasses = 'size-5 stroke-1 text-gray2';
 
         const handleClick = () => setIsPasswordVisible((prevState) => !prevState);
@@ -27,13 +28,13 @@ const InputPassword: FC<Props> = forwardRef<HTMLInputElement, Props>(
         const handleBlur = () => !isPasswordVisible && setIsPasswordVisible(false);
 
         return (
-            <div ref={ref} className={`${inputPasswordClasses} ${className}`}>
+            <div ref={ref} className={`${blockClasses} ${className}`}>
                 <Input
                     ref={inputRef}
                     {...props}
                     onBlur={handleBlur}
                     type={isPasswordVisible ? 'text' : 'password'}
-                    className={`pr-[60px] ${classNameInput}`}
+                    className={`${inputClasses} ${classNameInput}`}
                 />
 
                 <button type='button' onClick={handleClick} onMouseDown={handleMouseDown} className={buttonClasses}>

@@ -15,7 +15,7 @@ import { User } from 'lucide-react';
 
 const HomePage = () => {
     return (
-        <section className='relative w-full'>
+        <section className='relative w-full mt-10'>
             <Title className='mb-3 last:mb-0'>NFT Marketplace</Title>
 
             <Title titleType={EnumTitle.h2} className='mb-3 last:mb-0'>

@@ -1,3 +1,4 @@
-import Header from './Header';
+import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
+import { Logo } from './Logo';
 
-export { Header };
+export { HeaderBurger, HeaderLayer, HeaderLinks, Logo };

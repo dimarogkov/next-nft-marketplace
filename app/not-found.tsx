@@ -16,7 +16,7 @@ const NotFoundPage = () => {
                     Page not Found
                 </Title>
 
-                <Text textType={EnumText.large} className='mb-6 last:mb-0'>
+                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
                     It seems that the page you are looking for no longer exists or has been moved. Please check the URL
                     for any mistakes or return to the <span className='font-medium text-purple'>homepage</span>.
                 </Text>
