@@ -5,13 +5,13 @@ interface Props extends InputHTMLAttributes<HTMLInputElement>, RefAttributes<HTM
 }
 
 const Input: FC<Props> = forwardRef<HTMLInputElement, Props>(({ className = '', ...props }, ref) => {
-    const inputClasses =
-        'relative w-full height-btn font-medium rounded-md border border-gray bg-transparent px-4 md:px-5 outline-none placeholder:text-gray2 transition-all duration-300';
-
-    const hoverClasses = 'hover:border-gray2';
-    const focusClasses = 'focus:border-purple';
-
-    return <input ref={ref} {...props} className={`${inputClasses} ${hoverClasses} ${focusClasses} ${className}`} />;
+    return (
+        <input
+            ref={ref}
+            {...props}
+            className={`relative w-full height-btn font-medium rounded-md border border-gray bg-transparent px-4 md:px-5 outline-none placeholder:text-gray2 transition-all duration-300 hover:border-gray2 focus:border-purple ${className}`}
+        />
+    );
 });
 
 Input.displayName = 'Input';

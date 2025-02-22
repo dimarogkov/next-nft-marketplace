@@ -12,25 +12,20 @@ type Props = {
 };
 
 const Logo: FC<Props> = ({ disableAnimation = false }) => {
-    const logoClasses = 'relative group flex items-center h-full gap-4';
-    const iconBlockClasses = 'flex items-center justify-center size-10 rounded-full bg-purple';
-    const iconClasses = 'size-6 text-black';
-    const titleClasses = 'hidden sm:inline-block font-space-mono';
-
     return (
-        <Link href={PATHS.HOME} className={logoClasses}>
+        <Link href={PATHS.HOME} className='relative group flex items-center h-full gap-4'>
             <div
-                className={cn(iconBlockClasses, {
+                className={cn('flex items-center justify-center size-10 rounded-full bg-purple', {
                     'lg:z-10 lg:origin-left lg:scale-[1.2] lg:will-change-transform lg:transition-transform lg:duration-300 lg:group-hover:scale-100':
                         !disableAnimation,
                 })}
             >
-                <Store className={iconClasses} />
+                <Store className='size-6 text-black' />
             </div>
 
             <Title
                 titleType={EnumTitle.h4}
-                className={cn(titleClasses, {
+                className={cn('hidden sm:inline-block font-space-mono', {
                     'lg:opacity-0 lg:invisible lg:-translate-x-8 lg:transition-all lg:duration-300 lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-x-0':
                         !disableAnimation,
                 })}

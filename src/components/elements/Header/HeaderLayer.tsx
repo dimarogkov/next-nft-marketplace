@@ -7,13 +7,10 @@ type Props = {
 };
 
 const HeaderLayer: FC<Props> = ({ isOpen, closeMenu = () => {} }) => {
-    const layerClasses = 'fixed lg:hidden bottom-0 left-0 w-full height-full bg-gray/90';
-    const layerTransitionClasses = 'transition-all duration-300';
-
     return (
         <div
             onClick={closeMenu}
-            className={cn(`${layerClasses} ${layerTransitionClasses}`, {
+            className={cn('fixed lg:hidden bottom-0 left-0 w-full height-full bg-gray/90 transition-all duration-300', {
                 'opacity-0 invisible': !isOpen,
                 'opacity-100 visible': isOpen,
             })}

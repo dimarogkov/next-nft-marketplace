@@ -5,9 +5,7 @@ interface Props extends LabelHTMLAttributes<HTMLLabelElement>, RefAttributes<HTM
 }
 
 const Label: FC<Props> = forwardRef<HTMLLabelElement, Props>(({ className = '', ...props }, ref) => {
-    const labelClasses = 'relative block w-full';
-
-    return <label ref={ref} {...props} className={`${labelClasses} ${className}`} />;
+    return <label ref={ref} {...props} className={`relative block w-full ${className}`} />;
 });
 
 Label.displayName = 'Label';

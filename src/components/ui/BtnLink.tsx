@@ -2,7 +2,6 @@ import { AnchorHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAtt
 import Link from 'next/link';
 import { EnumBtn } from '@/src/types/enums';
 import { LucideProps } from 'lucide-react';
-import cn from 'classnames';
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
@@ -14,12 +13,6 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<H
 
 const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
     ({ href, target, icon: Icon, btnType = EnumBtn.default, className = '', ...props }, ref) => {
-        const btnLinkClasses =
-            'flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 md:px-5 md:px-8 rounded-md transition-all duration-300 will-change-transform';
-
-        const hoverClasses = 'hover:translate-x-[-2px] hover:translate-y-[-2px]';
-        const activeClasses = 'active:translate-x-[2px] active:translate-y-[2px]';
-
         const btnLinkTypeClasses = {
             [EnumBtn.default as string]: 'bg-purple text-white',
             [EnumBtn.outline as string]: 'border-2 border-purple text-white',
@@ -36,12 +29,9 @@ const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                 {...props}
                 href={href}
                 target={target}
-                className={cn(
-                    `${btnLinkClasses} ${hoverClasses} ${activeClasses} ${className}`,
-                    btnLinkTypeClasses[btnType]
-                )}
+                className={`flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 md:px-8 rounded-md transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${btnLinkTypeClasses[btnType]} ${className}`}
             >
-                {Icon && <Icon className={cn('size-5', iconClasses[btnType])} />}
+                {Icon && <Icon className={`size-5 ${iconClasses[btnType]}`} />}
                 <span>{props.children}</span>
             </Link>
         );

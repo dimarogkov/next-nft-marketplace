@@ -8,8 +8,6 @@ interface Props extends HTMLAttributes<HTMLHeadingElement>, RefAttributes<HTMLHe
 
 const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
     ({ titleType = EnumTitle.h1, className = '', ...props }, ref) => {
-        const titleClasses = 'relative font-semibold';
-
         const titleSize = {
             [EnumTitle.h1 as string]:
                 'text-[38px] sm:text-[44px] md:text-[58px] lg:text-[66px] leading-[1.25] sm:leading-[1.2] lg:leading-[1.15]',
@@ -21,19 +19,35 @@ const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
         return (
             <>
                 {titleType === EnumTitle.h1 && (
-                    <h1 ref={ref} {...props} className={`${titleClasses} ${titleSize[titleType]} ${className}`} />
+                    <h1
+                        ref={ref}
+                        {...props}
+                        className={`relative font-semibold ${titleSize[titleType]} ${className}`}
+                    />
                 )}
 
                 {titleType === EnumTitle.h2 && (
-                    <h2 ref={ref} {...props} className={`${titleClasses} ${titleSize[titleType]} ${className}`} />
+                    <h2
+                        ref={ref}
+                        {...props}
+                        className={`relative font-semibold ${titleSize[titleType]} ${className}`}
+                    />
                 )}
 
                 {titleType === EnumTitle.h3 && (
-                    <h3 ref={ref} {...props} className={`${titleClasses} ${titleSize[titleType]} ${className}`} />
+                    <h3
+                        ref={ref}
+                        {...props}
+                        className={`relative font-semibold ${titleSize[titleType]} ${className}`}
+                    />
                 )}
 
                 {titleType === EnumTitle.h4 && (
-                    <h4 ref={ref} {...props} className={`${titleClasses} ${titleSize[titleType]} ${className}`} />
+                    <h4
+                        ref={ref}
+                        {...props}
+                        className={`relative font-semibold ${titleSize[titleType]} ${className}`}
+                    />
                 )}
             </>
         );

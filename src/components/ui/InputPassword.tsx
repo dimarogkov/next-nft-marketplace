@@ -13,32 +13,35 @@ const InputPassword: FC<Props> = forwardRef<HTMLInputElement, Props>(
         const [isPasswordVisible, setIsPasswordVisible] = useState(false);
         const inputRef = useRef<HTMLInputElement | null>(null);
 
-        const blockClasses = 'relative group flex items-center w-full height-btn';
-        const inputClasses = 'pr-[52px] sm:pr-[60px]';
-        const buttonClasses = 'absolute right-0 flex items-center justify-center w-[52px] sm:w-[60px] h-full';
-        const iconClasses = 'size-5 stroke-1 text-gray2';
-
         const handleClick = () => setIsPasswordVisible((prevState) => !prevState);
+        const handleBlur = () => !isPasswordVisible && setIsPasswordVisible(false);
 
         const handleMouseDown = (e: MouseEvent) => {
             e.preventDefault();
             inputRef.current?.focus();
         };
 
-        const handleBlur = () => !isPasswordVisible && setIsPasswordVisible(false);
-
         return (
-            <div ref={ref} className={`${blockClasses} ${className}`}>
+            <div ref={ref} className={`relative group flex items-center w-full height-btn ${className}`}>
                 <Input
                     ref={inputRef}
                     {...props}
                     onBlur={handleBlur}
                     type={isPasswordVisible ? 'text' : 'password'}
-                    className={`${inputClasses} ${classNameInput}`}
+                    className={`pr-[52px] sm:pr-[60px] ${classNameInput}`}
                 />
 
-                <button type='button' onClick={handleClick} onMouseDown={handleMouseDown} className={buttonClasses}>
-                    {!isPasswordVisible ? <EyeOff className={iconClasses} /> : <Eye className={iconClasses} />}
+                <button
+                    type='button'
+                    onClick={handleClick}
+                    onMouseDown={handleMouseDown}
+                    className='absolute right-0 flex items-center justify-center w-[52px] sm:w-[60px] h-full'
+                >
+                    {!isPasswordVisible ? (
+                        <EyeOff className='size-5 stroke-1 text-gray2' />
+                    ) : (
+                        <Eye className='size-5 stroke-1 text-gray2' />
+                    )}
                 </button>
             </div>
         );

@@ -8,12 +8,9 @@ type Props = {
 };
 
 const Root: FC<Props> = ({ children }) => {
-    const htmlClasses = 'h-full';
-    const bodyClasses = 'flex flex-col min-h-full text-white';
-
     return (
-        <html lang='en' className={htmlClasses} suppressHydrationWarning>
-            <body className={`${bodyClasses} ${work_sans.className}`}>{children}</body>
+        <html lang='en' className='h-full' suppressHydrationWarning>
+            <body className={`flex flex-col min-h-full text-white ${work_sans.className}`}>{children}</body>
         </html>
     );
 };

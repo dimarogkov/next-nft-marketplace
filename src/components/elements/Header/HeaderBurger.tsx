@@ -7,14 +7,16 @@ type Props = {
 };
 
 const HeaderBurger: FC<Props> = ({ isOpen, toggleMenu = () => {} }) => {
-    const burgerClasses = 'burger-btn relative flex lg:hidden items-center w-7 sm:w-8 h-[18px] sm:h-5';
-    const lineClasses = 'w-full h-0.5 bg-white';
-    const lineTransitionClasses = 'transition-all duration-300';
-
     return (
-        <button type='button' onClick={toggleMenu} className={cn(burgerClasses, { active: isOpen })}>
+        <button
+            type='button'
+            onClick={toggleMenu}
+            className={cn('burger-btn relative flex lg:hidden items-center w-7 sm:w-8 h-[18px] sm:h-5', {
+                active: isOpen,
+            })}
+        >
             <span
-                className={cn(`${lineClasses} ${lineTransitionClasses}`, {
+                className={cn('w-full h-0.5 bg-white transition-all duration-300', {
                     'opacity-0 invisible translate-x-1': isOpen,
                 })}
             />
