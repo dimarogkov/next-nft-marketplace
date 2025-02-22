@@ -30,8 +30,16 @@ input[type='number']::-webkit-outer-spin-button {
     @apply h-[calc(100%-70px)] sm:h-[calc(100%-80px)] lg:h-[calc(100%-100px)];
 }
 
+.section-padding {
+    @apply py-8 sm:py-10 md:py-12 lg:py-20;
+}
+
 .height-btn {
     @apply h-11 md:h-12;
+}
+
+.img {
+    @apply absolute top-0 left-0 w-full h-full object-cover object-center;
 }
 
 .burger-btn::before,

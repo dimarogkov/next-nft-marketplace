@@ -8,10 +8,11 @@ interface Props extends HTMLAttributes<HTMLHeadingElement>, RefAttributes<HTMLHe
 
 const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
     ({ titleType = EnumTitle.h1, className = '', ...props }, ref) => {
-        const titleClasses = 'relative font-bold';
+        const titleClasses = 'relative font-semibold';
 
         const titleSize = {
-            [EnumTitle.h1 as string]: 'text-[32px] sm:text-4xl md:text-5xl lg:text-6xl',
+            [EnumTitle.h1 as string]:
+                'text-[38px] sm:text-[44px] md:text-[58px] lg:text-[66px] leading-[1.25] sm:leading-[1.2] lg:leading-[1.15]',
             [EnumTitle.h2 as string]: 'text-[28px] sm:text-3xl md:text-4xl lg:text-5xl',
             [EnumTitle.h3 as string]: 'text-2xl md:text-3xl lg:text-4xl',
             [EnumTitle.h4 as string]: 'text-xl md:text-2xl',

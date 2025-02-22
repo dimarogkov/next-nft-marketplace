@@ -13,7 +13,7 @@ const Text: FC<Props> = forwardRef<HTMLParagraphElement, Props>(
 
         const textSize = {
             [EnumText.default as string]: 'text-base',
-            [EnumText.large as string]: 'text-base md:text-lg',
+            [EnumText.large as string]: 'text-base md:text-lg lg:text-xl lg:leading-[1.5]',
         };
 
         return <p ref={ref} {...props} className={cn(`${textClasses} ${textSize[textType]} ${className}`)} />;

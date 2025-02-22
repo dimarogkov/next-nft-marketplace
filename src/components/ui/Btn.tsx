@@ -12,7 +12,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<H
 const Btn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
     ({ icon: Icon, btnType = EnumBtn.default, className = '', ...props }, ref) => {
         const btnClasses =
-            'flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 sm:px-5 md:px-8 rounded-md transition-all duration-300 will-change-transform';
+            'flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 md:px-5 md:px-8 rounded-md transition-all duration-300 will-change-transform';
 
         const hoverClasses = 'hover:translate-x-[-2px] hover:translate-y-[-2px]';
         const activeClasses = 'active:translate-x-[2px] active:translate-y-[2px]';

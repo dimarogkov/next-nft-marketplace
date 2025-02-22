@@ -7,7 +7,7 @@ type Props = {
 
 const RootLayout: FC<Props> = ({ children }) => {
     const mainClasses =
-        'relative flex flex-col grow w-full max-w-[1064px] pt-[70px] sm:pt-20 lg:pt-[100px] px-4 sm:px-5 m-auto';
+        'relative flex flex-col grow w-full max-w-[1064px] pt-[70px] sm:pt-20 lg:pt-[100px] px-4 md:px-5 m-auto';
 
     return (
         <>

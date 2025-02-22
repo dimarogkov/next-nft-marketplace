@@ -1,4 +1,5 @@
+import { BannerContent } from './Banner';
 import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
 import { Logo } from './Logo';
 
-export { HeaderBurger, HeaderLayer, HeaderLinks, Logo };
+export { BannerContent, HeaderBurger, HeaderLayer, HeaderLinks, Logo };
