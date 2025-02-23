@@ -1,9 +1,9 @@
 import Image from 'next/image';
+import { BANNER_DATA } from '@/src/variables';
 import { BannerContent } from '../../elements';
-import { bannerData } from '@/src/variables/data/banner';
 
 const Banner = () => {
-    const { img } = bannerData;
+    const { img } = BANNER_DATA;
 
     return (
         <section className='relative w-full section-padding'>

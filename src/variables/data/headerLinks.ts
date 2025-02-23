@@ -1,7 +1,7 @@
-import { PATHS } from './paths';
-import { ILink } from '../types/interfaces/Link';
+import { PATHS } from '../paths';
+import { ILink } from '@/src/types/interfaces/Link';
 
-export const headerLinks: ILink[] = [
+export const HEADER_LINKS: ILink[] = [
     {
         href: PATHS.MARKETPLACE,
         text: 'Marketplace',

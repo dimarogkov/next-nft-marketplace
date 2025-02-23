@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { PATHS } from '@/src/variables/paths';
-import { headerLinks } from '@/src/variables/headerLinks';
+import { HEADER_LINKS, PATHS } from '@/src/variables';
 
 import { BtnLink } from '../../ui';
 import { User } from 'lucide-react';
@@ -23,7 +22,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                 }
             )}
         >
-            {headerLinks.map(({ href, text }) => (
+            {HEADER_LINKS.map(({ href, text }) => (
                 <Link
                     key={text}
                     href={href}

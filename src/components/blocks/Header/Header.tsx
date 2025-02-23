@@ -19,7 +19,7 @@ const Header = () => {
 
     return (
         <header className='fixed z-20 top-0 left-0 flex items-center w-full h-[70px] sm:h-20 lg:h-[100px] border-b border-gray bg-black'>
-            <div className='relative flex items-center justify-between w-full h-full max-w-[1064px] px-4 md:px-5 m-auto'>
+            <div className='relative flex items-center justify-between w-full max-w-[1064px] h-full px-4 md:px-5 m-auto'>
                 <Logo />
                 <HeaderLinks isOpen={isOpen} />
                 <HeaderBurger isOpen={isOpen} toggleMenu={toggleMenu} />

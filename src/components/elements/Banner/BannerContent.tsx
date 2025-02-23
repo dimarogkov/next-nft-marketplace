@@ -1,9 +1,9 @@
+import { BANNER_DATA } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
-import { bannerData } from '@/src/variables/data/banner';
 import { BtnLink, Text, Title } from '../../ui';
 
 const BannerContent = () => {
-    const { title, text, link, info } = bannerData;
+    const { title, text, link, info } = BANNER_DATA;
 
     return (
         <div className='relative order-1 sm:order-none w-full'>

@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
-import { Btn, Text, Title } from '@/src/components/ui';
 import { EnumText, EnumTitle } from '@/src/types/enums';
+import { Btn, Text, Title } from '@/src/components/ui';
 import { RotateCw } from 'lucide-react';
 
 type Props = {
@@ -10,27 +10,19 @@ type Props = {
 };
 
 const Error: FC<Props> = ({ error, reset = () => {} }) => {
-    const sectionClasses = 'relative flex items-center justify-center grow w-full';
-    const blockClasses = 'w-full sm:max-w-[500px] text-center pb-24';
-
-    const titleClasses = 'line-clamp-2 mb-2 sm:mb-3 last:mb-0';
-    const textClasses = 'mb-5 last:mb-0';
-    const spanClasses = 'font-medium text-purple';
-    const linkClasses = 'm-auto';
-
     return (
-        <section className={sectionClasses}>
-            <div className={blockClasses}>
-                <Title titleType={EnumTitle.h2} className={titleClasses}>
+        <section className='relative flex items-center justify-center grow w-full'>
+            <div className='w-full sm:max-w-[550px] text-center pb-24'>
+                <Title titleType={EnumTitle.h2} className='line-clamp-2 mb-2 sm:mb-3 last:mb-0'>
                     {error?.message}
                 </Title>
 
-                <Text textType={EnumText.large} className={textClasses}>
+                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
                     Oops, something went wrong. We couldn&apos;t load the page. Please click the&nbsp;
-                    <span className={spanClasses}>&apos;Retry&apos;</span> button.
+                    <span className='font-medium text-purple'>&apos;Retry&apos;</span> button.
                 </Text>
 
-                <Btn icon={RotateCw} onClick={() => reset()} className={linkClasses}>
+                <Btn icon={RotateCw} onClick={() => reset()} className='m-auto'>
                     Retry
                 </Btn>
             </div>

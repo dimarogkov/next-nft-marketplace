@@ -35,7 +35,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .height-btn {
-    @apply h-11 md:h-12;
+    @apply h-12;
 }
 
 .img {

@@ -2,7 +2,7 @@ import { PATHS } from '../paths';
 import { IBannerData } from '@/src/types/interfaces/BannerData';
 import { Rocket } from 'lucide-react';
 
-export const bannerData: IBannerData = {
+export const BANNER_DATA: IBannerData = {
     title: 'Discover Digital Art & Collect NFTs',
     text: 'NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.',
     img: {
@@ -16,15 +16,15 @@ export const bannerData: IBannerData = {
     },
     info: [
         {
-            value: '240k+',
+            value: '300k+',
             text: 'Total Sale',
         },
         {
-            value: '100k+',
+            value: '150k+',
             text: 'Auctions',
         },
         {
-            value: '50k+',
+            value: '100k+',
             text: 'Artists',
         },
     ],

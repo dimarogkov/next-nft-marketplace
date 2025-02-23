@@ -12,7 +12,7 @@ const config: Config = {
             colors: {
                 black: '#2b2b2b',
                 gray: '#3b3b3b',
-                gray2: '#858584',
+                gray2: 'rgb(255 255 255 / 65%)',
                 white: '#fff',
                 purple: '#a259ff',
                 red: '#da4934',

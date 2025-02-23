@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { PATHS } from '@/src/variables/paths';
+import { PATHS } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { BtnLink, Text, Title } from '@/src/components/ui';
 import { ArrowLeft } from 'lucide-react';
@@ -9,27 +9,19 @@ export const metadata: Metadata = {
 };
 
 const NotFoundPage = () => {
-    const sectionClasses = 'relative flex items-center justify-center grow w-full';
-    const blockClasses = 'w-full sm:max-w-[500px] text-center pb-24';
-
-    const titleClasses = 'mb-2 sm:mb-3 last:mb-0';
-    const textClasses = 'mb-5 last:mb-0';
-    const spanClasses = 'font-medium text-purple';
-    const linkClasses = 'm-auto';
-
     return (
-        <section className={sectionClasses}>
-            <div className={blockClasses}>
-                <Title titleType={EnumTitle.h2} className={titleClasses}>
+        <section className='relative flex items-center justify-center grow w-full'>
+            <div className='w-full sm:max-w-[550px] text-center pb-24'>
+                <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
                     Page not Found
                 </Title>
 
-                <Text textType={EnumText.large} className={textClasses}>
+                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
                     It seems that the page you are looking for no longer exists or has been moved. Please check the URL
-                    for any mistakes or return to the <span className={spanClasses}>homepage</span>.
+                    for any mistakes or return to the <span className='font-medium text-purple'>homepage</span>.
                 </Text>
 
-                <BtnLink href={PATHS.HOME} icon={ArrowLeft} className={linkClasses}>
+                <BtnLink href={PATHS.HOME} icon={ArrowLeft} className='m-auto'>
                     Go Home
                 </BtnLink>
             </div>
