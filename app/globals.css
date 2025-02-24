@@ -58,6 +58,10 @@ input[type='number']::-webkit-outer-spin-button {
     @apply py-8 sm:py-10 md:py-12 lg:py-20;
 }
 
+.section-padding-bottom {
+    @apply pb-8 sm:pb-10 md:pb-12 lg:pb-20;
+}
+
 .height-btn {
     @apply h-12;
 }

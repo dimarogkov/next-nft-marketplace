@@ -1,16 +1,19 @@
 import Image from 'next/image';
+import { SUBSCRIBE_DATA } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { Btn, Input, Label, Text, Title } from '../../ui';
 
 const Subscribe = () => {
+    const { title, text, img, form } = SUBSCRIBE_DATA;
+
     return (
-        <section className='relative w-full section-padding'>
-            <div className='flex flex-wrap md:flex-nowrap items-center gap-4 sm:gap-5 lg:gap-10 w-full rounded-md p-4 md:p-5 lg:p-10 bg-gray'>
+        <section className='relative w-full section-padding-bottom'>
+            <div className='flex flex-wrap md:flex-nowrap items-center gap-5 lg:gap-[30px] w-full rounded-md p-4 sm:p-5 lg:p-[30px] bg-gray'>
                 <div className='relative w-full md:w-[48%] h-0 pb-[100%] sm:pb-[42%] md:pb-[31%] rounded-md overflow-hidden bg-black'>
                     <Image
-                        src='/subscribe_img.jpg'
-                        blurDataURL='/subscribe_img.jpg'
-                        alt='subscribe_img'
+                        src={img.src}
+                        blurDataURL={img.src}
+                        alt={img.alt}
                         placeholder='blur'
                         className='img !object-top'
                         sizes='100%'
@@ -21,24 +24,24 @@ const Subscribe = () => {
                 <div className='w-full md:w-auto'>
                     <div className='w-full mb-4 md:mb-5 last:mb-0'>
                         <Title titleType={EnumTitle.h3} className='mb-1 md:mb-2 last:mb-0'>
-                            Join Our Weekly Digest
+                            {title}
                         </Title>
 
-                        <Text textType={EnumText.large}>
-                            Get exclusive promotions & updates straight to your inbox.
+                        <Text textType={EnumText.large} className='w-full md:w-[90%]'>
+                            {text}
                         </Text>
                     </div>
 
-                    <form className='flex flex-wrap sm:flex-nowrap gap-2 sm:gap-1.5 w-full'>
+                    <form className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
                         <Label className='w-full'>
                             <Input
-                                name='email'
-                                placeholder='Enter your email here'
+                                name={form.name}
+                                placeholder={form.placeholder}
                                 className='border-gray2 hover:border-white'
                             />
                         </Label>
 
-                        <Btn type='submit'>Subscribe</Btn>
+                        <Btn type='submit'>{form.submitText}</Btn>
                     </form>
                 </div>
             </div>

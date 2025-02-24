@@ -1,11 +1,13 @@
 import Link from 'next/link';
-import { HEADER_LINKS, SOCIAL_LINKS } from '@/src/variables';
+import { HEADER_LINKS, SOCIAL_LINKS, SUBSCRIBE_DATA } from '@/src/variables';
 import { EnumTitle } from '@/src/types/enums';
 
 import { Logo } from '../../elements';
 import { Btn, Input, Label, SocialLink, Text, Title } from '../../ui';
 
 const Footer = () => {
+    const { title, text, form } = SUBSCRIBE_DATA;
+
     return (
         <footer className='relative w-full py-8 lg:py-10 bg-gray'>
             <div className='flex flex-wrap justify-between w-full max-w-[1064px] px-4 md:px-5 m-auto'>
@@ -42,24 +44,24 @@ const Footer = () => {
                 </div>
 
                 <div className='w-full sm:w-[58%] lg:w-[46%] pt-1'>
-                    <div className='w-full mb-3 last:mb-0'>
+                    <div className='w-full mb-4 md:mb-3 last:mb-0'>
                         <Title titleType={EnumTitle.h4} className='font-space-mono mb-1 sm:mb-3 lg:mb-5 last:mb-0'>
-                            Join Our Weekly Digest
+                            {title}
                         </Title>
 
-                        <Text>Get exclusive promotions & updates straight to your inbox.</Text>
+                        <Text>{text}</Text>
                     </div>
 
-                    <form className='flex flex-wrap sm:flex-nowrap gap-2 sm:gap-1.5 w-full'>
+                    <form className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
                         <Label className='w-full'>
                             <Input
-                                name='email'
-                                placeholder='Enter your email here'
+                                name={form.name}
+                                placeholder={form.placeholder}
                                 className='border-gray2 hover:border-white'
                             />
                         </Label>
 
-                        <Btn type='submit'>Subscribe</Btn>
+                        <Btn type='submit'>{form.submitText}</Btn>
                     </form>
                 </div>
             </div>

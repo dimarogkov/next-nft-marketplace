@@ -1,9 +1,10 @@
-import { Banner, Subscribe } from '@/src/components/blocks';
+import { Banner, HowItWorks, Subscribe } from '@/src/components/blocks';
 
 const HomePage = () => {
     return (
         <>
             <Banner />
+            <HowItWorks />
             <Subscribe />
         </>
     );
