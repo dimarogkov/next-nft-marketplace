@@ -1,7 +1,12 @@
-import { Banner } from '@/src/components/blocks';
+import { Banner, Subscribe } from '@/src/components/blocks';
 
 const HomePage = () => {
-    return <Banner />;
+    return (
+        <>
+            <Banner />
+            <Subscribe />
+        </>
+    );
 };
 
 export default HomePage;
