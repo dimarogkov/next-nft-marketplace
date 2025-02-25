@@ -46,6 +46,10 @@ input[type='number']::-webkit-outer-spin-button {
     font-family: 'Space Mono', serif;
 }
 
+.container {
+    @apply w-full max-w-[1064px] px-4 md:px-5 m-auto;
+}
+
 .height-full {
     @apply h-[calc(100%-70px)] sm:h-[calc(100%-80px)] lg:h-[calc(100%-100px)];
 }

@@ -10,7 +10,7 @@ const Footer = () => {
 
     return (
         <footer className='relative w-full py-8 lg:py-10 bg-gray'>
-            <div className='flex flex-wrap justify-between w-full max-w-[1064px] px-4 md:px-5 m-auto'>
+            <div className='flex flex-wrap justify-between container'>
                 <div className='flex flex-wrap lg:block w-full lg:w-[34%] mb-5 lg:mb-0 last:mb-0'>
                     <Logo disableAnimation className='sm:w-[42%] lg:w-auto !h-auto mb-5 lg:mb-4 last:mb-0' />
 
