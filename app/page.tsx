@@ -4,9 +4,9 @@ const HomePage = () => {
     return (
         <>
             <Banner />
-            <HowItWorks />
-            <NewEvent />
             <Subscribe />
+            <NewEvent />
+            <HowItWorks />
         </>
     );
 };

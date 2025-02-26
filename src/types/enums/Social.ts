@@ -1,6 +1,5 @@
-export enum EnumBtn {
+export enum EnumSocial {
     purple = 'purple',
-    outline = 'outline',
     light = 'light',
     dark = 'dark',
 }

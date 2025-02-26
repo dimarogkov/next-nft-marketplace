@@ -1,7 +1,7 @@
 import { PATHS } from '@/src/variables';
-import { EnumBtn, EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumSocial, EnumTitle } from '@/src/types/enums';
 
-import { Btn, BtnLink, Text, Title } from '../../ui';
+import { Btn, BtnLink, SocialLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
 
 const NewEventContent = () => {
@@ -21,6 +21,12 @@ const NewEventContent = () => {
             <BtnLink href={PATHS.HOME} icon={Eye} btnType={EnumBtn.dark}>
                 See NFT
             </BtnLink>
+
+            <div className='flex gap-2'>
+                <SocialLink href='/' icon={Eye} />
+                <SocialLink href='/' icon={Eye} socialType={EnumSocial.light} />
+                <SocialLink href='/' icon={Eye} socialType={EnumSocial.dark} />
+            </div>
         </div>
     );
 };

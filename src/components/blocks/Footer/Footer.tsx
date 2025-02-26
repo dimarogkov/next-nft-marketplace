@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { HEADER_LINKS, SOCIAL_LINKS, SUBSCRIBE_DATA } from '@/src/variables';
-import { EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumSocial, EnumTitle } from '@/src/types/enums';
 
 import { Logo } from '../../elements';
 import { Btn, Input, Label, SocialLink, Text, Title } from '../../ui';
@@ -19,7 +19,7 @@ const Footer = () => {
 
                         <div className='flex gap-1.5'>
                             {SOCIAL_LINKS.map(({ id, href, icon }) => (
-                                <SocialLink key={id} href={href} icon={icon} />
+                                <SocialLink key={id} href={href} icon={icon} socialType={EnumSocial.dark} />
                             ))}
                         </div>
                     </div>
@@ -61,7 +61,9 @@ const Footer = () => {
                             />
                         </Label>
 
-                        <Btn type='submit'>{form.submitText}</Btn>
+                        <Btn type='submit' btnType={EnumBtn.dark}>
+                            {form.submitText}
+                        </Btn>
                     </form>
                 </div>
             </div>

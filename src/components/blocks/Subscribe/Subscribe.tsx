@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { SUBSCRIBE_DATA } from '@/src/variables';
-import { EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 import { Btn, Input, Label, Text, Title } from '../../ui';
 
 const Subscribe = () => {
@@ -42,7 +42,9 @@ const Subscribe = () => {
                                 />
                             </Label>
 
-                            <Btn type='submit'>{form.submitText}</Btn>
+                            <Btn type='submit' btnType={EnumBtn.dark}>
+                                {form.submitText}
+                            </Btn>
                         </form>
                     </div>
                 </div>

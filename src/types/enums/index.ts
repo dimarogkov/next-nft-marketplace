@@ -1,6 +1,6 @@
 import { EnumBtn } from './Btn';
-import { EnumLoaderType } from './Loader';
+import { EnumSocial } from './Social';
 import { EnumText } from './Text';
 import { EnumTitle } from './Title';
 
-export { EnumBtn, EnumLoaderType, EnumText, EnumTitle };
+export { EnumBtn, EnumSocial, EnumText, EnumTitle };
