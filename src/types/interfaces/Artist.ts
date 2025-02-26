@@ -1,3 +1,5 @@
+import { IAuthor } from './Author';
+
 export interface IArtistLink {
     id: string;
     href: string;
@@ -10,9 +12,7 @@ export interface IArtistInfo {
     links: IArtistLink[];
 }
 
-export interface IArtist {
-    userName: string;
+export interface IArtist extends IAuthor {
     bio: string;
-    avatar: string;
     info: IArtistInfo;
 }

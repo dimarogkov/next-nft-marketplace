@@ -61,9 +61,7 @@ const Footer = () => {
                             />
                         </Label>
 
-                        <Btn type='submit' btnType={EnumBtn.dark}>
-                            {form.submitText}
-                        </Btn>
+                        <Btn type='submit'>{form.submitText}</Btn>
                     </form>
                 </div>
             </div>

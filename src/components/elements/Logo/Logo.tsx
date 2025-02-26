@@ -26,7 +26,7 @@ const Logo: FC<Props> = ({ disableAnimation = false, className = '' }) => {
                         !disableAnimation,
                 })}
             >
-                <Store className='size-6 text-black' />
+                <Store className='size-6 text-white' />
             </div>
 
             <Title
