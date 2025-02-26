@@ -16,11 +16,15 @@ const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
         const btnLinkTypeClasses = {
             [EnumBtn.default as string]: 'bg-purple text-white',
             [EnumBtn.outline as string]: 'border-2 border-purple text-white',
+            [EnumBtn.light as string]: 'bg-white text-black',
+            [EnumBtn.dark as string]: 'bg-black text-white',
         };
 
         const iconClasses = {
             [EnumBtn.default as string]: 'text-white',
             [EnumBtn.outline as string]: 'text-purple',
+            [EnumBtn.light as string]: 'text-black',
+            [EnumBtn.dark as string]: 'text-white',
         };
 
         return (
