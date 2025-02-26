@@ -1,3 +1,4 @@
+import Avatar from './Avatar';
 import Btn from './Btn';
 import BtnLink from './BtnLink';
 import Checkbox from './Checkbox';
@@ -8,11 +9,11 @@ import Label from './Label';
 import Radio from './Radio';
 import SimpleLink from './SimpleLink';
 import SocialLink from './SocialLink';
-import Tabs from './Tabs';
 import Text from './Text';
 import Title from './Title';
 
 export {
+    Avatar,
     Btn,
     BtnLink,
     Checkbox,
@@ -21,7 +22,6 @@ export {
     InputPassword,
     Label,
     Radio,
-    Tabs,
     SimpleLink,
     SocialLink,
     Text,

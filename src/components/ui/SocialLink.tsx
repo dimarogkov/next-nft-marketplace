@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import Link from 'next/link';
-import { LucideProps } from 'lucide-react';
 import { EnumSocial } from '@/src/types/enums';
+import { LucideProps } from 'lucide-react';
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
