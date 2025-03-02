@@ -14,7 +14,7 @@ const NotFoundPage = () => {
             <div className='container'>
                 <div className='w-full sm:max-w-[550px] text-center pb-[70px] sm:pb-[80px] lg:pb-[100px]'>
                     <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
-                        Page not Found
+                        Page not Found !
                     </Title>
 
                     <Text textType={EnumText.large} className='mb-5 last:mb-0'>

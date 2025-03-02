@@ -14,7 +14,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
     return (
         <div
             className={cn(
-                'z-10 fixed bottom-0 lg:bottom-auto right-0 lg:right-auto lg:relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-6 lg:gap-10 w-full sm:w-[450px] lg:w-auto height-full lg:h-full text-center sm:text-left p-4 sm:p-6 lg:p-0 pb-20 sm:pb-0 bg-black transition-all duration-300',
+                'z-10 fixed bottom-0 lg:bottom-auto right-0 lg:right-auto lg:relative w-full sm:w-[450px] lg:w-auto height-full lg:h-full text-center sm:text-left p-4 sm:p-6 lg:p-0 bg-black transition-all duration-300',
                 {
                     'opacity-0 lg:opacity-100 invisible lg:visible translate-x-full sm:translate-x-[450px] lg:translate-x-0':
                         !isOpen,
@@ -22,23 +22,25 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                 }
             )}
         >
-            {HEADER_LINKS.map(({ href, text }) => (
-                <Link
-                    key={text}
-                    href={href}
-                    className='font-semibold sm:font-medium text-2xl sm:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple'
-                >
-                    {text}
-                </Link>
-            ))}
-
-            <BtnLink
-                href={PATHS.SIGN_UP}
-                icon={User}
-                className='absolute sm:relative left-4 sm:left-auto bottom-4 sm:bottom-auto w-[calc(100%-32px)] md:w-fit bg-red'
+            <div
+                className={cn(
+                    'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-[30px] sm:gap-6 lg:gap-10 w-full h-full pb-16 sm:pb-0'
+                )}
             >
-                Sign Up
-            </BtnLink>
+                {HEADER_LINKS.map(({ href, text }) => (
+                    <Link
+                        key={text}
+                        href={href}
+                        className='font-semibold sm:font-medium text-3xl sm:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple'
+                    >
+                        {text}
+                    </Link>
+                ))}
+
+                <BtnLink href={PATHS.SIGN_UP} icon={User} className='absolute sm:relative bottom-0 sm:bottom-auto'>
+                    Sign Up
+                </BtnLink>
+            </div>
         </div>
     );
 };
