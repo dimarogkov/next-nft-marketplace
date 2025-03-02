@@ -11,19 +11,21 @@ export const metadata: Metadata = {
 const NotFoundPage = () => {
     return (
         <section className='relative flex items-center justify-center grow w-full section-height-full'>
-            <div className='w-full sm:max-w-[550px] text-center pb-[70px] sm:pb-[80px] lg:pb-[100px]'>
-                <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
-                    Page not Found
-                </Title>
+            <div className='container'>
+                <div className='w-full sm:max-w-[550px] text-center pb-[70px] sm:pb-[80px] lg:pb-[100px]'>
+                    <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
+                        Page not Found
+                    </Title>
 
-                <Text textType={EnumText.large} className='mb-5 last:mb-0'>
-                    It seems that the page you are looking for no longer exists or has been moved. Please check the URL
-                    for any mistakes or return to the <span className='font-medium text-purple'>homepage</span>.
-                </Text>
+                    <Text textType={EnumText.large} className='mb-5 last:mb-0'>
+                        It seems that the page you are looking for no longer exists or has been moved. Please check the
+                        URL for any mistakes or return to the <span className='font-medium text-purple'>homepage</span>.
+                    </Text>
 
-                <BtnLink href={PATHS.HOME} icon={ArrowLeft} className='m-auto'>
-                    Go Home
-                </BtnLink>
+                    <BtnLink href={PATHS.HOME} icon={ArrowLeft} className='m-auto'>
+                        Go Home
+                    </BtnLink>
+                </div>
             </div>
         </section>
     );
