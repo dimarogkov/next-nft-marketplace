@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 const NotFoundPage = () => {
     return (
-        <section className='relative flex items-center justify-center grow w-full section-height-full'>
-            <div className='container'>
+        <section className='relative grow w-full section-height-full'>
+            <div className='flex items-center justify-center container h-full'>
                 <div className='w-full sm:max-w-[550px] text-center pb-[70px] sm:pb-[80px] lg:pb-[100px]'>
                     <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
-                        Page not Found !
+                        Page not Found
                     </Title>
 
                     <Text textType={EnumText.large} className='mb-5 last:mb-0'>
