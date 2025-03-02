@@ -24,7 +24,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
         >
             <div
                 className={cn(
-                    'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-[30px] sm:gap-6 lg:gap-10 w-full h-full pb-16 sm:pb-0'
+                    'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-[30px] sm:gap-6 lg:gap-10 w-full h-full pb-20 sm:pb-0'
                 )}
             >
                 {HEADER_LINKS.map(({ href, text }) => (
