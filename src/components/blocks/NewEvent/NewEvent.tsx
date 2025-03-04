@@ -2,10 +2,10 @@ import { NTFS_DATA } from '@/src/variables';
 import { NewEventContent, NewEventImg } from '../../elements';
 
 const NewEvent = () => {
-    const { name, img, author } = NTFS_DATA[0];
+    const { name, img, author } = NTFS_DATA[2];
 
     return (
-        <section className='relative w-full md:h-[600px] lg:h-[700px] bg-gray'>
+        <section className='relative w-full md:h-[600px] lg:h-[700px] xl:h-[800px] bg-gray'>
             <NewEventImg img={img} />
 
             <div className='relative flex items-end container h-full py-10 lg:py-[60px] pt-56 md:pt-0'>

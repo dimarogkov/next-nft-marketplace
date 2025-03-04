@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { ITimer } from '../types/interfaces/Timer';
 
 const useTimer = (hours: number, minutes: number, seconds: number) => {
-    const [timer, setTimer] = useState<ITimer | null>(null);
+    const [timer, setTimer] = useState<ITimer>({ hours: 0, minutes: 0, seconds: 0 });
+    const [isTimerEnd, setIsTimerEnd] = useState(false);
 
     const date = useMemo(() => {
         return new Date(Date.now() + hours * 60 * 60 * 1000 + minutes * 60 * 1000 + seconds * 1000);
@@ -19,8 +20,10 @@ const useTimer = (hours: number, minutes: number, seconds: number) => {
                     minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
                     seconds: Math.floor((difference % (1000 * 60)) / 1000),
                 });
+                setIsTimerEnd(false);
             } else {
-                setTimer(null);
+                setTimer({ hours: 0, minutes: 0, seconds: 0 });
+                setIsTimerEnd(true);
             }
         };
 
@@ -28,9 +31,9 @@ const useTimer = (hours: number, minutes: number, seconds: number) => {
         updateTimer();
 
         return () => clearInterval(interval);
-    }, [date, hours, minutes, seconds]);
+    }, [date]);
 
-    return timer;
+    return { timer, isTimerEnd };
 };
 
 export default useTimer;

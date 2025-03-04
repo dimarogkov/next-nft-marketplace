@@ -11,7 +11,15 @@ const NewEventImg: FC<Props> = ({ img }) => {
 
     return (
         <div className='absolute top-0 left-0 w-full h-full'>
-            <Image src={src} blurDataURL={src} alt={alt} placeholder='blur' className='img' sizes='100%' fill />
+            <Image
+                src={src}
+                blurDataURL={src}
+                alt={alt}
+                placeholder='blur'
+                className='img !object-bottom'
+                sizes='100%'
+                fill
+            />
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-purple to-transparent' />
         </div>
     );
