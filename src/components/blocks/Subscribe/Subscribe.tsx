@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { SUBSCRIBE_DATA } from '@/src/variables';
-import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumText, EnumTitle } from '@/src/types/enums';
 import { Btn, Input, Label, Text, Title } from '../../ui';
 
 const Subscribe = () => {

@@ -22,11 +22,11 @@ const NewEventContent: FC<Props> = ({ content }) => {
             <Avatar
                 href={convertToSnakeCase(author.userName)}
                 src={author.avatar}
-                username={author.userName}
+                userName={author.userName}
                 className='rounded-md py-2 px-4 bg-black'
             />
 
-            <Title titleType={EnumTitle.h2}>Magic Mushrooms</Title>
+            <Title titleType={EnumTitle.h2}>{name}</Title>
             <Timer hours={6} className='md:absolute md:right-0 md:bottom-0 bg-black/40' />
 
             <BtnLink href={convertToSnakeCase(name)} icon={Eye} btnType={EnumBtn.light}>

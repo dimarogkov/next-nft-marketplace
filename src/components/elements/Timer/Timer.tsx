@@ -1,9 +1,10 @@
 'use client';
 import { FC } from 'react';
 import { useTimer } from '@/src/hooks';
-import { EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumTitle } from '@/src/types/enums';
 
 import TimerItem from './TimerItem';
+import TimerEnd from './TimerEnd';
 import { Text, Title } from '../../ui';
 
 type Props = {
@@ -14,12 +15,12 @@ type Props = {
 };
 
 const Timer: FC<Props> = ({ hours = 0, minutes = 0, seconds = 0, className = '' }) => {
-    const timer = useTimer(hours, minutes, seconds);
+    const { timer, isTimerEnd } = useTimer(hours, minutes, seconds);
 
     return (
-        <div className={`relative w-fit rounded-md p-4 sm:p-5 lg:p-6 ${className}`}>
-            {timer && timer.seconds > 0 ? (
-                <>
+        <div className={`relative w-fit max-w-[300px] rounded-md p-4 sm:p-5 lg:p-6 ${className}`}>
+            {!isTimerEnd ? (
+                <div>
                     <Text className='font-space-mono text-white mb-2 last:mb-0'>Auction ends in:</Text>
 
                     <div className='flex items-start gap-2.5 w-full text-center'>
@@ -37,17 +38,9 @@ const Timer: FC<Props> = ({ hours = 0, minutes = 0, seconds = 0, className = '' 
 
                         <TimerItem timer={{ label: 'Seconds', value: timer.seconds }} />
                     </div>
-                </>
-            ) : (
-                <div className='w-full'>
-                    <Title titleType={EnumTitle.h3} className='mb-1.5 last:mb-0'>
-                        Auction Closed!
-                    </Title>
-
-                    <Text textType={EnumText.large}>
-                        The auction has officially ended. Winners will be announced soon!
-                    </Text>
                 </div>
+            ) : (
+                <TimerEnd />
             )}
         </div>
     );

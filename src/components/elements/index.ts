@@ -3,7 +3,8 @@ import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent, NewEventImg } from './NewEvent';
-import { Timer, TimerItem } from './Timer';
+import { NftCard, NftCardContent, NftCardImg } from './NftCard';
+import { Timer, TimerEnd, TimerItem } from './Timer';
 
 export {
     BannerContent,
@@ -14,6 +15,10 @@ export {
     Logo,
     NewEventContent,
     NewEventImg,
+    NftCard,
+    NftCardContent,
+    NftCardImg,
     Timer,
+    TimerEnd,
     TimerItem,
 };

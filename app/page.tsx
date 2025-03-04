@@ -1,11 +1,12 @@
-import { Banner, HowItWorks, NewEvent, Subscribe } from '@/src/components/blocks';
+import { Banner, HowItWorks, NewEvent, NewNfts, Subscribe } from '@/src/components/blocks';
 
 const HomePage = () => {
     return (
         <>
             <Banner />
-            <Subscribe />
+            <NewNfts />
             <NewEvent />
+            <Subscribe />
             <HowItWorks />
         </>
     );

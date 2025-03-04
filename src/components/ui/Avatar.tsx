@@ -6,12 +6,12 @@ import Text from './Text';
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
     src: string;
-    username?: string;
+    userName?: string;
     className?: string;
 }
 
 const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
-    ({ href, src, username, className = '', ...props }, ref) => {
+    ({ href, src, userName, className = '', ...props }, ref) => {
         return (
             <Link
                 ref={ref}
@@ -23,7 +23,7 @@ const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                     <Image
                         src={src}
                         blurDataURL={src}
-                        alt={username || ''}
+                        alt={userName || ''}
                         placeholder='blur'
                         className='img'
                         sizes='100%'
@@ -31,9 +31,9 @@ const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                     />
                 </div>
 
-                {username && (
+                {userName && (
                     <Text className='!w-auto text-white transition-colors duration-300 group-hover:text-white/70'>
-                        {username}
+                        {userName}
                     </Text>
                 )}
             </Link>
