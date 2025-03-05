@@ -16,9 +16,12 @@ const Logo: FC<Props> = ({ disableAnimation = false, className = '' }) => {
     return (
         <Link
             href={PATHS.HOME}
-            className={cn(`relative group flex items-center h-full gap-3 sm:gap-4 ${className}`, {
-                'lg:transition-opacity lg:duration-300 lg:hover:opacity-80': disableAnimation,
-            })}
+            className={cn(
+                `relative group flex items-center h-full gap-3 sm:gap-4 transition-opacity duration-300 hover:opacity-80 ${className}`,
+                {
+                    'lg:hover:opacity-100': !disableAnimation,
+                }
+            )}
         >
             <div
                 className={cn('flex items-center justify-center size-10 rounded-full bg-purple duration-300', {

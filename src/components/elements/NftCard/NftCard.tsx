@@ -8,7 +8,7 @@ type Props = {
 };
 
 const NftCard: FC<Props> = ({ nft }) => {
-    const { name, price, highestBid, img, author } = nft;
+    const { img, ...content } = nft;
 
     return (
         <div className='relative flex flex-col sm:flex-row md:flex-col w-full rounded-md overflow-hidden bg-gray'>
@@ -22,7 +22,7 @@ const NftCard: FC<Props> = ({ nft }) => {
                 </ImageLoader.Link>
             </ImageLoader>
 
-            <NftCardContent content={{ name, author, price, highestBid }} />
+            <NftCardContent content={content} />
         </div>
     );
 };

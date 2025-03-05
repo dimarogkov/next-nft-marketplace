@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import { EnumTitle } from '@/src/types/enums';
-import { IHowItWorksItem } from '@/src/types/interfaces/HowItWorksData';
+import { IHowItWorksItem } from '@/src/types/interfaces/HowItWorksItem';
 import { Text, Title } from '../../ui';
 
 type Props = {
