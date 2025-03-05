@@ -5,9 +5,3 @@ export interface IHowItWorksItem {
     text: string;
     img: IImage;
 }
-
-export interface IHowItWorksData {
-    title: string;
-    text: string;
-    items: IHowItWorksItem[];
-}

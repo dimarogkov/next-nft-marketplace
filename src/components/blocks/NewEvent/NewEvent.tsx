@@ -3,7 +3,7 @@ import { NewEventContent } from '../../elements';
 import { ImageLoader } from '../../ui';
 
 const NewEvent = () => {
-    const { name, img, author } = NTFS_DATA[2];
+    const { img, ...content } = NTFS_DATA[2];
 
     return (
         <section className='relative w-full md:h-[600px] lg:h-[700px] xl:h-[800px] bg-gray'>
@@ -20,7 +20,7 @@ const NewEvent = () => {
             </ImageLoader>
 
             <div className='relative flex items-end container h-full py-10 lg:py-[60px] pt-56 md:pt-0'>
-                <NewEventContent content={{ name, author }} />
+                <NewEventContent content={content} />
             </div>
         </section>
     );

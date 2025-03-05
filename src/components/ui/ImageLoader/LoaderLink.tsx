@@ -19,7 +19,7 @@ const LoaderLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
         return (
             <Link ref={ref} {...props} className={`absolute top-0 left-0 w-full h-full ${className}`}>
                 {Children.map(children, (child) => {
-                    if (isValidElement(child)) {
+                    if (isValidElement(child) && child.type !== 'div') {
                         return cloneElement(child as ReactElement, {
                             isOptimized,
                             isLoading,

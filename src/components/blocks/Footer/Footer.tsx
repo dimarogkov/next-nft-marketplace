@@ -1,13 +1,11 @@
 import Link from 'next/link';
-import { HEADER_LINKS, SOCIAL_LINKS, SUBSCRIBE_DATA } from '@/src/variables';
-import { EnumBtn, EnumSocial, EnumTitle } from '@/src/types/enums';
+import { HEADER_LINKS, SOCIAL_LINKS } from '@/src/variables';
+import { EnumSocial, EnumTitle } from '@/src/types/enums';
 
 import { Logo } from '../../elements';
 import { Btn, Input, Label, SocialLink, Text, Title } from '../../ui';
 
 const Footer = () => {
-    const { title, text, form } = SUBSCRIBE_DATA;
-
     return (
         <footer className='relative w-full py-8 lg:py-10 bg-gray'>
             <div className='flex flex-wrap justify-between container'>
@@ -46,22 +44,22 @@ const Footer = () => {
                 <div className='w-full sm:w-[58%] lg:w-[46%] pt-1'>
                     <div className='w-full mb-4 md:mb-3 last:mb-0'>
                         <Title titleType={EnumTitle.h4} className='font-space-mono mb-1 sm:mb-3 lg:mb-5 last:mb-0'>
-                            {title}
+                            Join Our Weekly Digest
                         </Title>
 
-                        <Text>{text}</Text>
+                        <Text>Get exclusive promotions & updates straight to your inbox.</Text>
                     </div>
 
                     <form className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
                         <Label className='w-full'>
                             <Input
-                                name={form.name}
-                                placeholder={form.placeholder}
+                                name='email'
+                                placeholder='Enter your email here'
                                 className='border-gray2 hover:border-white'
                             />
                         </Label>
 
-                        <Btn type='submit'>{form.submitText}</Btn>
+                        <Btn type='submit'>Subscribe</Btn>
                     </form>
                 </div>
             </div>

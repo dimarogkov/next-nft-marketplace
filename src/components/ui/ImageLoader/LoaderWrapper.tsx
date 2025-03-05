@@ -28,7 +28,7 @@ const LoaderWrapper: FC<Props> = forwardRef<HTMLDivElement, Props>(({ className 
             {!hasError && (
                 <>
                     {Children.map(props.children, (child) => {
-                        if (isValidElement(child)) {
+                        if (isValidElement(child) && child.type !== 'div') {
                             return cloneElement(child as ReactElement, {
                                 isOptimized,
                                 isLoading,
