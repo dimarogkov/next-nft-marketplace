@@ -1,12 +1,23 @@
 import { NTFS_DATA } from '@/src/variables';
-import { NewEventContent, NewEventImg } from '../../elements';
+import { NewEventContent } from '../../elements';
+import { ImageLoader } from '../../ui';
 
 const NewEvent = () => {
     const { name, img, author } = NTFS_DATA[2];
 
     return (
         <section className='relative w-full md:h-[600px] lg:h-[700px] xl:h-[800px] bg-gray'>
-            <NewEventImg img={img} />
+            <ImageLoader className='!absolute h-full !pb-0'>
+                <ImageLoader.Image
+                    src={img.src}
+                    blurDataURL={img.src}
+                    alt={img.alt}
+                    placeholder='blur'
+                    className='!object-bottom'
+                />
+
+                <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-purple to-transparent' />
+            </ImageLoader>
 
             <div className='relative flex items-end container h-full py-10 lg:py-[60px] pt-56 md:pt-0'>
                 <NewEventContent content={{ name, author }} />

@@ -3,6 +3,7 @@ import Btn from './Btn';
 import BtnLink from './BtnLink';
 import Checkbox from './Checkbox';
 import ErrorMessage from './ErrorMessage';
+import ImageLoader from './ImageLoader';
 import ImgPlaceholder from './ImgPlaceholder';
 import Input from './Input';
 import InputPassword from './InputPassword';
@@ -20,6 +21,7 @@ export {
     BtnLink,
     Checkbox,
     ErrorMessage,
+    ImageLoader,
     ImgPlaceholder,
     Input,
     InputPassword,
