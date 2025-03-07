@@ -5,14 +5,15 @@ import { ImageLoader } from '../../ui';
 
 type Props = {
     nft: INFT;
+    className?: string;
 };
 
-const NftCard: FC<Props> = ({ nft }) => {
+const NftCard: FC<Props> = ({ nft, className = '' }) => {
     const { img, ...content } = nft;
 
     return (
-        <div className='relative flex flex-col sm:flex-row md:flex-col w-full rounded-md overflow-hidden bg-gray'>
-            <ImageLoader className='sm:w-[40%] md:w-full pb-[70%] sm:pb-[30%] md:pb-[70%]'>
+        <div className={`relative w-full rounded-md overflow-hidden bg-gray ${className}`}>
+            <ImageLoader className='w-full pb-[70%]'>
                 <ImageLoader.Link href={img.alt}>
                     <ImageLoader.Image
                         src={img.src}
