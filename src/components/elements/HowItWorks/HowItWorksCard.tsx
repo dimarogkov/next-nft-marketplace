@@ -12,7 +12,7 @@ const HowItWorksCard: FC<Props> = ({ item }) => {
     const { title, text, img } = item;
 
     return (
-        <div className='relative flex flex-row md:flex-col items-center gap-5 w-full p-4 sm:p-5 lg:p-[30px] lg:pt-2.5 rounded-md bg-gray'>
+        <div className='relative flex flex-row md:flex-col items-center gap-5 w-full p-4 sm:p-5 lg:p-[30px] lg:pt-2.5 rounded-lg bg-gray'>
             <div className='relative hidden sm:block w-[22%] md:w-[90%] h-0 pb-[22%] md:pb-[90%]'>
                 <Image
                     src={img.src}

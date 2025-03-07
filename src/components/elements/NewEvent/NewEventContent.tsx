@@ -23,7 +23,7 @@ const NewEventContent: FC<Props> = ({ content }) => {
                 href={convertToSnakeCase(author.userName)}
                 src={author.avatar}
                 userName={author.userName}
-                className='rounded-md py-2 px-4 bg-black'
+                className='rounded-lg py-2 px-4 bg-black'
             />
 
             <Title titleType={EnumTitle.h2}>{name}</Title>

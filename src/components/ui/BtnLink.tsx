@@ -31,7 +31,7 @@ const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                 {...props}
                 href={href}
                 target={target}
-                className={`flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 sm:px-5 md:px-8 rounded-md transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${btnLinkClasses[btnType]} ${className}`}
+                className={`flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 sm:px-5 md:px-8 rounded-lg transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${btnLinkClasses[btnType]} ${className}`}
             >
                 {Icon && <Icon className={`size-5 ${iconClasses[btnType]}`} />}
                 <span>{props.children}</span>

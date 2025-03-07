@@ -23,7 +23,7 @@ const Checkbox: FC<Props> = forwardRef<HTMLInputElement, Props>(
 
                     <span
                         className={cn(
-                            'flex items-center justify-center w-full h-full border rounded-md bg-transparent',
+                            'flex items-center justify-center w-full h-full border rounded-lg bg-transparent',
                             {
                                 'border-gray': !isChecked,
                                 'border-purple bg-purple': isChecked,

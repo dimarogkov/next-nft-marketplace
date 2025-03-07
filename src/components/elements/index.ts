@@ -1,4 +1,5 @@
 import { BannerContent } from './Banner';
+import { CollectionCard, CollectionCardNfts } from './CollectionCard';
 import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
@@ -10,6 +11,8 @@ import { TopCreatorsCard } from './TopCreators';
 
 export {
     BannerContent,
+    CollectionCard,
+    CollectionCardNfts,
     HeaderBurger,
     HeaderLayer,
     HeaderLinks,
