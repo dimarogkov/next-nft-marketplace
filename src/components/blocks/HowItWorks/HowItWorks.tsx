@@ -5,7 +5,7 @@ import { Text, Title } from '../../ui';
 
 const HowItWorks = () => {
     return (
-        <section className='relative w-full section-padding-bottom'>
+        <section className='relative w-full section-padding'>
             <div className='container'>
                 <div className='w-full mb-5 md:mb-6 lg:mb-[30px] last:mb-0'>
                     <Title titleType={EnumTitle.h3} className='mb-1 last:mb-0'>

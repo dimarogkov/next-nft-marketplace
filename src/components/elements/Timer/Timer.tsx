@@ -18,7 +18,7 @@ const Timer: FC<Props> = ({ hours = 0, minutes = 0, seconds = 0, className = '' 
     const { timer, isTimerEnd } = useTimer(hours, minutes, seconds);
 
     return (
-        <div className={`relative w-fit max-w-[300px] rounded-md p-4 sm:p-5 lg:p-6 ${className}`}>
+        <div className={`relative w-fit max-w-[300px] rounded-lg p-4 sm:p-5 lg:p-6 ${className}`}>
             {!isTimerEnd ? (
                 <div>
                     <Text className='font-space-mono text-white mb-2 last:mb-0'>Auction ends in:</Text>

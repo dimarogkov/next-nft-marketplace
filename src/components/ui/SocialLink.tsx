@@ -30,7 +30,7 @@ const SocialLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                 {...props}
                 href={href}
                 target='_blank'
-                className={`flex items-center justify-center size-10 rounded-md transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${socialClasses[socialType]} ${className}`}
+                className={`flex items-center justify-center size-10 rounded-lg transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${socialClasses[socialType]} ${className}`}
             >
                 <Icon className={`size-[22px] ${iconClasses[socialType]}`} />
             </Link>

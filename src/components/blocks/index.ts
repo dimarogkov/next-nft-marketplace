@@ -6,5 +6,6 @@ import { NewEvent } from './NewEvent';
 import { NewNfts } from './NewNfts';
 import { Subscribe } from './Subscribe';
 import { TopCreators } from './TopCreators';
+import { TrendingCollection } from './TrendingCollection';
 
-export { Banner, Footer, Header, HowItWorks, NewEvent, NewNfts, Subscribe, TopCreators };
+export { Banner, Footer, Header, HowItWorks, NewEvent, NewNfts, Subscribe, TopCreators, TrendingCollection };

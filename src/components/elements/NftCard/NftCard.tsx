@@ -12,7 +12,7 @@ const NftCard: FC<Props> = ({ nft, className = '' }) => {
     const { img, ...content } = nft;
 
     return (
-        <div className={`relative w-full rounded-md overflow-hidden bg-gray ${className}`}>
+        <div className={`relative w-full rounded-lg overflow-hidden bg-gray ${className}`}>
             <ImageLoader className='w-full pb-[70%]'>
                 <ImageLoader.Link href={img.alt}>
                     <ImageLoader.Image
