@@ -9,6 +9,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 34.53,
             links: [
                 {
                     id: 'facebook',
@@ -33,6 +34,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 21.25,
             links: [
                 {
                     id: 'facebook',
@@ -57,6 +59,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 78.34,
             links: [
                 {
                     id: 'facebook',
@@ -81,6 +84,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 48.02,
             links: [
                 {
                     id: 'facebook',
@@ -105,6 +109,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 14.88,
             links: [
                 {
                     id: 'facebook',
@@ -129,6 +134,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 20.5,
             links: [
                 {
                     id: 'facebook',
@@ -153,6 +159,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 33.33,
             links: [
                 {
                     id: 'facebook',
@@ -177,6 +184,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 8.07,
             links: [
                 {
                     id: 'facebook',
@@ -201,6 +209,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 16.78,
             links: [
                 {
                     id: 'facebook',
@@ -225,6 +234,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 42.17,
             links: [
                 {
                     id: 'facebook',
@@ -249,6 +259,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 65.09,
             links: [
                 {
                     id: 'facebook',
@@ -273,6 +284,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 27.91,
             links: [
                 {
                     id: 'facebook',
@@ -297,6 +309,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 22.11,
             links: [
                 {
                     id: 'facebook',
@@ -321,6 +334,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 38.76,
             links: [
                 {
                     id: 'facebook',
@@ -345,6 +359,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 91.14,
             links: [
                 {
                     id: 'facebook',
@@ -369,6 +384,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 88.87,
             links: [
                 {
                     id: 'facebook',
@@ -393,6 +409,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 54.53,
             links: [
                 {
                     id: 'facebook',
@@ -417,6 +434,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 78.32,
             links: [
                 {
                     id: 'facebook',
@@ -441,6 +459,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 82.37,
             links: [
                 {
                     id: 'facebook',
@@ -465,6 +484,7 @@ export const ARTISTS_DATA: IArtist[] = [
             volume: '250k+',
             sales: '50+',
             followers: '1000+',
+            totalSales: 49.11,
             links: [
                 {
                     id: 'facebook',

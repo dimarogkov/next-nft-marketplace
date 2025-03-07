@@ -6,6 +6,7 @@ import { NewEventContent } from './NewEvent';
 import { NftCard, NftCardContent } from './NftCard';
 import { SubscribeContent } from './Subscribe';
 import { Timer, TimerEnd, TimerItem } from './Timer';
+import { TopCreatorsCard } from './TopCreators';
 
 export {
     BannerContent,
@@ -21,4 +22,5 @@ export {
     Timer,
     TimerEnd,
     TimerItem,
+    TopCreatorsCard,
 };
