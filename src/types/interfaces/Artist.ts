@@ -9,6 +9,7 @@ export interface IArtistInfo {
     volume: string;
     sales: string;
     followers: string;
+    totalSales: number;
     links: IArtistLink[];
 }
 

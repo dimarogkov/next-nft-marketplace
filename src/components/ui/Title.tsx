@@ -14,6 +14,7 @@ const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
             [EnumTitle.h2 as string]: 'text-3xl sm:text-[38px] md:text-5xl lg:text-[56px] !leading-[1.25]',
             [EnumTitle.h3 as string]: 'text-2xl md:text-3xl lg:text-4xl',
             [EnumTitle.h4 as string]: 'text-xl md:text-2xl',
+            [EnumTitle.h5 as string]: 'text-xl',
         };
 
         return (
@@ -44,6 +45,14 @@ const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
 
                 {titleType === EnumTitle.h4 && (
                     <h4
+                        ref={ref}
+                        {...props}
+                        className={`relative font-semibold ${titleSize[titleType]} ${className}`}
+                    />
+                )}
+
+                {titleType === EnumTitle.h5 && (
+                    <h5
                         ref={ref}
                         {...props}
                         className={`relative font-semibold ${titleSize[titleType]} ${className}`}

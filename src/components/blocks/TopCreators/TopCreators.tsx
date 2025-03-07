@@ -1,11 +1,13 @@
-import { NTFS_DATA, PATHS } from '@/src/variables';
+import { ARTISTS_DATA, PATHS } from '@/src/variables';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 
-import { NftCard } from '../../elements';
+import { TopCreatorsCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
-import { Eye } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 
-const NewNfts = () => {
+const TopCreators = () => {
+    const artists = ARTISTS_DATA.sort((a, b) => b.info.totalSales - a.info.totalSales).slice(0, 12);
+
     return (
         <section className='relative w-full section-padding'>
             <div className='container'>
@@ -13,25 +15,25 @@ const NewNfts = () => {
                     <div className='flex flex-wrap items-center justify-between w-full mb-5 lg:mb-[30px] last:mb-0'>
                         <div className='w-full sm:w-[65%] md:w-[60%]'>
                             <Title titleType={EnumTitle.h3} className='mb-1 lg:mb-2 last:mb-0'>
-                                Discover More
+                                Top Creators
                             </Title>
 
-                            <Text textType={EnumText.large}>Explore new trending NFTs.</Text>
+                            <Text textType={EnumText.large}>Checkout Top Rated Creators on the NFT Marketplace.</Text>
                         </div>
 
                         <BtnLink
-                            href={PATHS.MARKETPLACE}
+                            href={PATHS.RANKINGS}
                             btnType={EnumBtn.outline}
-                            icon={Eye}
+                            icon={Rocket}
                             className='absolute sm:relative bottom-0 sm:bottom-auto'
                         >
-                            See All
+                            View Rankings
                         </BtnLink>
                     </div>
 
-                    <div className='grid md:grid-cols-3 gap-5 lg:gap-[30px] w-full'>
-                        {NTFS_DATA.slice(0, 3).map((nft) => (
-                            <NftCard key={nft.name} nft={nft} />
+                    <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-[30px] w-full'>
+                        {artists.map((artist, index) => (
+                            <TopCreatorsCard key={artist.userName} artist={{ index: index + 1, ...artist }} />
                         ))}
                     </div>
                 </div>
@@ -40,4 +42,4 @@ const NewNfts = () => {
     );
 };
 
-export default NewNfts;
+export default TopCreators;
