@@ -16,14 +16,6 @@ export const COLLECTIONS_DATA: ICollection[] = [
                 src: '/nfts/nft_2.jpg',
                 alt: 'life_on_edena',
             },
-            {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
-            },
-            {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
-            },
         ],
     },
     {
@@ -76,14 +68,6 @@ export const COLLECTIONS_DATA: ICollection[] = [
             },
             {
                 src: '/nfts/nft_1.jpg',
-                alt: 'astro_fiction',
-            },
-            {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
-            },
-            {
-                src: '/nfts/nft_3.jpg',
                 alt: 'astro_fiction',
             },
         ],
