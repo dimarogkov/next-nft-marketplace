@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { HEADER_LINKS, SOCIAL_LINKS } from '@/src/variables';
 import { EnumSocial, EnumTitle } from '@/src/types/enums';
 
-import { Logo } from '../../elements';
-import { Btn, Input, Label, SocialLink, Text, Title } from '../../ui';
+import { Logo, SubscribeForm } from '../../elements';
+import { SocialLink, Text, Title } from '../../ui';
 
 const Footer = () => {
     return (
@@ -50,17 +50,7 @@ const Footer = () => {
                         <Text>Get exclusive promotions & updates straight to your inbox.</Text>
                     </div>
 
-                    <form className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
-                        <Label className='w-full'>
-                            <Input
-                                name='email'
-                                placeholder='Enter your email here'
-                                className='border-gray2 hover:border-white'
-                            />
-                        </Label>
-
-                        <Btn type='submit'>Subscribe</Btn>
-                    </form>
+                    <SubscribeForm />
                 </div>
             </div>
         </footer>
