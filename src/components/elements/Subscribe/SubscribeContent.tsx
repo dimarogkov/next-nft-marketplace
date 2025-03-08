@@ -1,5 +1,6 @@
 import { EnumText, EnumTitle } from '@/src/types/enums';
-import { Btn, Input, Label, Text, Title } from '../../ui';
+import { SubscribeForm } from '../Form';
+import { Text, Title } from '../../ui';
 
 const SubscribeContent = () => {
     return (
@@ -14,17 +15,7 @@ const SubscribeContent = () => {
                 </Text>
             </div>
 
-            <form className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
-                <Label className='w-full'>
-                    <Input
-                        name='email'
-                        placeholder='Enter your email here'
-                        className='border-gray2 hover:border-white'
-                    />
-                </Label>
-
-                <Btn type='submit'>Subscribe</Btn>
-            </form>
+            <SubscribeForm />
         </div>
     );
 };

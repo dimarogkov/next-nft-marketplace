@@ -37,6 +37,10 @@ export const COLLECTIONS_DATA: ICollection[] = [
                 src: '/nfts/nft_3.jpg',
                 alt: 'astro_fiction',
             },
+            {
+                src: '/nfts/nft_3.jpg',
+                alt: 'astro_fiction',
+            },
         ],
     },
     {
