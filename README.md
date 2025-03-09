@@ -1,3 +1,3 @@
 # NFT Marketplace
 
-[Project Demo](https://nft-marketplace-chi-pink.vercel.app/)
+[Project Demo](https://next-nft-marketplace-kappa.vercel.app/)
