@@ -19,7 +19,7 @@ const NftCardContent: FC<Props> = ({ content }) => {
 
     return (
         <div className='relative flex flex-col justify-between w-full p-4 sm:p-5'>
-            <div className='w-full mb-6 md:mb-[30px] last:mb-0'>
+            <div className='w-full mb-6 dm:mb-[30px] last:mb-0'>
                 <Title titleType={EnumTitle.h5} className='mb-3 last:mb-0'>
                     <Link
                         href={convertToSnakeCase(name)}
@@ -35,12 +35,12 @@ const NftCardContent: FC<Props> = ({ content }) => {
             <div className='w-full'>
                 <div className='flex justify-between'>
                     <div className='w-fit'>
-                        <span className='block text-sm text-gray2/50 mb-1 last:mb-0'>Price</span>
+                        <span className='block text-sm text-gray2/50 mb-0.5 last:mb-0'>Price</span>
                         <Text className='font-space-mono text-white'>{price} ETH</Text>
                     </div>
 
                     <div className='w-fit text-right'>
-                        <span className='block text-sm text-gray2/50 mb-1 last:mb-0'>Highest Bid</span>
+                        <span className='block text-sm text-gray2/50 mb-0.5 last:mb-0'>Highest Bid</span>
                         <Text className='font-space-mono text-white'>{highestBid} wETH</Text>
                     </div>
                 </div>
