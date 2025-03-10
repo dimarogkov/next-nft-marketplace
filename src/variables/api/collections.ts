@@ -2,77 +2,77 @@ import { ICollection } from '@/src/types/interfaces/Collection';
 
 export const COLLECTIONS_DATA: ICollection[] = [
     {
-        name: 'Disco Machines',
+        name: 'Monkey Characters',
         author: {
             userName: 'Davis Workman',
             avatar: '/avatars/avatar_12.png',
         },
         nfts: [
             {
-                src: '/nfts/nft_1.jpg',
-                alt: 'distant_galaxy',
+                src: '/nfts/monkey_characters/monkey_characters_1.jpg',
+                alt: 'explorer_monkey',
             },
             {
-                src: '/nfts/nft_2.jpg',
-                alt: 'life_on_edena',
+                src: '/nfts/monkey_characters/monkey_characters_2.jpg',
+                alt: 'gentleman_monkey',
             },
         ],
     },
     {
-        name: 'Magic Mushrooms',
+        name: 'Botanical Portraits',
         author: {
             userName: 'Ruben Carder',
             avatar: '/avatars/avatar_2.png',
         },
         nfts: [
             {
-                src: '/nfts/nft_2.jpg',
-                alt: 'distant_galaxy',
+                src: '/nfts/botanical_portraits/botanical_portraits_1.jpg',
+                alt: 'whispering_blooms',
             },
             {
-                src: '/nfts/nft_1.jpg',
-                alt: 'life_on_edena',
+                src: '/nfts/botanical_portraits/botanical_portraits_2.jpg',
+                alt: 'enchanted_greens',
             },
             {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
+                src: '/nfts/botanical_portraits/botanical_portraits_3.jpg',
+                alt: 'petal_symphony',
             },
             {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
+                src: '/nfts/botanical_portraits/botanical_portraits_4.jpg',
+                alt: 'garden_fantasy',
             },
         ],
     },
     {
-        name: 'Design Animals',
+        name: 'Planet',
         author: {
-            userName: 'Jocelyn Westervelt',
-            avatar: '/avatars/avatar_17.png',
+            userName: 'Lindsey Lipshutz',
+            avatar: '/avatars/avatar_13.png',
         },
         nfts: [
             {
-                src: '/nfts/nft_3.jpg',
-                alt: 'distant_galaxy',
+                src: '/nfts/planet/planet_1.jpg',
+                alt: 'moon_dream',
             },
             {
-                src: '/nfts/nft_2.jpg',
-                alt: 'life_on_edena',
+                src: '/nfts/planet/planet_2.jpg',
+                alt: 'venus',
             },
             {
-                src: '/nfts/nft_1.jpg',
-                alt: 'astro_fiction',
+                src: '/nfts/planet/planet_3.jpg',
+                alt: 'mars',
             },
             {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
+                src: '/nfts/planet/planet_4.jpg',
+                alt: 'jupiter',
             },
             {
-                src: '/nfts/nft_3.jpg',
-                alt: 'astro_fiction',
+                src: '/nfts/planet/planet_5.jpg',
+                alt: 'neptune',
             },
             {
-                src: '/nfts/nft_1.jpg',
-                alt: 'astro_fiction',
+                src: '/nfts/planet/planet_6.jpg',
+                alt: 'uranus',
             },
         ],
     },

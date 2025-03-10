@@ -3,6 +3,7 @@ import { IImage } from './Image';
 
 export interface INFT {
     name: string;
+    collectionName: string;
     publishDate: string;
     price: number;
     highestBid: number;
