@@ -1,24 +1,25 @@
 import { FC } from 'react';
-import { EnumBtn, EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
 import { convertToSnakeCase } from '@/src/helpers';
 
 import { Timer } from '../Timer';
-import { Avatar, BtnLink, Title } from '../../ui';
+import { Avatar, BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
 
 type Props = {
     content: {
         name: string;
+        description: string;
         author: IAuthor;
     };
 };
 
 const NewEventContent: FC<Props> = ({ content }) => {
-    const { name, author } = content;
+    const { name, description, author } = content;
 
     return (
-        <div className='relative flex flex-col gap-5 w-full md:pr-[298px]'>
+        <div className='relative flex flex-col gap-4 sm:gap-5 w-full md:pr-[298px]'>
             <Avatar
                 href={convertToSnakeCase(author.userName)}
                 src={author.avatar}
@@ -26,8 +27,17 @@ const NewEventContent: FC<Props> = ({ content }) => {
                 className='rounded-lg py-2 px-4 bg-black'
             />
 
-            <Title titleType={EnumTitle.h2}>{name}</Title>
             <Timer hours={6} className='md:absolute md:right-0 md:bottom-0 bg-black/40' />
+
+            <div className='w-full'>
+                <Title titleType={EnumTitle.h2} className='sm:mb-2 md:mb-1 last:mb-0'>
+                    {name}
+                </Title>
+
+                <Text textType={EnumText.large} className='hidden sm:block md:line-clamp-2 text-white'>
+                    {description}
+                </Text>
+            </div>
 
             <BtnLink href={convertToSnakeCase(name)} icon={Eye} btnType={EnumBtn.light}>
                 See NFT

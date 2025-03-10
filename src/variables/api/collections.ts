@@ -16,6 +16,26 @@ export const COLLECTIONS_DATA: ICollection[] = [
                 src: '/nfts/monkey_characters/monkey_characters_2.jpg',
                 alt: 'gentleman_monkey',
             },
+            {
+                src: '/nfts/monkey_characters/monkey_characters_3.jpg',
+                alt: 'hip_hop_monkey',
+            },
+            {
+                src: '/nfts/monkey_characters/monkey_characters_4.jpg',
+                alt: 'gamer_monkey',
+            },
+            {
+                src: '/nfts/monkey_characters/monkey_characters_5.jpg',
+                alt: 'superhero_monkey',
+            },
+            {
+                src: '/nfts/monkey_characters/monkey_characters_6.jpg',
+                alt: 'party_time_monkey',
+            },
+            {
+                src: '/nfts/monkey_characters/monkey_characters_7.jpg',
+                alt: 'chill_vibes_monkey',
+            },
         ],
     },
     {
@@ -40,6 +60,14 @@ export const COLLECTIONS_DATA: ICollection[] = [
             {
                 src: '/nfts/botanical_portraits/botanical_portraits_4.jpg',
                 alt: 'garden_fantasy',
+            },
+            {
+                src: '/nfts/botanical_portraits/botanical_portraits_5.jpg',
+                alt: 'chromatic_blooms',
+            },
+            {
+                src: '/nfts/botanical_portraits/botanical_portraits_6.jpg',
+                alt: 'azure_elegance',
             },
         ],
     },

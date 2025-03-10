@@ -33,7 +33,7 @@ export const NTFS_DATA: INFT[] = [
             userName: 'Ruben Carder',
             avatar: '/avatars/avatar_2.png',
         },
-        tags: ['CASCADE', 'Vibrant', 'Color'],
+        tags: ['Cascade', 'Vibrant', 'Color'],
         description:
             'Vibrant Cascade evokes emotions through its dynamic movement, showcasing the interplay of color and flow in a striking composition.',
     },

@@ -30,7 +30,7 @@ const NewNfts = () => {
                         </BtnLink>
                     </div>
 
-                    <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] w-full'>
+                    <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
                         {NTFS_DATA.slice(0, 3).map((nft, index) => (
                             <NftCard key={nft.name} nft={nft} className={cn({ 'hidden lg:block': index > 1 })} />
                         ))}
