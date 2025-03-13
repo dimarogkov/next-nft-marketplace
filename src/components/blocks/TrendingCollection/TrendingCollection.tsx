@@ -1,4 +1,5 @@
-import { COLLECTIONS_DATA, PATHS } from '@/src/variables';
+import { PATHS } from '@/src/variables';
+import { getCollections } from '@/src/services';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 
 import { CollectionCard } from '../../elements';
@@ -6,7 +7,9 @@ import { BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
 import cn from 'classnames';
 
-const TrendingCollection = () => {
+const TrendingCollection = async () => {
+    const collections = await getCollections();
+
     return (
         <section className='relative w-full section-padding'>
             <div className='container'>
@@ -31,7 +34,7 @@ const TrendingCollection = () => {
                     </div>
 
                     <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
-                        {COLLECTIONS_DATA.slice(0, 3).map((collection, index) => (
+                        {collections.slice(0, 3).map((collection, index) => (
                             <CollectionCard
                                 key={collection.name}
                                 collection={collection}
