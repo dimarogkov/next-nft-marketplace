@@ -29,7 +29,7 @@ const NewEventContent: FC<Props> = ({ content }) => {
 
             <Timer hours={6} className='md:absolute md:right-0 md:bottom-0 bg-black/40' />
 
-            <div className='w-full'>
+            <div className='w-full md:w-[90%]'>
                 <Title titleType={EnumTitle.h2} className='sm:mb-2 md:mb-1 last:mb-0'>
                     {name}
                 </Title>

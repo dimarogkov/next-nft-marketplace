@@ -1,9 +1,9 @@
-import { NTFS_DATA } from '@/src/variables';
+import { getNftByName } from '@/src/services';
 import { NewEventContent } from '../../elements';
 import { ImageLoader } from '../../ui';
 
-const NewEvent = () => {
-    const { img, ...content } = NTFS_DATA[1];
+const NewEvent = async () => {
+    const { img, ...content } = await getNftByName('Whispering Blooms');
 
     return (
         <section className='relative w-full md:h-[600px] lg:h-[700px] xl:h-[800px] bg-gray'>

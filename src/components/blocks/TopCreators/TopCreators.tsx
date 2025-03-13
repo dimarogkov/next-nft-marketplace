@@ -1,12 +1,13 @@
-import { ARTISTS_DATA, PATHS } from '@/src/variables';
+import { PATHS } from '@/src/variables';
+import { getArtists } from '@/src/services';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 
 import { TopCreatorsCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
 import { Rocket } from 'lucide-react';
 
-const TopCreators = () => {
-    const artists = ARTISTS_DATA.sort((a, b) => b.info.totalSales - a.info.totalSales).slice(0, 12);
+const TopCreators = async () => {
+    const artists = await getArtists();
 
     return (
         <section className='relative w-full section-padding'>
@@ -32,7 +33,7 @@ const TopCreators = () => {
                     </div>
 
                     <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-[30px] w-full'>
-                        {artists.map((artist, index) => (
+                        {artists.slice(0, 12).map((artist, index) => (
                             <TopCreatorsCard key={artist.userName} artist={{ index: index + 1, ...artist }} />
                         ))}
                     </div>

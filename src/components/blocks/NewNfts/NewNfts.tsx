@@ -1,4 +1,5 @@
-import { NTFS_DATA, PATHS } from '@/src/variables';
+import { PATHS } from '@/src/variables';
+import { getNfts } from '@/src/services';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 
 import { NftCard } from '../../elements';
@@ -6,7 +7,9 @@ import { BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
 import cn from 'classnames';
 
-const NewNfts = () => {
+const NewNfts = async () => {
+    const nfts = await getNfts();
+
     return (
         <section className='relative w-full section-padding-bottom'>
             <div className='container'>
@@ -31,7 +34,7 @@ const NewNfts = () => {
                     </div>
 
                     <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
-                        {NTFS_DATA.slice(0, 3).map((nft, index) => (
+                        {nfts.slice(0, 3).map((nft, index) => (
                             <NftCard key={nft.name} nft={nft} className={cn({ 'hidden lg:block': index > 1 })} />
                         ))}
                     </div>
