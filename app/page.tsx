@@ -1,5 +1,5 @@
 import {
-    Banner,
+    Hero,
     HowItWorks,
     NewEvent,
     NewNfts,
@@ -11,7 +11,7 @@ import {
 const HomePage = () => {
     return (
         <>
-            <Banner />
+            <Hero />
             <TrendingCollection />
             <TopCreators />
             <Subscribe />

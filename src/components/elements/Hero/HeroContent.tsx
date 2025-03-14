@@ -1,9 +1,9 @@
-import { BANNER_INFO_DATA, PATHS } from '@/src/variables';
+import { HERO_INFO_DATA, PATHS } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { BtnLink, Text, Title } from '../../ui';
 import { Rocket } from 'lucide-react';
 
-const BannerContent = () => {
+const HeroContent = () => {
     return (
         <div className='relative order-1 sm:order-none w-full'>
             <div className='w-full mb-7 md:mb-[30px] last:mb-0'>
@@ -20,7 +20,7 @@ const BannerContent = () => {
             </div>
 
             <div className='flex justify-between w-full'>
-                {BANNER_INFO_DATA.map(({ value, text }) => (
+                {HERO_INFO_DATA.map(({ value, text }) => (
                     <div key={text} className='w-auto'>
                         <Title titleType={EnumTitle.h4} className='font-space-mono'>
                             {value}
@@ -34,4 +34,4 @@ const BannerContent = () => {
     );
 };
 
-export default BannerContent;
+export default HeroContent;

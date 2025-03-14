@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { BannerContent } from '../../elements';
+import { HeroContent } from '../../elements';
 
-const Banner = () => {
+const Hero = () => {
     return (
         <section className='relative w-full section-padding'>
             <div className='grid sm:grid-cols-2 items-center gap-6 sm:gap-3 md:gap-[30px] container'>
-                <BannerContent />
+                <HeroContent />
 
                 <div className='relative w-[92%] sm:w-full h-0 pb-[92%] sm:pb-[100%] m-auto'>
                     <Image
@@ -23,4 +23,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default Hero;

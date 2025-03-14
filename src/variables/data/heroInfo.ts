@@ -1,6 +1,6 @@
-import { IBannerInfo } from '@/src/types/interfaces/BannerInfo';
+import { IHeroInfo } from '@/src/types/interfaces/HeroInfo';
 
-export const BANNER_INFO_DATA: IBannerInfo[] = [
+export const HERO_INFO_DATA: IHeroInfo[] = [
     {
         value: '300k+',
         text: 'Total Sale',
