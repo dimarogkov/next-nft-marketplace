@@ -1,4 +1,4 @@
-export interface IBannerInfo {
+export interface IHeroInfo {
     value: string;
     text: string;
 }
