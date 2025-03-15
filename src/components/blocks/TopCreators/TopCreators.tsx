@@ -9,6 +9,8 @@ import { Rocket } from 'lucide-react';
 const TopCreators = async () => {
     const artists = await getArtists();
 
+    const sortedArtists = artists.sort((a, b) => b.info.totalSales - a.info.totalSales).slice(0, 12);
+
     return (
         <section className='relative w-full section-padding'>
             <div className='container'>
@@ -33,7 +35,7 @@ const TopCreators = async () => {
                     </div>
 
                     <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-[30px] w-full'>
-                        {artists.slice(0, 12).map((artist, index) => (
+                        {sortedArtists.map((artist, index) => (
                             <TopCreatorsCard key={artist.userName} artist={{ index: index + 1, ...artist }} />
                         ))}
                     </div>
