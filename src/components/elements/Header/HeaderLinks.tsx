@@ -1,5 +1,7 @@
+'use client';
 import { FC } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { HEADER_LINKS, PATHS } from '@/src/variables';
 
 import { BtnLink } from '../../ui';
@@ -11,6 +13,8 @@ type Props = {
 };
 
 const HeaderLinks: FC<Props> = ({ isOpen }) => {
+    const pathname = usePathname();
+
     return (
         <div
             className={cn(
@@ -31,7 +35,12 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                     <Link
                         key={text}
                         href={href}
-                        className='font-semibold sm:font-medium text-3xl sm:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple'
+                        className={cn(
+                            'font-semibold sm:font-medium text-3xl sm:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple',
+                            {
+                                'text-purple': pathname.startsWith(href),
+                            }
+                        )}
                     >
                         {text}
                     </Link>
