@@ -15,6 +15,7 @@ const config: Config = {
                 gray2: 'rgb(255 255 255 / 65%)',
                 white: '#fff',
                 purple: '#a259ff',
+                green: '#00ac4f',
                 red: '#da4934',
             },
         },

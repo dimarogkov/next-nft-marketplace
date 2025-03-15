@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
-import { convertToSnakeCase } from '@/src/helpers';
 
 import { ImageLoader, Text, Title } from '../../ui';
 import cn from 'classnames';
