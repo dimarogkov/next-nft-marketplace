@@ -1,3 +1,5 @@
+import { capitalizeFirstLetter } from './capitalizeFirstLetter';
 import { convertToSnakeCase } from './convertToLink';
+import { convertUrlToString } from './convertUrlToString';
 
-export { convertToSnakeCase };
+export { capitalizeFirstLetter, convertToSnakeCase, convertUrlToString };
