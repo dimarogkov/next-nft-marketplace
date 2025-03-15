@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Banner, Rankings } from '@/src/components/blocks';
+import { Banner, Breadcrumbs, Rankings } from '@/src/components/blocks';
 
 export const metadata: Metadata = {
     title: 'Rankings',
@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 const RankingsPage = () => {
     return (
         <>
+            <Breadcrumbs />
             <Banner title='Top Creators' text='Check out top ranking NFT artists on the NFT Marketplace.' />
             <Rankings />
         </>
