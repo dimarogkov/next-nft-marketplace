@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { PROJECT_NAME } from '@/src/variables';
 import { Root, RootLayout, RootProviders } from '@/src/components/root';
+import { Presence } from '@/src/components/other';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,7 +21,9 @@ const MainLayout: FC<Props> = ({ children }) => {
     return (
         <Root>
             <RootProviders>
-                <RootLayout>{children}</RootLayout>
+                <RootLayout>
+                    <Presence>{children}</Presence>
+                </RootLayout>
             </RootProviders>
         </Root>
     );
