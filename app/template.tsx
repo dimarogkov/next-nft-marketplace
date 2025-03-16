@@ -1,6 +1,7 @@
 'use client';
 import { FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import cn from 'classnames';
 
 type Props = {
     children?: ReactNode;
@@ -28,7 +29,7 @@ const Template: FC<Props> = ({ children }) => {
                 delay: 0.1 * i,
                 ease: [0.215, 0.61, 0.355, 1],
             },
-            transitionEnd: { height: '0', top: '0' },
+            transitionEnd: { top: '0', height: '0' },
         }),
         exit: (i: number) => ({
             height: '100%',
@@ -65,7 +66,10 @@ const Template: FC<Props> = ({ children }) => {
                         <motion.div
                             key={index}
                             {...anim(expand, 5 - index)}
-                            className='relative w-full h-full bg-gray'
+                            className={cn('relative w-full h-full bg-gray', {
+                                'hidden md:block': index === 0,
+                                'hidden sm:block': index === 1,
+                            })}
                         />
                     );
                 })}
