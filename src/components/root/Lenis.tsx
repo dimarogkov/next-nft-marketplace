@@ -1,5 +1,5 @@
 'use client';
-import { FC, ReactNode, Suspense, useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 
@@ -17,11 +17,9 @@ const Lenis: FC<Props> = ({ children }) => {
     }, [pathname, searchParams, lenis]);
 
     return (
-        <Suspense fallback={null}>
-            <ReactLenis options={{ duration: 1.5 }} autoRaf root>
-                {children}
-            </ReactLenis>
-        </Suspense>
+        <ReactLenis options={{ duration: 1.5 }} autoRaf root>
+            {children}
+        </ReactLenis>
     );
 };
 
