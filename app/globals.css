@@ -12,10 +12,6 @@ html {
     --fallback-b1: #2b2b2b;
 }
 
-body.lock {
-    overflow: hidden;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:hover,
