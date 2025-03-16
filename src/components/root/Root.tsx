@@ -9,8 +9,8 @@ type Props = {
 
 const Root: FC<Props> = ({ children }) => {
     return (
-        <html lang='en' className='h-full' suppressHydrationWarning>
-            <body className={`flex flex-col min-h-full text-white ${work_sans.className}`}>{children}</body>
+        <html lang='en' suppressHydrationWarning>
+            <body className={work_sans.className}>{children}</body>
         </html>
     );
 };
