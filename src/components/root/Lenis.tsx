@@ -17,7 +17,7 @@ const Lenis: FC<Props> = ({ children }) => {
     }, [pathname, searchParams, lenis]);
 
     return (
-        <ReactLenis options={{ duration: 1.5 }} autoRaf root>
+        <ReactLenis options={{ duration: 1.5 }} root>
             {children}
         </ReactLenis>
     );

@@ -12,6 +12,10 @@ html {
     --fallback-b1: #2b2b2b;
 }
 
+body {
+    color: #fff;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:hover,
