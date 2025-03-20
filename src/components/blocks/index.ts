@@ -1,6 +1,7 @@
 import { Banner } from './Banner';
 import { Breadcrumbs } from './Breadcrumbs';
 import { Footer } from './Footer';
+import { Gallery } from './Gallery';
 import { Header } from './Header';
 import { Hero } from './Hero';
 import { HowItWorks } from './HowItWorks';
@@ -15,6 +16,7 @@ export {
     Banner,
     Breadcrumbs,
     Footer,
+    Gallery,
     Header,
     Hero,
     HowItWorks,

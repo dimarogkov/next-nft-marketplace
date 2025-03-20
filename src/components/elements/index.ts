@@ -1,5 +1,6 @@
 import { CollectionCard, CollectionCardNfts } from './CollectionCard';
 import { SubscribeForm } from './Form';
+import { GalleryColumn } from './Gallery';
 import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
 import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
@@ -15,6 +16,7 @@ export {
     CollectionCard,
     CollectionCardNfts,
     SubscribeForm,
+    GalleryColumn,
     HeaderBurger,
     HeaderLayer,
     HeaderLinks,
