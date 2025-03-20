@@ -1,4 +1,5 @@
 import {
+    Gallery,
     Hero,
     HowItWorks,
     NewEvent,
@@ -13,6 +14,7 @@ const HomePage = () => {
         <>
             <Hero />
             <TrendingCollection />
+            <Gallery />
             <TopCreators />
             <Subscribe />
             <NewNfts />
