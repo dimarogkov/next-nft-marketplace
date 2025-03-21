@@ -1,28 +1,29 @@
 'use client';
-import { useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { PATHS } from '@/src/variables/paths';
-import { capitalizeFirstLetter, convertUrlToString } from '@/src/helpers';
+import { convertUrlToString } from '@/src/helpers';
 
 import { Text } from '../../ui';
 import { ChevronRight } from 'lucide-react';
 
-const Breadcrumbs = () => {
-    const paths = usePathname();
+type Props = {
+    pathname: string;
+};
 
-    const pathNames = paths
+const Breadcrumbs: FC<Props> = ({ pathname }) => {
+    const pathNames = pathname
         .split('/')
         .filter((path) => path)
         .map((path, index, arr) => ({
             href: `/${arr.slice(0, index + 1).join('/')}`,
-            text: capitalizeFirstLetter(convertUrlToString(path)),
+            text: convertUrlToString(path),
         }));
 
     const breadcrumbs = useMemo(() => [{ href: `${PATHS.HOME}`, text: 'Home' }, ...pathNames], [pathNames]);
 
     return (
-        <section className='relative w-full py-2.5 sm:py-3 border-b border-gray'>
+        <section className='fixed z-20 top-[70px] sm:top-20 lg:top-[100px] left-0 w-full py-2.5 sm:py-3 border-b border-gray bg-black'>
             <div className='container'>
                 <ul className='flex items-center gap-1 w-full'>
                     {breadcrumbs.map(({ href, text }, index) => (
