@@ -10,7 +10,7 @@ type Props = {
 const Template: FC<Props> = ({ children }) => {
     const pathname = usePathname();
 
-    const pageAnimation: HTMLMotionProps<'div'> = {
+    const animation: HTMLMotionProps<'div'> = {
         initial: {
             opacity: 0,
             y: 40,
@@ -28,7 +28,7 @@ const Template: FC<Props> = ({ children }) => {
 
     return (
         <AnimatePresence mode='wait'>
-            <motion.div key={pathname} {...pageAnimation}>
+            <motion.div key={pathname} {...animation}>
                 {children}
             </motion.div>
         </AnimatePresence>

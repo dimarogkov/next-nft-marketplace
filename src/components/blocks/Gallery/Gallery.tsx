@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { memo, useRef } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import { useDimension } from '@/src/hooks';
 import { GALLERY_IMGS_DATA } from '@/src/variables';
@@ -20,26 +20,12 @@ const Gallery = () => {
     const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
 
     return (
-        <section className='relative w-full section-padding'>
-            <div
-                ref={gallery}
-                className='relative container h-[75vh] sm:h-[100vh] !p-0 rounded-lg overflow-hidden bg-gray'
-            >
-                <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full'>
+        <section className='relative hidden md:block w-full section-padding'>
+            <div ref={gallery} className='relative container h-[100vh] !p-0 rounded-lg overflow-hidden bg-gray'>
+                <div className='grid grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full'>
                     <GalleryColumn images={GALLERY_IMGS_DATA.slice(0, 4)} y={y} />
-
-                    <GalleryColumn
-                        images={GALLERY_IMGS_DATA.slice(4, 8)}
-                        y={y2}
-                        className='-top-[100%] sm:-top-[70%]'
-                    />
-
-                    <GalleryColumn
-                        images={GALLERY_IMGS_DATA.slice(8, 12)}
-                        y={y3}
-                        className='-top-[15%] hidden sm:flex'
-                    />
-
+                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(4, 8)} y={y2} className='-top-[100%]' />
+                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(8, 12)} y={y3} className='-top-[15%]' />
                     <GalleryColumn images={GALLERY_IMGS_DATA.slice(12)} y={y4} className='-top-[60%] hidden lg:flex' />
                 </div>
             </div>

@@ -11,9 +11,9 @@ type Props = {
 
 const GalleryColumn: FC<Props> = ({ images, y, className = '' }) => {
     return (
-        <motion.div className={`relative flex flex-col gap-3 md:gap-4 w-full ${className}`} style={{ y }}>
+        <motion.div className={`relative flex flex-col gap-4 w-full ${className}`} style={{ y }}>
             {images.map(({ src, alt }) => (
-                <ImageLoader key={alt} className='pb-[150%] sm:pb-[145%] rounded-lg'>
+                <ImageLoader key={alt} className='pb-[145%] rounded-lg'>
                     <ImageLoader.Image src={src} alt={alt} />
                 </ImageLoader>
             ))}
