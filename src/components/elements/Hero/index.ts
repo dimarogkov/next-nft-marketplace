@@ -1,3 +1,4 @@
 import HeroContent from './HeroContent';
+import HeroInfoItem from './HeroInfoItem';
 
-export { HeroContent };
+export { HeroContent, HeroInfoItem };

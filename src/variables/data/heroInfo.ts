@@ -2,15 +2,15 @@ import { IHeroInfo } from '@/src/types/interfaces/HeroInfo';
 
 export const HERO_INFO_DATA: IHeroInfo[] = [
     {
-        value: '300k+',
+        value: 300,
         text: 'Total Sale',
     },
     {
-        value: '150k+',
+        value: 150,
         text: 'Auctions',
     },
     {
-        value: '100k+',
+        value: 100,
         text: 'Artists',
     },
 ];

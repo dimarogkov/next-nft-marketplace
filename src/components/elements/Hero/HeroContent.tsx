@@ -1,5 +1,7 @@
 import { HERO_INFO_DATA, PATHS } from '@/src/variables';
-import { EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumText } from '@/src/types/enums';
+
+import HeroInfoItem from './HeroInfoItem';
 import { BtnLink, Text, Title } from '../../ui';
 import { Rocket } from 'lucide-react';
 
@@ -20,14 +22,8 @@ const HeroContent = () => {
             </div>
 
             <div className='flex justify-between w-full'>
-                {HERO_INFO_DATA.map(({ value, text }) => (
-                    <div key={text} className='w-auto'>
-                        <Title titleType={EnumTitle.h4} className='font-space-mono'>
-                            {value}
-                        </Title>
-
-                        <Text textType={EnumText.large}>{text}</Text>
-                    </div>
+                {HERO_INFO_DATA.map((info) => (
+                    <HeroInfoItem key={info.text} info={info} />
                 ))}
             </div>
         </div>
