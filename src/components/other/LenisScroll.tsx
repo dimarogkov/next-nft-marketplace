@@ -13,11 +13,7 @@ const LenisScroll: FC<Props> = ({ children }) => {
     const lenis = useLenis();
 
     useEffect(() => {
-        const time = setTimeout(() => {
-            lenis?.scrollTo(0, { immediate: true });
-        }, 1050);
-
-        return () => clearTimeout(time);
+        lenis?.scrollTo(0, { immediate: true });
     }, [pathname, searchParams, lenis]);
 
     return (
