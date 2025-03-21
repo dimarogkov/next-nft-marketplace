@@ -18,7 +18,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
     return (
         <div
             className={cn(
-                'z-10 fixed bottom-0 lg:bottom-auto right-0 lg:right-auto lg:relative w-full sm:w-[450px] lg:w-auto height-full lg:h-full text-center sm:text-left p-4 sm:p-6 lg:p-0 bg-black transition-all duration-300',
+                'z-20 fixed bottom-0 lg:bottom-auto right-0 lg:right-auto lg:relative w-full sm:w-[450px] lg:w-auto height-full lg:h-full text-center sm:text-left p-4 sm:p-6 lg:p-0 bg-black transition-all duration-300',
                 {
                     'opacity-0 lg:opacity-100 invisible lg:visible translate-x-full sm:translate-x-[450px] lg:translate-x-0':
                         !isOpen,
