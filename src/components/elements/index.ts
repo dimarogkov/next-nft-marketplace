@@ -7,6 +7,7 @@ import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
 import { NftCard } from './NftCard';
+import { ProgressLine } from './ProgressLine';
 import { RankingCard } from './RankingCard';
 import { SubscribeContent } from './Subscribe';
 import { TopCreatorsCard } from './TopCreators';
@@ -23,6 +24,7 @@ export {
     Logo,
     NewEventContent,
     NftCard,
+    ProgressLine,
     RankingCard,
     SubscribeContent,
     TopCreatorsCard,

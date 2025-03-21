@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { PATHS } from '@/src/variables';
 
 import { Breadcrumbs, Footer, Header } from '../blocks';
+import { ProgressLine } from '../elements';
 import { LenisScroll } from '../other';
 import cn from 'classnames';
 
@@ -18,6 +19,7 @@ const RootLayout: FC<Props> = ({ children }) => {
     return (
         <Suspense fallback={null}>
             <LenisScroll>
+                <ProgressLine />
                 <Header />
 
                 {isVisible && <Breadcrumbs pathname={pathname} />}
