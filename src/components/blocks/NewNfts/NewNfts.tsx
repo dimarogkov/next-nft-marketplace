@@ -11,7 +11,7 @@ const NewNfts = async () => {
     const nfts = await getNfts();
 
     return (
-        <section className='relative w-full section-padding'>
+        <section className='relative w-full section-padding-bottom'>
             <div className='container'>
                 <div className='relative w-full pb-[68px] sm:pb-0'>
                     <div className='flex flex-wrap items-center justify-between w-full mb-5 lg:mb-[30px] last:mb-0'>
