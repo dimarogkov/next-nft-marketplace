@@ -1,4 +1,4 @@
 export interface IHeroInfo {
-    value: string;
+    value: number;
     text: string;
 }
