@@ -49,7 +49,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                 <BtnLink
                     href={PATHS.SIGN_UP}
                     icon={CircleUserRound}
-                    className='absolute sm:relative bottom-0 sm:bottom-auto'
+                    className='!absolute sm:!relative bottom-0 sm:bottom-auto'
                 >
                     Sign Up
                 </BtnLink>

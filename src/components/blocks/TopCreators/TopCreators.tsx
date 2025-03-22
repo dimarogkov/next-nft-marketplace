@@ -28,7 +28,7 @@ const TopCreators = async () => {
                             href={PATHS.RANKINGS}
                             btnType={EnumBtn.outline}
                             icon={Rocket}
-                            className='absolute sm:relative bottom-0 sm:bottom-auto'
+                            className='!absolute sm:!relative bottom-0 sm:bottom-auto'
                         >
                             View Rankings
                         </BtnLink>
