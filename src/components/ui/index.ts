@@ -3,6 +3,7 @@ import Btn from './Btn';
 import BtnLink from './BtnLink';
 import Checkbox from './Checkbox';
 import ErrorMessage from './ErrorMessage';
+import FlipText from './FlipText';
 import ImageLoader from './ImageLoader';
 import ImgPlaceholder from './ImgPlaceholder';
 import Input from './Input';
@@ -21,6 +22,7 @@ export {
     BtnLink,
     Checkbox,
     ErrorMessage,
+    FlipText,
     ImageLoader,
     ImgPlaceholder,
     Input,

@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { HEADER_LINKS, PATHS } from '@/src/variables';
 
 import { BtnLink } from '../../ui';
-import { User } from 'lucide-react';
+import { CircleUserRound } from 'lucide-react';
 import cn from 'classnames';
 
 type Props = {
@@ -46,7 +46,11 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                     </Link>
                 ))}
 
-                <BtnLink href={PATHS.SIGN_UP} icon={User} className='absolute sm:relative bottom-0 sm:bottom-auto'>
+                <BtnLink
+                    href={PATHS.SIGN_UP}
+                    icon={CircleUserRound}
+                    className='absolute sm:relative bottom-0 sm:bottom-auto'
+                >
                     Sign Up
                 </BtnLink>
             </div>

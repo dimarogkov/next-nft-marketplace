@@ -1,6 +1,7 @@
 import { AnchorHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import Link from 'next/link';
 import { EnumBtn } from '@/src/types/enums';
+import FlipText from './FlipText';
 import { LucideProps } from 'lucide-react';
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
@@ -14,14 +15,15 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<H
 const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
     ({ href, target, icon: Icon, btnType = EnumBtn.purple, className = '', ...props }, ref) => {
         const btnLinkClasses = {
-            [EnumBtn.purple as string]: 'bg-purple text-white',
-            [EnumBtn.outline as string]: 'border-2 border-purple text-white',
-            [EnumBtn.light as string]: 'bg-white text-black',
+            [EnumBtn.purple as string]: 'bg-purple text-white hover:bg-violet-600',
+            [EnumBtn.outline as string]:
+                'border-2 border-purple text-white hover:bg-violet-600 hover:border-violet-600',
+            [EnumBtn.light as string]: 'bg-white text-black hover:bg-stone-300',
         };
 
         const iconClasses = {
             [EnumBtn.purple as string]: 'text-white',
-            [EnumBtn.outline as string]: 'text-purple',
+            [EnumBtn.outline as string]: 'text-purple group-hover:text-white',
             [EnumBtn.light as string]: 'text-black',
         };
 
@@ -31,10 +33,11 @@ const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                 {...props}
                 href={href}
                 target={target}
-                className={`flex items-center justify-center gap-2 w-full sm:w-fit height-btn font-medium px-4 sm:px-5 md:px-8 rounded-lg transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${btnLinkClasses[btnType]} ${className}`}
+                className={`relative inline-block group w-full sm:w-fit height-btn rounded-lg transition-all duration-200 active:scale-95 ${btnLinkClasses[btnType]} ${className}`}
             >
-                {Icon && <Icon className={`size-5 ${iconClasses[btnType]}`} />}
-                <span>{props.children}</span>
+                <FlipText text={props.children as string}>
+                    {Icon && <Icon className={`size-5 transition-colors duration-200 ${iconClasses[btnType]}`} />}
+                </FlipText>
             </Link>
         );
     }

@@ -1,7 +1,12 @@
 'use client';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { usePathname } from 'next/navigation';
 import { subscribeFormOptions } from '@/src/helpers/formOptions';
+import { EnumBtn } from '@/src/types/enums';
+
 import { Btn, ErrorMessage, Input, Label } from '../../ui';
+import { MailCheck } from 'lucide-react';
 
 const SubscribeForm = () => {
     const {
@@ -10,6 +15,11 @@ const SubscribeForm = () => {
         reset,
         formState: { errors },
     } = useForm(subscribeFormOptions);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        reset();
+    }, [pathname, reset]);
 
     const onSubmit = (data: any) => {
         console.log(data);
@@ -31,7 +41,9 @@ const SubscribeForm = () => {
                 {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
             </Label>
 
-            <Btn type='submit'>Subscribe</Btn>
+            <Btn type='submit' icon={MailCheck} btnType={EnumBtn.light}>
+                Subscribe
+            </Btn>
         </form>
     );
 };
