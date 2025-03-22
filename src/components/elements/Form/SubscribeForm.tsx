@@ -27,23 +27,22 @@ const SubscribeForm = () => {
     };
 
     return (
-        <form
-            onSubmit={handleSubmit(onSubmit)}
-            className='relative flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'
-        >
-            <Label className='flex flex-col gap-2 w-full'>
-                <Input
-                    {...register('email')}
-                    placeholder='Enter your email here'
-                    className='border-gray2 hover:border-white'
-                />
+        <form onSubmit={handleSubmit(onSubmit)} className='relative w-full'>
+            {errors.email && <ErrorMessage className='mb-2.5'>{errors.email.message}</ErrorMessage>}
 
-                {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
-            </Label>
+            <div className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
+                <Label className='flex flex-col gap-2 w-full'>
+                    <Input
+                        {...register('email')}
+                        placeholder='Enter your email here'
+                        className='border-gray2 hover:border-white'
+                    />
+                </Label>
 
-            <Btn type='submit' icon={MailCheck} btnType={EnumBtn.light}>
-                Subscribe
-            </Btn>
+                <Btn type='submit' icon={MailCheck} btnType={EnumBtn.light}>
+                    Subscribe
+                </Btn>
+            </div>
         </form>
     );
 };
