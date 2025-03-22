@@ -27,7 +27,7 @@ const TrendingCollection = async () => {
                             href={PATHS.MARKETPLACE}
                             btnType={EnumBtn.outline}
                             icon={Eye}
-                            className='absolute sm:relative bottom-0 sm:bottom-auto'
+                            className='!absolute sm:!relative bottom-0 sm:bottom-auto'
                         >
                             See All
                         </BtnLink>

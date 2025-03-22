@@ -1,5 +1,5 @@
 'use client';
-import { memo, useRef } from 'react';
+import { useRef } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import { useDimension } from '@/src/hooks';
 import { GALLERY_IMGS_DATA } from '@/src/variables';
