@@ -9,8 +9,8 @@ const Hero = () => {
 
                 <div className='relative w-[92%] sm:w-full h-0 pb-[92%] sm:pb-[100%] m-auto'>
                     <Image
-                        src='/banner_img.gif'
-                        blurDataURL='/banner_img.gif'
+                        src='/hero_img.gif'
+                        blurDataURL='/hero_img.gif'
                         alt='banner_img'
                         placeholder='blur'
                         className='img'
