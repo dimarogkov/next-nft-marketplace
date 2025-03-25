@@ -13,6 +13,7 @@ import Radio from './Radio';
 import SimpleLink from './SimpleLink';
 import Skeleton from './Skeleton';
 import SocialLink from './SocialLink';
+import Tag from './Tag';
 import Text from './Text';
 import Title from './Title';
 
@@ -32,6 +33,7 @@ export {
     SimpleLink,
     Skeleton,
     SocialLink,
+    Tag,
     Text,
     Title,
 };

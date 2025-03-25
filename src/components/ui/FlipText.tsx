@@ -4,7 +4,7 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 
 interface Props extends HTMLMotionProps<'p'>, RefAttributes<HTMLParagraphElement> {
     text: string;
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 const FlipText: FC<Props> = forwardRef<HTMLParagraphElement, Props>(({ text, children, ...props }, ref) => {

@@ -1,4 +1,5 @@
 import { convertToSnakeCase } from './convertToLink';
 import { convertUrlToString } from './convertUrlToString';
+import { debounce } from './debounce';
 
-export { convertToSnakeCase, convertUrlToString };
+export { convertToSnakeCase, convertUrlToString, debounce };
