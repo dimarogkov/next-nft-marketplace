@@ -6,9 +6,10 @@ import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
-import { NftCard } from './NftCard';
+import { NftCard, NftsList, NftsTags } from './Nfts';
 import { ProgressLine } from './ProgressLine';
 import { RankingCard } from './RankingCard';
+import { Search } from './Search';
 import { SubscribeContent } from './Subscribe';
 import { TopCreatorsCard } from './TopCreators';
 
@@ -24,8 +25,11 @@ export {
     Logo,
     NewEventContent,
     NftCard,
+    NftsList,
+    NftsTags,
     ProgressLine,
     RankingCard,
+    Search,
     SubscribeContent,
     TopCreatorsCard,
 };

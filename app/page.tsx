@@ -14,8 +14,8 @@ const HomePage = () => {
         <>
             <Hero />
             <TrendingCollection />
-            <Gallery />
             <TopCreators />
+            <Gallery />
             <Subscribe />
             <NewNfts />
             <NewEvent />

@@ -7,6 +7,7 @@ import { Hero } from './Hero';
 import { HowItWorks } from './HowItWorks';
 import { NewEvent } from './NewEvent';
 import { NewNfts } from './NewNfts';
+import { Nfts } from './Nfts';
 import { Rankings } from './Rankings';
 import { Subscribe } from './Subscribe';
 import { TopCreators } from './TopCreators';
@@ -22,6 +23,7 @@ export {
     HowItWorks,
     NewEvent,
     NewNfts,
+    Nfts,
     Rankings,
     Subscribe,
     TopCreators,

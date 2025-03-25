@@ -13,7 +13,7 @@ const Footer = () => {
                     <Logo disableAnimation className='sm:w-[42%] lg:w-auto !h-auto mb-5 lg:mb-4 last:mb-0' />
 
                     <div className='w-full sm:w-[58%] lg:w-full'>
-                        <Text className='mb-2 sm:mb-3 last:mb-0'>Join our community</Text>
+                        <Text className='mb-3 sm:mb-4 last:mb-0'>Join our community</Text>
 
                         <div className='flex gap-1.5'>
                             {SOCIAL_LINKS.map(({ id, href, icon }) => (
@@ -28,7 +28,7 @@ const Footer = () => {
                         Explore
                     </Title>
 
-                    <div className='flex sm:flex-col gap-5 sm:gap-2 lg:gap-2.5 w-full'>
+                    <div className='flex sm:flex-col gap-5 sm:gap-3 w-full'>
                         {HEADER_LINKS.map(({ href, text }) => (
                             <Link
                                 key={text}
@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
 
                 <div className='w-full sm:w-[58%] lg:w-[46%] pt-1'>
-                    <div className='w-full mb-4 md:mb-3 last:mb-0'>
+                    <div className='w-full mb-4 last:mb-0'>
                         <Title titleType={EnumTitle.h4} className='font-space-mono mb-1 sm:mb-3 lg:mb-5 last:mb-0'>
                             Join Our Weekly Digest
                         </Title>
