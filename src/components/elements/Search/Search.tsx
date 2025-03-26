@@ -1,15 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useQueryState } from 'nuqs';
 import { debounce } from '@/src/helpers';
 import { Input, Label } from '../../ui';
 
 const Search = ({ className = '' }) => {
-    const [_, setNameQuery] = useQueryState('name', { defaultValue: '' });
+    const [nameQuery, setNameQuery] = useQueryState('name', { defaultValue: '' });
     const [value, setValue] = useState('');
 
     const applySearchValue = useCallback(debounce(setNameQuery, 700), []);
+
+    useEffect(() => {
+        setValue(nameQuery);
+    }, [nameQuery]);
 
     const handleSearch = (value: string) => {
         applySearchValue(value);

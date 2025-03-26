@@ -7,6 +7,7 @@ import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
 import { NftCard, NftsList, NftsTags } from './Nfts';
+import { NoResultsFound } from './NoResultsFound';
 import { ProgressLine } from './ProgressLine';
 import { RankingCard } from './RankingCard';
 import { Search } from './Search';
@@ -27,6 +28,7 @@ export {
     NftCard,
     NftsList,
     NftsTags,
+    NoResultsFound,
     ProgressLine,
     RankingCard,
     Search,
