@@ -1,27 +1,30 @@
 'use client';
-import { FC, useEffect, useMemo, useState } from 'react';
+import { FC, Fragment, useMemo } from 'react';
 import { useQueryState } from 'nuqs';
+import { EnumMarketplaceTabs } from '@/src/types/enums';
+import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
 
 import { NoResultsFound } from '../NoResultsFound';
-import NftCardSkeleton from './NftCardSkeleton';
+import { CollectionCard } from '../CollectionCard';
 import NftCard from './NftCard';
-import cn from 'classnames';
 
 type Props = {
-    nfts: INFT[];
+    type?: EnumMarketplaceTabs;
+    data: INFT[] | ICollection[];
 };
 
-const NftsList: FC<Props> = ({ nfts }) => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [nameQuery, setNameQuery] = useQueryState('name', { defaultValue: '' });
+const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
     const [collectionNameQuery, setCollectionNameQuery] = useQueryState('collectionName', { defaultValue: '' });
+    const [nameQuery, setNameQuery] = useQueryState('name', { defaultValue: '' });
 
-    const filteredNfts = useMemo(() => {
-        let arr = [...nfts];
+    const isNFTsType = useMemo(() => type === EnumMarketplaceTabs.NFTs, [type]);
 
-        if (collectionNameQuery) {
-            arr = arr.filter(({ collectionName }) => collectionName === collectionNameQuery);
+    const filteredData = useMemo(() => {
+        let arr = [...data];
+
+        if (isNFTsType && collectionNameQuery) {
+            arr = (arr as INFT[]).filter(({ collectionName }) => collectionName === collectionNameQuery);
         }
 
         if (nameQuery) {
@@ -29,40 +32,25 @@ const NftsList: FC<Props> = ({ nfts }) => {
         }
 
         return arr;
-    }, [collectionNameQuery, nameQuery, nfts]);
-
-    useEffect(() => {
-        setIsLoading(true);
-
-        const time = setTimeout(() => setIsLoading(false), 1000);
-
-        return () => clearTimeout(time);
-    }, [filteredNfts]);
+    }, [data, collectionNameQuery, nameQuery, isNFTsType]);
 
     const resetFilters = () => {
         setNameQuery('');
         setCollectionNameQuery('');
     };
 
-    if (isLoading) {
-        return (
-            <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
-                {[...new Array(6).fill(0)].map((_, index) => (
-                    <NftCardSkeleton
-                        key={crypto.randomUUID()}
-                        className={cn({ 'hidden sm:block': index > 1, 'hidden lg:block': index > 3 })}
-                    />
-                ))}
-            </div>
-        );
-    }
-
     return (
         <>
-            {filteredNfts.length ? (
+            {filteredData.length ? (
                 <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
-                    {filteredNfts.map((nft) => (
-                        <NftCard key={nft.name} nft={nft} />
+                    {filteredData.map((item) => (
+                        <Fragment key={item.name}>
+                            {!isNFTsType ? (
+                                <CollectionCard collection={item as ICollection} />
+                            ) : (
+                                <NftCard nft={item as INFT} className='!bg-black' />
+                            )}
+                        </Fragment>
                     ))}
                 </div>
             ) : (

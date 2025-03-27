@@ -1,6 +1,6 @@
 import { PATHS } from '@/src/variables';
 import { getNfts } from '@/src/services';
-import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumMarketplaceTabs, EnumText, EnumTitle } from '@/src/types/enums';
 
 import { NftCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
@@ -24,7 +24,7 @@ const NewNfts = async () => {
                         </div>
 
                         <BtnLink
-                            href={PATHS.MARKETPLACE}
+                            href={`${PATHS.MARKETPLACE}?activeTab=${EnumMarketplaceTabs.NFTs}`}
                             btnType={EnumBtn.outline}
                             icon={Eye}
                             className='!absolute sm:!relative bottom-0 sm:bottom-auto'

@@ -1,35 +1,46 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
-import { useCallback, useEffect, useState } from 'react';
-import { useQueryState } from 'nuqs';
+import { FC, forwardRef, InputHTMLAttributes, RefAttributes, useCallback, useEffect, useState } from 'react';
+import { Options } from 'nuqs';
 import { debounce } from '@/src/helpers';
 import { Input, Label } from '../../ui';
 
-const Search = ({ className = '' }) => {
-    const [nameQuery, setNameQuery] = useQueryState('name', { defaultValue: '' });
-    const [value, setValue] = useState('');
+interface Props extends InputHTMLAttributes<HTMLInputElement>, RefAttributes<HTMLInputElement> {
+    query: string;
+    className?: string;
+    classNameInput?: string;
+    setQuery: (value: string | ((old: string) => string | null) | null, options?: Options) => Promise<URLSearchParams>;
+}
 
-    const applySearchValue = useCallback(debounce(setNameQuery, 700), []);
+const Search: FC<Props> = forwardRef<HTMLInputElement, Props>(
+    ({ query, className = '', classNameInput = '', setQuery = () => {}, ...props }, ref) => {
+        const [value, setValue] = useState('');
+        const applySearchValue = useCallback(debounce(setQuery, 700), []);
 
-    useEffect(() => {
-        setValue(nameQuery);
-    }, [nameQuery]);
+        useEffect(() => {
+            setValue(query);
+        }, [query]);
 
-    const handleSearch = (value: string) => {
-        applySearchValue(value);
-        setValue(value);
-    };
+        const handleSearch = (value: string) => {
+            applySearchValue(value);
+            setValue(value);
+        };
 
-    return (
-        <Label className={className}>
-            <Input
-                name='search'
-                placeholder='Search your favorite NFTs'
-                value={value}
-                onChange={({ target }) => handleSearch(target.value)}
-            />
-        </Label>
-    );
-};
+        return (
+            <Label className={className}>
+                <Input
+                    ref={ref}
+                    {...props}
+                    name='search'
+                    placeholder={props.placeholder || 'Search'}
+                    value={value}
+                    onChange={({ target }) => handleSearch(target.value)}
+                    className={classNameInput}
+                />
+            </Label>
+        );
+    }
+);
 
+Search.displayName = 'Search';
 export default Search;
