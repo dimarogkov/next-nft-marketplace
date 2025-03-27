@@ -1,6 +1,6 @@
 import { PATHS } from '@/src/variables';
 import { getCollections } from '@/src/services';
-import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumMarketplaceTabs, EnumText, EnumTitle } from '@/src/types/enums';
 
 import { CollectionCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
@@ -24,7 +24,7 @@ const TrendingCollection = async () => {
                         </div>
 
                         <BtnLink
-                            href={PATHS.MARKETPLACE}
+                            href={`${PATHS.MARKETPLACE}?activeTab=${EnumMarketplaceTabs.Collections}`}
                             btnType={EnumBtn.outline}
                             icon={Eye}
                             className='!absolute sm:!relative bottom-0 sm:bottom-auto'
