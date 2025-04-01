@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { PATHS } from '@/src/variables/paths';
 import { convertUrlToString } from '@/src/helpers';
-
 import { Text } from '../../ui';
 import { ChevronRight } from 'lucide-react';
 

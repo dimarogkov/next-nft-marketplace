@@ -16,10 +16,10 @@ const CollectionCardNfts: FC<Props> = ({ nfts }) => {
     }, [nfts]);
 
     return (
-        <div className='grid grid-cols-3 gap-2 sm:gap-3 w-full mb-4 last:mb-0'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-3 w-full mb-5 lg:mb-4 last:mb-0'>
             {nftsArr.map((nft, index) =>
                 nft ? (
-                    <ImageLoader key={nft.alt} className={cn('rounded-lg', { 'col-span-3': index === 0 })}>
+                    <ImageLoader key={nft.alt} className={cn('rounded-lg', { 'lg:col-span-3': index === 0 })}>
                         <ImageLoader.Link href={nft.alt}>
                             <ImageLoader.Image
                                 src={nft.src}

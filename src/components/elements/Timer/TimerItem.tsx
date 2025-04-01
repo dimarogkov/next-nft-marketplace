@@ -12,11 +12,11 @@ const TimerItem: FC<Props> = ({ timer }) => {
 
     return (
         <div className='w-full'>
-            <Title titleType={EnumTitle.h3} className='font-space-mono text-4xl mb-1.5 last:mb-0'>
+            <Title titleType={EnumTitle.h3} className='text-4xl mb-1.5 last:mb-0'>
                 {value < 10 ? `0${value}` : value}
             </Title>
 
-            <Text className='font-space-mono text-sm text-white'>{label}</Text>
+            <Text className='text-sm text-white'>{label}</Text>
         </div>
     );
 };

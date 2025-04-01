@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
 import { convertToSnakeCase } from '@/src/helpers';
-
 import { Timer } from '../Timer';
 import { Avatar, BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
