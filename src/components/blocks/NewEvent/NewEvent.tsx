@@ -8,7 +8,7 @@ const NewEvent = async () => {
     return (
         <section className='relative w-full md:h-[600px] lg:h-[700px] xl:h-[800px] bg-gray'>
             <ImageLoader className='!absolute h-full !pb-0'>
-                <ImageLoader.Image src={img.src} blurDataURL={img.src} alt={img.alt} placeholder='blur' />
+                <ImageLoader.Image src={img.src} alt={img.alt} />
             </ImageLoader>
 
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-violet-600 via-sky-600/80 to-teal-500/60' />

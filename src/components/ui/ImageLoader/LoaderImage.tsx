@@ -1,6 +1,7 @@
 'use client';
 import { FC, forwardRef, RefAttributes } from 'react';
 import Image, { ImageProps } from 'next/image';
+import { getBlurDataURL } from '@/src/helpers';
 import cn from 'classnames';
 
 interface Props extends ImageProps, RefAttributes<HTMLImageElement> {
@@ -23,7 +24,7 @@ const LoaderImage: FC<Props> = forwardRef<HTMLImageElement, Props>(
                 ref={ref}
                 {...props}
                 src={src}
-                blurDataURL={src}
+                blurDataURL={getBlurDataURL()}
                 alt={alt}
                 className={cn(`img ${className}`, { invisible: isLoading })}
                 placeholder='blur'

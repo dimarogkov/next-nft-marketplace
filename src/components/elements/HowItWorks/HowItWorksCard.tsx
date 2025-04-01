@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import { getBlurDataURL } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IHowItWorksItem } from '@/src/types/interfaces/HowItWorksItem';
 import { Text, Title } from '../../ui';
@@ -16,7 +17,7 @@ const HowItWorksCard: FC<Props> = ({ item }) => {
             <div className='relative hidden sm:block w-[22%] md:w-[90%] h-0 pb-[22%] md:pb-[90%]'>
                 <Image
                     src={img.src}
-                    blurDataURL={img.src}
+                    blurDataURL={getBlurDataURL()}
                     alt={img.alt}
                     placeholder='blur'
                     className='img'
