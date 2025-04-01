@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { NewNfts, Subscribe } from '@/src/components/blocks';
 import { Title } from '@/src/components/ui';
 
 export const metadata: Metadata = {
@@ -13,6 +14,9 @@ const ConnectWalletPage = () => {
                     <Title>Connect a Wallet Page</Title>
                 </div>
             </section>
+
+            <Subscribe />
+            <NewNfts />
         </>
     );
 };

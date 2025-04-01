@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import { HeroContent } from '../../elements';
-import { ImageLoader } from '../../ui';
 
 const Hero = () => {
     return (
@@ -8,7 +8,7 @@ const Hero = () => {
                 <HeroContent />
 
                 <div className='relative w-[92%] sm:w-full h-0 pb-[92%] sm:pb-[100%] m-auto'>
-                    <ImageLoader.Image src='/hero_img.gif' alt='banner_img' />
+                    <Image src='/hero_img.gif' alt='banner_img' fill sizes='100%' className='img' />
                 </div>
             </div>
         </section>
