@@ -28,6 +28,7 @@ const LoaderImage: FC<Props> = forwardRef<HTMLImageElement, Props>(
                 alt={alt}
                 className={cn(`img ${className}`, { invisible: isLoading })}
                 placeholder='blur'
+                loading='lazy'
                 sizes='100%'
                 fill
                 onLoad={handleLoad}
