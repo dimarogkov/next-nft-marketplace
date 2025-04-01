@@ -24,9 +24,13 @@ const Gallery = () => {
             <div ref={gallery} className='relative container h-[100vh] !p-0 rounded-lg overflow-hidden bg-gray'>
                 <div className='grid grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full'>
                     <GalleryColumn images={GALLERY_IMGS_DATA.slice(0, 4)} y={y} />
-                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(4, 8)} y={y2} className='-top-[100%]' />
-                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(8, 12)} y={y3} className='-top-[15%]' />
-                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(12)} y={y4} className='-top-[60%] hidden lg:flex' />
+                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(4, 8)} y={y2} className='relative -top-[100%]' />
+                    <GalleryColumn images={GALLERY_IMGS_DATA.slice(8, 12)} y={y3} className='relative -top-[15%]' />
+                    <GalleryColumn
+                        images={GALLERY_IMGS_DATA.slice(12)}
+                        y={y4}
+                        className='relative -top-[60%] hidden lg:flex'
+                    />
                 </div>
             </div>
         </section>

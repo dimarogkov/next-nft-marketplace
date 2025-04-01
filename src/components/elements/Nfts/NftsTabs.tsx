@@ -20,7 +20,7 @@ const NftsTabs: FC<Props> = ({ data }) => {
 
     useEffect(() => {
         setNameQuery('');
-    }, [activeTabQuery]);
+    }, [activeTabQuery, setNameQuery]);
 
     return (
         <Tabs>
