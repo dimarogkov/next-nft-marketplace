@@ -4,6 +4,8 @@ import { EnumBtn } from '@/src/types/enums';
 import FlipText from './FlipText';
 import { LucideProps } from 'lucide-react';
 
+import { PATHS } from '@/src/variables';
+
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
     target?: string;
@@ -31,7 +33,7 @@ const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             <Link
                 ref={ref}
                 {...props}
-                href={href}
+                href={PATHS.HOME} // href={href}
                 target={target}
                 className={`relative inline-block group w-full sm:w-fit height-btn rounded-lg transition-all duration-200 active:scale-95 ${btnLinkClasses[btnType]} ${className}`}
             >

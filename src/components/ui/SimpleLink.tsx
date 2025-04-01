@@ -1,6 +1,8 @@
 import { AnchorHTMLAttributes, FC, forwardRef, RefAttributes } from 'react';
 import Link from 'next/link';
 
+import { PATHS } from '@/src/variables';
+
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
     className?: string;
@@ -11,7 +13,7 @@ const SimpleLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(({ href, clas
         <Link
             ref={ref}
             {...props}
-            href={href}
+            href={PATHS.HOME} // href={href}
             className='font-medium underline text-purple transition-opacity duration-300 hover:opacity-70'
         />
     );

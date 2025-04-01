@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { EnumSocial } from '@/src/types/enums';
 import { LucideProps } from 'lucide-react';
 
+import { PATHS } from '@/src/variables';
+
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
     icon: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>;
@@ -28,7 +30,7 @@ const SocialLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             <Link
                 ref={ref}
                 {...props}
-                href={href}
+                href={PATHS.HOME} // href={href}
                 target='_blank'
                 className={`flex items-center justify-center size-10 rounded-lg transition-all duration-300 will-change-transform hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] ${socialClasses[socialType]} ${className}`}
             >

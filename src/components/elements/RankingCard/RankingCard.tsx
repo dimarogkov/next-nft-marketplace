@@ -1,9 +1,11 @@
 import { FC } from 'react';
-import { convertToSnakeCase } from '@/src/helpers';
+// import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { ImageLoader, Text, Title } from '../../ui';
 import Link from 'next/link';
+
+import { PATHS } from '@/src/variables';
 
 type Props = {
     artist: IArtist & { index: number };
@@ -20,7 +22,8 @@ const RankingCard: FC<Props> = ({ artist }) => {
 
             <div className='flex items-center gap-4 lg:gap-5 w-full'>
                 <ImageLoader className='!size-14 lg:!size-16 !pb-0 rounded-full'>
-                    <ImageLoader.Link href={convertToSnakeCase(userName)}>
+                    {/* convertToSnakeCase(userName) */}
+                    <ImageLoader.Link href={PATHS.HOME}>
                         <ImageLoader.Image
                             src={avatar}
                             alt={userName}
@@ -30,10 +33,8 @@ const RankingCard: FC<Props> = ({ artist }) => {
                 </ImageLoader>
 
                 <Title titleType={EnumTitle.h5} className='!w-auto text-lg sm:text-xl line-clamp-1'>
-                    <Link
-                        href={convertToSnakeCase(userName)}
-                        className='transition-colors duration-300 hover:text-purple'
-                    >
+                    {/* convertToSnakeCase(userName) */}
+                    <Link href={PATHS.HOME} className='transition-colors duration-300 hover:text-purple'>
                         {userName}
                     </Link>
                 </Title>

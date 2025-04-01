@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Text from './Text';
 import ImageLoader from './ImageLoader';
 
+import { PATHS } from '@/src/variables';
+
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
     src: string;
@@ -16,7 +18,7 @@ const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             <Link
                 ref={ref}
                 {...props}
-                href={href}
+                href={PATHS.HOME} // href={href}
                 className={`relative group flex items-center gap-2.5 w-fit ${className}`}
             >
                 <ImageLoader className='!size-6 rounded-full !pb-0 bg-gray transition-all duration-300 outline outline-2 outline-transparent group-hover:outline-purple'>
