@@ -1,6 +1,5 @@
 import { FC, forwardRef, RefAttributes } from 'react';
 import Image, { ImageProps } from 'next/image';
-import { getBlurDataURL } from '@/src/helpers';
 import cn from 'classnames';
 
 interface Props extends ImageProps, RefAttributes<HTMLImageElement> {
@@ -15,10 +14,8 @@ const LoaderImage: FC<Props> = forwardRef<HTMLImageElement, Props>(({ src, alt, 
             ref={ref}
             {...props}
             src={src}
-            blurDataURL={getBlurDataURL()}
             alt={alt}
             className={cn(`img ${className}`)}
-            placeholder='blur'
             loading='lazy'
             sizes='100%'
             fill

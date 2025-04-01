@@ -15,7 +15,7 @@ const HomePage = () => {
             <Hero />
             <TrendingCollection />
             <TopCreators />
-            {/* <Gallery /> // remove in feature */}
+            <Gallery />
             <Subscribe />
             <NewNfts />
             <NewEvent />

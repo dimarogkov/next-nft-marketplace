@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HEADER_LINKS, PATHS } from '@/src/variables';
+import { HEADER_LINKS_DATA, PATHS } from '@/src/variables';
 import { BtnLink } from '../../ui';
 import { CircleUserRound } from 'lucide-react';
 import cn from 'classnames';
@@ -30,7 +30,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                     'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-8 sm:gap-6 lg:gap-10 w-full h-full pb-24 sm:pb-0'
                 )}
             >
-                {HEADER_LINKS.map(({ href, text }) => (
+                {HEADER_LINKS_DATA.map(({ href, text }) => (
                     <Link
                         key={text}
                         href={href}

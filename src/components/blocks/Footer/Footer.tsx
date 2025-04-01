@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HEADER_LINKS, SOCIAL_LINKS } from '@/src/variables';
+import { HEADER_LINKS_DATA, SOCIAL_LINKS_DATA } from '@/src/variables';
 import { EnumSocial, EnumTitle } from '@/src/types/enums';
 import { Logo, SubscribeForm } from '../../elements';
 import { SocialLink, Text, Title } from '../../ui';
@@ -15,7 +15,7 @@ const Footer = () => {
                         <Text className='mb-3 sm:mb-4 last:mb-0'>Join our community</Text>
 
                         <div className='flex gap-1.5'>
-                            {SOCIAL_LINKS.map(({ id, href, icon }) => (
+                            {SOCIAL_LINKS_DATA.map(({ id, href, icon }) => (
                                 <SocialLink key={id} href={href} icon={icon} socialType={EnumSocial.dark} />
                             ))}
                         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                     </Title>
 
                     <div className='flex flex-col gap-2.5 sm:gap-3 w-full'>
-                        {HEADER_LINKS.map(({ href, text }) => (
+                        {HEADER_LINKS_DATA.map(({ href, text }) => (
                             <Link
                                 key={text}
                                 href={href}
