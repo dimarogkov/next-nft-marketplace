@@ -36,8 +36,8 @@ const CollectionCardNfts: FC<Props> = ({ nfts }) => {
             )}
 
             {nftCount > 0 ? (
-                <div className='flex items-center justify-center rounded-lg bg-purple'>
-                    <Title titleType={EnumTitle.h5} className='font-space-mono text-white'>
+                <div className='flex items-center justify-center rounded-lg bg-violet-600'>
+                    <Title titleType={EnumTitle.h5} className='text-white'>
                         {nftCount}+
                     </Title>
                 </div>

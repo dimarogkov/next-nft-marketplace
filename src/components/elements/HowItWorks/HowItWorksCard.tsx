@@ -22,6 +22,7 @@ const HowItWorksCard: FC<Props> = ({ item }) => {
                     placeholder='blur'
                     className='img'
                     sizes='100%'
+                    loading='lazy'
                     fill
                 />
             </div>
