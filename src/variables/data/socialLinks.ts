@@ -1,7 +1,7 @@
 import { ISocialLink } from '@/src/types/interfaces/SocialLink';
 import { Facebook, Instagram, Twitch, Twitter } from 'lucide-react';
 
-export const SOCIAL_LINKS: ISocialLink[] = [
+export const SOCIAL_LINKS_DATA: ISocialLink[] = [
     {
         id: 'facebook',
         href: 'https://www.google.com/',
