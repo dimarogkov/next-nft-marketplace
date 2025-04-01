@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
-import { Work_Sans } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
-const work_sans = Work_Sans({ subsets: ['latin'] });
+const font = Poppins({ weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], subsets: ['latin'] });
 
 type Props = {
     children?: ReactNode;
@@ -10,7 +10,7 @@ type Props = {
 const Root: FC<Props> = ({ children }) => {
     return (
         <html lang='en' suppressHydrationWarning>
-            <body className={work_sans.className}>{children}</body>
+            <body className={font.className}>{children}</body>
         </html>
     );
 };

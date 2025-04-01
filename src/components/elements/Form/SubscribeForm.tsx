@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { usePathname } from 'next/navigation';
 import { subscribeFormOptions } from '@/src/helpers/formOptions';
 import { EnumBtn } from '@/src/types/enums';
-
 import { Btn, ErrorMessage, Input, Label } from '../../ui';
 import { MailCheck } from 'lucide-react';
 
@@ -30,7 +29,7 @@ const SubscribeForm = () => {
         <form onSubmit={handleSubmit(onSubmit)} className='relative w-full'>
             {errors.email && <ErrorMessage className='mb-2.5'>{errors.email.message}</ErrorMessage>}
 
-            <div className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-1.5 w-full'>
+            <div className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-2 w-full'>
                 <Label className='flex flex-col gap-2 w-full'>
                     <Input
                         {...register('email')}

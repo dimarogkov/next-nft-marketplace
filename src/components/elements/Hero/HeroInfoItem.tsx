@@ -23,7 +23,7 @@ const HeroInfoItem: FC<Props> = ({ info }) => {
 
     return (
         <div className='w-auto'>
-            <Title titleType={EnumTitle.h4} className='font-space-mono'>
+            <Title titleType={EnumTitle.h4}>
                 <motion.span>{rounded}</motion.span>k+
             </Title>
 

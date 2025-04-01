@@ -10,7 +10,7 @@ const Rankings = async () => {
     return (
         <section className='relative w-full section-padding-bottom'>
             <div className='container'>
-                <div className='grid grid-cols-[14%,86%] sm:grid-cols-[8%,52%,20%,20%] lg:grid-cols-[6%,41%,17%,17%,17%] w-full font-space-mono py-3 px-5 rounded-lg border border-gray mb-4 sm:mb-5 last:mb-0'>
+                <div className='grid grid-cols-[14%,86%] sm:grid-cols-[8%,52%,20%,20%] lg:grid-cols-[5%,44%,17%,17%,17%] w-full py-3 px-5 rounded-lg border border-gray mb-4 sm:mb-5 last:mb-0'>
                     <Text>#</Text>
                     <Text>Artist</Text>
                     <Text className='!hidden sm:!block'>Change</Text>

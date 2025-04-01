@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
-
 import { ImageLoader, Text, Title } from '../../ui';
 import cn from 'classnames';
 
@@ -21,7 +20,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
             })}
         >
             <div className='relative flex lg:flex-col items-center justify-between w-full'>
-                <span className='absolute z-10 -top-0.5 lg:top-0 -left-0.5 lg:left-0 flex items-center justify-center font-space-mono text-base text-gray2 size-7 lg:size-[30px] rounded-full bg-black'>
+                <span className='absolute z-10 -top-1 lg:top-0 -left-1 lg:left-0 flex items-center justify-center text-base text-gray2 size-7 lg:size-7 rounded-full bg-black'>
                     {index}
                 </span>
 
@@ -36,7 +35,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 </ImageLoader>
 
                 <div className='w-[calc(100%-100px)] lg:w-full lg:text-center'>
-                    <Title titleType={EnumTitle.h5} className='mb-0.5 last:mb-0'>
+                    <Title titleType={EnumTitle.h5} className='!text-lg mb-1.5 last:mb-0'>
                         <Link
                             href={convertToSnakeCase(userName)}
                             className='transition-colors duration-300 hover:text-purple'
@@ -46,7 +45,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                     </Title>
 
                     <Text className='text-gray2/50'>
-                        Total Sales: <span className='font-space-mono text-white'>{info.totalSales} ETH</span>
+                        Total Sales: <span className='text-white'>{info.totalSales} ETH</span>
                     </Text>
                 </div>
             </div>

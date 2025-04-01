@@ -25,7 +25,7 @@ const TabsPanels: FC<Props> = forwardRef<HTMLDivElement, Props>(
             <div
                 ref={ref}
                 {...props}
-                className={`relative w-full min-h-[50vh] py-[30px] md:py-10 bg-gray ${className}`}
+                className={`relative w-full min-h-[50vh] py-7 md:py-10 bg-gray ${className}`}
             >
                 <div className='container'>
                     <AnimatePresence mode='wait'>

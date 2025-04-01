@@ -4,7 +4,6 @@ import { useQueryState } from 'nuqs';
 import { EnumMarketplaceTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
-
 import NftsList from './NftsList';
 import { Tabs } from '../../ui';
 import cn from 'classnames';
@@ -36,7 +35,7 @@ const NftsTabs: FC<Props> = ({ data }) => {
 
                         <span
                             className={cn(
-                                'flex items-center justify-center size-[30px] md:size-8 text-base rounded-full transition-colors duration-300',
+                                'flex items-center justify-center size-7 md:size-8 text-base rounded-full transition-colors duration-300',
                                 {
                                     'text-gray bg-gray2': tab === activeTabQuery,
                                     'text-white bg-gray': tab !== activeTabQuery,

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -43,10 +42,6 @@ input[type='number']::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.font-space-mono {
-    font-family: 'Space Mono', serif;
-}
-
 .container {
     @apply w-full max-w-[1064px] px-4 md:px-5 m-auto;
 }
@@ -60,11 +55,11 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .section-padding {
-    @apply py-10 md:py-14 lg:py-20;
+    @apply py-10 md:py-12 lg:py-20;
 }
 
 .section-padding-bottom {
-    @apply pb-10 md:pb-14 lg:pb-20;
+    @apply pb-10 md:pb-12 lg:pb-20;
 }
 
 .height-btn {

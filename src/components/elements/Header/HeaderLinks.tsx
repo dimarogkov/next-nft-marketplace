@@ -3,7 +3,6 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { HEADER_LINKS, PATHS } from '@/src/variables';
-
 import { BtnLink } from '../../ui';
 import { CircleUserRound } from 'lucide-react';
 import cn from 'classnames';

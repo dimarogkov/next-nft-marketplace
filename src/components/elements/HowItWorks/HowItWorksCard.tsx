@@ -1,9 +1,7 @@
 import { FC } from 'react';
-import Image from 'next/image';
-import { getBlurDataURL } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IHowItWorksItem } from '@/src/types/interfaces/HowItWorksItem';
-import { Text, Title } from '../../ui';
+import { ImageLoader, Text, Title } from '../../ui';
 
 type Props = {
     item: IHowItWorksItem;
@@ -13,18 +11,9 @@ const HowItWorksCard: FC<Props> = ({ item }) => {
     const { title, text, img } = item;
 
     return (
-        <div className='relative flex flex-row md:flex-col items-center gap-5 w-full p-4 sm:p-5 lg:p-[30px] lg:pt-2.5 rounded-lg bg-gray'>
+        <div className='relative flex flex-row md:flex-col items-center gap-5 w-full p-4 sm:p-5 lg:p-7 lg:pt-2.5 rounded-lg bg-gray'>
             <div className='relative hidden sm:block w-[22%] md:w-[90%] h-0 pb-[22%] md:pb-[90%]'>
-                <Image
-                    src={img.src}
-                    blurDataURL={getBlurDataURL()}
-                    alt={img.alt}
-                    placeholder='blur'
-                    className='img'
-                    sizes='100%'
-                    loading='lazy'
-                    fill
-                />
+                <ImageLoader.Image src={img.src} alt={img.alt} />
             </div>
 
             <div className='w-full sm:w-[calc(78%-20px)] md:w-full md:text-center'>

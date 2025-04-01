@@ -1,10 +1,9 @@
 'use client';
 import { FC, Fragment, useMemo } from 'react';
 import { useQueryState } from 'nuqs';
-import { EnumMarketplaceTabs } from '@/src/types/enums';
+import { EnumCard, EnumMarketplaceTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
-
 import { NoResultsFound } from '../NoResultsFound';
 import { CollectionCard } from '../CollectionCard';
 import NftCard from './NftCard';
@@ -42,13 +41,13 @@ const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
     return (
         <>
             {filteredData.length ? (
-                <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
+                <div className='grid lg:grid-cols-3 gap-7 w-full'>
                     {filteredData.map((item) => (
                         <Fragment key={item.name}>
                             {!isNFTsType ? (
-                                <CollectionCard collection={item as ICollection} />
+                                <CollectionCard collection={item as ICollection} cardType={EnumCard.dark} />
                             ) : (
-                                <NftCard nft={item as INFT} className='!bg-black' />
+                                <NftCard nft={item as INFT} cardType={EnumCard.dark} />
                             )}
                         </Fragment>
                     ))}

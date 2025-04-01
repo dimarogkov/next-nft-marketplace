@@ -1,7 +1,6 @@
 import { PATHS } from '@/src/variables';
 import { getNfts } from '@/src/services';
 import { EnumBtn, EnumMarketplaceTabs, EnumText, EnumTitle } from '@/src/types/enums';
-
 import { NftCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
@@ -11,12 +10,12 @@ const NewNfts = async () => {
     const nfts = await getNfts();
 
     return (
-        <section className='relative w-full section-padding-bottom'>
+        <section className='relative w-full section-padding'>
             <div className='container'>
                 <div className='relative w-full pb-[68px] sm:pb-0'>
-                    <div className='flex flex-wrap items-center justify-between w-full mb-5 lg:mb-[30px] last:mb-0'>
+                    <div className='flex flex-wrap items-center justify-between w-full mb-5 lg:mb-7 last:mb-0'>
                         <div className='w-full sm:w-[65%] md:w-[60%]'>
-                            <Title titleType={EnumTitle.h3} className='mb-1 lg:mb-2 last:mb-0'>
+                            <Title titleType={EnumTitle.h3} className='mb-1.5 lg:mb-2 last:mb-0'>
                                 Discover More
                             </Title>
 
@@ -33,7 +32,7 @@ const NewNfts = async () => {
                         </BtnLink>
                     </div>
 
-                    <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
+                    <div className='grid lg:grid-cols-3 gap-7 w-full'>
                         {nfts.slice(0, 3).map((nft, index) => (
                             <NftCard key={nft.name} nft={nft} className={cn({ 'hidden lg:block': index > 1 })} />
                         ))}

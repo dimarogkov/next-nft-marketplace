@@ -1,6 +1,5 @@
 import { HERO_INFO_DATA, PATHS } from '@/src/variables';
 import { EnumText } from '@/src/types/enums';
-
 import HeroInfoItem from './HeroInfoItem';
 import { BtnLink, Text, Title } from '../../ui';
 import { Rocket } from 'lucide-react';
@@ -8,10 +7,10 @@ import { Rocket } from 'lucide-react';
 const HeroContent = () => {
     return (
         <div className='relative order-1 sm:order-none w-full'>
-            <div className='w-full mb-7 md:mb-[30px] last:mb-0'>
+            <div className='w-full mb-7 md:mb-7 last:mb-0'>
                 <Title className='mb-4 md:mb-5 last:mb-0'>Discover Digital Art & Collect NFTs</Title>
 
-                <Text textType={EnumText.large} className='mb-6 sm:mb-7 md:mb-[30px] last:mb-0'>
+                <Text textType={EnumText.large} className='mb-6 sm:mb-7 md:mb-7 last:mb-0'>
                     NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT
                     artists.
                 </Text>

@@ -13,7 +13,6 @@ const MarketplacePage = () => {
                 text='Browse through more than 50k NFTs on the NFT Marketplace.'
                 className='!pb-0 mb-6 last:mb-0'
             />
-
             <Nfts />
             <Subscribe />
             <TopCreators />

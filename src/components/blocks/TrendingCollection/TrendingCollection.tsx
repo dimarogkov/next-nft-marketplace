@@ -1,7 +1,6 @@
 import { PATHS } from '@/src/variables';
 import { getCollections } from '@/src/services';
 import { EnumBtn, EnumMarketplaceTabs, EnumText, EnumTitle } from '@/src/types/enums';
-
 import { CollectionCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
@@ -14,9 +13,9 @@ const TrendingCollection = async () => {
         <section className='relative w-full section-padding'>
             <div className='container'>
                 <div className='relative w-full pb-[68px] sm:pb-0'>
-                    <div className='flex flex-wrap items-center justify-between w-full mb-5 lg:mb-[30px] last:mb-0'>
+                    <div className='flex flex-wrap items-center justify-between w-full mb-5 lg:mb-7 last:mb-0'>
                         <div className='w-full sm:w-[65%] md:w-[60%]'>
-                            <Title titleType={EnumTitle.h3} className='mb-1 lg:mb-2 last:mb-0'>
+                            <Title titleType={EnumTitle.h3} className='mb-1.5 lg:mb-2 last:mb-0'>
                                 Trending Collection
                             </Title>
 
@@ -33,7 +32,7 @@ const TrendingCollection = async () => {
                         </BtnLink>
                     </div>
 
-                    <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full'>
+                    <div className='grid lg:grid-cols-3 gap-7 w-full'>
                         {collections.slice(0, 3).map((collection, index) => (
                             <CollectionCard
                                 key={collection.name}

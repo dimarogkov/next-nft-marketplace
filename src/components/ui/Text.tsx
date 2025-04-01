@@ -9,8 +9,8 @@ interface Props extends HTMLAttributes<HTMLParagraphElement>, RefAttributes<HTML
 const Text: FC<Props> = forwardRef<HTMLParagraphElement, Props>(
     ({ textType = EnumText.default, className = '', ...props }, ref) => {
         const textSize = {
-            [EnumText.default as string]: 'text-base',
-            [EnumText.large as string]: 'text-base md:text-lg lg:text-xl lg:leading-[1.5]',
+            [EnumText.default as string]: 'text-base leading-[1.55]',
+            [EnumText.large as string]: 'text-base md:text-lg lg:text-xl leading-[1.55] lg:leading-[1.6]',
         };
 
         return <p ref={ref} {...props} className={`relative w-full text-gray2 ${textSize[textType]} ${className}`} />;
