@@ -4,6 +4,8 @@ import { IImage } from '@/src/types/interfaces/Image';
 import { ImageLoader, ImgPlaceholder, Title } from '../../ui';
 import cn from 'classnames';
 
+import { PATHS } from '@/src/variables';
+
 type Props = {
     nfts: IImage[];
 };
@@ -20,7 +22,8 @@ const CollectionCardNfts: FC<Props> = ({ nfts }) => {
             {nftsArr.map((nft, index) =>
                 nft ? (
                     <ImageLoader key={nft.alt} className={cn('rounded-lg', { 'lg:col-span-3': index === 0 })}>
-                        <ImageLoader.Link href={nft.alt}>
+                        {/* href={nft.alt} */}
+                        <ImageLoader.Link href={PATHS.HOME}>
                             <ImageLoader.Image
                                 src={nft.src}
                                 alt={nft.alt}

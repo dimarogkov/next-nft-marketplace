@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { PATHS } from '@/src/variables';
-import { convertToSnakeCase } from '@/src/helpers';
+// import { convertToSnakeCase } from '@/src/helpers';
 import { EnumCard, EnumTitle } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import CollectionCardNfts from './CollectionCardNfts';
@@ -37,7 +37,8 @@ const CollectionCard: FC<Props> = ({ collection, cardType = EnumCard.gray, class
                     </Link>
                 </Title>
 
-                <Avatar href={convertToSnakeCase(author.userName)} src={author.avatar} userName={author.userName} />
+                {/* convertToSnakeCase(author.userName) */}
+                <Avatar href={PATHS.HOME} src={author.avatar} userName={author.userName} />
             </div>
         </div>
     );

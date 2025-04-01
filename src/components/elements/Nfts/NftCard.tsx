@@ -4,6 +4,8 @@ import { INFT } from '@/src/types/interfaces/NFT';
 import NftCardContent from './NftCardContent';
 import { ImageLoader } from '../../ui';
 
+import { PATHS } from '@/src/variables';
+
 type Props = {
     nft: INFT;
     cardType?: EnumCard;
@@ -28,7 +30,8 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumCard.gray, className = '' }) =
             className={`relative flex flex-col sm:flex-row lg:flex-col justify-between w-full rounded-lg overflow-hidden ${cardClasses[cardType]} ${className}`}
         >
             <ImageLoader className='w-full sm:w-[35%] md:w-[30%] lg:w-full sm:!h-full lg:!h-0 pb-[100%] sm:pb-0 lg:pb-[100%] sm:rounded-lg lg:rounded-none'>
-                <ImageLoader.Link href={img.alt}>
+                {/* href={img.alt} */}
+                <ImageLoader.Link href={PATHS.HOME}>
                     <ImageLoader.Image
                         src={img.src}
                         alt={img.alt}
