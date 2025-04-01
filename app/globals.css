@@ -9,6 +9,7 @@
 }
 
 html {
+    position: relative;
     --fallback-b1: #2b2b2b;
 }
 
