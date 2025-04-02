@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import Link from 'next/link';
-import { EnumSocial } from '@/src/types/enums';
+import { EnumColorStyle } from '@/src/types/enums';
 import { LucideProps } from 'lucide-react';
 
 import { PATHS } from '@/src/variables';
@@ -13,17 +13,17 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<H
 }
 
 const SocialLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
-    ({ href, icon: Icon, socialType = EnumSocial.purple, className = '', ...props }, ref) => {
+    ({ href, icon: Icon, socialType = EnumColorStyle.purple, className = '', ...props }, ref) => {
         const socialClasses = {
-            [EnumSocial.purple as string]: 'bg-purple',
-            [EnumSocial.light as string]: 'bg-white',
-            [EnumSocial.dark as string]: 'bg-black',
+            [EnumColorStyle.purple as string]: 'bg-purple',
+            [EnumColorStyle.light as string]: 'bg-white',
+            [EnumColorStyle.dark as string]: 'bg-black',
         };
 
         const iconClasses = {
-            [EnumSocial.purple as string]: 'text-white',
-            [EnumSocial.light as string]: 'text-black',
-            [EnumSocial.dark as string]: 'text-white',
+            [EnumColorStyle.purple as string]: 'text-white',
+            [EnumColorStyle.light as string]: 'text-black',
+            [EnumColorStyle.dark as string]: 'text-white',
         };
 
         return (

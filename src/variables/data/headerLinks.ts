@@ -4,7 +4,7 @@ import { ILink } from '@/src/types/interfaces/Link';
 
 export const HEADER_LINKS_DATA: ILink[] = [
     {
-        href: `${PATHS.MARKETPLACE}?activeTab=${EnumMarketplaceTabs.NFTs}`,
+        href: `${PATHS.MARKETPLACE}&activeTab=${EnumMarketplaceTabs.NFTs}`,
         text: 'Marketplace',
     },
     {

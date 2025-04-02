@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { EnumCard } from '@/src/types/enums';
+import { EnumColorStyle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftCardContent from './NftCardContent';
 import { ImageLoader } from '../../ui';
@@ -8,21 +8,21 @@ import { PATHS } from '@/src/variables';
 
 type Props = {
     nft: INFT;
-    cardType?: EnumCard;
+    cardType?: EnumColorStyle;
     className?: string;
 };
 
-const NftCard: FC<Props> = ({ nft, cardType = EnumCard.gray, className = '' }) => {
+const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '' }) => {
     const { img, ...content } = nft;
 
     const cardClasses = {
-        [EnumCard.gray as string]: 'lg:bg-gray',
-        [EnumCard.dark as string]: 'lg:bg-black',
+        [EnumColorStyle.gray as string]: 'lg:bg-gray',
+        [EnumColorStyle.dark as string]: 'lg:bg-black',
     };
 
     const cardContentClasses = {
-        [EnumCard.gray as string]: 'bg-gray',
-        [EnumCard.dark as string]: 'bg-black',
+        [EnumColorStyle.gray as string]: 'bg-gray',
+        [EnumColorStyle.dark as string]: 'bg-black',
     };
 
     return (

@@ -2,23 +2,23 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { PATHS } from '@/src/variables';
 // import { convertToSnakeCase } from '@/src/helpers';
-import { EnumCard, EnumTitle } from '@/src/types/enums';
+import { EnumColorStyle, EnumTitle } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import CollectionCardNfts from './CollectionCardNfts';
 import { Avatar, Title } from '../../ui';
 
 type Props = {
     collection: ICollection;
-    cardType?: EnumCard;
+    cardType?: EnumColorStyle;
     className?: string;
 };
 
-const CollectionCard: FC<Props> = ({ collection, cardType = EnumCard.gray, className = '' }) => {
+const CollectionCard: FC<Props> = ({ collection, cardType = EnumColorStyle.gray, className = '' }) => {
     const { name, author, nfts } = collection;
 
     const cardClasses = {
-        [EnumCard.gray as string]: 'bg-gray',
-        [EnumCard.dark as string]: 'bg-black',
+        [EnumColorStyle.gray as string]: 'bg-gray',
+        [EnumColorStyle.dark as string]: 'bg-black',
     };
 
     return (

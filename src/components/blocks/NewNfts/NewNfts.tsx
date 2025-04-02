@@ -23,7 +23,7 @@ const NewNfts = async () => {
                         </div>
 
                         <BtnLink
-                            href={`${PATHS.MARKETPLACE}?activeTab=${EnumMarketplaceTabs.NFTs}`}
+                            href={`${PATHS.MARKETPLACE}&activeTab=${EnumMarketplaceTabs.NFTs}`}
                             btnType={EnumBtn.outline}
                             icon={Eye}
                             className='!absolute sm:!relative bottom-0 sm:bottom-auto'

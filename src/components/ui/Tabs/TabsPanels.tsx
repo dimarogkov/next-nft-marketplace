@@ -22,11 +22,7 @@ interface Props extends HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLDivEle
 const TabsPanels: FC<Props> = forwardRef<HTMLDivElement, Props>(
     ({ activeIndex, className = '', setActiveIndex = () => {}, ...props }, ref) => {
         return (
-            <div
-                ref={ref}
-                {...props}
-                className={`relative w-full min-h-[50vh] py-7 md:py-10 bg-gray ${className}`}
-            >
+            <div ref={ref} {...props} className={`relative w-full py-7 md:py-10 bg-gray ${className}`}>
                 <div className='container'>
                     <AnimatePresence mode='wait'>
                         {Children.map(props.children, (child, index) => {
