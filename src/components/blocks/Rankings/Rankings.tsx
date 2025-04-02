@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getArtists } from '@/src/services';
 import { RankingsList } from '../../elements';
 
@@ -9,11 +10,13 @@ const Rankings = async () => {
         .map((artist, index) => ({ index: index + 1, ...artist }));
 
     return (
-        <section className='relative w-full section-padding-bottom'>
-            <div className='container'>
-                <RankingsList data={sortedArtists} />
-            </div>
-        </section>
+        <Suspense fallback={null}>
+            <section className='relative w-full section-padding-bottom'>
+                <div className='container'>
+                    <RankingsList data={sortedArtists} />
+                </div>
+            </section>
+        </Suspense>
     );
 };
 
