@@ -15,11 +15,13 @@ type Props = {
 const NftsTabs: FC<Props> = ({ data }) => {
     const [activeTabQuery, setActiveTabQuery] = useQueryState('activeTab', { defaultValue: '' });
     const [, setNameQuery] = useQueryState('name', { defaultValue: '' });
+    const [, setPageQuery] = useQueryState('page', { defaultValue: '' });
     const [nfts, collections] = data;
 
     useEffect(() => {
         setNameQuery('');
-    }, [activeTabQuery, setNameQuery]);
+        setPageQuery('1');
+    }, [activeTabQuery, setNameQuery, setPageQuery]);
 
     return (
         <Tabs>
@@ -50,7 +52,7 @@ const NftsTabs: FC<Props> = ({ data }) => {
 
             <Tabs.Panels>
                 <Tabs.Panel>
-                    <NftsList data={nfts.slice(0, 6)} />
+                    <NftsList data={nfts} />
                 </Tabs.Panel>
 
                 <Tabs.Panel>

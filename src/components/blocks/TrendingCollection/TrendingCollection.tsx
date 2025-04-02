@@ -23,7 +23,7 @@ const TrendingCollection = async () => {
                         </div>
 
                         <BtnLink
-                            href={`${PATHS.MARKETPLACE}?activeTab=${EnumMarketplaceTabs.Collections}`}
+                            href={`${PATHS.MARKETPLACE}&activeTab=${EnumMarketplaceTabs.Collections}`}
                             btnType={EnumBtn.outline}
                             icon={Eye}
                             className='!absolute sm:!relative bottom-0 sm:bottom-auto'

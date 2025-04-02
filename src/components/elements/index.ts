@@ -8,8 +8,9 @@ import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
 import { NftCard, NftsSearch, NftsTabs } from './Nfts';
 import { NoResultsFound } from './NoResultsFound';
+import { Pagination } from './Pagination';
 import { ProgressLine } from './ProgressLine';
-import { RankingCard } from './RankingCard';
+import { RankingsList } from './Rankings';
 import { Search } from './Search';
 import { SubscribeContent } from './Subscribe';
 import { TopCreatorsCard } from './TopCreators';
@@ -29,8 +30,9 @@ export {
     NftsSearch,
     NftsTabs,
     NoResultsFound,
+    Pagination,
     ProgressLine,
-    RankingCard,
+    RankingsList,
     Search,
     SubscribeContent,
     TopCreatorsCard,
