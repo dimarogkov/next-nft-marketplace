@@ -1,5 +1,6 @@
 import { Banner } from './Banner';
 import { Breadcrumbs } from './Breadcrumbs';
+import { Clients } from './Clients';
 import { Footer } from './Footer';
 import { Gallery } from './Gallery';
 import { Header } from './Header';
@@ -16,6 +17,7 @@ import { TrendingCollection } from './TrendingCollection';
 export {
     Banner,
     Breadcrumbs,
+    Clients,
     Footer,
     Gallery,
     Header,

@@ -1,4 +1,5 @@
 import {
+    CLIENTS_DATA,
     GALLERY_IMGS_DATA,
     HEADER_LINKS_DATA,
     HERO_INFO_DATA,
@@ -10,6 +11,7 @@ import { API, PROJECT_NAME } from './main';
 import { PATHS } from './paths';
 
 export {
+    CLIENTS_DATA,
     GALLERY_IMGS_DATA,
     HEADER_LINKS_DATA,
     HERO_INFO_DATA,

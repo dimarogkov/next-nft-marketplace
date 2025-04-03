@@ -1,4 +1,5 @@
 import {
+    Clients,
     Gallery,
     Hero,
     HowItWorks,
@@ -19,6 +20,7 @@ const HomePage = () => {
             <Subscribe />
             <NewNfts />
             <NewEvent />
+            <Clients />
             <HowItWorks />
         </>
     );
