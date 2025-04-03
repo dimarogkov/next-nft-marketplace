@@ -2,7 +2,6 @@
 import { FC, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import { PATHS } from '@/src/variables';
-
 import { Breadcrumbs, Footer, Header } from '../blocks';
 import { ProgressLine } from '../elements';
 import { LenisScroll } from '../other';
@@ -14,7 +13,12 @@ type Props = {
 
 const RootLayout: FC<Props> = ({ children }) => {
     const pathname = usePathname();
-    const isVisible = pathname !== '/' && Object.values(PATHS).includes(pathname);
+
+    const isVisible =
+        pathname !== '/' &&
+        Object.values(PATHS)
+            .map((path) => path.split('?')[0])
+            .includes(pathname);
 
     return (
         <LenisScroll>
@@ -24,13 +28,14 @@ const RootLayout: FC<Props> = ({ children }) => {
             {isVisible && <Breadcrumbs pathname={pathname} />}
 
             <main
-                className={cn('relative flex flex-col grow w-full', {
+                className={cn('relative flex flex-col grow w-full section-padding-bottom', {
                     'pt-[116px] sm:pt-[130px] lg:pt-[150px]': isVisible,
                     'pt-[70px] sm:pt-20 lg:pt-[100px]': !isVisible,
                 })}
             >
                 {children}
             </main>
+
             <Footer />
         </LenisScroll>
     );

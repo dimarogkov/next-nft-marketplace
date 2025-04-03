@@ -51,19 +51,23 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .section-height-full {
-    @apply h-[calc(100vh-70px)] sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-100px)];
+    @apply h-[calc(100vh-102px)] sm:h-[calc(100vh-112px)] md:h-[calc(100vh-128px)] lg:h-[calc(100vh-160px)];
+}
+
+.section-height-full-with-breadcrumbs {
+    @apply h-[calc(100vh-148px)] sm:h-[calc(100vh-162px)] md:h-[calc(100vh-178px)] lg:h-[calc(100vh-210px)];
 }
 
 .section-padding {
-    @apply py-10 md:py-12 lg:py-20;
+    @apply py-8 md:py-12 lg:py-[60px];
 }
 
 .section-padding-bottom {
-    @apply pb-10 md:pb-12 lg:pb-20;
+    @apply pb-8 md:pb-12 lg:pb-[60px];
 }
 
 .height-btn {
-    @apply h-10 md:h-12;
+    @apply h-12;
 }
 
 .img {

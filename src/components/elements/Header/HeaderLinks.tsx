@@ -37,7 +37,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                         className={cn(
                             'font-semibold sm:font-medium text-3xl sm:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple',
                             {
-                                'text-purple': pathname.startsWith(href),
+                                'text-purple': pathname.startsWith(href.split('?')[0]),
                             }
                         )}
                     >

@@ -14,8 +14,8 @@ const MarketplacePage = () => {
                 className='!pb-0 mb-6 last:mb-0'
             />
             <Nfts />
-            <Subscribe />
             <TopCreators />
+            <Subscribe />
         </>
     );
 };

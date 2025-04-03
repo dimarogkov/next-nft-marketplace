@@ -13,6 +13,6 @@ export const HEADER_LINKS_DATA: ILink[] = [
     },
     {
         href: PATHS.CONNECT_WALLET,
-        text: 'Connect a Wallet',
+        text: 'Connect Wallet',
     },
 ];

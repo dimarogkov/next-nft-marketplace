@@ -10,8 +10,8 @@ const RankingsPage = () => {
         <>
             <Banner title='Top Creators' text='Check out top ranking NFT artists on the NFT Marketplace.' />
             <Rankings />
-            <Subscribe />
             <NewNfts />
+            <Subscribe />
         </>
     );
 };
