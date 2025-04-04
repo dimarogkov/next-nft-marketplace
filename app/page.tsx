@@ -1,4 +1,5 @@
 import {
+    CallToAction,
     Clients,
     Gallery,
     Hero,
@@ -21,6 +22,7 @@ const HomePage = () => {
             <NewNfts />
             <NewEvent />
             <Clients />
+            <CallToAction />
             <HowItWorks />
         </>
     );

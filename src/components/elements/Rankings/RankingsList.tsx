@@ -24,7 +24,7 @@ const RankingsList: FC<Props> = ({ data }) => {
                 <Text className='!hidden sm:!block'>Volume</Text>
             </div>
 
-            <div className='flex flex-col gap-4 sm:gap-5 w-full mb-7 md:mb-10 last:mb-0'>
+            <div className='flex flex-col gap-4 sm:gap-5 w-full mb-4 sm:mb-7 md:mb-10 last:mb-0'>
                 {slicedData.map((artist) => (
                     <RankingCard key={artist.userName} artist={artist} />
                 ))}

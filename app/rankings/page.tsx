@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Banner, NewNfts, Rankings, Subscribe } from '@/src/components/blocks';
+import { Banner, CallToAction, NewNfts, Rankings, Subscribe } from '@/src/components/blocks';
 
 export const metadata: Metadata = {
     title: 'Rankings',
@@ -11,6 +11,7 @@ const RankingsPage = () => {
             <Banner title='Top Creators' text='Check out top ranking NFT artists on the NFT Marketplace.' />
             <Rankings />
             <NewNfts />
+            <CallToAction />
             <Subscribe />
         </>
     );
