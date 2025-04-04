@@ -23,10 +23,13 @@ const Logo: FC<Props> = ({ disableAnimation = false, className = '' }) => {
             )}
         >
             <div
-                className={cn('flex items-center justify-center size-10 rounded-full bg-purple duration-300', {
-                    'lg:z-10 lg:origin-left lg:scale-[1.2] lg:will-change-transform lg:transition-transform lg:duration-300 lg:group-hover:scale-100':
-                        !disableAnimation,
-                })}
+                className={cn(
+                    'flex items-center justify-center size-10 rounded-full bg-gradient-to-br from-purple to-violet-600 duration-300',
+                    {
+                        'lg:z-10 lg:origin-left lg:scale-[1.2] lg:will-change-transform lg:transition-transform lg:duration-300 lg:group-hover:scale-100':
+                            !disableAnimation,
+                    }
+                )}
             >
                 <Store className='size-6 text-white' />
             </div>
