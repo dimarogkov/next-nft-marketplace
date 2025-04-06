@@ -1,6 +1,5 @@
 import {
     CLIENTS_DATA,
-    GALLERY_IMGS_DATA,
     HEADER_LINKS_DATA,
     HERO_INFO_DATA,
     HOW_IT_WORKS_ITEMS_DATA,
@@ -12,7 +11,6 @@ import { PATHS } from './paths';
 
 export {
     CLIENTS_DATA,
-    GALLERY_IMGS_DATA,
     HEADER_LINKS_DATA,
     HERO_INFO_DATA,
     HOW_IT_WORKS_ITEMS_DATA,
