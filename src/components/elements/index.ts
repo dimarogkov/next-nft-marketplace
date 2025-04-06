@@ -1,7 +1,6 @@
 import { CollectionCard } from './CollectionCard';
 import { ConnectWallet } from './ConnectWallet';
 import { SubscribeForm } from './Form';
-import { GalleryColumn } from './Gallery';
 import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
 import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
@@ -20,7 +19,6 @@ export {
     CollectionCard,
     ConnectWallet,
     SubscribeForm,
-    GalleryColumn,
     HeaderBurger,
     HeaderLayer,
     HeaderLinks,
