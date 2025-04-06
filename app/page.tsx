@@ -1,7 +1,6 @@
 import {
     CallToAction,
     Clients,
-    Gallery,
     Hero,
     HowItWorks,
     NewEvent,
@@ -17,12 +16,11 @@ const HomePage = () => {
             <Hero />
             <TrendingCollection />
             <TopCreators />
-            <Gallery />
+            <CallToAction />
             <Subscribe />
             <NewNfts />
             <NewEvent />
             <Clients />
-            <CallToAction />
             <HowItWorks />
         </>
     );

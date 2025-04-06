@@ -4,7 +4,6 @@ import { CallToAction } from './CallToAction';
 import { Clients } from './Clients';
 import { Footer } from './Footer';
 import { FullPage } from './FullPage';
-import { Gallery } from './Gallery';
 import { Header } from './Header';
 import { Hero } from './Hero';
 import { HowItWorks } from './HowItWorks';
@@ -23,7 +22,6 @@ export {
     Clients,
     Footer,
     FullPage,
-    Gallery,
     Header,
     Hero,
     HowItWorks,
