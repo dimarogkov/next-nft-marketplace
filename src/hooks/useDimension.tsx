@@ -17,7 +17,7 @@ const useDimension = () => {
         };
     }, []);
 
-    return dimension;
+    return { ...dimension };
 };
 
 export default useDimension;

@@ -62,6 +62,10 @@ input[type='number']::-webkit-outer-spin-button {
     @apply py-8 md:py-12 lg:py-[60px];
 }
 
+.section-padding-top {
+    @apply pt-8 md:pt-12 lg:pt-[60px];
+}
+
 .section-padding-bottom {
     @apply pb-8 md:pb-12 lg:pb-[60px];
 }

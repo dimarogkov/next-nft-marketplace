@@ -1,4 +1,5 @@
 import { CollectionCard } from './CollectionCard';
+import { ConnectWallet } from './ConnectWallet';
 import { SubscribeForm } from './Form';
 import { GalleryColumn } from './Gallery';
 import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
@@ -17,6 +18,7 @@ import { TopCreatorsCard } from './TopCreators';
 
 export {
     CollectionCard,
+    ConnectWallet,
     SubscribeForm,
     GalleryColumn,
     HeaderBurger,

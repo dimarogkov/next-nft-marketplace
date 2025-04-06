@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
-import { PATHS } from '@/src/variables';
+import { useBreadcrumbsStatus } from '@/src/hooks';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { Btn, Text, Title } from '@/src/components/ui';
 import { RotateCw } from 'lucide-react';
@@ -14,18 +14,13 @@ type Props = {
 
 const Error: FC<Props> = ({ error, reset = () => {} }) => {
     const pathname = usePathname();
-
-    const isBreadcrumbsVisible =
-        pathname !== '/' &&
-        Object.values(PATHS)
-            .map((path) => path.split('?')[0])
-            .includes(pathname);
+    const { isBreadcrumbsExist } = useBreadcrumbsStatus(pathname);
 
     return (
         <section
             className={cn('relative grow w-full', {
-                'section-height-full-with-breadcrumbs': isBreadcrumbsVisible,
-                'section-height-full': !isBreadcrumbsVisible,
+                'section-height-full-with-breadcrumbs': isBreadcrumbsExist,
+                'section-height-full': !isBreadcrumbsExist,
             })}
         >
             <div className='flex items-center justify-center container h-full'>

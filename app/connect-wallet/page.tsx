@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { Title } from '@/src/components/ui';
+import { FullPage } from '@/src/components/blocks';
+import { ConnectWallet } from '@/src/components/elements';
 
 export const metadata: Metadata = {
     title: 'Connect a Wallet',
@@ -8,11 +9,9 @@ export const metadata: Metadata = {
 const ConnectWalletPage = () => {
     return (
         <>
-            <section className='relative w-full section-padding'>
-                <div className='container'>
-                    <Title>Connect a Wallet Page</Title>
-                </div>
-            </section>
+            <FullPage src='/new_event.jpg' alt='connect_wallet'>
+                <ConnectWallet />
+            </FullPage>
         </>
     );
 };
