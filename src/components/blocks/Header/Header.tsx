@@ -1,11 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+// import { useSession } from 'next-auth/react';
 import { useDisableScroll } from '@/src/hooks';
 import { HeaderBurger, HeaderLayer, HeaderLinks, Logo } from '../../elements';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    // const { data: session } = useSession();
     const pathname = usePathname();
 
     useEffect(() => {
@@ -22,6 +24,7 @@ const Header = () => {
             <div className='relative flex items-center justify-between container h-full'>
                 <Logo />
                 <HeaderLinks isOpen={isOpen} />
+                {/* {session && <span className='rounded-lg px-2.5 bg-purple'>{session?.user?.name}</span>} */}
                 <HeaderBurger isOpen={isOpen} toggleMenu={toggleMenu} />
                 <HeaderLayer isOpen={isOpen} closeMenu={closeMenu} />
             </div>

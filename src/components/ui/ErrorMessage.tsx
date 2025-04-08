@@ -11,7 +11,7 @@ const ErrorMessage: FC<Props> = forwardRef<HTMLParagraphElement, Props>(({ class
         <div
             ref={ref}
             {...props}
-            className={`relative flex items-center gap-1.5 w-full height-btn rounded-lg border border-red px-4 md:px-5 bg-red/15 ${className}`}
+            className={`relative flex items-center gap-2 w-full min-h-12 py-2.5 rounded-lg border border-red px-4 md:px-5 bg-red/15 ${className}`}
         >
             <TriangleAlert className='size-5 min-w-5 text-red' />
             <Text className='text-red'>{props.children}</Text>

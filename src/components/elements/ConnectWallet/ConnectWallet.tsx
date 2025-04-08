@@ -1,4 +1,4 @@
-import { WALLET_OPTIONS_DATA } from '@/src/variables/data/walletOptions';
+import { WALLET_OPTIONS_DATA } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import ConnectWalletOption from './ConnectWalletOption';
 import { Text, Title } from '../../ui';

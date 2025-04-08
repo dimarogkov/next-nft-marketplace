@@ -16,6 +16,7 @@ const config: Config = {
                 white: '#fff',
                 purple: '#a259ff',
                 green: '#00ac4f',
+                yellow: 'oklch(76.9% 0.188 70.08)',
                 red: '#da4934',
             },
         },

@@ -24,8 +24,8 @@ const CallToAction = () => {
                         </div>
                     </div>
 
-                    <BtnLink href={PATHS.SIGN_UP} icon={ArrowUpRight}>
-                        Sign Up
+                    <BtnLink href={PATHS.SIGN_IN} icon={ArrowUpRight}>
+                        Sign In
                     </BtnLink>
                 </div>
             </div>

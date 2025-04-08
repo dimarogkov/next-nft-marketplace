@@ -25,7 +25,7 @@ const NftsTabs: FC<Props> = ({ data }) => {
 
     return (
         <Tabs>
-            <Tabs.TabList>
+            <Tabs.TabList classNameList='md:!px-5'>
                 {[EnumMarketplaceTabs.NFTs, EnumMarketplaceTabs.Collections].map((tab) => (
                     <Tabs.Tab
                         key={tab}
