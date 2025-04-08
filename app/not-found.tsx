@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { PATHS } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
+import { FullPage } from '@/src/components/blocks';
 import { BtnLink, Text, Title } from '@/src/components/ui';
 import { ArrowLeft } from 'lucide-react';
 
@@ -10,9 +11,9 @@ export const metadata: Metadata = {
 
 const NotFoundPage = () => {
     return (
-        <section className='relative grow w-full section-height-full'>
-            <div className='flex items-center justify-center container h-full'>
-                <div className='w-full sm:max-w-[550px] text-center pb-[70px] sm:pb-[80px] lg:pb-[100px]'>
+        <FullPage>
+            <div className='flex items-center justify-center container'>
+                <div className='w-full sm:max-w-[550px] text-center'>
                     <Title titleType={EnumTitle.h2} className='mb-2 sm:mb-3 last:mb-0'>
                         Page not Found
                     </Title>
@@ -27,7 +28,7 @@ const NotFoundPage = () => {
                     </BtnLink>
                 </div>
             </div>
-        </section>
+        </FullPage>
     );
 };
 

@@ -5,6 +5,8 @@ import {
     HOW_IT_WORKS_ITEMS_DATA,
     NEW_EVENT_DATA,
     SOCIAL_LINKS_DATA,
+    USER_DATA,
+    WALLET_OPTIONS_DATA,
 } from './data';
 import { API, PROJECT_NAME } from './main';
 import { PATHS } from './paths';
@@ -16,6 +18,8 @@ export {
     HOW_IT_WORKS_ITEMS_DATA,
     NEW_EVENT_DATA,
     SOCIAL_LINKS_DATA,
+    USER_DATA,
+    WALLET_OPTIONS_DATA,
     API,
     PROJECT_NAME,
     PATHS,

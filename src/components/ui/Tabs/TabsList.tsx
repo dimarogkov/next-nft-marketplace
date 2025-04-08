@@ -23,7 +23,7 @@ const TabsList: FC<Props> = forwardRef<HTMLDivElement, Props>(
     ({ activeIndex, className = '', classNameList = '', setActiveIndex = () => {}, ...props }, ref) => {
         return (
             <div ref={ref} {...props} className={`relative border-t border-gray ${className}`}>
-                <ul className={`flex container !px-0 md:!px-5 ${classNameList}`}>
+                <ul className={`flex container !px-0 ${classNameList}`}>
                     {Children.map(props.children, (child, index) => {
                         if (isValidElement(child)) {
                             return cloneElement(child as ReactElement, {

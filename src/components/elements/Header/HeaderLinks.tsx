@@ -1,10 +1,11 @@
 'use client';
 import { FC } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { redirect } from 'next/navigation';
+import { signOut, useSession } from 'next-auth/react';
 import { HEADER_LINKS_DATA, PATHS } from '@/src/variables';
-import { BtnLink } from '../../ui';
-import { CircleUserRound } from 'lucide-react';
+import HeaderLink from './HeaderLink';
+import { Btn, BtnLink } from '../../ui';
+import { CircleUser, LogOut } from 'lucide-react';
 import cn from 'classnames';
 
 type Props = {
@@ -12,7 +13,13 @@ type Props = {
 };
 
 const HeaderLinks: FC<Props> = ({ isOpen }) => {
-    const pathname = usePathname();
+    const { data: session } = useSession();
+    const links = HEADER_LINKS_DATA.filter((link) => (!session ? link.href !== PATHS.CONNECT_WALLET : link));
+
+    const removeSession = () => {
+        signOut();
+        redirect(PATHS.HOME);
+    };
 
     return (
         <div
@@ -27,31 +34,30 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
         >
             <div
                 className={cn(
-                    'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-8 sm:gap-6 lg:gap-10 w-full h-full pb-24 sm:pb-0'
+                    'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-8 sm:gap-6 lg:gap-10 w-full h-full pb-32 md:pb-16 lg:pb-0'
                 )}
             >
-                {HEADER_LINKS_DATA.map(({ href, text }) => (
-                    <Link
-                        key={text}
-                        href={href}
-                        className={cn(
-                            'font-semibold sm:font-medium text-3xl sm:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple',
-                            {
-                                'text-purple': pathname.startsWith(href.split('?')[0]),
-                            }
-                        )}
-                    >
-                        {text}
-                    </Link>
+                {links.map((link) => (
+                    <HeaderLink key={link.href} link={link} />
                 ))}
 
-                <BtnLink
-                    href={PATHS.SIGN_UP}
-                    icon={CircleUserRound}
-                    className='!absolute sm:!relative bottom-0 sm:bottom-auto'
-                >
-                    Sign Up
-                </BtnLink>
+                {session ? (
+                    <Btn
+                        icon={LogOut}
+                        onClick={removeSession}
+                        className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
+                    >
+                        Sign Out
+                    </Btn>
+                ) : (
+                    <BtnLink
+                        href={PATHS.SIGN_IN}
+                        icon={CircleUser}
+                        className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
+                    >
+                        Sign In
+                    </BtnLink>
+                )}
             </div>
         </div>
     );

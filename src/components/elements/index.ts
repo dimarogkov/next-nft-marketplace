@@ -12,6 +12,7 @@ import { Pagination } from './Pagination';
 import { ProgressLine } from './ProgressLine';
 import { RankingsList } from './Rankings';
 import { Search } from './Search';
+import { SignIn, SignInContent } from './SignIn';
 import { SubscribeContent } from './Subscribe';
 import { TopCreatorsCard } from './TopCreators';
 
@@ -34,6 +35,8 @@ export {
     ProgressLine,
     RankingsList,
     Search,
+    SignIn,
+    SignInContent,
     SubscribeContent,
     TopCreatorsCard,
 };

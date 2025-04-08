@@ -15,7 +15,7 @@ const HeroContent = () => {
                     artists.
                 </Text>
 
-                <BtnLink href={PATHS.SIGN_UP} icon={Rocket}>
+                <BtnLink href={PATHS.SIGN_IN} icon={Rocket}>
                     Get Started
                 </BtnLink>
             </div>

@@ -30,7 +30,7 @@ const SubscribeForm = () => {
             {errors.email && <ErrorMessage className='mb-2.5'>{errors.email.message}</ErrorMessage>}
 
             <div className='flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-2 w-full'>
-                <Label className='flex flex-col gap-2 w-full'>
+                <Label>
                     <Input
                         {...register('email')}
                         placeholder='Enter your email here'
