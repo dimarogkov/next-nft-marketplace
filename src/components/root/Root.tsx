@@ -10,7 +10,7 @@ type Props = {
 const Root: FC<Props> = ({ children }) => {
     return (
         <html lang='en' suppressHydrationWarning>
-            <body className={font.className}>{children}</body>
+            <body className={`flex flex-col w-full min-h-screen ${font.className}`}>{children}</body>
         </html>
     );
 };

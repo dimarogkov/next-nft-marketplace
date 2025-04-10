@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 import { signInFormOptions } from '@/src/helpers/formOptions';
@@ -10,6 +10,7 @@ import { PATHS } from '@/src/variables';
 
 const SignInForm = () => {
     const [responseError, setResponseError] = useState('');
+    const router = useRouter();
 
     const {
         register,
@@ -23,7 +24,7 @@ const SignInForm = () => {
         const response = await signIn('credentials', { email, password, redirect: false });
 
         if (response && !response.error) {
-            redirect(PATHS.HOME);
+            router.push(PATHS.HOME);
         } else {
             setResponseError('Your Email or Password is wrong!');
         }

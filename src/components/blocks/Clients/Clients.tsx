@@ -27,8 +27,8 @@ const Clients = () => {
                                 className={cn(
                                     'relative group flex items-center justify-center w-full h-[90px] md:h-[100px] rounded-lg border border-black',
                                     {
+                                        'hidden md:flex': index > 5 && index < 8,
                                         'hidden lg:flex': index > 7,
-                                        'hidden md:flex': index > 5,
                                     }
                                 )}
                             >

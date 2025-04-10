@@ -9,14 +9,6 @@ import { AuthBtn, InfoMessage, Text } from '../../ui';
 import Image from 'next/image';
 
 const SignIn = () => {
-    const handleClick = async (type: string) => {
-        const response = await signIn(type, { redirect: false });
-
-        if (response && !response.error) {
-            redirect(PATHS.HOME);
-        }
-    };
-
     return (
         <div className='relative w-full rounded-lg p-4 md:p-5 overflow-hidden border border-gray'>
             <InfoMessage className='mb-5 last:mb-0'>
@@ -31,12 +23,12 @@ const SignIn = () => {
             </div>
 
             <div className='flex flex-col gap-2.5 w-full'>
-                <AuthBtn btnType={EnumBtn.light} onClick={() => handleClick('google')}>
+                <AuthBtn btnType={EnumBtn.light} onClick={() => signIn('google', { callbackUrl: PATHS.HOME })}>
                     <Image src='/google.png' alt='google' width={20} height={20} />
                     <span>Continue with Google</span>
                 </AuthBtn>
 
-                <AuthBtn btnType={EnumBtn.light} onClick={() => handleClick('github')}>
+                <AuthBtn btnType={EnumBtn.light} onClick={() => signIn('github', { callbackUrl: PATHS.HOME })}>
                     <Image src='/github.png' alt='github' width={20} height={20} />
                     <span>Continue with Github</span>
                 </AuthBtn>

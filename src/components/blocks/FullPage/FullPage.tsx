@@ -1,6 +1,5 @@
 'use client';
 import { FC, ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
 import { useBreadcrumbsStatus } from '@/src/hooks';
 import cn from 'classnames';
 
@@ -9,8 +8,7 @@ type Props = {
 };
 
 const FullPage: FC<Props> = ({ children }) => {
-    const pathname = usePathname();
-    const { isBreadcrumbsExist } = useBreadcrumbsStatus(pathname);
+    const { isBreadcrumbsExist } = useBreadcrumbsStatus();
 
     return (
         <section
