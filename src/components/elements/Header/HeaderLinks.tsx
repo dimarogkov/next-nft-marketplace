@@ -1,6 +1,5 @@
 'use client';
 import { FC } from 'react';
-import { redirect } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
 import { HEADER_LINKS_DATA, PATHS } from '@/src/variables';
 import HeaderLink from './HeaderLink';
@@ -15,11 +14,6 @@ type Props = {
 const HeaderLinks: FC<Props> = ({ isOpen }) => {
     const { data: session } = useSession();
     const links = HEADER_LINKS_DATA.filter((link) => (!session ? link.href !== PATHS.CONNECT_WALLET : link));
-
-    const removeSession = () => {
-        signOut();
-        redirect(PATHS.HOME);
-    };
 
     return (
         <div
@@ -44,7 +38,7 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                 {session ? (
                     <Btn
                         icon={LogOut}
-                        onClick={removeSession}
+                        onClick={() => signOut({ callbackUrl: PATHS.HOME })}
                         className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
                     >
                         Sign Out

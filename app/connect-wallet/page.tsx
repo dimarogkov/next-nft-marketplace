@@ -1,8 +1,4 @@
 import { Metadata } from 'next';
-import { redirect } from 'next/navigation';
-import { getServerSession } from 'next-auth';
-import { PATHS } from '@/src/variables';
-import { authConfig } from '@/src/helpers';
 import { FullPage } from '@/src/components/blocks';
 import { ConnectWallet } from '@/src/components/elements';
 import { ImageLoader } from '@/src/components/ui';
@@ -11,25 +7,17 @@ export const metadata: Metadata = {
     title: 'Connect a Wallet',
 };
 
-const ConnectWalletPage = async () => {
-    const session = await getServerSession(authConfig);
-
-    if (!session) {
-        redirect(PATHS.HOME);
-    }
-
+const ConnectWalletPage = () => {
     return (
-        <>
-            <FullPage>
-                <div className='relative grid grid-cols-1 md:grid-cols-2 grow items-center justify-between gap-7 lg:gap-10 w-full h-full'>
-                    <ConnectWallet />
+        <FullPage>
+            <div className='relative grid grid-cols-1 md:grid-cols-2 grow items-center justify-between gap-7 lg:gap-10 w-full h-full'>
+                <ConnectWallet />
 
-                    <ImageLoader className='hidden md:block !h-full !pb-0 rounded-lg'>
-                        <ImageLoader.Image src='/new_event.jpg' alt='connect_wallet' />
-                    </ImageLoader>
-                </div>
-            </FullPage>
-        </>
+                <ImageLoader className='hidden md:block !h-full !pb-0 rounded-lg'>
+                    <ImageLoader.Image src='/new_event.jpg' alt='connect_wallet' />
+                </ImageLoader>
+            </div>
+        </FullPage>
     );
 };
 

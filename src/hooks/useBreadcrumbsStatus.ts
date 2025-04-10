@@ -1,6 +1,9 @@
+import { usePathname } from 'next/navigation';
 import { PATHS } from '../variables';
 
-const useBreadcrumbsStatus = (pathname: string) => {
+const useBreadcrumbsStatus = (): { isBreadcrumbsExist: boolean } => {
+    const pathname = usePathname();
+
     const isExit =
         pathname !== '/' &&
         Object.values(PATHS)

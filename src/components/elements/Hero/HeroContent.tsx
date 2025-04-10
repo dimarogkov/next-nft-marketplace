@@ -1,10 +1,14 @@
+import { getServerSession } from 'next-auth';
 import { HERO_INFO_DATA, PATHS } from '@/src/variables';
+import { authConfig } from '@/src/helpers';
 import { EnumText } from '@/src/types/enums';
 import HeroInfoItem from './HeroInfoItem';
 import { BtnLink, Text, Title } from '../../ui';
 import { Rocket } from 'lucide-react';
 
-const HeroContent = () => {
+const HeroContent = async () => {
+    const session = await getServerSession(authConfig);
+
     return (
         <div className='relative order-1 sm:order-none w-full'>
             <div className='w-full mb-7 md:mb-7 last:mb-0'>
@@ -15,7 +19,7 @@ const HeroContent = () => {
                     artists.
                 </Text>
 
-                <BtnLink href={PATHS.SIGN_IN} icon={Rocket}>
+                <BtnLink href={session ? PATHS.HOME : PATHS.SIGN_IN} icon={Rocket}>
                     Get Started
                 </BtnLink>
             </div>
