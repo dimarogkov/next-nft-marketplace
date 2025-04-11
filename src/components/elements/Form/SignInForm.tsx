@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
+import { PATHS } from '@/src/variables';
 import { signInFormOptions } from '@/src/helpers/formOptions';
 import { Btn, ErrorMessage, Input, Label } from '../../ui';
 import { CircleUser } from 'lucide-react';
-import { PATHS } from '@/src/variables';
 
 const SignInForm = () => {
     const [responseError, setResponseError] = useState('');

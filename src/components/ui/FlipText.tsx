@@ -10,25 +10,17 @@ interface Props extends HTMLMotionProps<'p'>, RefAttributes<HTMLParagraphElement
 const FlipText: FC<Props> = forwardRef<HTMLParagraphElement, Props>(({ text, children, ...props }, ref) => {
     const firstLetterAnimation = (index: number): HTMLMotionProps<'span'> => ({
         variants: {
-            initial: {
-                y: 0,
-            },
+            initial: { y: 0 },
             hovered: {
                 y: '-100%',
-                transition: {
-                    duration: 0.25,
-                    delay: 0.025 * index,
-                    ease: [0.215, 0.61, 0.355, 1],
-                },
+                transition: { duration: 0.25, delay: 0.025 * index, ease: [0.215, 0.61, 0.355, 1] },
             },
         },
     });
 
     const secondLetterAnimation = (index: number): HTMLMotionProps<'span'> => ({
         variants: {
-            initial: {
-                y: '100%',
-            },
+            initial: { y: '100%' },
             hovered: {
                 y: 0,
                 transition: {

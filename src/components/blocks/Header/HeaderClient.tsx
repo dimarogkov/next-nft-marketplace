@@ -3,8 +3,10 @@ import { FC, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
+import { AdapterUser } from 'next-auth/adapters';
 import { useDisableScroll } from '@/src/hooks';
-import { HeaderBurger, HeaderLayer, HeaderLinks, Logo } from '../../elements';
+import { IArtist } from '@/src/types/interfaces/Artist';
+import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser, Logo } from '../../elements';
 
 type Props = {
     initialSession: Session | null;
@@ -31,10 +33,12 @@ const HeaderClient: FC<Props> = ({ initialSession }) => {
             <div className='relative flex items-center justify-between container h-full'>
                 <Logo />
 
-                {status !== 'loading' && <HeaderLinks isOpen={isOpen} />}
-                {session && <span className='rounded-lg px-2.5 bg-purple'>{session?.user?.name}</span>}
+                <div className='flex items-center gap-5 sm:gap-6 lg:gap-8 h-full'>
+                    {status !== 'loading' && <HeaderLinks isOpen={isOpen} session={session} />}
+                    <HeaderBurger isOpen={isOpen} toggleMenu={toggleMenu} />
+                    {session && <HeaderUser user={session.user as IArtist & AdapterUser} closeMenu={closeMenu} />}
+                </div>
 
-                <HeaderBurger isOpen={isOpen} toggleMenu={toggleMenu} />
                 <HeaderLayer isOpen={isOpen} closeMenu={closeMenu} />
             </div>
         </header>

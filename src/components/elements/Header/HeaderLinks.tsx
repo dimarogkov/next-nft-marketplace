@@ -1,20 +1,19 @@
 'use client';
 import { FC } from 'react';
-import { signOut, useSession } from 'next-auth/react';
+import { Session } from 'next-auth';
 import { HEADER_LINKS_DATA, PATHS } from '@/src/variables';
 import HeaderLink from './HeaderLink';
-import { Btn, BtnLink } from '../../ui';
-import { CircleUser, LogOut } from 'lucide-react';
+import { EnumBtn } from '@/src/types/enums';
+import { BtnLink } from '../../ui';
+import { CircleUser, Wallet } from 'lucide-react';
 import cn from 'classnames';
 
 type Props = {
     isOpen: boolean;
+    session: Session | null;
 };
 
-const HeaderLinks: FC<Props> = ({ isOpen }) => {
-    const { data: session } = useSession();
-    const links = HEADER_LINKS_DATA.filter((link) => (!session ? link.href !== PATHS.CONNECT_WALLET : link));
-
+const HeaderLinks: FC<Props> = ({ isOpen, session }) => {
     return (
         <div
             className={cn(
@@ -31,22 +30,24 @@ const HeaderLinks: FC<Props> = ({ isOpen }) => {
                     'relative flex flex-col lg:flex-row lg:items-center justify-center sm:justify-normal gap-8 sm:gap-6 lg:gap-10 w-full h-full pb-32 md:pb-16 lg:pb-0'
                 )}
             >
-                {links.map((link) => (
+                {HEADER_LINKS_DATA.map((link) => (
                     <HeaderLink key={link.href} link={link} />
                 ))}
 
                 {session ? (
-                    <Btn
-                        icon={LogOut}
-                        onClick={() => signOut({ callbackUrl: PATHS.HOME })}
+                    <BtnLink
+                        href={PATHS.CONNECT_WALLET}
+                        icon={Wallet}
+                        btnType={EnumBtn.outline}
                         className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
                     >
-                        Sign Out
-                    </Btn>
+                        Connect Wallet
+                    </BtnLink>
                 ) : (
                     <BtnLink
                         href={PATHS.SIGN_IN}
                         icon={CircleUser}
+                        btnType={EnumBtn.outline}
                         className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
                     >
                         Sign In

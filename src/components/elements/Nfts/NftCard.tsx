@@ -1,10 +1,9 @@
 import { FC } from 'react';
+import { PATHS } from '@/src/variables';
 import { EnumColorStyle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftCardContent from './NftCardContent';
 import { ImageLoader } from '../../ui';
-
-import { PATHS } from '@/src/variables';
 
 type Props = {
     nft: INFT;

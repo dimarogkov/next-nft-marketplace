@@ -13,7 +13,7 @@ type Props = {
 };
 
 const NftsTabs: FC<Props> = ({ data }) => {
-    const [activeTabQuery, setActiveTabQuery] = useQueryState('activeTab', { defaultValue: '' });
+    const [tabQuery, setTabQuery] = useQueryState('tab', { defaultValue: '' });
     const [, setNameQuery] = useQueryState('name', { defaultValue: '' });
     const [, setPageQuery] = useQueryState('page', { defaultValue: '' });
     const [nfts, collections] = data;
@@ -21,7 +21,7 @@ const NftsTabs: FC<Props> = ({ data }) => {
     useEffect(() => {
         setNameQuery('');
         setPageQuery('1');
-    }, [activeTabQuery, setNameQuery, setPageQuery]);
+    }, [tabQuery, setNameQuery, setPageQuery]);
 
     return (
         <Tabs>
@@ -29,8 +29,8 @@ const NftsTabs: FC<Props> = ({ data }) => {
                 {[EnumMarketplaceTabs.NFTs, EnumMarketplaceTabs.Collections].map((tab) => (
                     <Tabs.Tab
                         key={tab}
-                        isActive={tab === activeTabQuery}
-                        onMouseDown={() => setActiveTabQuery(tab)}
+                        isActive={tab === tabQuery}
+                        onMouseDown={() => setTabQuery(tab)}
                         classNameText='flex items-center justify-center gap-2.5 font-medium'
                     >
                         <span>{tab}</span>
@@ -39,8 +39,8 @@ const NftsTabs: FC<Props> = ({ data }) => {
                             className={cn(
                                 'flex items-center justify-center size-7 md:size-8 text-base rounded-full transition-colors duration-300',
                                 {
-                                    'text-gray bg-gray2': tab === activeTabQuery,
-                                    'text-white bg-gray': tab !== activeTabQuery,
+                                    'text-gray bg-gray2': tab === tabQuery,
+                                    'text-white bg-gray': tab !== tabQuery,
                                 }
                             )}
                         >
