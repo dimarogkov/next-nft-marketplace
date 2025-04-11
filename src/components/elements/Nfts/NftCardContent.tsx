@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { PATHS } from '@/src/variables';
 // import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
 import { Avatar, Text, Title } from '../../ui';
-
-import { PATHS } from '@/src/variables';
 
 type Props = {
     content: {
@@ -34,8 +33,8 @@ const NftCardContent: FC<Props> = ({ content, className = '' }) => {
                     </Link>
                 </Title>
 
-                {/* convertToSnakeCase(author.userName) */}
-                <Avatar href={PATHS.HOME} src={author.avatar} userName={author.userName} />
+                {/* convertToSnakeCase(author.name) */}
+                <Avatar href={PATHS.HOME} src={author.avatar} name={author.name} />
             </div>
 
             <div className='w-full'>

@@ -1,10 +1,9 @@
 import { FC, useMemo } from 'react';
+import { PATHS } from '@/src/variables';
 import { EnumTitle } from '@/src/types/enums';
 import { IImage } from '@/src/types/interfaces/Image';
 import { ImageLoader, ImgPlaceholder, Title } from '../../ui';
 import cn from 'classnames';
-
-import { PATHS } from '@/src/variables';
 
 type Props = {
     nfts: IImage[];

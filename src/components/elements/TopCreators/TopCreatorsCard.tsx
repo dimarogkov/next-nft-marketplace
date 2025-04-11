@@ -1,19 +1,18 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { PATHS } from '@/src/variables';
 // import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { ImageLoader, Text, Title } from '../../ui';
 import cn from 'classnames';
 
-import { PATHS } from '@/src/variables';
-
 type Props = {
     artist: IArtist & { index: number };
 };
 
 const TopCreatorsCard: FC<Props> = ({ artist }) => {
-    const { index, userName, avatar, info } = artist;
+    const { index, name, avatar, info } = artist;
 
     return (
         <div
@@ -27,11 +26,11 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 </span>
 
                 <ImageLoader className='!size-20 lg:!size-[120px] !pb-0 rounded-full lg:m-auto lg:mb-6 last:mb-0'>
-                    {/* convertToSnakeCase(userName) */}
+                    {/* convertToSnakeCase(name) */}
                     <ImageLoader.Link href={PATHS.HOME}>
                         <ImageLoader.Image
                             src={avatar}
-                            alt={userName}
+                            alt={name}
                             className='will-change-transform transition-all duration-500 hover:scale-110 hover:brightness-75'
                         />
                     </ImageLoader.Link>
@@ -39,9 +38,9 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
 
                 <div className='w-[calc(100%-100px)] lg:w-full lg:text-center'>
                     <Title titleType={EnumTitle.h5} className='!text-lg mb-1.5 last:mb-0'>
-                        {/* convertToSnakeCase(userName) */}
+                        {/* convertToSnakeCase(name) */}
                         <Link href={PATHS.HOME} className='transition-colors duration-300 hover:text-purple'>
-                            {userName}
+                            {name}
                         </Link>
                     </Title>
 

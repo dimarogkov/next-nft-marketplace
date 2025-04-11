@@ -1,7 +1,7 @@
 import { CollectionCard } from './CollectionCard';
 import { ConnectWallet } from './ConnectWallet';
 import { SubscribeForm } from './Form';
-import { HeaderBurger, HeaderLayer, HeaderLinks } from './Header';
+import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser } from './Header';
 import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
@@ -23,6 +23,7 @@ export {
     HeaderBurger,
     HeaderLayer,
     HeaderLinks,
+    HeaderUser,
     HeroContent,
     HowItWorksCard,
     Logo,

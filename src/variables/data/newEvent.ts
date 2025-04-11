@@ -9,7 +9,7 @@ export const NEW_EVENT_DATA: INewEvent = {
         alt: 'whispering_blooms',
     },
     author: {
-        userName: 'Jocelyn West',
+        name: 'Jocelyn West',
         avatar: '/avatars/avatar_17.png',
     },
 };

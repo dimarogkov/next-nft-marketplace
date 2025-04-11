@@ -3,6 +3,7 @@ import Avatar from './Avatar';
 import Btn from './Btn';
 import BtnLink from './BtnLink';
 import Checkbox from './Checkbox';
+import Dropdown from './Dropdown';
 import ErrorMessage from './ErrorMessage';
 import FlipText from './FlipText';
 import ImageLoader from './ImageLoader';
@@ -25,6 +26,7 @@ export {
     Btn,
     BtnLink,
     Checkbox,
+    Dropdown,
     ErrorMessage,
     FlipText,
     ImageLoader,

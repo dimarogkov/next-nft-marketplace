@@ -35,7 +35,7 @@ const TopCreators = async () => {
 
                     <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-7 w-full'>
                         {sortedArtists.map((artist, index) => (
-                            <TopCreatorsCard key={artist.userName} artist={{ index: index + 1, ...artist }} />
+                            <TopCreatorsCard key={artist.name} artist={{ index: index + 1, ...artist }} />
                         ))}
                     </div>
                 </div>

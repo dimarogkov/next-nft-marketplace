@@ -37,8 +37,8 @@ const CollectionCard: FC<Props> = ({ collection, cardType = EnumColorStyle.gray,
                     </Link>
                 </Title>
 
-                {/* convertToSnakeCase(author.userName) */}
-                <Avatar href={PATHS.HOME} src={author.avatar} userName={author.userName} />
+                {/* convertToSnakeCase(author.name) */}
+                <Avatar href={PATHS.HOME} src={author.avatar} name={author.name} />
             </div>
         </div>
     );

@@ -1,12 +1,11 @@
 'use client';
+import Image from 'next/image';
 import { signIn } from 'next-auth/react';
-import { redirect } from 'next/navigation';
 import { PATHS } from '@/src/variables';
 import { EnumBtn } from '@/src/types/enums';
 import { SignInForm } from '../Form';
 import SignInInfo from './SignInInfo';
 import { AuthBtn, InfoMessage, Text } from '../../ui';
-import Image from 'next/image';
 
 const SignIn = () => {
     return (

@@ -12,7 +12,7 @@ export const getCollections = async () => {
             if (!acc[collectionName]) {
                 acc[collectionName] = {
                     name: collectionName,
-                    author: { userName: author.userName, avatar: author.avatar },
+                    author: { name: author.name, avatar: author.avatar },
                     nfts: [],
                 };
             }

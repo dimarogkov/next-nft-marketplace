@@ -1,12 +1,11 @@
 import { FC } from 'react';
+import { PATHS } from '@/src/variables';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
-import { convertToSnakeCase } from '@/src/helpers';
 import { Timer } from '../Timer';
 import { Avatar, BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
-
-import { PATHS } from '@/src/variables';
 
 type Props = {
     content: {
@@ -22,9 +21,9 @@ const NewEventContent: FC<Props> = ({ content }) => {
     return (
         <div className='relative flex flex-col gap-4 sm:gap-5 w-full md:pr-[298px]'>
             <Avatar
-                href={PATHS.HOME} // convertToSnakeCase(author.userName)
+                href={PATHS.HOME} // convertToSnakeCase(author.name)
                 src={author.avatar}
-                userName={author.userName}
+                name={author.name}
                 className='rounded-lg py-2 px-4 bg-black'
             />
 
