@@ -25,10 +25,10 @@ const HeaderUser: FC<Props> = ({ user, closeMenu = () => {} }) => {
                 </div>
             </Dropdown.Trigger>
 
-            <Dropdown.Content align={EnumDropdownAlign.end} className='p-0'>
+            <Dropdown.Content align={EnumDropdownAlign.end} className='!p-0'>
                 <div className='w-60'>
                     <div className='flex flex-col gap-1 p-3 border-b border-gray'>
-                        <Text className='text-[18px] text-white line-clamp-1'>{name}</Text>
+                        <Text className='!text-[18px] text-white line-clamp-1'>{name}</Text>
                         <Text className='text-[15px] font-light line-clamp-1'>{email}</Text>
                     </div>
 

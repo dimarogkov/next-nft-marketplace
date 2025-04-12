@@ -18,7 +18,7 @@ const DropdownContent: FC<Props> = forwardRef<HTMLDivElement, Props>(
         {
             align = EnumDropdownAlign.start,
             position = EnumDropdownPosition.bottom,
-            gap = 6,
+            gap = 4,
             isOpen,
             className = '',
             setIsOpen = () => {},
