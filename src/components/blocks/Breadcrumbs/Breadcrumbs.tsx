@@ -6,20 +6,27 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import { useBreadcrumbsStatus } from '@/src/hooks';
 import { PATHS } from '@/src/variables/paths';
 import { convertUrlToString } from '@/src/helpers';
+import { EnumMarketplaceTabs } from '@/src/types/enums';
 import { Text } from '../../ui';
 import { ChevronRight } from 'lucide-react';
 
 const Breadcrumbs = () => {
     const pathname = usePathname();
+    const hasMarketplace = pathname.split('/').includes(PATHS.MARKETPLACE.slice(1));
     const { isBreadcrumbsExist } = useBreadcrumbsStatus();
 
     const pathNames = pathname
         .split('/')
         .filter((path) => path)
-        .map((path, index, arr) => ({
-            href: `/${arr.slice(0, index + 1).join('/')}`,
-            text: convertUrlToString(path),
-        }));
+        .map((path, index, arr) => {
+            const baseHref = `/${arr.slice(0, index + 1).join('/')}`;
+            const href = hasMarketplace ? `${baseHref}?tab=${EnumMarketplaceTabs.NFTs}&${PATHS.PARAMS.PAGE}` : baseHref;
+
+            return {
+                href,
+                text: convertUrlToString(path),
+            };
+        });
 
     const breadcrumbs = useMemo(() => [{ href: `${PATHS.HOME}`, text: 'Home' }, ...pathNames], [pathNames]);
 

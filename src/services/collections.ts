@@ -1,37 +1,50 @@
 import axios from 'axios';
 import { API } from '../variables';
-import { convertToSnakeCase } from '../helpers';
 import { INFT } from './../types/interfaces/NFT';
 import { ICollection } from '../types/interfaces/Collection';
 
 export const getCollections = async () => {
     const response = await axios.get<INFT[]>(`${API}/nfts`);
 
-    const collectionItems = response.data.reduce<{ [key: string]: ICollection }>(
-        (acc, { collectionName, author, img, name }) => {
-            if (!acc[collectionName]) {
-                acc[collectionName] = {
-                    name: collectionName,
-                    author: { name: author.name, avatar: author.avatar },
-                    nfts: [],
-                };
-            }
+    const collectionItems = response.data.reduce<{ [key: string]: ICollection }>((acc, nft) => {
+        const { collectionName, author, price, highestBid } = nft;
 
-            acc[collectionName].nfts.push({
-                src: img.src,
-                alt: convertToSnakeCase(name),
-            });
+        if (!acc[collectionName]) {
+            acc[collectionName] = {
+                name: collectionName,
+                totalPrice: 0,
+                totalBid: 0,
+                items: 0,
+                authors: [],
+                nfts: [],
+                _authorNames: new Set<string>(),
+            };
+        }
 
-            return acc;
-        },
-        {}
-    );
+        const collection = acc[collectionName];
 
-    return [...Object.values(collectionItems)];
+        collection.nfts.push(nft);
+        collection.totalPrice += price;
+        collection.totalBid += highestBid;
+        collection.items += 1;
+
+        if (!collection._authorNames?.has(author.name)) {
+            collection._authorNames?.add(author.name);
+            collection.authors.push(author);
+        }
+
+        return acc;
+    }, {});
+
+    return Object.values(collectionItems).map(({ _authorNames, ...rest }) => ({
+        ...rest,
+        totalPrice: +rest.totalPrice.toFixed(2),
+        totalBid: +rest.totalBid.toFixed(2),
+    }));
 };
 
 export const getCollectionByName = async (collectionName: string) => {
     const collections = await getCollections();
 
-    return collections.filter(({ name }) => name === collectionName);
+    return collections.filter(({ name }) => name === collectionName)[0];
 };

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { PATHS } from '@/src/variables';
-import { convertToSnakeCase } from '@/src/helpers';
+// import { convertToSnakeCase } from '@/src/helpers';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
 import { Timer } from '../Timer';
@@ -39,7 +39,8 @@ const NewEventContent: FC<Props> = ({ content }) => {
                 </Text>
             </div>
 
-            <BtnLink href={convertToSnakeCase(name)} icon={Eye} btnType={EnumBtn.light}>
+            {/* convertToSnakeCase(name) */}
+            <BtnLink href={PATHS.HOME} icon={Eye} btnType={EnumBtn.light}>
                 See NFT
             </BtnLink>
         </div>

@@ -1,8 +1,11 @@
 export const PATHS = {
     HOME: '/',
-    MARKETPLACE: '/marketplace?page=1',
-    RANKINGS: '/rankings?page=1',
+    MARKETPLACE: '/marketplace',
+    RANKINGS: '/rankings',
     SIGN_IN: '/sign-in',
     CONNECT_WALLET: '/connect-wallet',
     NOT_FOUND: '*',
+    PARAMS: {
+        PAGE: 'page=1',
+    },
 };

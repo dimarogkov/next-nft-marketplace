@@ -1,8 +1,12 @@
 import { IAuthor } from './Author';
-import { IImage } from './Image';
+import { INFT } from './NFT';
 
 export interface ICollection {
     name: string;
-    author: IAuthor;
-    nfts: IImage[];
+    totalPrice: number;
+    totalBid: number;
+    items: number;
+    authors: IAuthor[];
+    nfts: INFT[];
+    _authorNames?: Set<string>;
 }
