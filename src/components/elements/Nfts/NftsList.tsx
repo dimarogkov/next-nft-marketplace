@@ -6,7 +6,7 @@ import { EnumColorStyle, EnumMarketplaceTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
 import { NoResultsFound } from '../NoResultsFound';
-import { CollectionCard } from '../CollectionCard';
+import { CollectionCard } from '../Collection';
 import { Pagination } from '../Pagination';
 import NftCard from './NftCard';
 

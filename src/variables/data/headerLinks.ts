@@ -5,11 +5,11 @@ import { CirclePlus, CircleUser, Heart, Settings } from 'lucide-react';
 
 export const HEADER_LINKS_DATA: ILink[] = [
     {
-        href: `${PATHS.MARKETPLACE}&tab=${EnumMarketplaceTabs.NFTs}`,
+        href: `${PATHS.MARKETPLACE}?tab=${EnumMarketplaceTabs.NFTs}&${PATHS.PARAMS.PAGE}`,
         text: 'Marketplace',
     },
     {
-        href: PATHS.RANKINGS,
+        href: `${PATHS.RANKINGS}?${PATHS.PARAMS.PAGE}`,
         text: 'Rankings',
     },
 ];
