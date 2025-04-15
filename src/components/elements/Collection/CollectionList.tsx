@@ -15,7 +15,7 @@ const CollectionList: FC<Props> = ({ nfts }) => {
 
     return (
         <div className='relative w-full'>
-            <div className='grid lg:grid-cols-3 gap-7 w-full mb-7 md:mb-10 last:mb-0'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-7 sm:gap-5 lg:gap-7 w-full mb-7 md:mb-10 last:mb-0'>
                 {slicedData.map((nft) => (
                     <NftCard key={nft.name} nft={nft} />
                 ))}

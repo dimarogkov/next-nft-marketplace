@@ -32,9 +32,9 @@ const NewNfts = async () => {
                         </BtnLink>
                     </div>
 
-                    <div className='grid lg:grid-cols-3 gap-7 w-full'>
+                    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-7 sm:gap-5 lg:gap-7 w-full'>
                         {nfts.slice(0, 3).map((nft, index) => (
-                            <NftCard key={nft.name} nft={nft} className={cn({ 'hidden lg:block': index > 1 })} />
+                            <NftCard key={nft.name} nft={nft} className={cn({ 'hidden md:block': index > 1 })} />
                         ))}
                     </div>
                 </div>
