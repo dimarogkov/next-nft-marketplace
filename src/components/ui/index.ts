@@ -7,7 +7,6 @@ import Dropdown from './Dropdown';
 import ErrorMessage from './ErrorMessage';
 import FlipText from './FlipText';
 import ImageLoader from './ImageLoader';
-import ImgPlaceholder from './ImgPlaceholder';
 import InfoMessage from './InfoMessage';
 import Input from './Input';
 import InputPassword from './InputPassword';
@@ -30,7 +29,6 @@ export {
     ErrorMessage,
     FlipText,
     ImageLoader,
-    ImgPlaceholder,
     InfoMessage,
     Input,
     InputPassword,

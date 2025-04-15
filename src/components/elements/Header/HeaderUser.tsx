@@ -20,9 +20,13 @@ const HeaderUser: FC<Props> = ({ user, closeMenu = () => {} }) => {
     return (
         <Dropdown className='flex items-center h-full'>
             <Dropdown.Trigger onMouseDown={closeMenu}>
-                <div className='relative size-11 md:size-12 rounded-full overflow-hidden bg-gray'>
-                    <ImageLoader.Image src={image || avatar} alt={name} />
-                </div>
+                <ImageLoader className='!size-11 md:!size-12 !pb-0 rounded-full bg-gray'>
+                    <ImageLoader.Image
+                        src={image || avatar}
+                        alt={name}
+                        className='will-change-transform transition-all duration-500 hover:scale-110 hover:brightness-75'
+                    />
+                </ImageLoader>
             </Dropdown.Trigger>
 
             <Dropdown.Content align={EnumDropdownAlign.end} className='!p-0'>
