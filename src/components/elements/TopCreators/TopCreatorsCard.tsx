@@ -37,7 +37,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 </ImageLoader>
 
                 <div className='w-[calc(100%-100px)] lg:w-full lg:text-center'>
-                    <Title titleType={EnumTitle.h5} className='!text-lg mb-1.5 last:mb-0'>
+                    <Title titleType={EnumTitle.h5} className='!text-lg mb-1 last:mb-0'>
                         {/* convertToSnakeCase(name) */}
                         <Link href={PATHS.HOME} className='transition-colors duration-300 hover:text-purple'>
                             {name}
