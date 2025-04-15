@@ -46,7 +46,7 @@ const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
         <div className='relative flex flex-col items-center w-full min-h-[50vh]'>
             {filteredData.length ? (
                 <div className='w-full'>
-                    <div className='grid lg:grid-cols-3 gap-7 w-full mb-7 md:mb-10 last:mb-0'>
+                    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-7 sm:gap-5 lg:gap-7 w-full mb-7 md:mb-10 last:mb-0'>
                         {slicedData.map((item) => (
                             <Fragment key={item.name}>
                                 {!isNFTsType ? (
@@ -57,7 +57,6 @@ const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
                             </Fragment>
                         ))}
                     </div>
-
                     <Pagination options={paginationOptions} />
                 </div>
             ) : (

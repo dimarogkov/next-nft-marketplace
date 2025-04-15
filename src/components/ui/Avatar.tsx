@@ -9,28 +9,33 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<H
     src: string;
     name?: string;
     className?: string;
+    classNameImage?: string;
 }
 
-const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(({ href, src, name, className = '', ...props }, ref) => {
-    return (
-        <Link
-            ref={ref}
-            {...props}
-            href={PATHS.HOME} // href={href}
-            className={`relative group flex items-center gap-2.5 w-fit ${className}`}
-        >
-            <ImageLoader className='!size-6 rounded-full !pb-0 bg-gray transition-all duration-300 outline outline-2 outline-transparent group-hover:outline-purple'>
-                <ImageLoader.Image src={src} alt={name || ''} />
-            </ImageLoader>
+const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
+    ({ href, src, name, className = '', classNameImage = '', ...props }, ref) => {
+        return (
+            <Link
+                ref={ref}
+                {...props}
+                href={PATHS.HOME} // href={href}
+                className={`relative group flex items-center gap-2.5 w-fit ${className}`}
+            >
+                <ImageLoader
+                    className={`!size-6 rounded-full !pb-0 bg-gray transition-all duration-300 outline outline-2 outline-transparent group-hover:outline-purple ${classNameImage}`}
+                >
+                    <ImageLoader.Image src={src} alt={name || ''} />
+                </ImageLoader>
 
-            {name && (
-                <Text className='!w-auto text-white transition-colors duration-300 group-hover:text-white/70'>
-                    {name}
-                </Text>
-            )}
-        </Link>
-    );
-});
+                {name && (
+                    <Text className='!w-auto text-white transition-colors duration-300 group-hover:text-white/70'>
+                        {name}
+                    </Text>
+                )}
+            </Link>
+        );
+    }
+);
 
 Avatar.displayName = 'Avatar';
 export default Avatar;
