@@ -23,7 +23,7 @@ const NftCardContent: FC<Props> = ({ content, className = '' }) => {
         <div className={`relative w-full p-4 sm:p-5 ${className}`}>
             <div className='flex flex-col gap-5 w-full -mt-10 sm:-mt-12 mb-5 last:mb-0'>
                 {/* convertToSnakeCase(author.name) */}
-                <Avatar href={PATHS.HOME} src={author.avatar} classNameImage='!size-12' />
+                <Avatar href={PATHS.HOME} src={author.avatar} classNameImage='!size-12 !pb-0' />
 
                 <div className='w-full'>
                     <Title titleType={EnumTitle.h5} className='line-clamp-1 mb-1.5 last:mb-0'>

@@ -22,7 +22,7 @@ const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                 className={`relative group flex items-center gap-2.5 w-fit ${className}`}
             >
                 <ImageLoader
-                    className={`!size-6 rounded-full !pb-0 bg-gray transition-all duration-300 outline outline-2 outline-transparent group-hover:outline-purple ${classNameImage}`}
+                    className={`rounded-full bg-gray transition-all duration-300 outline outline-2 outline-transparent group-hover:outline-purple ${classNameImage}`}
                 >
                     <ImageLoader.Image src={src} alt={name || ''} />
                 </ImageLoader>
