@@ -72,6 +72,7 @@ const CollectionBanner: FC<Props> = ({ data }) => {
                             src={author.avatar}
                             name={author.name}
                             className='px-4 py-2 shrink-0 rounded-lg bg-gray'
+                            classNameImage='!size-6 !pb-0'
                         />
                     ))}
                 </div>

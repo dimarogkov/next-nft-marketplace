@@ -25,6 +25,7 @@ const NewEventContent: FC<Props> = ({ content }) => {
                 src={author.avatar}
                 name={author.name}
                 className='rounded-lg py-2 px-4 bg-black'
+                classNameImage='!size-6 !pb-0'
             />
 
             <Timer hours={6} className='md:absolute md:right-0 md:bottom-0 bg-black/40' />
