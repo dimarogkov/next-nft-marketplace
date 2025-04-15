@@ -24,9 +24,14 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
         [EnumColorStyle.dark as string]: 'bg-black',
     };
 
+    const outlineClasses = {
+        [EnumColorStyle.gray as string]: 'outline-gray',
+        [EnumColorStyle.dark as string]: 'outline-black',
+    };
+
     return (
         <div className={`relative w-full rounded-lg overflow-hidden ${cardClasses[cardType]} ${className}`}>
-            <ImageLoader className='w-full !pb-[75%]'>
+            <ImageLoader className='w-full !pb-[75%] rounded-lg'>
                 {/* href={img.alt} */}
                 <ImageLoader.Link href={PATHS.HOME}>
                     <ImageLoader.Image
@@ -37,7 +42,11 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
                 </ImageLoader.Link>
             </ImageLoader>
 
-            <NftCardContent content={content} className={cardContentClasses[cardType]} />
+            <NftCardContent
+                content={content}
+                colorType={outlineClasses[cardType]}
+                className={cardContentClasses[cardType]}
+            />
         </div>
     );
 };
