@@ -20,7 +20,7 @@ const HeaderLink: FC<Props> = ({ link }) => {
             className={cn(
                 'font-semibold lg:font-medium text-3xl sm:text-2xl lg:text-base sm:uppercase lg:capitalize transition-colors duration-300 hover:text-purple',
                 {
-                    'text-purple': pathname.startsWith(href.split('?')[0]),
+                    'text-purple': pathname.endsWith(href.split('?')[0]),
                 }
             )}
         >
