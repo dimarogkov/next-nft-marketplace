@@ -9,7 +9,7 @@ import { AuthBtn, InfoMessage, Text } from '../../ui';
 
 const SignIn = () => {
     return (
-        <div className='relative w-full rounded-lg p-4 md:p-5 overflow-hidden border border-gray'>
+        <div className='relative w-full rounded-lg p-4 overflow-hidden border border-gray'>
             <InfoMessage className='mb-5 last:mb-0'>
                 <SignInInfo />
             </InfoMessage>

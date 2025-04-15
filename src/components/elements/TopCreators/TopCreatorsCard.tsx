@@ -16,7 +16,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
 
     return (
         <div
-            className={cn('relative w-full rounded-lg p-4 sm:p-5 bg-gray', {
+            className={cn('relative w-full rounded-lg p-4 bg-gray', {
                 'hidden lg:block': index > 6,
             })}
         >
