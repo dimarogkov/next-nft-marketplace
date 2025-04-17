@@ -23,7 +23,7 @@ const CollectionCardNfts: FC<Props> = ({ nfts, className = '' }) => {
                 <ImageLoader
                     key={nft.alt}
                     className={cn(index !== 0 && `${className}`, {
-                        'left-4 rounded-full outline outline-4 -mt-[50%]': index !== 0,
+                        'left-4 rounded-full outline outline-4 -mt-[50%] bg-gray': index !== 0,
                         'col-span-6 !pb-[75%] rounded-lg': index === 0,
                     })}
                     style={{

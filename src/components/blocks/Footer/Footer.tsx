@@ -1,10 +1,14 @@
 import Link from 'next/link';
-import { HEADER_LINKS_DATA, SOCIAL_LINKS_DATA } from '@/src/variables';
+import { getServerSession } from 'next-auth';
+import { HEADER_LINKS_DATA, PATHS, SOCIAL_LINKS_DATA } from '@/src/variables';
+import { authConfig } from '@/src/helpers';
 import { EnumColorStyle, EnumTitle } from '@/src/types/enums';
 import { Logo, SubscribeForm } from '../../elements';
 import { SocialLink, Text, Title } from '../../ui';
 
-const Footer = () => {
+const Footer = async () => {
+    const session = await getServerSession(authConfig);
+
     return (
         <footer className='relative w-full py-8 lg:py-10 bg-gray'>
             <div className='flex flex-wrap justify-between container'>
@@ -37,6 +41,15 @@ const Footer = () => {
                                 {text}
                             </Link>
                         ))}
+
+                        {session && (
+                            <Link
+                                href={PATHS.CONNECT_WALLET}
+                                className='text-gray2 transition-colors duration-300 hover:text-white'
+                            >
+                                Connect Wallet
+                            </Link>
+                        )}
                     </div>
                 </div>
 

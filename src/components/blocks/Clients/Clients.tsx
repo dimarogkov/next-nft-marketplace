@@ -25,7 +25,7 @@ const Clients = () => {
                             <div
                                 key={alt}
                                 className={cn(
-                                    'relative group flex items-center justify-center w-full h-[90px] md:h-[100px] rounded-lg border border-black',
+                                    'relative group flex items-center justify-center w-full h-[90px] md:h-[100px] rounded-lg border-2 border-black',
                                     {
                                         'hidden md:flex': index > 5 && index < 8,
                                         'hidden lg:flex': index > 7,
@@ -37,14 +37,11 @@ const Clients = () => {
                                     alt={alt}
                                     sizes='100%'
                                     fill
-                                    className={cn(
-                                        '!relative !w-auto opacity-50 transition-opacity duration-300 group-hover:opacity-100',
-                                        {
-                                            '!h-11': sizeType === 3,
-                                            '!h-7 sm:!h-8': sizeType === 2,
-                                            '!h-5': sizeType === 1,
-                                        }
-                                    )}
+                                    className={cn('!relative !w-auto', {
+                                        '!h-11': sizeType === 3,
+                                        '!h-7 sm:!h-8': sizeType === 2,
+                                        '!h-5': sizeType === 1,
+                                    })}
                                 />
                             </div>
                         ))}
