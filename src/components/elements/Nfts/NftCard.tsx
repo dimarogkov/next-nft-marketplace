@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { PATHS } from '@/src/variables';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumColorStyle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftCardContent from './NftCardContent';
@@ -32,8 +33,9 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
     return (
         <div className={`relative w-full rounded-lg overflow-hidden ${cardClasses[cardType]} ${className}`}>
             <ImageLoader className='w-full !pb-[75%] rounded-lg'>
-                {/* href={img.alt} */}
-                <ImageLoader.Link href={PATHS.HOME}>
+                <ImageLoader.Link
+                    href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(content.collectionName)}/${img.alt}`}
+                >
                     <ImageLoader.Image
                         src={img.src}
                         alt={img.alt}

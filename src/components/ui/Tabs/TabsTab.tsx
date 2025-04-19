@@ -36,11 +36,11 @@ const TabsTab: FC<Props> = forwardRef<HTMLLIElement, Props>(
                 ref={ref}
                 {...props}
                 onClick={() => setActiveIndex(tabIndex)}
-                className={`relative w-full text-center px-2 py-3.5 md:py-5 cursor-pointer ${className}`}
+                className={`relative group w-full text-center px-2 py-3.5 md:py-5 cursor-pointer ${className}`}
             >
                 <Text
                     textType={EnumText.large}
-                    className={cn(classNameText, 'transition-colors duration-300', {
+                    className={cn(classNameText, 'transition-colors duration-300 group-hover:text-white', {
                         'text-white': tabIndex === activeIndex,
                         'text-gray2': tabIndex !== activeIndex,
                     })}

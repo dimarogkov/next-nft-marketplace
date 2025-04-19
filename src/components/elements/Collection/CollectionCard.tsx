@@ -27,7 +27,12 @@ const CollectionCard: FC<Props> = ({ collection, cardType = EnumColorStyle.gray,
 
     return (
         <div className={`relative flex flex-col w-full rounded-lg ${cardClasses[cardType]} ${className}`}>
-            <CollectionCardNfts nfts={nftsImages} className={outlineClasses[cardType]} />
+            <CollectionCardNfts
+                nfts={nftsImages}
+                collectionName={collectionData.name}
+                className={outlineClasses[cardType]}
+            />
+
             <CollectionCardContent data={collectionData} />
         </div>
     );

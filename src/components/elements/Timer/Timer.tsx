@@ -17,10 +17,10 @@ const Timer: FC<Props> = ({ hours = 0, minutes = 0, seconds = 0, className = '' 
     const { timer, isTimerEnd } = useTimer(hours, minutes, seconds);
 
     return (
-        <div className={`relative w-fit max-w-[300px] rounded-lg p-4 sm:p-5 lg:p-6 ${className}`}>
+        <div className={`relative w-fit max-w-[300px] rounded-lg p-4 md:p-5 ${className}`}>
             {!isTimerEnd ? (
-                <div>
-                    <Text className='text-white mb-2 last:mb-0'>Auction ends in:</Text>
+                <div className='w-fit'>
+                    <Text className='text-white mb-2.5 last:mb-0'>Auction ends in:</Text>
 
                     <div className='flex items-start gap-2.5 w-full text-center'>
                         <TimerItem timer={{ label: 'Hours', value: timer.hours }} />

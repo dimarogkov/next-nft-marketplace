@@ -1,6 +1,5 @@
 import { AnchorHTMLAttributes, FC, forwardRef, RefAttributes } from 'react';
 import Link from 'next/link';
-import { PATHS } from '@/src/variables';
 import Text from './Text';
 import ImageLoader from './ImageLoader';
 
@@ -18,7 +17,7 @@ const Avatar: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             <Link
                 ref={ref}
                 {...props}
-                href={PATHS.HOME} // href={href}
+                href={href}
                 className={`relative group flex items-center gap-2.5 w-fit ${className}`}
             >
                 <ImageLoader

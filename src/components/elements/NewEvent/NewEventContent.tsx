@@ -6,17 +6,15 @@ import { IAuthor } from '@/src/types/interfaces/Author';
 import { Timer } from '../Timer';
 import { Avatar, BtnLink, ImageLoader, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
+import { convertToSnakeCase } from '@/src/helpers';
+import { INewEvent } from '@/src/types/interfaces/NewEvent';
 
 type Props = {
-    content: {
-        name: string;
-        description: string;
-        author: IAuthor;
-    };
+    content: Omit<INewEvent, 'img'>;
 };
 
 const NewEventContent: FC<Props> = ({ content }) => {
-    const { name, description, author } = content;
+    const { name, collectionName, description, author } = content;
 
     return (
         <div className='relative flex flex-col gap-4 sm:gap-5 w-full md:pr-[298px]'>
@@ -42,7 +40,11 @@ const NewEventContent: FC<Props> = ({ content }) => {
             </div>
 
             {/* convertToSnakeCase(name) */}
-            <BtnLink href={PATHS.HOME} icon={Eye} btnType={EnumBtn.light}>
+            <BtnLink
+                href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(collectionName)}/${convertToSnakeCase(name)}`}
+                icon={Eye}
+                btnType={EnumBtn.light}
+            >
                 See NFT
             </BtnLink>
         </div>

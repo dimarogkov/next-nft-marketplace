@@ -9,6 +9,7 @@ import { convertUrlToString } from '@/src/helpers';
 import { EnumMarketplaceTabs } from '@/src/types/enums';
 import { Text } from '../../ui';
 import { ChevronRight } from 'lucide-react';
+import cn from 'classnames';
 
 const Breadcrumbs = () => {
     const pathname = usePathname();
@@ -42,19 +43,33 @@ const Breadcrumbs = () => {
                 className='fixed z-20 top-[70px] sm:top-20 lg:top-[100px] left-0 w-full py-2.5 sm:py-3 border-b border-gray bg-black'
             >
                 <div className='container'>
-                    <ul className='flex items-center gap-1 w-full'>
+                    <ul className='flex items-center gap-1 w-full overflow-hidden'>
                         {breadcrumbs.map(({ href, text }, index) => (
                             <li key={text}>
                                 {breadcrumbs.length - 1 !== index ? (
                                     <Link
                                         href={href}
-                                        className='flex items-center gap-1 line-clamp-1 text-white transition-colors duration-300 hover:text-purple'
+                                        className='flex items-center gap-1 text-white transition-colors duration-300 hover:text-purple'
                                     >
-                                        <span>{text}</span>
+                                        <span
+                                            className={cn({
+                                                'truncate max-w-[70px] sm:max-w-full': breadcrumbs.length > 3,
+                                            })}
+                                        >
+                                            {text}
+                                        </span>
+
                                         <ChevronRight className='size-5 stroke-1 text-white' />
                                     </Link>
                                 ) : (
-                                    <Text className='line-clamp-1 text-gray2'>{text}</Text>
+                                    <Text
+                                        className={cn('text-gray2', {
+                                            'truncate max-w-[100px] sm:max-w-full': breadcrumbs.length > 2,
+                                            'truncate max-w-[70px] sm:max-w-full': breadcrumbs.length > 3,
+                                        })}
+                                    >
+                                        {text}
+                                    </Text>
                                 )}
                             </li>
                         ))}
