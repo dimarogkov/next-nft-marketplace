@@ -44,25 +44,30 @@ const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
 
     return (
         <div className='relative flex flex-col items-center w-full min-h-[50vh]'>
-            {filteredData.length ? (
-                <div className='w-full'>
-                    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-7 sm:gap-5 lg:gap-7 w-full mb-7 last:mb-0'>
-                        {slicedData.map((item) => (
-                            <Fragment key={item.name}>
-                                {!isNFTsType ? (
-                                    <CollectionCard collection={item as ICollection} cardType={EnumColorStyle.dark} />
-                                ) : (
-                                    <NftCard nft={item as INFT} cardType={EnumColorStyle.dark} />
-                                )}
-                            </Fragment>
-                        ))}
-                    </div>
+            <div className='container section-padding'>
+                {filteredData.length ? (
+                    <div className='w-full'>
+                        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-7 sm:gap-5 lg:gap-7 w-full mb-7 last:mb-0'>
+                            {slicedData.map((item) => (
+                                <Fragment key={item.name}>
+                                    {!isNFTsType ? (
+                                        <CollectionCard
+                                            collection={item as ICollection}
+                                            cardType={EnumColorStyle.dark}
+                                        />
+                                    ) : (
+                                        <NftCard nft={item as INFT} cardType={EnumColorStyle.dark} />
+                                    )}
+                                </Fragment>
+                            ))}
+                        </div>
 
-                    <Pagination options={paginationOptions} />
-                </div>
-            ) : (
-                <NoResultsFound handleClick={resetFilters} />
-            )}
+                        <Pagination options={paginationOptions} />
+                    </div>
+                ) : (
+                    <NoResultsFound handleClick={resetFilters} />
+                )}
+            </div>
         </div>
     );
 };

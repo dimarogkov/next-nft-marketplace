@@ -6,7 +6,7 @@ import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
-import { NftCard, NftsSearch, NftsTabs } from './Nfts';
+import { NftCard, NftDetailContent, NftsSearch, NftsTabs } from './Nfts';
 import { NoResultsFound } from './NoResultsFound';
 import { Pagination } from './Pagination';
 import { ProgressLine } from './ProgressLine';
@@ -31,6 +31,7 @@ export {
     Logo,
     NewEventContent,
     NftCard,
+    NftDetailContent,
     NftsSearch,
     NftsTabs,
     NoResultsFound,

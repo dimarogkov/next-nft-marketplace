@@ -22,20 +22,18 @@ interface Props extends HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLDivEle
 const TabsPanels: FC<Props> = forwardRef<HTMLDivElement, Props>(
     ({ activeIndex, className = '', setActiveIndex = () => {}, ...props }, ref) => {
         return (
-            <div ref={ref} {...props} className={`relative w-full section-padding bg-gray ${className}`}>
-                <div className='container'>
-                    <AnimatePresence mode='wait'>
-                        {Children.map(props.children, (child, index) => {
-                            if (index === activeIndex) {
-                                if (isValidElement(child)) {
-                                    return cloneElement(child as ReactElement);
-                                }
-
-                                return child;
+            <div ref={ref} {...props} className={`relative w-full bg-gray ${className}`}>
+                <AnimatePresence mode='wait'>
+                    {Children.map(props.children, (child, index) => {
+                        if (index === activeIndex) {
+                            if (isValidElement(child)) {
+                                return cloneElement(child as ReactElement);
                             }
-                        })}
-                    </AnimatePresence>
-                </div>
+
+                            return child;
+                        }
+                    })}
+                </AnimatePresence>
             </div>
         );
     }

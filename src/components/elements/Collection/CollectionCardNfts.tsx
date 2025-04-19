@@ -1,5 +1,6 @@
 import { FC, useMemo } from 'react';
 import { PATHS } from '@/src/variables';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IImage } from '@/src/types/interfaces/Image';
 import { ImageLoader, Title } from '../../ui';
@@ -7,10 +8,11 @@ import cn from 'classnames';
 
 type Props = {
     nfts: IImage[];
+    collectionName: string;
     className?: string;
 };
 
-const CollectionCardNfts: FC<Props> = ({ nfts, className = '' }) => {
+const CollectionCardNfts: FC<Props> = ({ nfts, collectionName, className = '' }) => {
     const nftCount = useMemo(() => nfts.length - 4, [nfts]);
 
     const nftsArr = useMemo(() => {
@@ -32,8 +34,7 @@ const CollectionCardNfts: FC<Props> = ({ nfts, className = '' }) => {
                         }),
                     }}
                 >
-                    {/* href={nft.alt} */}
-                    <ImageLoader.Link href={PATHS.HOME}>
+                    <ImageLoader.Link href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(collectionName)}/${nft.alt}`}>
                         <ImageLoader.Image
                             src={nft.src}
                             alt={nft.alt}

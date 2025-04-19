@@ -1,24 +1,19 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { PATHS } from '@/src/variables';
-// import { convertToSnakeCase } from '@/src/helpers';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
-import { IAuthor } from '@/src/types/interfaces/Author';
-import { Avatar, ImageLoader, SimpleLink, Text, Title } from '../../ui';
+import { INFT } from '@/src/types/interfaces/NFT';
+import { ImageLoader, SimpleLink, Text, Title } from '../../ui';
 
 type Props = {
-    content: {
-        name: string;
-        author: IAuthor;
-        price: number;
-        highestBid: number;
-    };
+    content: Omit<INFT, 'img'>;
     colorType: string;
     className?: string;
 };
 
 const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
-    const { name, author, price, highestBid } = content;
+    const { name, collectionName, author, price, highestBid } = content;
 
     return (
         <div className={`relative w-full p-4 ${className}`}>
@@ -37,7 +32,9 @@ const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
                 <div className='w-full'>
                     <Title titleType={EnumTitle.h5} className='line-clamp-1 mb-1.5 last:mb-0'>
                         <Link
-                            href={PATHS.HOME} // convertToSnakeCase(name)
+                            href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(collectionName)}/${convertToSnakeCase(
+                                name
+                            )}`}
                             className='text-white transition-colors duration-300 hover:text-purple'
                         >
                             {name}
