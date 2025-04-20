@@ -7,10 +7,10 @@ import { Timer } from '../Timer';
 import { Avatar, BtnLink, ImageLoader, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
 import { convertToSnakeCase } from '@/src/helpers';
-import { INewEvent } from '@/src/types/interfaces/NewEvent';
+import { INFT } from '@/src/types/interfaces/NFT';
 
 type Props = {
-    content: Omit<INewEvent, 'img'>;
+    content: Omit<INFT, 'img'>;
 };
 
 const NewEventContent: FC<Props> = ({ content }) => {

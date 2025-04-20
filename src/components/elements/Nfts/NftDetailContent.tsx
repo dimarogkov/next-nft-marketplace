@@ -26,7 +26,7 @@ const NftDetailContent: FC<Props> = async ({ data }) => {
 
             <div className='flex flex-wrap gap-4 w-full'>
                 <div className='w-fit'>
-                    <Text className='mb-2 last:mb-0'>Collection</Text>
+                    <Text className='mb-2.5 last:mb-0'>Collection</Text>
 
                     <Avatar
                         href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(collectionName)}?${PATHS.PARAMS.PAGE}`}
@@ -38,7 +38,7 @@ const NftDetailContent: FC<Props> = async ({ data }) => {
                 </div>
 
                 <div className='w-fit'>
-                    <Text className='mb-2 last:mb-0'>Created By</Text>
+                    <Text className='mb-2.5 last:mb-0'>Created By</Text>
 
                     {/* convertToSnakeCase(author.name) */}
                     <Avatar
@@ -51,8 +51,8 @@ const NftDetailContent: FC<Props> = async ({ data }) => {
                 </div>
             </div>
 
-            <Tabs className='border border-gray rounded-lg'>
-                <Tabs.TabList className='!border-none'>
+            <Tabs className='-left-4 sm:left-auto !w-[calc(100%+32px)] sm:!w-full sm:border sm:border-gray sm:rounded-lg'>
+                <Tabs.TabList className='sm:!border-none'>
                     {['Details', 'Bids', 'History'].map((tab) => (
                         <Tabs.Tab key={tab}>{tab}</Tabs.Tab>
                     ))}
