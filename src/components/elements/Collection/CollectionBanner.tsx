@@ -64,7 +64,7 @@ const CollectionBanner: FC<Props> = ({ data }) => {
                     Authors
                 </Text>
 
-                <div className='flex gap-3 w-full overflow-x-auto pb-2'>
+                <div className='relative -left-4 md:left-auto flex gap-3 w-[calc(100%+32px)] md:w-full overflow-x-auto pb-2 px-4 md:px-0'>
                     {authors.map((author) => (
                         <Avatar
                             key={author.name}

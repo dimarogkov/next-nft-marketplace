@@ -29,9 +29,9 @@ const NftDetailInfo: FC<Props> = ({ data }) => {
         <div className='relative container py-4 md:py-5'>
             <div className='flex flex-col gap-5 lg:gap-7 w-full'>
                 <div className='w-full'>
-                    <Text className='text-white mb-2 last:mb-0'>Total Value</Text>
+                    <Text className='text-white mb-2.5 last:mb-0'>Total Value</Text>
 
-                    <div className='grid sm:grid-cols-2 gap-3 w-full'>
+                    <div className='grid sm:grid-cols-2 gap-2.5 w-full'>
                         {NftInfoArr.map(({ value, text }) => (
                             <div key={text} className='w-full px-3 sm:px-4 py-2 rounded-lg bg-black'>
                                 <Text
@@ -48,9 +48,9 @@ const NftDetailInfo: FC<Props> = ({ data }) => {
                 </div>
 
                 <div className='w-full'>
-                    <Text className='text-white mb-2 last:mb-0'>Description</Text>
+                    <Text className='text-white mb-2.5 last:mb-0'>Description</Text>
 
-                    <div className='flex flex-col gap-3 w-full'>
+                    <div className='flex flex-col gap-2.5 w-full'>
                         <Text>{description}</Text>
 
                         <Text>
@@ -62,7 +62,7 @@ const NftDetailInfo: FC<Props> = ({ data }) => {
                 </div>
 
                 <div className='w-full'>
-                    <Text className='text-white mb-2 last:mb-0'>Tags</Text>
+                    <Text className='text-white mb-2.5 last:mb-0'>Tags</Text>
 
                     <div className='flex flex-wrap gap-2 w-full'>
                         {tags.map((tag) => (

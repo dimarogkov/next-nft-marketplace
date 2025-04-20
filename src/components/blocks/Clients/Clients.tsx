@@ -37,7 +37,7 @@ const Clients = () => {
                                     alt={alt}
                                     sizes='100%'
                                     fill
-                                    className={cn('!relative !w-auto', {
+                                    className={cn('!relative !w-auto opacity-70', {
                                         '!h-11': sizeType === 3,
                                         '!h-7 sm:!h-8': sizeType === 2,
                                         '!h-5': sizeType === 1,

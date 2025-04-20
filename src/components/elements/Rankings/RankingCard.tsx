@@ -20,7 +20,7 @@ const RankingCard: FC<Props> = ({ artist }) => {
             </span>
 
             <div className='flex items-center gap-4 lg:gap-5 w-full'>
-                <ImageLoader className='!size-14 lg:!size-16 !pb-0 rounded-full'>
+                <ImageLoader className='!size-14 min-w-14 lg:!size-16 lg:min-w-16 !pb-0 rounded-full'>
                     {/* convertToSnakeCase(name) */}
                     <ImageLoader.Link href={PATHS.HOME}>
                         <ImageLoader.Image
@@ -31,7 +31,7 @@ const RankingCard: FC<Props> = ({ artist }) => {
                     </ImageLoader.Link>
                 </ImageLoader>
 
-                <Title titleType={EnumTitle.h5} className='!w-auto text-lg sm:text-xl line-clamp-1'>
+                <Title titleType={EnumTitle.h5} className='!w-auto text-lg sm:text-xl truncate'>
                     {/* convertToSnakeCase(name) */}
                     <Link href={PATHS.HOME} className='transition-colors duration-300 hover:text-purple'>
                         {name}

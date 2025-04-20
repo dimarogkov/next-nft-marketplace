@@ -30,7 +30,7 @@ const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
                 </ImageLoader>
 
                 <div className='w-full'>
-                    <Title titleType={EnumTitle.h5} className='line-clamp-1 mb-1.5 last:mb-0'>
+                    <Title titleType={EnumTitle.h5} className='truncate mb-1.5 last:mb-0'>
                         <Link
                             href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(collectionName)}/${convertToSnakeCase(
                                 name
