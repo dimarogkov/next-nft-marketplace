@@ -2,7 +2,6 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 import { HEADER_USER_LINKS_DATA, PATHS } from '@/src/variables';
-import { AdapterUser } from 'next-auth/adapters';
 import { EnumDropdownAlign } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { Dropdown, ImageLoader, Text } from '../../ui';
@@ -10,18 +9,18 @@ import { Dropdown, ImageLoader, Text } from '../../ui';
 import { LogOut } from 'lucide-react';
 
 type Props = {
-    user: IArtist & AdapterUser;
+    user: IArtist & { email: string };
     closeMenu: () => void;
 };
 
 const HeaderUser: FC<Props> = ({ user, closeMenu = () => {} }) => {
-    const { name, email, image, avatar } = user;
+    const { name, email, avatar } = user;
 
     return (
         <Dropdown className='flex items-center h-full'>
             <Dropdown.Trigger onMouseDown={closeMenu}>
                 <ImageLoader className='!size-11 md:!size-12 !pb-0 rounded-full bg-gray'>
-                    <ImageLoader.Image src={image || avatar} alt={name} />
+                    <ImageLoader.Image src={avatar} alt={name} />
                 </ImageLoader>
             </Dropdown.Trigger>
 

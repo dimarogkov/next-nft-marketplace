@@ -3,7 +3,6 @@ import { FC, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
-import { AdapterUser } from 'next-auth/adapters';
 import { useDisableScroll } from '@/src/hooks';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser, Logo } from '../../elements';
@@ -36,7 +35,7 @@ const HeaderClient: FC<Props> = ({ initialSession }) => {
                 <div className='flex items-center gap-5 sm:gap-6 lg:gap-8 h-full'>
                     {status !== 'loading' && <HeaderLinks isOpen={isOpen} session={session} />}
                     <HeaderBurger isOpen={isOpen} toggleMenu={toggleMenu} />
-                    {session && <HeaderUser user={session.user as IArtist & AdapterUser} closeMenu={closeMenu} />}
+                    {session && <HeaderUser user={session.user as IArtist & { email: string }} closeMenu={closeMenu} />}
                 </div>
 
                 <HeaderLayer isOpen={isOpen} closeMenu={closeMenu} />
