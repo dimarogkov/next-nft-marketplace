@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Session } from 'next-auth';
 import { PATHS } from '@/src/variables';
 import { getArtists } from '@/src/services';
 import { convertToSnakeCase } from '@/src/helpers';
@@ -7,13 +8,14 @@ import { INFT } from '@/src/types/interfaces/NFT';
 import NftDetailBidItem from './NftDetailBidItem';
 import NftDetailInfo from './NftDetailInfo';
 import { Timer } from '../Timer';
-import { Avatar, Btn, Tabs, Text, Title } from '../../ui';
+import { Avatar, Btn, BtnLink, Tabs, Text, Title } from '../../ui';
 
 type Props = {
+    session: Session | null;
     data: INFT;
 };
 
-const NftDetailContent: FC<Props> = async ({ data }) => {
+const NftDetailContent: FC<Props> = async ({ data, session }) => {
     const { name, collectionName, publishDate, img, author, ...infoData } = data;
     const artists = await getArtists();
 
@@ -79,16 +81,15 @@ const NftDetailContent: FC<Props> = async ({ data }) => {
                 </Tabs.Panels>
             </Tabs>
 
-            <div className='flex flex-wrap lg:flex-nowrap gap-5 lg:gap-7 w-full'>
-                <div className='w-full p-4 md:p-5 rounded-lg bg-gray'>
-                    <Text className='text-white mb-2.5 last:mb-0'>Winning bit</Text>
-                    <NftDetailBidItem artist={artists[0]} className='!p-0' />
-                </div>
+            <Timer hours={6} className='!w-full !max-w-full bg-gray' />
 
-                <Timer hours={6} className='!w-full lg:!w-fit !max-w-full lg:!max-w-[300px] bg-gray' />
-            </div>
-
-            <Btn className='sm:w-full'>Place a Bid</Btn>
+            {!session ? (
+                <BtnLink href={PATHS.SIGN_IN} className='sm:w-full'>
+                    Place a Bid
+                </BtnLink>
+            ) : (
+                <Btn className='sm:w-full'>Place a Bid</Btn>
+            )}
         </div>
     );
 };
