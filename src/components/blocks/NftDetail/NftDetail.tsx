@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { getServerSession } from 'next-auth';
+import { authConfig } from '@/src/helpers';
 import { INFT } from '@/src/types/interfaces/NFT';
 import { NftDetailContent } from '../../elements';
 import { ImageLoader } from '../../ui';
@@ -7,7 +9,8 @@ type Props = {
     nft: INFT;
 };
 
-const NftDetail: FC<Props> = ({ nft }) => {
+const NftDetail: FC<Props> = async ({ nft }) => {
+    const session = await getServerSession(authConfig);
     const { img } = nft;
 
     return (
@@ -18,7 +21,7 @@ const NftDetail: FC<Props> = ({ nft }) => {
                         <ImageLoader.Image src={img.src} alt={img.alt} />
                     </ImageLoader>
 
-                    <NftDetailContent data={nft} />
+                    <NftDetailContent data={nft} session={session} />
                 </div>
             </div>
         </section>
