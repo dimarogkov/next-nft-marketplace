@@ -3,6 +3,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import { USER_DATA } from '../variables';
+import { getArtistByName } from '../services';
 import { IArtist } from '../types/interfaces/Artist';
 
 export const authConfig: NextAuthOptions = {
@@ -41,18 +42,21 @@ export const authConfig: NextAuthOptions = {
     ],
     callbacks: {
         async session({ session }) {
-            const safeUser = session.user as unknown as IArtist;
+            const artist = await getArtistByName(USER_DATA.name);
+            const safeUser = session.user as unknown as User & IArtist;
+            const isTestArtist = artist.name === safeUser.name;
 
-            safeUser.bio = '';
-            safeUser.avatar = '/avatars/avatar_13.png';
+            safeUser.bio = isTestArtist ? artist.bio : '';
+            safeUser.avatar = isTestArtist ? artist.avatar : safeUser.image || '';
             safeUser.info = {
-                volume: '0',
-                sales: '0',
-                followers: '0',
-                totalSales: 0,
-                links: [],
+                volume: isTestArtist ? artist.info.volume : '0',
+                sales: isTestArtist ? artist.info.sales : '0',
+                followers: isTestArtist ? artist.info.followers : '0',
+                totalSales: isTestArtist ? artist.info.totalSales : 0,
+                links: isTestArtist ? artist.info.links : [],
             };
 
+            delete safeUser.image;
             return session;
         },
     },
