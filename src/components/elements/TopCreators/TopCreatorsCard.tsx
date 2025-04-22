@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { PATHS } from '@/src/variables';
-// import { convertToSnakeCase } from '@/src/helpers';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { ImageLoader, Text, Title } from '../../ui';
@@ -26,8 +25,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 </span>
 
                 <ImageLoader className='!size-20 lg:!size-[120px] !pb-0 rounded-full lg:m-auto lg:mb-6 last:mb-0'>
-                    {/* convertToSnakeCase(name) */}
-                    <ImageLoader.Link href={PATHS.HOME}>
+                    <ImageLoader.Link href={`/${convertToSnakeCase(name)}`}>
                         <ImageLoader.Image
                             src={avatar}
                             alt={name}
@@ -38,8 +36,10 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
 
                 <div className='w-[calc(100%-100px)] lg:w-full lg:text-center'>
                     <Title titleType={EnumTitle.h5} className='!text-lg mb-1 last:mb-0'>
-                        {/* convertToSnakeCase(name) */}
-                        <Link href={PATHS.HOME} className='transition-colors duration-300 hover:text-purple'>
+                        <Link
+                            href={`/${convertToSnakeCase(name)}`}
+                            className='transition-colors duration-300 hover:text-purple'
+                        >
                             {name}
                         </Link>
                     </Title>
