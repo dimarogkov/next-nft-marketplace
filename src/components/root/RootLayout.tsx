@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Breadcrumbs, Footer, Header } from '../blocks';
+import { Footer, Header } from '../blocks';
 import { ProgressLine } from '../elements';
 import { LenisScroll } from '../other';
 import RootMain from './RootMain';
@@ -13,7 +13,6 @@ const RootLayout: FC<Props> = ({ children }) => {
         <LenisScroll>
             <ProgressLine />
             <Header />
-            <Breadcrumbs />
             <RootMain>{children}</RootMain>
             <Footer />
         </LenisScroll>

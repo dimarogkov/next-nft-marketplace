@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Metadata } from 'next';
 import { convertUrlToString } from '@/src/helpers';
 import { getNftByName } from '@/src/services';
-import { CallToAction, NewNfts, NftDetail, Subscribe } from '@/src/components/blocks';
+import { Breadcrumbs, CallToAction, NewNfts, NftDetail, Subscribe } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -25,6 +25,7 @@ const NftPage: FC<Props> = async ({ params }) => {
 
     return (
         <>
+            <Breadcrumbs />
             <NftDetail nft={nft} />
             <NewNfts />
             <CallToAction />
