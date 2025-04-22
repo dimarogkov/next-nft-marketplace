@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Metadata } from 'next';
 import { convertUrlToString } from '@/src/helpers';
 import { getCollectionByName } from '@/src/services';
-import { CallToAction, CollectionDetail, Subscribe, TrendingCollection } from '@/src/components/blocks';
+import { Breadcrumbs, CallToAction, CollectionDetail, Subscribe, TrendingCollection } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -25,6 +25,7 @@ const CollectionPage: FC<Props> = async ({ params }) => {
 
     return (
         <>
+            <Breadcrumbs />
             <CollectionDetail collection={collection} />
             <TrendingCollection />
             <CallToAction />
