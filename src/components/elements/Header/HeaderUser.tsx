@@ -5,7 +5,6 @@ import { HEADER_USER_LINKS_DATA, PATHS } from '@/src/variables';
 import { EnumDropdownAlign } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { Dropdown, ImageLoader, Text } from '../../ui';
-
 import { LogOut } from 'lucide-react';
 
 type Props = {

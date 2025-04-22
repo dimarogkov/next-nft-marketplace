@@ -42,9 +42,8 @@ const NftDetailContent: FC<Props> = async ({ data, session }) => {
                 <div className='w-fit'>
                     <Text className='mb-2.5 last:mb-0'>Created By</Text>
 
-                    {/* convertToSnakeCase(author.name) */}
                     <Avatar
-                        href={PATHS.HOME}
+                        href={`/${convertToSnakeCase(author.name)}`}
                         src={author.avatar}
                         name={author.name}
                         className='px-4 py-2 shrink-0 rounded-lg bg-gray'
