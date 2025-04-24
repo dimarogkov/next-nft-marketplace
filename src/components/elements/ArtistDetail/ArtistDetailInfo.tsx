@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { EnumColorStyle, EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumColorStyle, EnumText } from '@/src/types/enums';
 import { IArtistInfo } from '@/src/types/interfaces/Artist';
-import { SocialLink, Text, Title } from '../../ui';
+import { HeroInfoItem } from '../Hero';
+import { SocialLink, Text } from '../../ui';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 type Props = {
@@ -10,6 +11,12 @@ type Props = {
 
 const ArtistDetailInfo: FC<Props> = ({ info }) => {
     const { volume, sales, followers, links } = info;
+
+    const infoArr = [
+        { value: volume, text: 'Volume' },
+        { value: sales, text: 'NFTs Sold' },
+        { value: followers, text: 'Followers' },
+    ];
 
     const SocialIcon = {
         ['facebook' as string]: Facebook,
@@ -20,29 +27,11 @@ const ArtistDetailInfo: FC<Props> = ({ info }) => {
     return (
         <>
             <div className='relative grid grid-cols-3 gap-4 w-full'>
-                <div className='w-full'>
-                    <Title titleType={EnumTitle.h4} className='font-semibold text-white'>
-                        {volume}
-                    </Title>
-
-                    <Text textType={EnumText.large}>Volume</Text>
-                </div>
-
-                <div className='w-full'>
-                    <Title titleType={EnumTitle.h4} className='font-semibold text-white'>
-                        {sales}
-                    </Title>
-
-                    <Text textType={EnumText.large}>NFTs Sold</Text>
-                </div>
-
-                <div className='w-full'>
-                    <Title titleType={EnumTitle.h4} className='font-semibold text-white'>
-                        {followers}
-                    </Title>
-
-                    <Text textType={EnumText.large}>Followers</Text>
-                </div>
+                {infoArr.map((info) => (
+                    <div key={info.text} className='w-full'>
+                        <HeroInfoItem info={info} />
+                    </div>
+                ))}
             </div>
 
             <div className='w-full'>
@@ -50,7 +39,7 @@ const ArtistDetailInfo: FC<Props> = ({ info }) => {
                     Links
                 </Text>
 
-                <div className='flex gap-1.5 w-full'>
+                <div className='flex gap-2 w-full'>
                     {links.map(({ id, href }) => (
                         <SocialLink key={id} href={href} icon={SocialIcon[id]} socialType={EnumColorStyle.gray} />
                     ))}
