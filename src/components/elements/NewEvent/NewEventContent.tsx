@@ -17,7 +17,7 @@ const NewEventContent: FC<Props> = ({ content }) => {
     return (
         <div className='relative flex flex-col gap-4 sm:gap-5 w-full md:pr-[298px]'>
             <Avatar
-                href={`/${convertToSnakeCase(author.name)}`}
+                href={`/${convertToSnakeCase(author.name)}?${PATHS.PARAMS.PAGE}`}
                 src={author.avatar}
                 name={author.name}
                 className='rounded-lg py-2 px-4 bg-black'

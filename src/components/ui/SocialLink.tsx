@@ -16,12 +16,14 @@ const SocialLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             [EnumColorStyle.purple as string]: 'bg-purple',
             [EnumColorStyle.light as string]: 'bg-white',
             [EnumColorStyle.dark as string]: 'bg-black',
+            [EnumColorStyle.gray as string]: 'bg-gray',
         };
 
         const iconClasses = {
             [EnumColorStyle.purple as string]: 'text-white',
             [EnumColorStyle.light as string]: 'text-black',
             [EnumColorStyle.dark as string]: 'text-white',
+            [EnumColorStyle.gray as string]: 'text-white',
         };
 
         return (
