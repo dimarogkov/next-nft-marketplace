@@ -6,9 +6,9 @@ export interface IArtistLink {
 }
 
 export interface IArtistInfo {
-    volume: string;
-    sales: string;
-    followers: string;
+    volume: number;
+    sales: number;
+    followers: number;
     totalSales: number;
     links: IArtistLink[];
 }
