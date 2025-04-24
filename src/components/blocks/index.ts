@@ -1,3 +1,4 @@
+import { ArtistDetail } from './ArtistDetail';
 import { Banner } from './Banner';
 import { Breadcrumbs } from './Breadcrumbs';
 import { CallToAction } from './CallToAction';
@@ -18,6 +19,7 @@ import { TopCreators } from './TopCreators';
 import { TrendingCollection } from './TrendingCollection';
 
 export {
+    ArtistDetail,
     Banner,
     Breadcrumbs,
     CallToAction,

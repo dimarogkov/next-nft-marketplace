@@ -11,8 +11,8 @@ const Template: FC<Props> = ({ children }) => {
     const pathname = usePathname();
 
     const animation: HTMLMotionProps<'div'> = {
-        initial: { opacity: 0, y: 40 },
-        animate: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] } },
+        initial: { opacity: 0 },
+        animate: { opacity: 1, transition: { duration: 0.6, delay: 0.3, ease: [0.215, 0.61, 0.355, 1] } },
     };
 
     return (

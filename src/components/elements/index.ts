@@ -1,5 +1,7 @@
+import { ArtistDetailBanner, ArtistDetailInfo, ArtistDetailTabs } from './ArtistDetail';
 import { CollectionBanner, CollectionCard, CollectionList } from './Collection';
 import { ConnectWallet } from './ConnectWallet';
+import { FollowBtn } from './FollowBtn';
 import { SubscribeForm } from './Form';
 import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser } from './Header';
 import { HeroContent } from './Hero';
@@ -17,10 +19,14 @@ import { SubscribeContent } from './Subscribe';
 import { TopCreatorsCard } from './TopCreators';
 
 export {
+    ArtistDetailBanner,
+    ArtistDetailInfo,
+    ArtistDetailTabs,
     CollectionBanner,
     CollectionCard,
     CollectionList,
     ConnectWallet,
+    FollowBtn,
     SubscribeForm,
     HeaderBurger,
     HeaderLayer,

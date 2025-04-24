@@ -26,7 +26,7 @@ const NftDetailInfo: FC<Props> = ({ data }) => {
     ];
 
     return (
-        <div className='relative container py-4 md:py-5'>
+        <div className='relative container py-8 sm:py-4 md:py-5'>
             <div className='flex flex-col gap-5 lg:gap-7 w-full'>
                 <div className='w-full'>
                     <Text className='text-white mb-2.5 last:mb-0'>Total Value</Text>

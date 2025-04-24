@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { PATHS } from '@/src/variables';
-import { ICollection } from '@/src/types/interfaces/Collection';
+import { convertToSnakeCase } from '@/src/helpers';
 import { EnumText, EnumTitle } from '@/src/types/enums';
+import { ICollection } from '@/src/types/interfaces/Collection';
 import { Avatar, Text, Title } from '../../ui';
+import { PATHS } from '@/src/variables';
 
 type Props = {
     data: Omit<ICollection, 'nfts'>;
@@ -68,7 +69,7 @@ const CollectionBanner: FC<Props> = ({ data }) => {
                     {authors.map((author) => (
                         <Avatar
                             key={author.name}
-                            href={PATHS.HOME}
+                            href={`/${convertToSnakeCase(author.name)}?${PATHS.PARAMS.PAGE}`}
                             src={author.avatar}
                             name={author.name}
                             className='px-4 py-2 shrink-0 rounded-lg bg-gray'

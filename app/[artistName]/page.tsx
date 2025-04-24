@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Metadata } from 'next';
 import { convertUrlToString } from '@/src/helpers';
 import { getArtistByName } from '@/src/services';
+import { ArtistDetail, CallToAction, Subscribe } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -24,7 +25,9 @@ const ArtistPage: FC<Props> = async ({ params }) => {
 
     return (
         <>
-            <div className='relative w-full section-padding container'>{artist.name}</div>
+            <ArtistDetail artist={artist} />
+            <CallToAction />
+            <Subscribe />
         </>
     );
 };
