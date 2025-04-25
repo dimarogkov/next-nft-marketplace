@@ -16,7 +16,7 @@ export const HEADER_LINKS_DATA: ILink[] = [
 
 export const HEADER_USER_LINKS_DATA: ILink[] = [
     {
-        href: PATHS.HOME,
+        href: `${PATHS.PROFILE}?${PATHS.PARAMS.PAGE}`,
         text: 'Profile',
         icon: CircleUser,
     },

@@ -2,14 +2,15 @@ import { FC } from 'react';
 import { getCollections, getNfts } from '@/src/services';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
-import { ArtistDetailBanner, ArtistDetailInfo, ArtistDetailTabs, FollowBtn } from '../../elements';
+import { ArtistDetailBanner, ArtistDetailInfo, ArtistDetailTabs, FollowBtn, ProfileDropdown } from '../../elements';
 import { ImageLoader, Text, Title } from '../../ui';
 
 type Props = {
     artist: IArtist;
+    isProfile?: boolean;
 };
 
-const ArtistDetail: FC<Props> = async ({ artist }) => {
+const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
     const nfts = await getNfts();
     const collections = await getCollections();
 
@@ -30,7 +31,7 @@ const ArtistDetail: FC<Props> = async ({ artist }) => {
                         <ImageLoader.Image src={avatar} alt={name} />
                     </ImageLoader>
 
-                    <div className='flex flex-wrap justify-between gap-7 sm:gap-0 w-full'>
+                    <div className='flex flex-wrap items-start justify-between gap-7 sm:gap-0 w-full'>
                         <div className='flex flex-col gap-7 lg:gap-10 w-full sm:max-w-[75%] md:max-w-[70%] lg:max-w-[60%]'>
                             <div className='w-full'>
                                 <Title titleType={EnumTitle.h3} className='mb-1 md:mb-2 last:mb-0'>
@@ -43,7 +44,7 @@ const ArtistDetail: FC<Props> = async ({ artist }) => {
                             <ArtistDetailInfo info={info} />
                         </div>
 
-                        <FollowBtn />
+                        {isProfile ? <ProfileDropdown /> : <FollowBtn />}
                     </div>
                 </div>
             </div>

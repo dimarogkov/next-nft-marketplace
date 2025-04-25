@@ -30,10 +30,12 @@ const Btn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
                 ref={ref}
                 {...props}
                 className={cn(
-                    `relative group inline-block w-full sm:w-fit height-btn rounded-lg transition-all duration-200 active:scale-95 ${className}`,
+                    `relative group inline-block w-full height-btn rounded-lg transition-all duration-200 active:scale-95 ${className}`,
                     !props.disabled && btnClasses[btnType],
                     {
                         'bg-gray text-white/50 pointer-events-none': props.disabled,
+                        'sm:w-fit': props.children,
+                        'sm:w-12': !props.children,
                     }
                 )}
             >
