@@ -1,0 +1,24 @@
+import { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
+import { authConfig } from '@/src/helpers';
+import { ArtistDetail, CallToAction, Subscribe } from '@/src/components/blocks';
+import { IArtist } from '@/src/types/interfaces/Artist';
+
+export const metadata: Metadata = {
+    title: 'Profile',
+};
+
+const ProfilePage = async () => {
+    const session = await getServerSession(authConfig);
+    const artist = session?.user as IArtist;
+    console.log(artist);
+    return (
+        <>
+            <ArtistDetail artist={artist} isProfile />
+            <CallToAction />
+            <Subscribe />
+        </>
+    );
+};
+
+export default ProfilePage;

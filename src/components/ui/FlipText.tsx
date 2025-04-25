@@ -1,6 +1,7 @@
 'use client';
 import { FC, forwardRef, Fragment, ReactNode, RefAttributes } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
+import cn from 'classnames';
 
 interface Props extends HTMLMotionProps<'p'>, RefAttributes<HTMLParagraphElement> {
     text: string;
@@ -38,29 +39,36 @@ const FlipText: FC<Props> = forwardRef<HTMLParagraphElement, Props>(({ text, chi
             {...props}
             initial='initial'
             whileHover='hovered'
-            className='flex items-center justify-center gap-2 w-full h-full font-medium px-4 sm:px-5 md:px-8'
+            className={cn('flex items-center justify-center gap-2 w-full h-full font-medium', {
+                'px-4 sm:px-5 md:px-8': !!text,
+            })}
         >
             {children && children}
 
-            <span className='relative flex overflow-hidden'>
-                {text.split('').map((letter, index) => (
-                    <Fragment key={index}>
-                        {letter !== ' ' ? (
-                            <span className='relative'>
-                                <motion.span {...firstLetterAnimation(index)} className='inline-block'>
-                                    {letter}
-                                </motion.span>
+            {text && (
+                <span className='relative flex overflow-hidden'>
+                    {text.split('').map((letter, index) => (
+                        <Fragment key={index}>
+                            {letter !== ' ' ? (
+                                <span className='relative'>
+                                    <motion.span {...firstLetterAnimation(index)} className='inline-block'>
+                                        {letter}
+                                    </motion.span>
 
-                                <motion.span {...secondLetterAnimation(index)} className='absolute left-0 inline-block'>
-                                    {letter}
-                                </motion.span>
-                            </span>
-                        ) : (
-                            <span>&nbsp;</span>
-                        )}
-                    </Fragment>
-                ))}
-            </span>
+                                    <motion.span
+                                        {...secondLetterAnimation(index)}
+                                        className='absolute left-0 inline-block'
+                                    >
+                                        {letter}
+                                    </motion.span>
+                                </span>
+                            ) : (
+                                <span>&nbsp;</span>
+                            )}
+                        </Fragment>
+                    ))}
+                </span>
+            )}
         </motion.p>
     );
 });

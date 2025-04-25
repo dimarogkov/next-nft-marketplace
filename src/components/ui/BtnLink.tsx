@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { EnumBtn } from '@/src/types/enums';
 import FlipText from './FlipText';
 import { LucideProps } from 'lucide-react';
+import cn from 'classnames';
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLAnchorElement> {
     href: string;
@@ -33,7 +34,14 @@ const BtnLink: FC<Props> = forwardRef<HTMLAnchorElement, Props>(
                 {...props}
                 href={href}
                 target={target}
-                className={`relative inline-block group w-full sm:w-fit height-btn rounded-lg transition-all duration-200 active:scale-95 ${btnLinkClasses[btnType]} ${className}`}
+                className={cn(
+                    `relative inline-block group w-full height-btn rounded-lg transition-all duration-200 active:scale-95 ${className}`,
+                    btnLinkClasses[btnType],
+                    {
+                        'sm:w-fit': props.children,
+                        'sm:w-12': !props.children,
+                    }
+                )}
             >
                 <FlipText text={props.children as string}>
                     {Icon && <Icon className={`size-5 transition-colors duration-200 ${iconClasses[btnType]}`} />}

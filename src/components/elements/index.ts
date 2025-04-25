@@ -11,6 +11,7 @@ import { NewEventContent } from './NewEvent';
 import { NftCard, NftDetailContent, NftsSearch, NftsTabs } from './Nfts';
 import { NoResultsFound } from './NoResultsFound';
 import { Pagination } from './Pagination';
+import { ProfileDropdown } from './Profile';
 import { ProgressLine } from './ProgressLine';
 import { RankingsList } from './Rankings';
 import { Search } from './Search';
@@ -42,6 +43,7 @@ export {
     NftsTabs,
     NoResultsFound,
     Pagination,
+    ProfileDropdown,
     ProgressLine,
     RankingsList,
     Search,
