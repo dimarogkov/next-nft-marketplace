@@ -7,15 +7,15 @@ const Nfts = async () => {
     const collections = await getCollections();
 
     return (
-        <Suspense fallback={null}>
-            <section className='relative w-full section-padding-bottom'>
-                <div className='container section-padding-bottom'>
-                    <NftsSearch />
-                </div>
+        <section className='relative w-full section-padding-bottom'>
+            <div className='container section-padding-bottom'>
+                <NftsSearch />
+            </div>
 
+            <Suspense fallback={null}>
                 <NftsTabs data={[nfts, collections]} />
-            </section>
-        </Suspense>
+            </Suspense>
+        </section>
     );
 };
 

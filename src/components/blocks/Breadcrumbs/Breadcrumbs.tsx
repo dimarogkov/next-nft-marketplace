@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { PATHS } from '@/src/variables/paths';
 import { convertUrlToString } from '@/src/helpers';
-import { EnumMarketplaceTabs } from '@/src/types/enums';
+import { EnumTabs } from '@/src/types/enums';
 import { Text } from '../../ui';
 import { ChevronRight } from 'lucide-react';
 import cn from 'classnames';
@@ -18,7 +18,7 @@ const Breadcrumbs = () => {
         .filter((path) => path)
         .map((path, index, arr) => {
             const baseHref = `/${arr.slice(0, index + 1).join('/')}`;
-            const href = hasMarketplace ? `${baseHref}?tab=${EnumMarketplaceTabs.NFTs}&${PATHS.PARAMS.PAGE}` : baseHref;
+            const href = hasMarketplace ? `${baseHref}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}` : baseHref;
 
             return {
                 href,

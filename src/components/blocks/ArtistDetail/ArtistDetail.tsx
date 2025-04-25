@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { getCollections, getNfts } from '@/src/services';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
-import { ArtistDetailBanner, ArtistDetailInfo, ArtistDetailTabs, FollowBtn, ProfileDropdown } from '../../elements';
+import { ArtistDetailBanner, ArtistDetailInfo, FollowBtn, NftsTabs, ProfileDropdown } from '../../elements';
 import { ImageLoader, Text, Title } from '../../ui';
 
 type Props = {
@@ -49,7 +49,9 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
                 </div>
             </div>
 
-            <ArtistDetailTabs data={[artistNfts, artistCollections]} />
+            <Suspense fallback={null}>
+                <NftsTabs data={[artistNfts, artistCollections]} isProfile={isProfile} />
+            </Suspense>
         </section>
     );
 };

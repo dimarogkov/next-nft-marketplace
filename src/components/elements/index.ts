@@ -1,4 +1,4 @@
-import { ArtistDetailBanner, ArtistDetailInfo, ArtistDetailTabs } from './ArtistDetail';
+import { ArtistDetailBanner, ArtistDetailInfo } from './ArtistDetail';
 import { CollectionBanner, CollectionCard, CollectionList } from './Collection';
 import { ConnectWallet } from './ConnectWallet';
 import { FollowBtn } from './FollowBtn';
@@ -22,7 +22,6 @@ import { TopCreatorsCard } from './TopCreators';
 export {
     ArtistDetailBanner,
     ArtistDetailInfo,
-    ArtistDetailTabs,
     CollectionBanner,
     CollectionCard,
     CollectionList,

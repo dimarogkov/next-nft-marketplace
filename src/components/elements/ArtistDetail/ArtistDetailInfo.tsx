@@ -4,6 +4,7 @@ import { IArtistInfo } from '@/src/types/interfaces/Artist';
 import { HeroInfoItem } from '../Hero';
 import { SocialLink, Text } from '../../ui';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
+import cn from 'classnames';
 
 type Props = {
     info: IArtistInfo;
@@ -26,7 +27,7 @@ const ArtistDetailInfo: FC<Props> = ({ info }) => {
 
     return (
         <>
-            <div className='relative grid grid-cols-3 gap-4 w-full'>
+            <div className={cn('relative grid grid-cols-3 gap-4 w-full', { 'mb-7 lg:mb-10': links.length === 0 })}>
                 {infoArr.map((info) => (
                     <div key={info.text} className='w-full'>
                         <HeroInfoItem info={info} />
@@ -34,17 +35,19 @@ const ArtistDetailInfo: FC<Props> = ({ info }) => {
                 ))}
             </div>
 
-            <div className='w-full'>
-                <Text textType={EnumText.large} className='mb-2 last:mb-0'>
-                    Links
-                </Text>
+            {links.length > 0 && (
+                <div className='w-full'>
+                    <Text textType={EnumText.large} className='mb-2 last:mb-0'>
+                        Links
+                    </Text>
 
-                <div className='flex gap-2 w-full'>
-                    {links.map(({ id, href }) => (
-                        <SocialLink key={id} href={href} icon={SocialIcon[id]} socialType={EnumColorStyle.gray} />
-                    ))}
+                    <div className='flex gap-2 w-full'>
+                        {links.map(({ id, href }) => (
+                            <SocialLink key={id} href={href} icon={SocialIcon[id]} socialType={EnumColorStyle.gray} />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

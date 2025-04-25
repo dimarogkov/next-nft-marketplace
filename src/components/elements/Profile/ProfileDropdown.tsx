@@ -1,6 +1,7 @@
 'use client';
+import Link from 'next/link';
 import { signOut } from 'next-auth/react';
-import { PATHS } from '@/src/variables';
+import { PATHS, PROFILE_LINKS_DATA } from '@/src/variables';
 import { EnumDropdownAlign } from '@/src/types/enums';
 import { Btn, Dropdown, Text } from '../../ui';
 import { Ellipsis, LogOut } from 'lucide-react';
@@ -13,8 +14,8 @@ const ProfileDropdown = () => {
             </Dropdown.Trigger>
 
             <Dropdown.Content align={EnumDropdownAlign.end} className='!p-0'>
-                <ul className='w-60'>
-                    {/* {HEADER_USER_LINKS_DATA.map(({ href, text, icon: Icon }) => (
+                <ul className='w-full sm:w-60'>
+                    {PROFILE_LINKS_DATA.map(({ href, text, icon: Icon }) => (
                         <li key={text} className='w-full border-b border-gray'>
                             <Text className='font-light text-white'>
                                 <Link
@@ -26,7 +27,7 @@ const ProfileDropdown = () => {
                                 </Link>
                             </Text>
                         </li>
-                    ))} */}
+                    ))}
 
                     <li className='w-full'>
                         <Text className='font-light text-white'>

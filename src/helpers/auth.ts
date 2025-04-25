@@ -49,9 +49,9 @@ export const authConfig: NextAuthOptions = {
             safeUser.bio = isTestArtist ? artist.bio : '';
             safeUser.avatar = isTestArtist ? artist.avatar : safeUser.image || '';
             safeUser.info = {
-                volume: isTestArtist ? artist.info.volume : '0',
-                sales: isTestArtist ? artist.info.sales : '0',
-                followers: isTestArtist ? artist.info.followers : '0',
+                volume: isTestArtist ? artist.info.volume : 0,
+                sales: isTestArtist ? artist.info.sales : 0,
+                followers: isTestArtist ? artist.info.followers : 0,
                 totalSales: isTestArtist ? artist.info.totalSales : 0,
                 links: isTestArtist ? artist.info.links : [],
             };

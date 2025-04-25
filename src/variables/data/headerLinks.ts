@@ -1,11 +1,11 @@
 import { PATHS } from '../paths';
-import { EnumMarketplaceTabs } from '@/src/types/enums';
+import { EnumTabs } from '@/src/types/enums';
 import { ILink } from '@/src/types/interfaces/Link';
 import { CirclePlus, CircleUser, Heart, Settings } from 'lucide-react';
 
 export const HEADER_LINKS_DATA: ILink[] = [
     {
-        href: `${PATHS.MARKETPLACE}?tab=${EnumMarketplaceTabs.NFTs}&${PATHS.PARAMS.PAGE}`,
+        href: `${PATHS.MARKETPLACE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`,
         text: 'Marketplace',
     },
     {
@@ -16,7 +16,7 @@ export const HEADER_LINKS_DATA: ILink[] = [
 
 export const HEADER_USER_LINKS_DATA: ILink[] = [
     {
-        href: `${PATHS.PROFILE}?${PATHS.PARAMS.PAGE}`,
+        href: `${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`,
         text: 'Profile',
         icon: CircleUser,
     },
@@ -26,7 +26,7 @@ export const HEADER_USER_LINKS_DATA: ILink[] = [
         icon: CirclePlus,
     },
     {
-        href: PATHS.HOME,
+        href: `${PATHS.PROFILE}?tab=${EnumTabs.Liked}&${PATHS.PARAMS.PAGE}`,
         text: 'Favorite NFT',
         icon: Heart,
     },
