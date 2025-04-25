@@ -1,20 +1,23 @@
 'use client';
 import { FC, useEffect } from 'react';
 import { useQueryState } from 'nuqs';
-import { EnumMarketplaceTabs } from '@/src/types/enums';
+import { EnumTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftsList from './NftsList';
 import { Tabs } from '../../ui';
 import cn from 'classnames';
+import { NoResultsFound } from '../NoResultsFound';
 
 type Props = {
     data: [INFT[], ICollection[]];
+    isProfile?: boolean;
 };
 
-const NftsTabs: FC<Props> = ({ data }) => {
+const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
     const [tabQuery, setTabQuery] = useQueryState('tab', { defaultValue: '' });
     const [, setNameQuery] = useQueryState('name', { defaultValue: '' });
+    const [, setCollectionNameQuery] = useQueryState('collectionName', { defaultValue: '' });
     const [, setPageQuery] = useQueryState('page', { defaultValue: '' });
     const [nfts, collections] = data;
 
@@ -23,10 +26,27 @@ const NftsTabs: FC<Props> = ({ data }) => {
         setPageQuery('1');
     }, [tabQuery, setNameQuery, setPageQuery]);
 
+    const tabsArr = isProfile
+        ? [EnumTabs.NFTs, EnumTabs.Collections, EnumTabs.Liked]
+        : [EnumTabs.NFTs, EnumTabs.Collections];
+
+    const resetFilters = () => {
+        setNameQuery('');
+        setCollectionNameQuery('');
+    };
+
+    const notExistNfts = !isProfile ? <NoResultsFound handleClick={resetFilters} /> : <div>Not Found Nfts</div>;
+
+    const notExistCollections = !isProfile ? (
+        <NoResultsFound handleClick={resetFilters} />
+    ) : (
+        <div>Not Found Collections</div>
+    );
+
     return (
         <Tabs>
             <Tabs.TabList classNameList='md:!px-5'>
-                {[EnumMarketplaceTabs.NFTs, EnumMarketplaceTabs.Collections].map((tab) => (
+                {tabsArr.map((tab) => (
                     <Tabs.Tab
                         key={tab}
                         isActive={tab === tabQuery}
@@ -44,7 +64,7 @@ const NftsTabs: FC<Props> = ({ data }) => {
                                 }
                             )}
                         >
-                            {tab === EnumMarketplaceTabs.NFTs ? nfts.length : collections.length}
+                            {tab === EnumTabs.NFTs ? nfts.length : collections.length}
                         </span>
                     </Tabs.Tab>
                 ))}
@@ -52,12 +72,18 @@ const NftsTabs: FC<Props> = ({ data }) => {
 
             <Tabs.Panels>
                 <Tabs.Panel>
-                    <NftsList data={nfts} />
+                    <NftsList data={nfts} notExistComponent={notExistNfts} />
                 </Tabs.Panel>
 
                 <Tabs.Panel>
-                    <NftsList type={EnumMarketplaceTabs.Collections} data={collections} />
+                    <NftsList type={EnumTabs.Collections} data={collections} notExistComponent={notExistCollections} />
                 </Tabs.Panel>
+
+                {isProfile && (
+                    <Tabs.Panel>
+                        <NftsList data={nfts} notExistComponent={<div>Not Found Liked NFTs</div>} />
+                    </Tabs.Panel>
+                )}
             </Tabs.Panels>
         </Tabs>
     );

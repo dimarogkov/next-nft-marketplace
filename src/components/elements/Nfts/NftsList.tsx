@@ -1,25 +1,25 @@
 'use client';
-import { FC, Fragment, useMemo } from 'react';
+import { FC, Fragment, ReactNode, useMemo } from 'react';
 import { useQueryState } from 'nuqs';
 import { usePagination } from '@/src/hooks';
-import { EnumColorStyle, EnumMarketplaceTabs } from '@/src/types/enums';
+import { EnumColorStyle, EnumTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
-import { NoResultsFound } from '../NoResultsFound';
 import { CollectionCard } from '../Collection';
 import { Pagination } from '../Pagination';
 import NftCard from './NftCard';
 
 type Props = {
-    type?: EnumMarketplaceTabs;
+    type?: EnumTabs;
     data: INFT[] | ICollection[];
+    notExistComponent: ReactNode;
 };
 
-const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
-    const [collectionNameQuery, setCollectionNameQuery] = useQueryState('collectionName', { defaultValue: '' });
-    const [nameQuery, setNameQuery] = useQueryState('name', { defaultValue: '' });
+const NftsList: FC<Props> = ({ type = EnumTabs.NFTs, data, notExistComponent }) => {
+    const [nameQuery] = useQueryState('name');
+    const [collectionNameQuery] = useQueryState('collectionName');
 
-    const isNFTsType = useMemo(() => type === EnumMarketplaceTabs.NFTs, [type]);
+    const isNFTsType = useMemo(() => type === EnumTabs.NFTs, [type]);
 
     const filteredData = useMemo(() => {
         let arr = [...data];
@@ -36,11 +36,6 @@ const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
     }, [data, collectionNameQuery, nameQuery, isNFTsType]);
 
     const { data: slicedData, ...paginationOptions } = usePagination(filteredData);
-
-    const resetFilters = () => {
-        setNameQuery('');
-        setCollectionNameQuery('');
-    };
 
     return (
         <div className='relative flex flex-col items-center w-full min-h-[50vh]'>
@@ -65,7 +60,7 @@ const NftsList: FC<Props> = ({ type = EnumMarketplaceTabs.NFTs, data }) => {
                         <Pagination options={paginationOptions} />
                     </div>
                 ) : (
-                    <NoResultsFound handleClick={resetFilters} />
+                    <>{notExistComponent}</>
                 )}
             </div>
         </div>

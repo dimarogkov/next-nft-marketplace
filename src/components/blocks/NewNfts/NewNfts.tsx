@@ -1,6 +1,6 @@
 import { PATHS } from '@/src/variables';
 import { getNfts } from '@/src/services';
-import { EnumBtn, EnumMarketplaceTabs, EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumBtn, EnumTabs, EnumText, EnumTitle } from '@/src/types/enums';
 import { NftCard } from '../../elements';
 import { BtnLink, Text, Title } from '../../ui';
 import { Eye } from 'lucide-react';
@@ -23,7 +23,7 @@ const NewNfts = async () => {
                         </div>
 
                         <BtnLink
-                            href={`${PATHS.MARKETPLACE}?tab=${EnumMarketplaceTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
+                            href={`${PATHS.MARKETPLACE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
                             btnType={EnumBtn.outline}
                             icon={Eye}
                             className='!absolute sm:!relative bottom-0 sm:bottom-auto'
