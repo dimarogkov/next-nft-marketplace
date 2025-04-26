@@ -24,7 +24,7 @@ const SignInForm = () => {
         const response = await signIn('credentials', { email, password, redirect: false });
 
         if (response && !response.error) {
-            router.push(PATHS.HOME);
+            router.push(PATHS.PROFILE);
         } else {
             setResponseError('Your Email or Password is wrong!');
         }

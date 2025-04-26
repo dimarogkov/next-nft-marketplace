@@ -5,9 +5,9 @@ import { EnumTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftsList from './NftsList';
+import { NoLikedNftFound, NoNftFound, NoResultsFound } from '../NoExist';
 import { Tabs } from '../../ui';
 import cn from 'classnames';
-import { NoResultsFound } from '../NoResultsFound';
 
 type Props = {
     data: [INFT[], ICollection[]];
@@ -35,13 +35,7 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
         setCollectionNameQuery('');
     };
 
-    const notExistNfts = !isProfile ? <NoResultsFound handleClick={resetFilters} /> : <div>Not Found Nfts</div>;
-
-    const notExistCollections = !isProfile ? (
-        <NoResultsFound handleClick={resetFilters} />
-    ) : (
-        <div>Not Found Collections</div>
-    );
+    const notExist = !isProfile ? <NoResultsFound handleClick={resetFilters} /> : <NoNftFound />;
 
     return (
         <Tabs>
@@ -72,16 +66,16 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
 
             <Tabs.Panels>
                 <Tabs.Panel>
-                    <NftsList data={nfts} notExistComponent={notExistNfts} />
+                    <NftsList data={nfts} notExistComponent={notExist} />
                 </Tabs.Panel>
 
                 <Tabs.Panel>
-                    <NftsList type={EnumTabs.Collections} data={collections} notExistComponent={notExistCollections} />
+                    <NftsList type={EnumTabs.Collections} data={collections} notExistComponent={notExist} />
                 </Tabs.Panel>
 
                 {isProfile && (
                     <Tabs.Panel>
-                        <NftsList data={nfts} notExistComponent={<div>Not Found Liked NFTs</div>} />
+                        <NftsList data={nfts} notExistComponent={<NoLikedNftFound />} />
                     </Tabs.Panel>
                 )}
             </Tabs.Panels>
