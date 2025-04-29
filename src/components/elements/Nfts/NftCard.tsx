@@ -1,4 +1,6 @@
+'use client';
 import { FC } from 'react';
+import { useSession } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumColorStyle } from '@/src/types/enums';
@@ -13,14 +15,10 @@ type Props = {
 };
 
 const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '' }) => {
+    const { data: session } = useSession();
     const { img, ...content } = nft;
 
     const cardClasses = {
-        [EnumColorStyle.gray as string]: 'lg:bg-gray',
-        [EnumColorStyle.dark as string]: 'lg:bg-black',
-    };
-
-    const cardContentClasses = {
         [EnumColorStyle.gray as string]: 'bg-gray',
         [EnumColorStyle.dark as string]: 'bg-black',
     };
@@ -43,14 +41,10 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
                     />
                 </ImageLoader.Link>
 
-                <LikeBtn className='!absolute top-1.5 right-1.5' />
+                {session && <LikeBtn colorType={cardType} className='!absolute top-1.5 right-1.5' />}
             </ImageLoader>
 
-            <NftCardContent
-                content={content}
-                colorType={outlineClasses[cardType]}
-                className={cardContentClasses[cardType]}
-            />
+            <NftCardContent content={content} colorType={outlineClasses[cardType]} />
         </div>
     );
 };
