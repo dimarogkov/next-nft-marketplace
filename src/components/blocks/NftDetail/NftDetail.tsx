@@ -13,13 +13,15 @@ const NftDetail: FC<Props> = async ({ nft }) => {
     const session = await getServerSession(authConfig);
     const { img } = nft;
 
+    const isLikeBtnExist = session && session.user?.name !== nft.author.name;
+
     return (
         <section className='relative w-full section-padding'>
             <div className='container'>
                 <div className='grid sm:grid-cols-[1fr,2fr] md:grid-cols-[2fr,3fr] gap-5 lg:gap-7 w-full'>
                     <ImageLoader className='sm:sticky sm:top-[150px] lg:top-[170px] w-full !pb-[120%] rounded-lg shadow-md'>
                         <ImageLoader.Image src={img.src} alt={img.alt} />
-                        {session && <LikeBtn className='!absolute top-1.5 right-1.5' />}
+                        {isLikeBtnExist && <LikeBtn className='!absolute top-1.5 right-1.5' />}
                     </ImageLoader>
 
                     <NftDetailContent data={nft} session={session} />
