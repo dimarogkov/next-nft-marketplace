@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import { EnumBtn } from '@/src/types/enums';
-import FlipText from './FlipText';
+import FlipText from '../FlipText';
 import { LucideProps } from 'lucide-react';
 import cn from 'classnames';
 

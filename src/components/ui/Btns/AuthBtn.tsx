@@ -1,5 +1,5 @@
-import { EnumBtn } from '@/src/types/enums';
 import { ButtonHTMLAttributes, FC, forwardRef, RefAttributes } from 'react';
+import { EnumBtn } from '@/src/types/enums';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<HTMLButtonElement> {
     btnType?: EnumBtn;

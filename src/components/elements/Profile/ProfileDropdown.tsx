@@ -8,7 +8,7 @@ import { Ellipsis, LogOut } from 'lucide-react';
 
 const ProfileDropdown = () => {
     return (
-        <Dropdown>
+        <Dropdown className='w-full sm:w-fit'>
             <Dropdown.Trigger>
                 <Btn icon={Ellipsis} />
             </Dropdown.Trigger>
