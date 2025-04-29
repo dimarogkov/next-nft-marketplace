@@ -19,7 +19,7 @@ const NftDetail: FC<Props> = async ({ nft }) => {
                 <div className='grid sm:grid-cols-[1fr,2fr] md:grid-cols-[2fr,3fr] gap-5 lg:gap-7 w-full'>
                     <ImageLoader className='sm:sticky sm:top-[150px] lg:top-[170px] w-full !pb-[120%] rounded-lg shadow-md'>
                         <ImageLoader.Image src={img.src} alt={img.alt} />
-                        <LikeBtn className='!absolute top-1.5 right-1.5' />
+                        {session && <LikeBtn className='!absolute top-1.5 right-1.5' />}
                     </ImageLoader>
 
                     <NftDetailContent data={nft} session={session} />

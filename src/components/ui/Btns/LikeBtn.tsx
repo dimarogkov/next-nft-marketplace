@@ -1,17 +1,24 @@
 'use client';
 import { ButtonHTMLAttributes, FC, forwardRef, RefAttributes, useState } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
+import { EnumColorStyle } from '@/src/types/enums';
 import { Heart } from 'lucide-react';
 import cn from 'classnames';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<HTMLButtonElement> {
+    colorType?: EnumColorStyle;
     isActive?: boolean;
     className?: string;
 }
 
 const LikeBtn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
-    ({ isActive = false, className = '', ...props }, ref) => {
+    ({ colorType = EnumColorStyle.dark, isActive = false, className = '', ...props }, ref) => {
         const [isLiked, setIsLiked] = useState(isActive);
+
+        const btnClasses = {
+            [EnumColorStyle.dark as string]: 'bg-black',
+            [EnumColorStyle.gray as string]: 'bg-gray',
+        };
 
         const animation: HTMLMotionProps<'span'> = {
             whileTap: { scale: 0.8 },
@@ -22,7 +29,7 @@ const LikeBtn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
                 ref={ref}
                 {...props}
                 onClick={() => setIsLiked((prevState) => !prevState)}
-                className={`relative flex items-center justify-center w-9 h-9 rounded-full bg-black ${className}`}
+                className={`relative flex items-center justify-center w-9 h-9 rounded-full ${btnClasses[colorType]} ${className}`}
             >
                 <motion.span {...animation}>
                     <Heart
