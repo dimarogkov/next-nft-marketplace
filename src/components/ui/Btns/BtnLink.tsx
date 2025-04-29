@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes, FC, forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import Link from 'next/link';
 import { EnumBtn } from '@/src/types/enums';
-import FlipText from './FlipText';
+import FlipText from '../FlipText';
 import { LucideProps } from 'lucide-react';
 import cn from 'classnames';
 

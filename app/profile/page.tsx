@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const ProfilePage = async () => {
     const session = await getServerSession(authConfig);
     const artist = session?.user as IArtist;
-    console.log(artist);
+    
     return (
         <>
             <ArtistDetail artist={artist} isProfile />

@@ -1,7 +1,5 @@
-import AuthBtn from './AuthBtn';
+import { AuthBtn, Btn, BtnLink, LikeBtn } from './Btns';
 import Avatar from './Avatar';
-import Btn from './Btn';
-import BtnLink from './BtnLink';
 import Checkbox from './Checkbox';
 import Dropdown from './Dropdown';
 import ErrorMessage from './ErrorMessage';
@@ -21,9 +19,10 @@ import Title from './Title';
 
 export {
     AuthBtn,
-    Avatar,
     Btn,
     BtnLink,
+    LikeBtn,
+    Avatar,
     Checkbox,
     Dropdown,
     ErrorMessage,

@@ -4,7 +4,7 @@ import { convertToSnakeCase } from '@/src/helpers';
 import { EnumColorStyle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftCardContent from './NftCardContent';
-import { ImageLoader } from '../../ui';
+import { ImageLoader, LikeBtn } from '../../ui';
 
 type Props = {
     nft: INFT;
@@ -42,6 +42,8 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
                         className='will-change-transform transition-all duration-500 hover:scale-110 hover:brightness-75'
                     />
                 </ImageLoader.Link>
+
+                <LikeBtn className='!absolute top-1.5 right-1.5' />
             </ImageLoader>
 
             <NftCardContent
