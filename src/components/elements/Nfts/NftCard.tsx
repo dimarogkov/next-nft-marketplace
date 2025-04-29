@@ -18,6 +18,8 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
     const { data: session } = useSession();
     const { img, ...content } = nft;
 
+    const isLikeBtnExist = session && session.user?.name !== content.author.name;
+
     const cardClasses = {
         [EnumColorStyle.gray as string]: 'bg-gray',
         [EnumColorStyle.dark as string]: 'bg-black',
@@ -41,7 +43,7 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
                     />
                 </ImageLoader.Link>
 
-                {session && <LikeBtn colorType={cardType} className='!absolute top-1.5 right-1.5' />}
+                {isLikeBtnExist && <LikeBtn colorType={cardType} className='!absolute top-1.5 right-1.5' />}
             </ImageLoader>
 
             <NftCardContent content={content} colorType={outlineClasses[cardType]} />
