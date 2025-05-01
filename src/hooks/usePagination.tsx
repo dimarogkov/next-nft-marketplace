@@ -1,3 +1,4 @@
+'use client';
 import { useQueryState } from 'nuqs';
 
 const usePagination = (arr: any[], perPage: number = 6) => {

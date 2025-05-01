@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useMemo, useState } from 'react';
 import { ITimer } from '../types/interfaces/Timer';
 

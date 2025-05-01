@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 import { HEADER_USER_LINKS_DATA, PATHS } from '@/src/variables';
 import { EnumDropdownAlign } from '@/src/types/enums';
-import { IArtist } from '@/src/types/interfaces/Artist';
+import { IProfile } from '@/src/types/interfaces/Profile';
 import { Dropdown, ImageLoader, Text } from '../../ui';
 import { LogOut } from 'lucide-react';
 
 type Props = {
-    user: IArtist & { email: string };
+    user: IProfile;
     closeMenu: () => void;
 };
 
