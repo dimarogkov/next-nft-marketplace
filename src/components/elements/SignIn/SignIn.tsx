@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
-import { EnumBtn } from '@/src/types/enums';
+import { EnumBtn, EnumTabs } from '@/src/types/enums';
 import { SignInForm } from '../Form';
 import SignInInfo from './SignInInfo';
 import { AuthBtn, InfoMessage, Text } from '../../ui';
@@ -22,12 +22,22 @@ const SignIn = () => {
             </div>
 
             <div className='flex flex-col gap-2.5 w-full'>
-                <AuthBtn btnType={EnumBtn.light} onClick={() => signIn('google', { callbackUrl: PATHS.HOME })}>
+                <AuthBtn
+                    btnType={EnumBtn.light}
+                    onClick={() =>
+                        signIn('google', { callbackUrl: `${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}` })
+                    }
+                >
                     <Image src='/google.png' alt='google' width={20} height={20} />
                     <span>Continue with Google</span>
                 </AuthBtn>
 
-                <AuthBtn btnType={EnumBtn.light} onClick={() => signIn('github', { callbackUrl: PATHS.HOME })}>
+                <AuthBtn
+                    btnType={EnumBtn.light}
+                    onClick={() =>
+                        signIn('github', { callbackUrl: `${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}` })
+                    }
+                >
                     <Image src='/github.png' alt='github' width={20} height={20} />
                     <span>Continue with Github</span>
                 </AuthBtn>

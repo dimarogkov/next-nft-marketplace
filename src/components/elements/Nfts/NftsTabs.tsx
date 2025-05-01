@@ -10,7 +10,7 @@ import { Tabs } from '../../ui';
 import cn from 'classnames';
 
 type Props = {
-    data: [INFT[], ICollection[]];
+    data: [INFT[], ICollection[], INFT[]];
     isProfile?: boolean;
 };
 
@@ -19,7 +19,7 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
     const [, setNameQuery] = useQueryState('name', { defaultValue: '' });
     const [, setCollectionNameQuery] = useQueryState('collectionName', { defaultValue: '' });
     const [, setPageQuery] = useQueryState('page', { defaultValue: '' });
-    const [nfts, collections] = data;
+    const [nfts, collections, likedNfts] = data;
 
     useEffect(() => {
         setNameQuery('');
@@ -29,6 +29,12 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
     const tabsArr = isProfile
         ? [EnumTabs.NFTs, EnumTabs.Collections, EnumTabs.Liked]
         : [EnumTabs.NFTs, EnumTabs.Collections];
+
+    const tabCount = {
+        [EnumTabs.NFTs as string]: nfts.length,
+        [EnumTabs.Collections as string]: collections.length,
+        [EnumTabs.Liked as string]: likedNfts.length,
+    };
 
     const resetFilters = () => {
         setNameQuery('');
@@ -58,7 +64,7 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
                                 }
                             )}
                         >
-                            {tab === EnumTabs.NFTs ? nfts.length : collections.length}
+                            {tabCount[tab]}
                         </span>
                     </Tabs.Tab>
                 ))}
@@ -75,7 +81,7 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
 
                 {isProfile && (
                     <Tabs.Panel>
-                        <NftsList data={nfts} notExistComponent={<NoLikedNftFound />} />
+                        <NftsList data={likedNfts} notExistComponent={<NoLikedNftFound />} />
                     </Tabs.Panel>
                 )}
             </Tabs.Panels>

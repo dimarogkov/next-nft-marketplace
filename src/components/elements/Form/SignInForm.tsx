@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
 import { signInFormOptions } from '@/src/helpers/formOptions';
+import { EnumTabs } from '@/src/types/enums';
 import { Btn, ErrorMessage, Input, Label } from '../../ui';
 import { CircleUser } from 'lucide-react';
 
@@ -24,7 +25,7 @@ const SignInForm = () => {
         const response = await signIn('credentials', { email, password, redirect: false });
 
         if (response && !response.error) {
-            router.push(PATHS.PROFILE);
+            router.push(`${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`);
         } else {
             setResponseError('Your Email or Password is wrong!');
         }

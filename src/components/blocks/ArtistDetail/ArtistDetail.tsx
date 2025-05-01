@@ -2,11 +2,12 @@ import { FC, Suspense } from 'react';
 import { getCollections, getNfts } from '@/src/services';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
+import { IProfile } from '@/src/types/interfaces/Profile';
 import { ArtistDetailBanner, ArtistDetailInfo, FollowBtn, NftsTabs, ProfileDropdown } from '../../elements';
 import { ImageLoader, Text, Title } from '../../ui';
 
 type Props = {
-    artist: IArtist;
+    artist: IArtist | IProfile;
     isProfile?: boolean;
 };
 
@@ -17,7 +18,8 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
     const { name, avatar, bio, info } = artist;
 
     const artistNfts = nfts.filter(({ author }) => author.name === name);
-    const artistCollections = collections.filter(({ authors }) => authors.map(({ name }) => name).includes(name));
+    const artistCollections = collections.filter(({ authors }) => authors.some((author) => author.name === name));
+    const likedNfts = isProfile ? (artist as IProfile).nfts.likedNfts : [];
 
     const bannerImg = { src: '/artist_banner_img.jpg', alt: 'banner_img' };
 
@@ -50,7 +52,7 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
             </div>
 
             <Suspense fallback={null}>
-                <NftsTabs data={[artistNfts, artistCollections]} isProfile={isProfile} />
+                <NftsTabs data={[artistNfts, artistCollections, likedNfts]} isProfile={isProfile} />
             </Suspense>
         </section>
     );
