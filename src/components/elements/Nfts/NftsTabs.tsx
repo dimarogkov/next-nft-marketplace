@@ -1,25 +1,30 @@
 'use client';
 import { FC, useEffect } from 'react';
 import { useQueryState } from 'nuqs';
+import { useSession } from 'next-auth/react';
 import { EnumTabs } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { INFT } from '@/src/types/interfaces/NFT';
+import { IProfile } from '@/src/types/interfaces/Profile';
 import NftsList from './NftsList';
 import { NoLikedNftFound, NoNftFound, NoResultsFound } from '../NoExist';
 import { Tabs } from '../../ui';
 import cn from 'classnames';
 
 type Props = {
-    data: [INFT[], ICollection[], INFT[]];
+    data: [INFT[], ICollection[]];
     isProfile?: boolean;
 };
 
 const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
+    const { data: session } = useSession();
     const [tabQuery, setTabQuery] = useQueryState('tab', { defaultValue: '' });
     const [, setNameQuery] = useQueryState('name', { defaultValue: '' });
     const [, setCollectionNameQuery] = useQueryState('collectionName', { defaultValue: '' });
     const [, setPageQuery] = useQueryState('page', { defaultValue: '' });
-    const [nfts, collections, likedNfts] = data;
+
+    const [nfts, collections] = data;
+    const likedNfts = (session?.user as IProfile)?.nfts.likedNfts || [];
 
     useEffect(() => {
         setNameQuery('');
@@ -76,7 +81,7 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
                 </Tabs.Panel>
 
                 <Tabs.Panel>
-                    <NftsList type={EnumTabs.Collections} data={collections} notExistComponent={notExist} />
+                    <NftsList data={collections} type={EnumTabs.Collections} notExistComponent={notExist} />
                 </Tabs.Panel>
 
                 {isProfile && (

@@ -1,26 +1,26 @@
 import { FC } from 'react';
-import { Session } from 'next-auth';
 import { PATHS } from '@/src/variables';
-import { getArtists } from '@/src/services';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
-import { INFT } from '@/src/types/interfaces/NFT';
-import NftDetailBidItem from './NftDetailBidItem';
-import NftDetailInfo from './NftDetailInfo';
-import { Timer } from '../Timer';
-import { Avatar, Btn, BtnLink, Tabs, Text, Title } from '../../ui';
+import { IImage } from '@/src/types/interfaces/Image';
+import { IAuthor } from '@/src/types/interfaces/Author';
+import { Avatar, Text, Title } from '../../ui';
 
 type Props = {
-    session: Session | null;
-    data: INFT;
+    data: {
+        name: string;
+        collectionName: string;
+        publishDate: string;
+        img: IImage;
+        author: IAuthor;
+    };
 };
 
-const NftDetailContent: FC<Props> = async ({ data, session }) => {
-    const { name, collectionName, publishDate, img, author, ...infoData } = data;
-    const artists = await getArtists();
+const NftDetailContent: FC<Props> = async ({ data }) => {
+    const { name, collectionName, publishDate, img, author } = data;
 
     return (
-        <div className='relative flex flex-col gap-5 lg:gap-7 w-full'>
+        <>
             <div className='w-full'>
                 <Text>{publishDate}</Text>
                 <Title titleType={EnumTitle.h2}>{name}</Title>
@@ -51,45 +51,7 @@ const NftDetailContent: FC<Props> = async ({ data, session }) => {
                     />
                 </div>
             </div>
-
-            <Tabs className='-left-4 sm:left-auto !w-[calc(100%+32px)] sm:!w-full sm:border sm:border-gray sm:rounded-lg'>
-                <Tabs.TabList className='sm:!border-none'>
-                    {['Details', 'Bids', 'History'].map((tab) => (
-                        <Tabs.Tab key={tab}>{tab}</Tabs.Tab>
-                    ))}
-                </Tabs.TabList>
-
-                <Tabs.Panels>
-                    <Tabs.Panel>
-                        <NftDetailInfo data={infoData} />
-                    </Tabs.Panel>
-                    <Tabs.Panel>
-                        <div className='relative w-full'>
-                            {artists.slice(0, 6).map((artist) => (
-                                <NftDetailBidItem key={artist.name} artist={artist} />
-                            ))}
-                        </div>
-                    </Tabs.Panel>
-                    <Tabs.Panel>
-                        <div className='relative w-full'>
-                            {artists.slice(0, 5).map((artist) => (
-                                <NftDetailBidItem key={artist.name} artist={artist} />
-                            ))}
-                        </div>
-                    </Tabs.Panel>
-                </Tabs.Panels>
-            </Tabs>
-
-            <Timer hours={6} className='!w-full !max-w-full bg-gray' />
-
-            {!session ? (
-                <BtnLink href={PATHS.SIGN_IN} className='sm:w-full'>
-                    Place a Bid
-                </BtnLink>
-            ) : (
-                <Btn className='sm:w-full'>Place a Bid</Btn>
-            )}
-        </div>
+        </>
     );
 };
 

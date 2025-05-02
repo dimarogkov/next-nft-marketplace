@@ -10,12 +10,12 @@ import { Pagination } from '../Pagination';
 import NftCard from './NftCard';
 
 type Props = {
-    type?: EnumTabs;
     data: INFT[] | ICollection[];
+    type?: EnumTabs;
     notExistComponent: ReactNode;
 };
 
-const NftsList: FC<Props> = ({ type = EnumTabs.NFTs, data, notExistComponent }) => {
+const NftsList: FC<Props> = ({ data, type = EnumTabs.NFTs, notExistComponent }) => {
     const [nameQuery] = useQueryState('name');
     const [collectionNameQuery] = useQueryState('collectionName');
 

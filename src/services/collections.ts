@@ -6,11 +6,12 @@ import { ICollection } from '../types/interfaces/Collection';
 export const getCollections = async () => {
     const response = await axios.get<INFT[]>(`${API}/nfts`);
 
-    const collectionItems = response.data.reduce<{ [key: string]: ICollection }>((acc, nft) => {
+    const collectionItems = response.data.reduce<{ [key: string]: ICollection }>((acc, nft, index) => {
         const { collectionName, author, price, highestBid } = nft;
 
         if (!acc[collectionName]) {
             acc[collectionName] = {
+                id: `${index + 1}`,
                 name: collectionName,
                 totalPrice: 0,
                 totalBid: 0,
