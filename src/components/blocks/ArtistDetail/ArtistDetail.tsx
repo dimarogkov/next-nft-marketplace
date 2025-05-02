@@ -19,13 +19,10 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
 
     const artistNfts = nfts.filter(({ author }) => author.name === name);
     const artistCollections = collections.filter(({ authors }) => authors.some((author) => author.name === name));
-    const likedNfts = isProfile ? (artist as IProfile).nfts.likedNfts : [];
-
-    const bannerImg = { src: '/artist_banner_img.jpg', alt: 'banner_img' };
 
     return (
         <section className='relative w-full section-padding-bottom'>
-            <ArtistDetailBanner img={bannerImg} />
+            <ArtistDetailBanner />
 
             <div className='container !-mt-10 md:!-mt-12 lg:!-mt-14 !mb-10 last:!mb-0'>
                 <div className='flex flex-col gap-5 lg:gap-7 w-full'>
@@ -52,7 +49,7 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
             </div>
 
             <Suspense fallback={null}>
-                <NftsTabs data={[artistNfts, artistCollections, likedNfts]} isProfile={isProfile} />
+                <NftsTabs data={[artistNfts, artistCollections]} isProfile={isProfile} />
             </Suspense>
         </section>
     );

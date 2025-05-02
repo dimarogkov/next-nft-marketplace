@@ -12,7 +12,7 @@ type Props = {
 };
 
 const HeaderClient: FC<Props> = ({ initialSession }) => {
-    const { data: clientSession, status } = useSession();
+    const { data: clientSession } = useSession();
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
@@ -33,7 +33,7 @@ const HeaderClient: FC<Props> = ({ initialSession }) => {
                 <Logo />
 
                 <div className='flex items-center gap-5 sm:gap-6 lg:gap-8 h-full'>
-                    {status !== 'loading' && <HeaderLinks isOpen={isOpen} session={session} />}
+                    <HeaderLinks isOpen={isOpen} session={session} />
                     <HeaderBurger isOpen={isOpen} toggleMenu={toggleMenu} />
                     {session && <HeaderUser user={session.user as IProfile} closeMenu={closeMenu} />}
                 </div>

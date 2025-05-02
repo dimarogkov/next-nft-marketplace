@@ -1,12 +1,13 @@
 'use client';
 import { FC } from 'react';
-import { useSession } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
+import { useLike } from '@/src/hooks';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumColorStyle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
 import NftCardContent from './NftCardContent';
 import { ImageLoader, LikeBtn } from '../../ui';
+import cn from 'classnames';
 
 type Props = {
     nft: INFT;
@@ -15,10 +16,8 @@ type Props = {
 };
 
 const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '' }) => {
-    const { data: session } = useSession();
+    const { isLiked, isLoading, isLikeBtnExist, toggleLike } = useLike(nft);
     const { img, ...content } = nft;
-
-    const isLikeBtnExist = session && session.user?.name !== content.author.name;
 
     const cardClasses = {
         [EnumColorStyle.gray as string]: 'bg-gray',
@@ -31,7 +30,15 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
     };
 
     return (
-        <div className={`relative w-full rounded-lg overflow-hidden ${cardClasses[cardType]} ${className}`}>
+        <div
+            className={cn(
+                `relative w-full rounded-lg overflow-hidden transition-opacity duration-300 ${className}`,
+                cardClasses[cardType],
+                {
+                    'opacity-50 pointer-events-none': isLoading,
+                }
+            )}
+        >
             <ImageLoader className='w-full !pb-[75%] rounded-lg'>
                 <ImageLoader.Link
                     href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(content.collectionName)}/${img.alt}`}
@@ -43,7 +50,14 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
                     />
                 </ImageLoader.Link>
 
-                {isLikeBtnExist && <LikeBtn colorType={cardType} className='!absolute top-1.5 right-1.5' />}
+                {isLikeBtnExist && (
+                    <LikeBtn
+                        isActive={isLiked}
+                        colorType={cardType}
+                        onClick={toggleLike}
+                        className='!absolute top-1.5 right-1.5'
+                    />
+                )}
             </ImageLoader>
 
             <NftCardContent content={content} colorType={outlineClasses[cardType]} />

@@ -8,7 +8,7 @@ import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
-import { NftCard, NftDetailContent, NftsSearch, NftsTabs } from './Nfts';
+import { NftCard, NftDetailContent, NftDetailImg, NftDetailTabs, NftsSearch, NftsTabs } from './Nfts';
 import { NoLikedNftFound, NoNftFound, NoResultsFound } from './NoExist';
 import { Pagination } from './Pagination';
 import { ProfileDropdown } from './Profile';
@@ -17,6 +17,7 @@ import { RankingsList } from './Rankings';
 import { Search } from './Search';
 import { SignIn, SignInContent } from './SignIn';
 import { SubscribeContent } from './Subscribe';
+import { Timer } from './Timer';
 import { TopCreatorsCard } from './TopCreators';
 
 export {
@@ -38,6 +39,8 @@ export {
     NewEventContent,
     NftCard,
     NftDetailContent,
+    NftDetailImg,
+    NftDetailTabs,
     NftsSearch,
     NftsTabs,
     NoLikedNftFound,
@@ -51,5 +54,6 @@ export {
     SignIn,
     SignInContent,
     SubscribeContent,
+    Timer,
     TopCreatorsCard,
 };
