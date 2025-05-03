@@ -9,10 +9,10 @@ export const WALLET_OPTIONS_DATA: IWalletOption[] = [
         },
     },
     {
-        name: 'Wallet Connect',
+        name: 'Open Sea',
         icon: {
-            src: '/wallet_options/wallet_connect.svg',
-            alt: 'wallet_connect',
+            src: '/wallet_options/open_sea.svg',
+            alt: 'open_sea',
         },
     },
     {

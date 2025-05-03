@@ -1,9 +1,14 @@
+'use client';
+import { useState } from 'react';
 import { WALLET_OPTIONS_DATA } from '@/src/variables';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import ConnectWalletOption from './ConnectWalletOption';
 import { Text, Title } from '../../ui';
+import cn from 'classnames';
 
 const ConnectWallet = () => {
+    const [isLoading, setIsLoading] = useState(false);
+
     return (
         <div className='relative w-full'>
             <div className='w-full mb-5 sm:mb-10 last:mb-0'>
@@ -18,7 +23,12 @@ const ConnectWallet = () => {
 
             <div className='flex flex-col gap-4 sm:gap-5 w-full lg:w-[75%]'>
                 {WALLET_OPTIONS_DATA.map((option) => (
-                    <ConnectWalletOption key={option.name} option={option} />
+                    <ConnectWalletOption
+                        key={option.name}
+                        option={option}
+                        setIsLoading={setIsLoading}
+                        className={cn({ 'opacity-50 pointer-events-none': isLoading })}
+                    />
                 ))}
             </div>
         </div>

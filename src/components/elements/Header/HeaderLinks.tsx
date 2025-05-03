@@ -2,8 +2,9 @@
 import { FC } from 'react';
 import { Session } from 'next-auth';
 import { HEADER_LINKS_DATA, PATHS } from '@/src/variables';
-import HeaderLink from './HeaderLink';
 import { EnumBtn } from '@/src/types/enums';
+import { IProfile } from '@/src/types/interfaces/Profile';
+import HeaderLink from './HeaderLink';
 import { BtnLink } from '../../ui';
 import { CircleUser, Wallet } from 'lucide-react';
 import cn from 'classnames';
@@ -14,6 +15,8 @@ type Props = {
 };
 
 const HeaderLinks: FC<Props> = ({ isOpen, session }) => {
+    const wallet = (session?.user as IProfile)?.wallet;
+
     return (
         <div
             className={cn(
@@ -41,7 +44,7 @@ const HeaderLinks: FC<Props> = ({ isOpen, session }) => {
                         btnType={EnumBtn.outline}
                         className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
                     >
-                        Connect Wallet
+                        {!wallet ? 'Connect Wallet' : wallet.name}
                     </BtnLink>
                 ) : (
                     <BtnLink
