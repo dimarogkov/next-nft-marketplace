@@ -50,6 +50,7 @@ export const authConfig: NextAuthOptions = {
             if (session && trigger === 'update') {
                 currentToken.name = session.name;
                 currentToken.email = session.email;
+                currentToken.wallet = session.wallet;
                 currentToken.bio = session.bio;
                 currentToken.avatar = session.avatar;
                 currentToken.info = session.info;
@@ -59,6 +60,7 @@ export const authConfig: NextAuthOptions = {
 
             currentToken.name = isTestArtist ? USER_DATA.name : currentToken.name || '';
             currentToken.email = isTestArtist ? USER_DATA.email : currentToken.email || '';
+            currentToken.wallet = isTestArtist ? USER_DATA.wallet : currentToken.wallet;
             currentToken.bio = isTestArtist ? artist.bio : currentToken.bio || '';
             currentToken.avatar = isTestArtist ? artist.avatar : currentToken.picture || '';
             currentToken.info = currentToken.info || {
@@ -80,6 +82,7 @@ export const authConfig: NextAuthOptions = {
 
             currentUser.name = currentToken.name;
             currentUser.email = currentToken.email;
+            currentUser.wallet = currentToken.wallet;
             currentUser.bio = currentToken.bio;
             currentUser.avatar = currentToken.avatar;
             currentUser.info = currentToken.info;
