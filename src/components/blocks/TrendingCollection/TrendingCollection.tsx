@@ -32,7 +32,7 @@ const TrendingCollection = async () => {
                         </BtnLink>
                     </div>
 
-                    <div className='grid lg:grid-cols-3 gap-7 w-full'>
+                    <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full'>
                         {collections.slice(0, 3).map((collection, index) => (
                             <CollectionCard
                                 key={collection.name}

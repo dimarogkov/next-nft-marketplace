@@ -49,14 +49,14 @@ const ConnectWalletOption: FC<Props> = ({ option, className = '', setIsLoading =
 
             <span
                 className={cn(
-                    'absolute right-3 md:-right-3 flex items-center justify-center size-7 md:size-8 rounded-full outline outline-2 outline-violet-600 bg-black transition-all duration-300',
+                    'absolute right-3 md:-right-2.5 flex items-center justify-center size-6 sm:size-7 rounded-full md:outline md:outline-2 md:outline-violet-600 bg-black transition-all duration-300',
                     {
                         'opacity-0 invisible': !isActive,
                         'opacity-100 visible': isActive,
                     }
                 )}
             >
-                <Check className='size-5 text-purple' />
+                <Check className='size-4 sm:size-5 text-purple' />
             </span>
         </div>
     );
