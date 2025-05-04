@@ -55,7 +55,7 @@ const Footer = async () => {
 
                 <div className='w-full sm:w-[58%] lg:w-[46%] lg:pt-1'>
                     <div className='w-full mb-4 last:mb-0'>
-                        <Title titleType={EnumTitle.h4} className='mb-2.5 sm:mb-3 lg:mb-5 last:mb-0'>
+                        <Title titleType={EnumTitle.h4} className='mb-2 sm:mb-3 lg:mb-5 last:mb-0'>
                             Join Our Weekly Digest
                         </Title>
 
