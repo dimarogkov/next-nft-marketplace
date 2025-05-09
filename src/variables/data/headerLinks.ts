@@ -31,7 +31,7 @@ export const HEADER_USER_LINKS_DATA: ILink[] = [
         icon: Heart,
     },
     {
-        href: PATHS.HOME,
+        href: PATHS.SETTINGS,
         text: 'Settings',
         icon: Settings,
     },

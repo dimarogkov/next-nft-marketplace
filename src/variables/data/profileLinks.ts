@@ -1,6 +1,6 @@
 import { PATHS } from '../paths';
 import { ILink } from '@/src/types/interfaces/Link';
-import { CirclePlus, Settings, Wallet } from 'lucide-react';
+import { CirclePlus, Settings } from 'lucide-react';
 
 export const PROFILE_LINKS_DATA: ILink[] = [
     {
@@ -9,12 +9,7 @@ export const PROFILE_LINKS_DATA: ILink[] = [
         icon: CirclePlus,
     },
     {
-        href: PATHS.CONNECT_WALLET,
-        text: 'Connect Wallet',
-        icon: Wallet,
-    },
-    {
-        href: PATHS.HOME,
+        href: PATHS.SETTINGS,
         text: 'Settings',
         icon: Settings,
     },

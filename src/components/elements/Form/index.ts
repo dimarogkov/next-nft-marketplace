@@ -1,4 +1,5 @@
+import SettingsForm from './SettingsForm';
 import SignInForm from './SignInForm';
 import SubscribeForm from './SubscribeForm';
 
-export { SignInForm, SubscribeForm };
+export { SettingsForm, SignInForm, SubscribeForm };
