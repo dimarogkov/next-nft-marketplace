@@ -1,4 +1,5 @@
+import { settingsFormOptions } from './settingsFormOptions';
 import { signInFormOptions } from './signInFormOptions';
 import { subscribeFormOptions } from './subscribeFormOptions';
 
-export { signInFormOptions, subscribeFormOptions };
+export { settingsFormOptions, signInFormOptions, subscribeFormOptions };

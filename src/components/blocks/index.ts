@@ -14,6 +14,7 @@ import { NewNfts } from './NewNfts';
 import { NftDetail } from './NftDetail';
 import { Nfts } from './Nfts';
 import { Rankings } from './Rankings';
+import { Settings } from './Settings';
 import { Subscribe } from './Subscribe';
 import { TopCreators } from './TopCreators';
 import { TrendingCollection } from './TrendingCollection';
@@ -35,6 +36,7 @@ export {
     NftDetail,
     Nfts,
     Rankings,
+    Settings,
     Subscribe,
     TopCreators,
     TrendingCollection,

@@ -1,20 +1,12 @@
 'use client';
 import Link from 'next/link';
-import { signOut, useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import { PATHS, PROFILE_LINKS_DATA } from '@/src/variables';
 import { EnumDropdownAlign } from '@/src/types/enums';
-import { IProfile } from '@/src/types/interfaces/Profile';
 import { Btn, Dropdown, Text } from '../../ui';
 import { Ellipsis, LogOut } from 'lucide-react';
 
 const ProfileDropdown = () => {
-    const { data: session } = useSession();
-    const wallet = (session?.user as IProfile)?.wallet;
-
-    const profileLinks = PROFILE_LINKS_DATA.map((link) => {
-        return wallet && link.text === 'Connect Wallet' ? { ...link, text: wallet.name } : link;
-    });
-
     return (
         <Dropdown className='w-full sm:w-fit'>
             <Dropdown.Trigger>
@@ -23,7 +15,7 @@ const ProfileDropdown = () => {
 
             <Dropdown.Content align={EnumDropdownAlign.end} className='!p-0'>
                 <ul className='w-full sm:w-60'>
-                    {profileLinks.map(({ href, text, icon: Icon }) => (
+                    {PROFILE_LINKS_DATA.map(({ href, text, icon: Icon }) => (
                         <li key={text} className='w-full border-b border-gray'>
                             <Text className='font-light text-white'>
                                 <Link
