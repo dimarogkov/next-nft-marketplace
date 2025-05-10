@@ -1,7 +1,7 @@
 'use client';
 import { FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { PATHS } from '@/src/variables';
+import { PATHS, USER_DATA } from '@/src/variables';
 import { settingsFormOptions } from '@/src/helpers/formOptions';
 import { EnumBtn, EnumTabs, EnumTitle } from '@/src/types/enums';
 import { IArtistLink } from '@/src/types/interfaces/Artist';
@@ -15,11 +15,13 @@ type Props = {
         bio: string;
         links: IArtistLink[];
     };
+    updateData: (data: any) => void;
 };
 
-const SettingsForm: FC<Props> = ({ data }) => {
+const SettingsForm: FC<Props> = ({ data, updateData = () => {} }) => {
     const { name: fullName, email, bio, links } = data;
     const [name, surname] = fullName.split(' ');
+    const isTestAccount = fullName === USER_DATA.name;
 
     const {
         register,
@@ -47,7 +49,7 @@ const SettingsForm: FC<Props> = ({ data }) => {
     }, [name, surname, email, bio, socials.facebook, socials.twitter, socials.instagram, reset]);
 
     const onSubmit = async (data: any) => {
-        console.log(data);
+        await updateData(data);
     };
 
     return (
@@ -60,24 +62,24 @@ const SettingsForm: FC<Props> = ({ data }) => {
                 <Label className='flex flex-col gap-2.5 w-full'>
                     {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
                     <Text>Name</Text>
-                    <Input {...register('name')} placeholder='Name' />
+                    <Input {...register('name')} placeholder='Name' disabled={isTestAccount} />
                 </Label>
 
                 <Label className='flex flex-col gap-2.5 w-full'>
                     {errors.surname && <ErrorMessage>{errors.surname.message}</ErrorMessage>}
                     <Text>Surname</Text>
-                    <Input {...register('surname')} placeholder='Surname' />
+                    <Input {...register('surname')} placeholder='Surname' disabled={isTestAccount} />
                 </Label>
 
                 <Label className='flex flex-col gap-2.5 w-full'>
                     {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
                     <Text>Email</Text>
-                    <Input {...register('email')} placeholder='Email' />
+                    <Input {...register('email')} placeholder='Email' disabled={isTestAccount} />
                 </Label>
 
                 <Label className='flex flex-col gap-2.5 w-full'>
                     <Text>BIO</Text>
-                    <Input {...register('bio')} placeholder='BIO' />
+                    <Input {...register('bio')} placeholder='BIO' disabled={isTestAccount} />
                 </Label>
             </div>
 

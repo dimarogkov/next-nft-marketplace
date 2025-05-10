@@ -47,5 +47,5 @@ export const getCollections = async () => {
 export const getCollectionByName = async (collectionName: string) => {
     const collections = await getCollections();
 
-    return collections.filter(({ name }) => name === collectionName)[0];
+    return collections.find(({ name }) => name === collectionName) || null;
 };

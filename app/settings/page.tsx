@@ -12,11 +12,7 @@ const SettingsPage = async () => {
     const session = await getServerSession(authConfig);
     const user = session?.user as IProfile;
 
-    return (
-        <>
-            <Settings user={user} />
-        </>
-    );
+    return <Settings user={user} />;
 };
 
 export default SettingsPage;
