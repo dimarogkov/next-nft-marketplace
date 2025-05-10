@@ -4,7 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import { JWT } from 'next-auth/jwt';
 import { USER_DATA } from '../variables';
-import { getArtistByName } from '../services';
+import { getArtistByQuery } from '../services';
 import { IProfile } from '../types/interfaces/Profile';
 
 export const authConfig: NextAuthOptions = {
@@ -24,7 +24,7 @@ export const authConfig: NextAuthOptions = {
                     return null;
                 }
 
-                if (USER_DATA && USER_DATA.password === credentials.password) {
+                if (USER_DATA && USER_DATA.email === credentials.email && USER_DATA.password === credentials.password) {
                     const { password, ...userWithoutPassword } = USER_DATA;
                     return userWithoutPassword as User & IProfile;
                 }
@@ -43,9 +43,9 @@ export const authConfig: NextAuthOptions = {
     ],
     callbacks: {
         async jwt({ session, token, trigger }) {
-            const artist = await getArtistByName(USER_DATA.name);
+            const artist = await getArtistByQuery('name', USER_DATA.name);
             const currentToken = token as JWT & IProfile;
-            const isTestArtist = artist.name === token.name;
+            const isTestAccount = currentToken.name === artist.name;
 
             if (session && trigger === 'update') {
                 currentToken.name = session.name;
@@ -58,17 +58,17 @@ export const authConfig: NextAuthOptions = {
                 return currentToken;
             }
 
-            currentToken.name = isTestArtist ? USER_DATA.name : currentToken.name || '';
-            currentToken.email = isTestArtist ? USER_DATA.email : currentToken.email || '';
-            currentToken.wallet = isTestArtist ? USER_DATA.wallet : currentToken.wallet;
-            currentToken.bio = isTestArtist ? artist.bio : currentToken.bio || '';
-            currentToken.avatar = isTestArtist ? artist.avatar : currentToken.picture || '';
+            currentToken.name = isTestAccount ? artist.name : currentToken.name || '';
+            currentToken.email = currentToken.email;
+            currentToken.wallet = isTestAccount ? USER_DATA.wallet : currentToken.wallet;
+            currentToken.bio = isTestAccount ? artist.bio : currentToken.bio || '';
+            currentToken.avatar = isTestAccount ? artist.avatar : currentToken.picture || '';
             currentToken.info = currentToken.info || {
-                volume: isTestArtist ? artist.info.volume : 0,
-                sales: isTestArtist ? artist.info.sales : 0,
-                followers: isTestArtist ? artist.info.followers : 0,
-                totalSales: isTestArtist ? artist.info.totalSales : 0,
-                links: isTestArtist ? artist.info.links : [],
+                volume: isTestAccount ? artist.info.volume : 0,
+                sales: isTestAccount ? artist.info.sales : 0,
+                followers: isTestAccount ? artist.info.followers : 0,
+                totalSales: isTestAccount ? artist.info.totalSales : 0,
+                links: isTestAccount ? artist.info.links : [],
             };
             currentToken.nfts = currentToken.nfts || {
                 likedNfts: [],

@@ -1,9 +1,9 @@
-import { getNftByName } from '@/src/services';
+import { getNftByQuery } from '@/src/services';
 import { NewEventContent } from '../../elements';
 import { ImageLoader } from '../../ui';
 
 const NewEvent = async () => {
-    const { img, ...content } = await getNftByName('Whispering Blooms');
+    const { img, ...content } = await getNftByQuery('name', 'Whispering Blooms');
 
     return (
         <section className='relative w-full section-padding'>

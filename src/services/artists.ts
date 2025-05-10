@@ -6,6 +6,6 @@ export const getArtists = async () => {
     return (await axios.get<IArtist[]>(`${API}/artists`)).data;
 };
 
-export const getArtistByName = async (name: string) => {
-    return (await axios.get<IArtist[]>(`${API}/artists?name=${name}`)).data[0];
+export const getArtistByQuery = async (query: string, value: string) => {
+    return (await axios.get<IArtist[]>(`${API}/artists?${query}=${value}`)).data[0];
 };

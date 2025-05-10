@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Metadata } from 'next';
 import { convertUrlToString } from '@/src/helpers';
-import { getNftByName } from '@/src/services';
+import { getNftByQuery } from '@/src/services';
 import { Breadcrumbs, CallToAction, NewNfts, NftDetail, Subscribe } from '@/src/components/blocks';
 
 type Props = {
@@ -21,7 +21,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
 const NftPage: FC<Props> = async ({ params }) => {
     const { nftName } = await params;
-    const nft = await getNftByName(convertUrlToString(nftName));
+    const nft = await getNftByQuery('name', convertUrlToString(nftName));
 
     return (
         <>
