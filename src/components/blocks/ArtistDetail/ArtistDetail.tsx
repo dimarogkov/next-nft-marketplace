@@ -4,7 +4,7 @@ import { getCollections, getNfts } from '@/src/services';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { IProfile } from '@/src/types/interfaces/Profile';
-import { ArtistDetailBanner, ArtistDetailInfo, FollowBtn, NftsTabs, ProfileDropdown } from '../../elements';
+import { ArtistDetailBanner, ArtistDetailInfo, Follow, NftsTabs, ProfileDropdown } from '../../elements';
 import { ImageLoader, Text, Title } from '../../ui';
 import { Camera } from 'lucide-react';
 
@@ -57,7 +57,7 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
                             <ArtistDetailInfo info={info} />
                         </div>
 
-                        {isProfile ? <ProfileDropdown /> : <FollowBtn />}
+                        {isProfile ? <ProfileDropdown /> : <Follow />}
                     </div>
                 </div>
             </div>

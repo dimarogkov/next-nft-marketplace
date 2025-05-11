@@ -1,10 +1,10 @@
 import { getServerSession } from 'next-auth';
 import { PATHS } from '@/src/variables';
 import { authConfig } from '@/src/helpers';
-import { Btn, BtnLink } from '../../ui';
+import { BtnLink, FollowBtn } from '../../ui';
 import { Plus } from 'lucide-react';
 
-const FollowBtn = async () => {
+const Follow = async () => {
     const session = await getServerSession(authConfig);
 
     return (
@@ -14,10 +14,10 @@ const FollowBtn = async () => {
                     Follow
                 </BtnLink>
             ) : (
-                <Btn icon={Plus}>Follow</Btn>
+                <FollowBtn />
             )}
         </>
     );
 };
 
-export default FollowBtn;
+export default Follow;

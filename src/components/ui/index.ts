@@ -1,4 +1,4 @@
-import { AuthBtn, Btn, BtnLink, LikeBtn } from './Btns';
+import { AuthBtn, Btn, BtnLink, FollowBtn, FollowCircleBtn, LikeBtn } from './Btns';
 import Avatar from './Avatar';
 import Checkbox from './Checkbox';
 import Dropdown from './Dropdown';
@@ -21,6 +21,8 @@ export {
     AuthBtn,
     Btn,
     BtnLink,
+    FollowBtn,
+    FollowCircleBtn,
     LikeBtn,
     Avatar,
     Checkbox,
