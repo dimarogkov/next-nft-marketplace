@@ -25,7 +25,7 @@ const LikeBtn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
             <button
                 ref={ref}
                 {...props}
-                className={`relative flex items-center justify-center w-9 h-9 rounded-full ${btnClasses[colorType]} ${className}`}
+                className={`relative flex items-center justify-center w-9 h-9 rounded-full outline-none ${btnClasses[colorType]} ${className}`}
             >
                 <motion.span {...animation}>
                     <Heart

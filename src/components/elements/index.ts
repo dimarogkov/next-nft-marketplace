@@ -1,7 +1,7 @@
 import { ArtistDetailBanner, ArtistDetailInfo } from './ArtistDetail';
 import { CollectionBanner, CollectionCard, CollectionList } from './Collection';
 import { ConnectWallet } from './ConnectWallet';
-import { FollowBtn } from './FollowBtn';
+import { Follow } from './Follow';
 import { SettingsForm, SubscribeForm } from './Form';
 import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser } from './Header';
 import { HeroContent } from './Hero';
@@ -27,7 +27,7 @@ export {
     CollectionCard,
     CollectionList,
     ConnectWallet,
-    FollowBtn,
+    Follow,
     SettingsForm,
     SubscribeForm,
     HeaderBurger,

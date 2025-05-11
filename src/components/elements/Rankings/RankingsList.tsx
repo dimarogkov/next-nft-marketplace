@@ -16,7 +16,7 @@ const RankingsList: FC<Props> = ({ data }) => {
 
     return (
         <>
-            <div className='grid grid-cols-[14%,86%] sm:grid-cols-[8%,52%,20%,20%] lg:grid-cols-[5%,44%,17%,17%,17%] w-full py-3 px-5 rounded-lg border border-gray mb-4 sm:mb-5 last:mb-0'>
+            <div className='grid grid-cols-[12%,88%] sm:grid-cols-[7%,49%,22%,22%] lg:grid-cols-[5%,41%,18%,18%,18%] w-full py-3 px-4 rounded-lg border border-gray mb-4 sm:mb-5 last:mb-0'>
                 <Text>#</Text>
                 <Text>Artist</Text>
                 <Text className='!hidden sm:!block'>Change</Text>
