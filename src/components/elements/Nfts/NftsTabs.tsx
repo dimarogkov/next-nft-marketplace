@@ -24,7 +24,7 @@ const NftsTabs: FC<Props> = ({ data, isProfile = false }) => {
     const [, setPageQuery] = useQueryState('page', { defaultValue: '' });
 
     const [nfts, collections] = data;
-    const likedNfts = (session?.user as IProfile)?.nfts.likedNfts || [];
+    const likedNfts = (session?.user as IProfile)?.data.likedNfts || [];
 
     useEffect(() => {
         setNameQuery('');

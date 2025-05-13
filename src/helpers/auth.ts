@@ -54,7 +54,7 @@ export const authConfig: NextAuthOptions = {
                 currentToken.bio = session.bio;
                 currentToken.avatar = session.avatar;
                 currentToken.info = session.info;
-                currentToken.nfts = session.nfts;
+                currentToken.data = session.data;
                 return currentToken;
             }
 
@@ -70,7 +70,8 @@ export const authConfig: NextAuthOptions = {
                 totalSales: isTestAccount ? artist.info.totalSales : 0,
                 links: isTestAccount ? artist.info.links : [],
             };
-            currentToken.nfts = currentToken.nfts || {
+            currentToken.data = currentToken.data || {
+                followingArtists: [],
                 likedNfts: [],
             };
 
@@ -86,7 +87,7 @@ export const authConfig: NextAuthOptions = {
             currentUser.bio = currentToken.bio;
             currentUser.avatar = currentToken.avatar;
             currentUser.info = currentToken.info;
-            currentUser.nfts = currentToken.nfts;
+            currentUser.data = currentToken.data;
 
             return session;
         },
