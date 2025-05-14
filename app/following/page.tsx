@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { Breadcrumbs, Following } from '@/src/components/blocks';
 
@@ -9,7 +10,10 @@ const FollowingPage = async () => {
     return (
         <>
             <Breadcrumbs />
-            <Following />
+
+            <Suspense fallback={null}>
+                <Following />
+            </Suspense>
         </>
     );
 };
