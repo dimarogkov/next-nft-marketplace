@@ -1,7 +1,7 @@
 import { PATHS } from '../paths';
 import { EnumTabs } from '@/src/types/enums';
 import { ILink } from '@/src/types/interfaces/Link';
-import { CirclePlus, CircleUser, Heart, Settings } from 'lucide-react';
+import { CirclePlus, CircleUser, Heart, Settings, UsersRound } from 'lucide-react';
 
 export const HEADER_LINKS_DATA: ILink[] = [
     {
@@ -24,6 +24,11 @@ export const HEADER_USER_LINKS_DATA: ILink[] = [
         href: PATHS.HOME,
         text: 'Create NFT',
         icon: CirclePlus,
+    },
+    {
+        href: `${PATHS.FOLLOWING}?${PATHS.PARAMS.PAGE}`,
+        text: 'Following',
+        icon: UsersRound,
     },
     {
         href: `${PATHS.PROFILE}?tab=${EnumTabs.Liked}&${PATHS.PARAMS.PAGE}`,

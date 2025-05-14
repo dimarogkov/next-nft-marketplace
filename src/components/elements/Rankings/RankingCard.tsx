@@ -1,23 +1,29 @@
 'use client';
 import { FC } from 'react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { useFollow } from '@/src/hooks';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { FollowCircleBtn, ImageLoader, Text, Title } from '../../ui';
+import cn from 'classnames';
 
 type Props = {
     artist: IArtist & { index: number };
 };
 
 const RankingCard: FC<Props> = ({ artist }) => {
+    const { isFollow, isLoading, isFollowBtnExist, toggleFollow } = useFollow(artist);
     const { index, name, avatar, info } = artist;
-    const { data: session } = useSession();
 
     return (
-        <div className='relative grid grid-cols-[12%,88%] sm:grid-cols-[7%,49%,22%,22%] lg:grid-cols-[5%,41%,18%,18%,18%] items-center w-full rounded-lg p-2 sm:p-3 bg-gray'>
+        <div
+            className={cn(
+                'relative grid grid-cols-[12%,88%] sm:grid-cols-[7%,49%,22%,22%] lg:grid-cols-[5%,41%,18%,18%,18%] items-center w-full rounded-lg p-2 sm:p-3 bg-gray transition-opacity duration-300',
+                { 'opacity-50 pointer-events-none': isLoading }
+            )}
+        >
             <span className='flex items-center justify-center text-sm sm:text-base text-gray2 size-7 lg:size-7 rounded-full bg-black'>
                 {index}
             </span>
@@ -47,7 +53,9 @@ const RankingCard: FC<Props> = ({ artist }) => {
             <Text className='!hidden lg:!block font-medium text-white'>{Math.round((info.totalSales * 60) / 10)}</Text>
             <Text className='!hidden sm:!block font-medium text-white'>{info.totalSales} ETH</Text>
 
-            {session && <FollowCircleBtn className='!absolute right-2 sm:right-3' />}
+            {isFollowBtnExist && (
+                <FollowCircleBtn isActive={isFollow} onClick={toggleFollow} className='!absolute right-2 sm:right-3' />
+            )}
         </div>
     );
 };

@@ -10,8 +10,8 @@ const useLike = (nft: INFT) => {
 
     const currentData = session?.user as IProfile;
     const likedNfts = currentData?.data.likedNfts || [];
-    const isLiked = likedNfts.some(({ id }) => id === nft.id);
 
+    const isLiked = likedNfts.some(({ id }) => id === nft.id);
     const isLikeBtnExist = (session && session.user?.name !== nft.author.name) || false;
 
     const toggleLike = async () => {

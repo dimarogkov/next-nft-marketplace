@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, FC, forwardRef, RefAttributes } from 'react';
 import Btn from './Btn';
-import { UserPlus } from 'lucide-react';
+import { UserMinus, UserPlus } from 'lucide-react';
+import { EnumBtn } from '@/src/types/enums';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<HTMLButtonElement> {
     isActive?: boolean;
@@ -10,7 +11,13 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<H
 const FollowBtn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
     ({ isActive = false, className = '', ...props }, ref) => {
         return (
-            <Btn ref={ref} {...props} icon={UserPlus} className={className}>
+            <Btn
+                ref={ref}
+                {...props}
+                icon={isActive ? UserMinus : UserPlus}
+                btnType={isActive ? EnumBtn.purple : EnumBtn.outline}
+                className={className}
+            >
                 {isActive ? 'Unfollow' : 'Follow'}
             </Btn>
         );

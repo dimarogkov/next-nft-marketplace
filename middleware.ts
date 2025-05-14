@@ -13,6 +13,10 @@ export async function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL(PATHS.SIGN_IN, request.url));
     }
 
+    if (!token && request.nextUrl.pathname === PATHS.FOLLOWING) {
+        return NextResponse.redirect(new URL(PATHS.SIGN_IN, request.url));
+    }
+
     if (!token && request.nextUrl.pathname === PATHS.SETTINGS) {
         return NextResponse.redirect(new URL(PATHS.SIGN_IN, request.url));
     }
@@ -25,5 +29,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: [PATHS.SIGN_IN, PATHS.CONNECT_WALLET, PATHS.PROFILE, PATHS.SETTINGS],
+    matcher: [PATHS.SIGN_IN, PATHS.CONNECT_WALLET, PATHS.PROFILE, PATHS.FOLLOWING, PATHS.SETTINGS],
 };

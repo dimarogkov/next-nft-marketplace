@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { useFollow } from '@/src/hooks';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTitle } from '@/src/types/enums';
@@ -14,12 +14,13 @@ type Props = {
 };
 
 const TopCreatorsCard: FC<Props> = ({ artist }) => {
+    const { isFollow, isLoading, isFollowBtnExist, toggleFollow } = useFollow(artist);
     const { index, name, avatar, info } = artist;
-    const { data: session } = useSession();
 
     return (
         <div
-            className={cn('relative w-full rounded-lg p-4 bg-gray', {
+            className={cn('relative w-full rounded-lg p-4 bg-gray transition-opacity duration-300', {
+                'opacity-50 pointer-events-none': isLoading,
                 'hidden lg:block': index > 6,
             })}
         >
@@ -54,7 +55,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 </div>
             </div>
 
-            {session && <FollowBtn className='sm:!w-full' />}
+            {isFollowBtnExist && <FollowBtn isActive={isFollow} onClick={toggleFollow} className='sm:!w-full' />}
         </div>
     );
 };

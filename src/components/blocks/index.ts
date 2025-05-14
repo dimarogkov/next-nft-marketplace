@@ -4,6 +4,7 @@ import { Breadcrumbs } from './Breadcrumbs';
 import { CallToAction } from './CallToAction';
 import { Clients } from './Clients';
 import { CollectionDetail } from './CollectionDetail';
+import { Following } from './Following';
 import { Footer } from './Footer';
 import { FullPage } from './FullPage';
 import { Header } from './Header';
@@ -26,6 +27,7 @@ export {
     CallToAction,
     Clients,
     CollectionDetail,
+    Following,
     Footer,
     FullPage,
     Header,
