@@ -1,20 +1,40 @@
-import { getServerSession } from 'next-auth';
+'use client';
+import { FC } from 'react';
 import { PATHS } from '@/src/variables';
-import { authConfig } from '@/src/helpers';
+import { useSession } from 'next-auth/react';
+import { useFollow } from '@/src/hooks';
+import { EnumBtn } from '@/src/types/enums';
+import { IArtist } from '@/src/types/interfaces/Artist';
 import { BtnLink, FollowBtn } from '../../ui';
-import { Plus } from 'lucide-react';
+import { UserPlus } from 'lucide-react';
+import cn from 'classnames';
 
-const Follow = async () => {
-    const session = await getServerSession(authConfig);
+type Props = {
+    artist: IArtist;
+};
+
+const Follow: FC<Props> = ({ artist }) => {
+    const { data: session } = useSession();
+    const { isFollow, isLoading, isFollowBtnExist, toggleFollow } = useFollow(artist);
 
     return (
         <>
             {!session ? (
-                <BtnLink href={PATHS.SIGN_IN} icon={Plus}>
+                <BtnLink href={PATHS.SIGN_IN} icon={UserPlus} btnType={EnumBtn.outline}>
                     Follow
                 </BtnLink>
             ) : (
-                <FollowBtn />
+                <>
+                    {isFollowBtnExist && (
+                        <FollowBtn
+                            isActive={isFollow}
+                            onClick={toggleFollow}
+                            className={cn('transition-opacity duration-300', {
+                                'opacity-50 pointer-events-none': isLoading,
+                            })}
+                        />
+                    )}
+                </>
             )}
         </>
     );

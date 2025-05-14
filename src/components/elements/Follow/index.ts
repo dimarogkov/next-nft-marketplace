@@ -1,3 +1,4 @@
 import Follow from './Follow';
+import FollowingArtistCard from './FollowingArtistCard';
 
-export { Follow };
+export { Follow, FollowingArtistCard };

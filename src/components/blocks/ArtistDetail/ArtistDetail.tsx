@@ -57,7 +57,7 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
                             <ArtistDetailInfo info={info} />
                         </div>
 
-                        {isProfile ? <ProfileDropdown /> : <Follow />}
+                        {isProfile ? <ProfileDropdown /> : <Follow artist={artist} />}
                     </div>
                 </div>
             </div>

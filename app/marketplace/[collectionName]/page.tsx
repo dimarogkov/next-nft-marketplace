@@ -26,7 +26,7 @@ const CollectionPage: FC<Props> = async ({ params }) => {
     return (
         <>
             <Breadcrumbs />
-            <CollectionDetail collection={collection} />
+            {collection && <CollectionDetail collection={collection} />}
             <TrendingCollection />
             <CallToAction />
             <Subscribe />

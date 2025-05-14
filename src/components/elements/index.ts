@@ -1,7 +1,7 @@
 import { ArtistDetailBanner, ArtistDetailInfo } from './ArtistDetail';
 import { CollectionBanner, CollectionCard, CollectionList } from './Collection';
 import { ConnectWallet } from './ConnectWallet';
-import { Follow } from './Follow';
+import { Follow, FollowingArtistCard } from './Follow';
 import { SettingsForm, SubscribeForm } from './Form';
 import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser } from './Header';
 import { HeroContent } from './Hero';
@@ -9,7 +9,7 @@ import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
 import { NewEventContent } from './NewEvent';
 import { NftCard, NftDetailContent, NftDetailImg, NftDetailTabs, NftsSearch, NftsTabs } from './Nfts';
-import { NoLikedNftFound, NoNftFound, NoResultsFound } from './NoExist';
+import { NoFollowingArtistsFound, NoLikedNftFound, NoNftFound, NoResultsFound } from './NoExist';
 import { Pagination } from './Pagination';
 import { ProfileDropdown } from './Profile';
 import { ProgressLine } from './ProgressLine';
@@ -28,6 +28,7 @@ export {
     CollectionList,
     ConnectWallet,
     Follow,
+    FollowingArtistCard,
     SettingsForm,
     SubscribeForm,
     HeaderBurger,
@@ -44,6 +45,7 @@ export {
     NftDetailTabs,
     NftsSearch,
     NftsTabs,
+    NoFollowingArtistsFound,
     NoLikedNftFound,
     NoNftFound,
     NoResultsFound,
