@@ -20,7 +20,7 @@ const FollowCircleBtn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
                 {...props}
                 {...animation}
                 className={cn(
-                    `relative flex items-center justify-center w-9 h-9 rounded-full outline-none border-2 border-purple transition-colors duration-200 hover:border-violet-600 hover:bg-violet-600 ${className}`,
+                    `relative flex items-center justify-center size-9 rounded-full outline-none border-2 border-purple transition-colors duration-200 hover:border-violet-600 hover:bg-violet-600 ${className}`,
                     {
                         'bg-purple': isActive,
                     }

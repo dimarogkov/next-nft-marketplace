@@ -1,5 +1,5 @@
 import { PATHS } from '@/src/variables';
-import { EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumTabs, EnumText, EnumTitle } from '@/src/types/enums';
 import { BtnLink, Text, Title } from '../../ui';
 import { Store } from 'lucide-react';
 
@@ -14,7 +14,7 @@ const NoLikedNftFound = () => {
                 You don’t have any liked NFTs. Consider adding some to your favorites!
             </Text>
 
-            <BtnLink href={PATHS.MARKETPLACE} icon={Store}>
+            <BtnLink href={`${PATHS.MARKETPLACE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`} icon={Store}>
                 Go to Marketplace
             </BtnLink>
         </div>
