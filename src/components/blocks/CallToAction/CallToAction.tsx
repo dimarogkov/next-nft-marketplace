@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { PATHS } from '@/src/variables';
 import { authConfig } from '@/src/helpers';
-import { EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumTabs, EnumText, EnumTitle } from '@/src/types/enums';
 import { BtnLink, Text, Title } from '../../ui';
 import { Rocket, Store } from 'lucide-react';
 
@@ -28,7 +28,10 @@ const CallToAction = async () => {
                         </div>
                     </div>
 
-                    <BtnLink href={session ? PATHS.HOME : PATHS.SIGN_IN} icon={Rocket}>
+                    <BtnLink
+                        href={session ? `${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}` : PATHS.SIGN_IN}
+                        icon={Rocket}
+                    >
                         Get Started
                     </BtnLink>
                 </div>

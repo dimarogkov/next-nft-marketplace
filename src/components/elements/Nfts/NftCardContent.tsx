@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
-import { EnumTitle } from '@/src/types/enums';
+import { EnumTabs, EnumTitle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
 import { ImageLoader, SimpleLink, Text, Title } from '../../ui';
 
@@ -19,7 +19,9 @@ const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
         <div className={`relative w-full p-4 ${className}`}>
             <div className='flex flex-col gap-3 w-full -mt-12 mb-5 last:mb-0'>
                 <ImageLoader className={`!size-14 !pb-0 rounded-full outline outline-4 bg-gray ${colorType}`}>
-                    <ImageLoader.Link href={`/${convertToSnakeCase(author.name)}?${PATHS.PARAMS.PAGE}`}>
+                    <ImageLoader.Link
+                        href={`/${convertToSnakeCase(author.name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
+                    >
                         <ImageLoader.Image
                             src={author.avatar}
                             alt={author.name}
@@ -41,8 +43,10 @@ const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
                     </Title>
 
                     <Text>
-                        By{' '}
-                        <SimpleLink href={`/${convertToSnakeCase(author.name)}?${PATHS.PARAMS.PAGE}`}>
+                        By&nbsp;
+                        <SimpleLink
+                            href={`/${convertToSnakeCase(author.name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
+                        >
                             {author.name}
                         </SimpleLink>
                     </Text>

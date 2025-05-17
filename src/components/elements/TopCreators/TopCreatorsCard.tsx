@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useFollow } from '@/src/hooks';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
-import { EnumTitle } from '@/src/types/enums';
+import { EnumTabs, EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { FollowBtn, ImageLoader, Text, Title } from '../../ui';
 import cn from 'classnames';
@@ -30,7 +30,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 </span>
 
                 <ImageLoader className='!size-20 lg:!size-[120px] !pb-0 rounded-full lg:m-auto lg:mb-6 last:mb-0'>
-                    <ImageLoader.Link href={`/${convertToSnakeCase(name)}?${PATHS.PARAMS.PAGE}`}>
+                    <ImageLoader.Link href={`/${convertToSnakeCase(name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}>
                         <ImageLoader.Image
                             src={avatar}
                             alt={name}
@@ -42,7 +42,7 @@ const TopCreatorsCard: FC<Props> = ({ artist }) => {
                 <div className='w-[calc(100%-100px)] lg:w-full lg:text-center'>
                     <Title titleType={EnumTitle.h5} className='!text-lg mb-1 last:mb-0'>
                         <Link
-                            href={`/${convertToSnakeCase(name)}?${PATHS.PARAMS.PAGE}`}
+                            href={`/${convertToSnakeCase(name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
                             className='transition-colors duration-300 hover:text-purple'
                         >
                             {name}

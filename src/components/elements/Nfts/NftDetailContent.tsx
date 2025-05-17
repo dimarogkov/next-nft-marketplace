@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
-import { EnumTitle } from '@/src/types/enums';
+import { EnumTabs, EnumTitle } from '@/src/types/enums';
 import { IImage } from '@/src/types/interfaces/Image';
 import { IAuthor } from '@/src/types/interfaces/Author';
 import { Avatar, Text, Title } from '../../ui';
@@ -43,7 +43,7 @@ const NftDetailContent: FC<Props> = async ({ data }) => {
                     <Text className='mb-2.5 last:mb-0'>Created By</Text>
 
                     <Avatar
-                        href={`/${convertToSnakeCase(author.name)}?${PATHS.PARAMS.PAGE}`}
+                        href={`/${convertToSnakeCase(author.name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
                         src={author.avatar}
                         name={author.name}
                         className='px-4 py-2 shrink-0 rounded-lg bg-gray'

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { convertToSnakeCase } from '@/src/helpers';
-import { EnumText, EnumTitle } from '@/src/types/enums';
+import { EnumTabs, EnumText, EnumTitle } from '@/src/types/enums';
 import { ICollection } from '@/src/types/interfaces/Collection';
 import { Avatar, Text, Title } from '../../ui';
 import { PATHS } from '@/src/variables';
@@ -69,7 +69,7 @@ const CollectionBanner: FC<Props> = ({ data }) => {
                     {authors.map((author) => (
                         <Avatar
                             key={author.name}
-                            href={`/${convertToSnakeCase(author.name)}?${PATHS.PARAMS.PAGE}`}
+                            href={`/${convertToSnakeCase(author.name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
                             src={author.avatar}
                             name={author.name}
                             className='px-4 py-2 shrink-0 rounded-lg bg-gray'

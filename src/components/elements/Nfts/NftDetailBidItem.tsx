@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
+import { EnumTabs } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { ImageLoader, SimpleLink, Text } from '../../ui';
 
@@ -17,7 +18,7 @@ const NftDetailBidItem: FC<Props> = ({ artist, className = '' }) => {
             className={`flex items-center gap-2.5 px-4 md:px-5 py-4 border-b border-black last:border-none ${className}`}
         >
             <ImageLoader className='!size-12 min-w-12 !pb-0 rounded-full'>
-                <ImageLoader.Link href={`/${convertToSnakeCase(name)}?${PATHS.PARAMS.PAGE}`}>
+                <ImageLoader.Link href={`/${convertToSnakeCase(name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}>
                     <ImageLoader.Image
                         src={avatar}
                         alt={name}
@@ -28,8 +29,10 @@ const NftDetailBidItem: FC<Props> = ({ artist, className = '' }) => {
 
             <div className='w-full'>
                 <Text className='truncate text-white'>
-                    1.35 wETH by{' '}
-                    <SimpleLink href={`/${convertToSnakeCase(name)}?${PATHS.PARAMS.PAGE}`}>{name}</SimpleLink>
+                    1.35 wETH by&nbsp;
+                    <SimpleLink href={`/${convertToSnakeCase(name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}>
+                        {name}
+                    </SimpleLink>
                 </Text>
 
                 <Text>1 hours ago</Text>
