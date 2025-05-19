@@ -24,8 +24,8 @@ const FollowingArtistCard: FC<Props> = ({ artist }) => {
                 { 'opacity-50 pointer-events-none': isLoading }
             )}
         >
-            <div className='flex items-center gap-4 md:gap-5 w-full max-w-[calc(100%-56px)]'>
-                <ImageLoader className='!size-[72px] min-w-[72px] md:!size-20 md:min-w-20 !pb-0 rounded-full'>
+            <div className='flex items-center gap-3 sm:gap-4 lg:gap-5 w-full max-w-[calc(100%-56px)]'>
+                <ImageLoader className='!size-[52px] min-w-[52px] sm:!size-14 sm:min-w-14 lg:!size-16 lg:min-w-16 !pb-0 rounded-full'>
                     <ImageLoader.Link href={`/${convertToSnakeCase(name)}?${PATHS.PARAMS.PAGE}`}>
                         <ImageLoader.Image
                             src={avatar}
@@ -36,7 +36,7 @@ const FollowingArtistCard: FC<Props> = ({ artist }) => {
                 </ImageLoader>
 
                 <div className='w-auto'>
-                    <Text textType={EnumText.large} className='!text-lg text-white mb-1 last:mb-0'>
+                    <Text textType={EnumText.large} className='!text-lg text-white mb-0.5 last:mb-0'>
                         <Link
                             href={`/${convertToSnakeCase(name)}?${PATHS.PARAMS.PAGE}`}
                             className='transition-colors duration-300 hover:text-purple'
