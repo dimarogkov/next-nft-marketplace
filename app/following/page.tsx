@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const FollowingPage = async () => {
     return (
         <>
-            <Breadcrumbs />
+            <Breadcrumbs className='sm:!fixed' />
 
             <Suspense fallback={null}>
                 <Following />
