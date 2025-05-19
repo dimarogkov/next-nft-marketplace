@@ -27,9 +27,9 @@ const FollowCircleBtn: FC<Props> = forwardRef<HTMLButtonElement, Props>(
                 )}
             >
                 {isActive ? (
-                    <UserMinus className='relative left-0.5 size-5 text-white' />
+                    <UserMinus className='relative left-[1px] size-[18px] text-white' />
                 ) : (
-                    <UserPlus className='relative left-0.5 size-5 text-white' />
+                    <UserPlus className='relative left-[1px] size-[18px] text-white' />
                 )}
             </motion.button>
         );

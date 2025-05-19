@@ -18,7 +18,7 @@ const HeaderUser: FC<Props> = ({ user, closeMenu = () => {} }) => {
     return (
         <Dropdown className='flex items-center h-full'>
             <Dropdown.Trigger onMouseDown={closeMenu}>
-                <ImageLoader className='!size-11 md:!size-12 !pb-0 rounded-full bg-gray'>
+                <ImageLoader className='!size-10 sm:!size-11 lg:!size-12 border-2 border-transparent outline outline-2 outline-purple !pb-0 rounded-full bg-gray'>
                     <ImageLoader.Image src={avatar} alt={name} />
                 </ImageLoader>
             </Dropdown.Trigger>

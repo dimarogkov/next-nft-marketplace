@@ -29,7 +29,7 @@ const RankingCard: FC<Props> = ({ artist }) => {
             </span>
 
             <div className='flex items-center gap-3 sm:gap-4 lg:gap-5 w-full'>
-                <ImageLoader className='!size-14 min-w-14 lg:!size-16 lg:min-w-16 !pb-0 rounded-full'>
+                <ImageLoader className='!size-[52px] min-w-[52px] sm:!size-14 sm:min-w-14 lg:!size-16 lg:min-w-16 !pb-0 rounded-full'>
                     <ImageLoader.Link href={`/${convertToSnakeCase(name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}>
                         <ImageLoader.Image
                             src={avatar}
