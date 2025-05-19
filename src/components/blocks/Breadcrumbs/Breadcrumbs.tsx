@@ -1,5 +1,5 @@
 'use client';
-import { useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { PATHS } from '@/src/variables/paths';
@@ -9,7 +9,11 @@ import { Text } from '../../ui';
 import { ChevronRight } from 'lucide-react';
 import cn from 'classnames';
 
-const Breadcrumbs = () => {
+type Props = {
+    className?: string;
+};
+
+const Breadcrumbs: FC<Props> = ({ className = '' }) => {
     const pathname = usePathname();
     const hasMarketplace = pathname.split('/').includes(PATHS.MARKETPLACE.slice(1));
 
@@ -29,7 +33,9 @@ const Breadcrumbs = () => {
     const breadcrumbs = useMemo(() => [{ href: `${PATHS.HOME}`, text: 'Home' }, ...pathNames], [pathNames]);
 
     return (
-        <section className='sticky z-20 top-[70px] sm:top-20 lg:top-[100px] left-0 w-full py-2.5 sm:py-3 border-b border-gray bg-black'>
+        <section
+            className={`sticky z-20 top-[70px] sm:top-20 lg:top-[100px] left-0 w-full py-2.5 sm:py-3 border-b border-gray bg-black ${className}`}
+        >
             <div className='container'>
                 <ul className='flex items-center gap-1 w-full overflow-hidden'>
                     {breadcrumbs.map(({ href, text }, index) => (

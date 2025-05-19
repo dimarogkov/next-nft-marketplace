@@ -43,13 +43,13 @@ const ConnectWalletOption: FC<Props> = ({ option, className = '', setIsLoading =
                 <ImageLoader.Image src={icon.src} alt={icon.alt} />
             </div>
 
-            <Text textType={EnumText.large} className='text-white'>
+            <Text textType={EnumText.large} className='text-white !text-lg'>
                 {name}
             </Text>
 
             <span
                 className={cn(
-                    'absolute right-3 md:-right-2.5 flex items-center justify-center size-6 sm:size-7 rounded-full md:outline md:outline-2 md:outline-violet-600 bg-black transition-all duration-300',
+                    'absolute right-2 md:-right-2.5 flex items-center justify-center size-6 sm:size-7 rounded-full md:outline md:outline-2 md:outline-violet-600 bg-black transition-all duration-300',
                     {
                         'opacity-0 invisible': !isActive,
                         'opacity-100 visible': isActive,

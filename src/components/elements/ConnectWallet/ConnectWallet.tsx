@@ -10,9 +10,9 @@ const ConnectWallet = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     return (
-        <div className='relative w-full'>
-            <div className='w-full mb-5 sm:mb-10 last:mb-0'>
-                <Title titleType={EnumTitle.h2} className='mb-2 last:mb-0'>
+        <div className='relative w-full order-1 md:order-none'>
+            <div className='w-full mb-5 md:mb-10 last:mb-0'>
+                <Title titleType={EnumTitle.h2} className='mb-1 md:mb-2 last:mb-0'>
                     Connect wallet
                 </Title>
 
@@ -21,7 +21,7 @@ const ConnectWallet = () => {
                 </Text>
             </div>
 
-            <div className='flex flex-col gap-4 sm:gap-5 w-full lg:w-[75%]'>
+            <div className='flex flex-col gap-3 md:gap-5 w-full lg:w-[75%]'>
                 {WALLET_OPTIONS_DATA.map((option) => (
                     <ConnectWalletOption
                         key={option.name}
