@@ -38,14 +38,18 @@ const HeaderLinks: FC<Props> = ({ isOpen, session }) => {
                 ))}
 
                 {session ? (
-                    <BtnLink
-                        href={PATHS.CONNECT_WALLET}
-                        icon={Wallet}
-                        btnType={EnumBtn.outline}
-                        className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
-                    >
-                        {!wallet ? 'Connect Wallet' : wallet.name}
-                    </BtnLink>
+                    <>
+                        <HeaderLink link={{ href: `${PATHS.FOLLOWING}?${PATHS.PARAMS.PAGE}`, text: 'Following' }} />
+
+                        <BtnLink
+                            href={PATHS.CONNECT_WALLET}
+                            icon={Wallet}
+                            btnType={EnumBtn.outline}
+                            className='!absolute lg:!relative bottom-0 lg:bottom-auto !w-full lg:!w-fit'
+                        >
+                            {!wallet ? 'Connect Wallet' : wallet.name}
+                        </BtnLink>
+                    </>
                 ) : (
                     <BtnLink
                         href={PATHS.SIGN_IN}
