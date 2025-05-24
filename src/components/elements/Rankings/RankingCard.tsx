@@ -50,7 +50,7 @@ const RankingCard: FC<Props> = ({ artist }) => {
             </div>
 
             <Text className='!hidden sm:!block font-medium text-green'>+{(info.totalSales / 10).toFixed(2)}%</Text>
-            <Text className='!hidden lg:!block font-medium text-white'>{Math.round((info.totalSales * 60) / 10)}</Text>
+            <Text className='!hidden lg:!block font-medium text-white'>{info.sales}</Text>
             <Text className='!hidden sm:!block font-medium text-white'>{info.totalSales} ETH</Text>
 
             {isFollowBtnExist && (
