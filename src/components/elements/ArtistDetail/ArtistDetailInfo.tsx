@@ -26,8 +26,8 @@ const ArtistDetailInfo: FC<Props> = ({ info }) => {
     };
 
     return (
-        <>
-            <div className={cn('relative grid grid-cols-3 gap-4 w-full', { 'mb-7 lg:mb-10': links.length === 0 })}>
+        <div className='w-full'>
+            <div className={cn('relative grid grid-cols-3 gap-4 w-full', { 'mb-7': links.length > 0 })}>
                 {infoArr.map((info) => (
                     <div key={info.text} className='w-full'>
                         <HeroInfoItem info={info} />
@@ -48,7 +48,7 @@ const ArtistDetailInfo: FC<Props> = ({ info }) => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 
