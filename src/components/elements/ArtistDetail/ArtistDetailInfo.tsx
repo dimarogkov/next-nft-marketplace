@@ -11,10 +11,10 @@ type Props = {
 };
 
 const ArtistDetailInfo: FC<Props> = ({ info }) => {
-    const { volume, sales, followers, links } = info;
+    const { sales, followers, totalSales, links } = info;
 
     const infoArr = [
-        { value: volume, text: 'Volume' },
+        { value: totalSales, text: 'Volume' },
         { value: sales, text: 'NFTs Sold' },
         { value: followers, text: 'Followers' },
     ];

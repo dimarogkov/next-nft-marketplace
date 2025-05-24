@@ -14,17 +14,19 @@ const HeroInfoItem: FC<Props> = ({ info }) => {
     const rounded = useTransform(() => Math.round(count.get()));
 
     const { value, text } = info;
+    const updatedValue = value > 999 ? Math.floor(value / 1000) : value;
 
     useEffect(() => {
-        const controls = animate(count, value, { duration: 4, delay: 0.5 });
+        const controls = animate(count, updatedValue, { duration: 4, delay: 0.5 });
 
         return () => controls.stop();
-    }, [count, value]);
+    }, [count, updatedValue]);
 
     return (
         <div className='w-auto'>
             <Title titleType={EnumTitle.h4}>
-                <motion.span>{rounded}</motion.span>k+
+                <motion.span>{rounded}</motion.span>
+                {value > 999 && 'k+'}
             </Title>
 
             <Text textType={EnumText.large}>{text}</Text>

@@ -19,7 +19,11 @@ const useFollow = (artist: IArtist) => {
             ? followingArtists.filter(({ id }) => id !== artist.id)
             : [...followingArtists, artist];
 
-        const newData = { ...currentData, data: { ...currentData.data, followingArtists: updatedFollowingArtists } };
+        const newData = {
+            ...currentData,
+            info: { ...currentData.info, followers: updatedFollowingArtists.length },
+            data: { ...currentData.data, followingArtists: updatedFollowingArtists },
+        };
 
         setIsLoading(true);
         await update(newData);
