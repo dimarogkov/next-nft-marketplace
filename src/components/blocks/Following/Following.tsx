@@ -1,17 +1,14 @@
 'use client';
 import { useSession } from 'next-auth/react';
-import { usePagination } from '@/src/hooks';
-import { EnumColorStyle, EnumTitle } from '@/src/types/enums';
+import { EnumTitle } from '@/src/types/enums';
 import { IProfile } from '@/src/types/interfaces/Profile';
-import { FollowingArtistCard, NoFollowingArtistsFound, Pagination } from '../../elements';
+import { FollowingList, FollowingSearch, NoFollowingArtistsFound } from '../../elements';
 import { Title } from '../../ui';
 import cn from 'classnames';
 
 const Following = () => {
     const { data: session } = useSession();
     const followingArtists = (session?.user as IProfile)?.data.followingArtists || [];
-
-    const { data: slicedData, ...options } = usePagination(followingArtists, 10);
     const isFollowingArtistsExist = followingArtists.length > 0;
 
     return (
@@ -24,15 +21,12 @@ const Following = () => {
             <div className='container'>
                 {isFollowingArtistsExist ? (
                     <div className='flex flex-col gap-5 md:gap-7 w-full'>
-                        <Title titleType={EnumTitle.h3}>Following: {followingArtists.length}</Title>
-
-                        <div className='w-full border-t border-gray'>
-                            {slicedData.map((artist) => (
-                                <FollowingArtistCard key={artist.name} artist={artist} />
-                            ))}
+                        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 items-center justify-between w-full'>
+                            <Title titleType={EnumTitle.h3}>Following: {followingArtists.length}</Title>
+                            <FollowingSearch />
                         </div>
 
-                        <Pagination type={EnumColorStyle.gray} options={options} />
+                        <FollowingList data={followingArtists} />
                     </div>
                 ) : (
                     <NoFollowingArtistsFound />
