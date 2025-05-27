@@ -3,16 +3,15 @@ import { useEffect } from 'react';
 import { useQueryState } from 'nuqs';
 import { Search } from '../Search';
 
-const NftsSearch = () => {
+const FollowingSearch = () => {
     const [nameQuery, setNameQuery] = useQueryState('name', { defaultValue: '' });
     const [_, setPageQuery] = useQueryState('page', { defaultValue: '' });
-    const [tabQuery] = useQueryState('tab');
 
     useEffect(() => {
         setPageQuery('1');
     }, [nameQuery, setPageQuery]);
 
-    return <Search query={nameQuery} setQuery={setNameQuery} placeholder={`Search Your Favorite ${tabQuery}`} />;
+    return <Search query={nameQuery} setQuery={setNameQuery} placeholder='Search Artist' />;
 };
 
-export default NftsSearch;
+export default FollowingSearch;
