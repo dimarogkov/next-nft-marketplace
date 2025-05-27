@@ -9,7 +9,7 @@ type Props = {
 
 const NoFollowingArtistsFoundBySearch: FC<Props> = ({ handleClick = () => {} }) => {
     return (
-        <div className='relative w-full h-full sm:max-w-[75%] lg:max-w-[50%] text-center m-auto'>
+        <div className='relative w-full h-full sm:max-w-[75%] lg:max-w-[50%] section-padding text-center m-auto'>
             <Title titleType={EnumTitle.h3} className='mb-2 last:mb-0'>
                 No Results Found
             </Title>
