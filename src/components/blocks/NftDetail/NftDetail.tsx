@@ -6,6 +6,7 @@ import { authConfig } from '@/src/helpers';
 import { INFT } from '@/src/types/interfaces/NFT';
 import { NftDetailContent, NftDetailImg, NftDetailTabs, Timer } from '../../elements';
 import { Btn, BtnLink } from '../../ui';
+import { PlusCircle } from 'lucide-react';
 
 type Props = {
     nft: INFT;
@@ -31,11 +32,13 @@ const NftDetail: FC<Props> = async ({ nft }) => {
                         <Timer hours={6} className='!w-full !max-w-full bg-gray' />
 
                         {!session ? (
-                            <BtnLink href={PATHS.SIGN_IN} className='sm:w-full'>
-                                Place a Bid
+                            <BtnLink href={PATHS.SIGN_IN} icon={PlusCircle} className='sm:w-full'>
+                                Buy NFT
                             </BtnLink>
                         ) : (
-                            <Btn className='sm:w-full'>Place a Bid</Btn>
+                            <Btn icon={PlusCircle} className='sm:w-full'>
+                                Buy NFT
+                            </Btn>
                         )}
                     </div>
                 </div>

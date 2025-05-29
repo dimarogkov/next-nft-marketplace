@@ -1,10 +1,12 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTabs, EnumTitle } from '@/src/types/enums';
 import { INFT } from '@/src/types/interfaces/NFT';
-import { ImageLoader, SimpleLink, Text, Title } from '../../ui';
+import { Btn, ImageLoader, SimpleLink, Text, Title } from '../../ui';
+import { PlusCircle } from 'lucide-react';
 
 type Props = {
     content: Omit<INFT, 'img'>;
@@ -14,10 +16,11 @@ type Props = {
 
 const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
     const { name, collectionName, author, price, highestBid } = content;
+    const { data: session } = useSession();
 
     return (
-        <div className={`relative w-full p-4 ${className}`}>
-            <div className='flex flex-col gap-3 w-full -mt-12 mb-5 last:mb-0'>
+        <div className={`relative flex flex-col gap-5 w-full p-4 -mt-12 ${className}`}>
+            <div className='flex flex-col gap-3 w-full'>
                 <ImageLoader className={`!size-14 !pb-0 rounded-full outline outline-4 bg-gray ${colorType}`}>
                     <ImageLoader.Link
                         href={`/${convertToSnakeCase(author.name)}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`}
@@ -66,6 +69,12 @@ const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
                     </div>
                 </div>
             </div>
+
+            {session && (
+                <Btn icon={PlusCircle} className='sm:!w-full'>
+                    Buy NFT
+                </Btn>
+            )}
         </div>
     );
 };
