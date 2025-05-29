@@ -53,6 +53,7 @@ export const authConfig: NextAuthOptions = {
                 currentToken.wallet = session.wallet;
                 currentToken.bio = session.bio;
                 currentToken.avatar = session.avatar;
+                currentToken.banner = session.banner;
                 currentToken.info = session.info;
                 currentToken.data = session.data;
                 return currentToken;
@@ -63,6 +64,7 @@ export const authConfig: NextAuthOptions = {
             currentToken.wallet = isTestAccount ? USER_DATA.wallet : currentToken.wallet;
             currentToken.bio = isTestAccount ? artist.bio : currentToken.bio || '';
             currentToken.avatar = isTestAccount ? artist.avatar : currentToken.picture || '';
+            currentToken.banner = artist.banner;
             currentToken.info = currentToken.info || {
                 volume: isTestAccount ? artist.info.volume : 0,
                 sales: isTestAccount ? artist.info.sales : 0,
@@ -86,6 +88,7 @@ export const authConfig: NextAuthOptions = {
             currentUser.wallet = currentToken.wallet;
             currentUser.bio = currentToken.bio;
             currentUser.avatar = currentToken.avatar;
+            currentUser.banner = currentToken.banner;
             currentUser.info = currentToken.info;
             currentUser.data = currentToken.data;
 

@@ -17,7 +17,7 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
     const nfts = await getNfts();
     const collections = await getCollections();
 
-    const { name, avatar, bio, info } = artist;
+    const { name, avatar, banner, bio, info } = artist;
     const isTestAccount = name === USER_DATA.name;
     const isUploadImgBtnExist = isProfile && !isTestAccount;
 
@@ -26,7 +26,7 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
 
     return (
         <section className='relative w-full section-padding-bottom'>
-            <ArtistDetailBanner isUploadImgBtnExist={isUploadImgBtnExist} />
+            <ArtistDetailBanner banner={banner} isUploadImgBtnExist={isUploadImgBtnExist} />
 
             <div className='container !-mt-10 md:!-mt-12 lg:!-mt-14 !mb-16 last:!mb-0'>
                 <div className='flex flex-col gap-5 lg:gap-7 w-full'>

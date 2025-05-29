@@ -90,17 +90,17 @@ const SettingsForm: FC<Props> = ({ data, updateData = () => {} }) => {
             <div className='grid gap-2.5 sm:gap-5 w-full'>
                 <Label className='flex flex-col gap-2.5 w-full'>
                     <Text>Facebook</Text>
-                    <Input {...register('facebook')} placeholder='Facebook' />
+                    <Input {...register('facebook')} placeholder='Facebook link' />
                 </Label>
 
                 <Label className='flex flex-col gap-2.5 w-full'>
                     <Text>Twitter</Text>
-                    <Input {...register('twitter')} placeholder='Twitter' />
+                    <Input {...register('twitter')} placeholder='Twitter link' />
                 </Label>
 
                 <Label className='flex flex-col gap-2.5 w-full'>
                     <Text>Instagram</Text>
-                    <Input {...register('instagram')} placeholder='Instagram' />
+                    <Input {...register('instagram')} placeholder='Instagram link' />
                 </Label>
             </div>
 
