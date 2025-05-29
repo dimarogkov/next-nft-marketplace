@@ -1,4 +1,4 @@
-import { ArtistDetailBanner, ArtistDetailInfo } from './ArtistDetail';
+import { ArtistDetailAvatar, ArtistDetailBanner, ArtistDetailInfo } from './ArtistDetail';
 import { CollectionBanner, CollectionCard, CollectionList } from './Collection';
 import { ConnectWallet } from './ConnectWallet';
 import { Follow, FollowingArtistCard, FollowingList, FollowingSearch } from './Follow';
@@ -27,6 +27,7 @@ import { Timer } from './Timer';
 import { TopCreatorsCard } from './TopCreators';
 
 export {
+    ArtistDetailAvatar,
     ArtistDetailBanner,
     ArtistDetailInfo,
     CollectionBanner,

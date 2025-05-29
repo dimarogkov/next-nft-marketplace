@@ -1,7 +1,7 @@
 import { PATHS } from '@/src/variables';
 import { EnumTabs, EnumText, EnumTitle } from '@/src/types/enums';
 import { BtnLink, Text, Title } from '../../ui';
-import { CirclePlus } from 'lucide-react';
+import { Store } from 'lucide-react';
 
 const NoNftFound = () => {
     return (
@@ -11,11 +11,11 @@ const NoNftFound = () => {
             </Title>
 
             <Text textType={EnumText.large} className='mb-5 last:mb-0'>
-                It looks like there are no NFTs available. Why not create one?
+                You don’t have any NFTs yet. Check out the Marketplace and pick your first one!
             </Text>
 
-            <BtnLink href={`${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`} icon={CirclePlus}>
-                Create NFT
+            <BtnLink href={`${PATHS.MARKETPLACE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`} icon={Store}>
+                Go to Marketplace
             </BtnLink>
         </div>
     );
