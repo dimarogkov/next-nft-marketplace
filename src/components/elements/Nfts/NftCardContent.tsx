@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
 import { convertToSnakeCase } from '@/src/helpers';
 import { EnumTabs, EnumTitle } from '@/src/types/enums';
@@ -11,12 +10,12 @@ import { PlusCircle } from 'lucide-react';
 type Props = {
     content: Omit<INFT, 'img'>;
     colorType: string;
+    isBuyBtnExist: boolean;
     className?: string;
 };
 
-const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
+const NftCardContent: FC<Props> = ({ content, colorType, isBuyBtnExist, className = '' }) => {
     const { name, collectionName, author, price, highestBid } = content;
-    const { data: session } = useSession();
 
     return (
         <div className={`relative flex flex-col gap-5 w-full p-4 -mt-12 ${className}`}>
@@ -70,7 +69,7 @@ const NftCardContent: FC<Props> = ({ content, colorType, className = '' }) => {
                 </div>
             </div>
 
-            {session && (
+            {isBuyBtnExist && (
                 <Btn icon={PlusCircle} className='sm:!w-full'>
                     Buy NFT
                 </Btn>
