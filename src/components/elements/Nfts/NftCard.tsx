@@ -60,7 +60,7 @@ const NftCard: FC<Props> = ({ nft, cardType = EnumColorStyle.gray, className = '
                 )}
             </ImageLoader>
 
-            <NftCardContent content={content} colorType={outlineClasses[cardType]} />
+            <NftCardContent content={content} colorType={outlineClasses[cardType]} isBuyBtnExist={isLikeBtnExist} />
         </div>
     );
 };

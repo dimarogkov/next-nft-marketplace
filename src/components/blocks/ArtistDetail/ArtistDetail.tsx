@@ -1,18 +1,12 @@
 import { FC, Suspense } from 'react';
-import { USER_DATA } from '@/src/variables';
+import { PATHS, USER_DATA } from '@/src/variables';
 import { getCollections, getNfts } from '@/src/services';
 import { EnumText, EnumTitle } from '@/src/types/enums';
 import { IArtist } from '@/src/types/interfaces/Artist';
 import { IProfile } from '@/src/types/interfaces/Profile';
-import {
-    ArtistDetailAvatar,
-    ArtistDetailBanner,
-    ArtistDetailInfo,
-    Follow,
-    NftsTabs,
-    ProfileDropdown,
-} from '../../elements';
-import { Text, Title } from '../../ui';
+import { ArtistDetailAvatar, ArtistDetailBanner, ArtistDetailInfo, Follow, NftsTabs } from '../../elements';
+import { BtnLink, Text, Title } from '../../ui';
+import { Settings } from 'lucide-react';
 
 type Props = {
     artist: IArtist | IProfile;
@@ -51,7 +45,13 @@ const ArtistDetail: FC<Props> = async ({ artist, isProfile = false }) => {
                             <ArtistDetailInfo info={info} />
                         </div>
 
-                        {isProfile ? <ProfileDropdown /> : <Follow artist={artist} />}
+                        {isProfile ? (
+                            <BtnLink href={PATHS.SETTINGS} icon={Settings}>
+                                Settings
+                            </BtnLink>
+                        ) : (
+                            <Follow artist={artist} />
+                        )}
                     </div>
                 </div>
             </div>

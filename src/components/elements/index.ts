@@ -17,7 +17,6 @@ import {
     NoResultsFound,
 } from './NoExist';
 import { Pagination } from './Pagination';
-import { ProfileDropdown } from './Profile';
 import { ProgressLine } from './ProgressLine';
 import { RankingsList } from './Rankings';
 import { Search } from './Search';
@@ -60,7 +59,6 @@ export {
     NoNftFound,
     NoResultsFound,
     Pagination,
-    ProfileDropdown,
     ProgressLine,
     RankingsList,
     Search,
