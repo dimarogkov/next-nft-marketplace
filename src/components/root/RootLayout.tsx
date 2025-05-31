@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { Footer, Header } from '../blocks';
 import { ProgressLine } from '../elements';
 import { LenisScroll } from '../other';
@@ -15,6 +16,7 @@ const RootLayout: FC<Props> = ({ children }) => {
             <Header />
             <RootMain>{children}</RootMain>
             <Footer />
+            <Toaster position='bottom-right' reverseOrder={false} toastOptions={{ duration: 2000 }} />
         </LenisScroll>
     );
 };

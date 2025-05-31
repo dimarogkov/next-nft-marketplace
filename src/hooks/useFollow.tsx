@@ -1,8 +1,10 @@
 'use client';
+import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { IArtist } from '../types/interfaces/Artist';
 import { IProfile } from '../types/interfaces/Profile';
+import { Toast } from '../components/ui';
 
 const useFollow = (artist: IArtist) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -27,6 +29,7 @@ const useFollow = (artist: IArtist) => {
 
         setIsLoading(true);
         await update(newData);
+        toast.custom((t) => <Toast toast={t} text={`👏 ${!isFollow ? 'Follow' : 'Unfollow'} - ${artist.name}`} />);
         setIsLoading(false);
     };
 

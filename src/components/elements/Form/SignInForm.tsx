@@ -1,4 +1,5 @@
 'use client';
+import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -6,7 +7,7 @@ import { signIn } from 'next-auth/react';
 import { PATHS } from '@/src/variables';
 import { signInFormOptions } from '@/src/helpers/formOptions';
 import { EnumTabs } from '@/src/types/enums';
-import { Btn, ErrorMessage, Input, Label } from '../../ui';
+import { Btn, ErrorMessage, Input, Label, Toast } from '../../ui';
 import { CircleUser } from 'lucide-react';
 
 const SignInForm = () => {
@@ -26,6 +27,7 @@ const SignInForm = () => {
 
         if (response && !response.error) {
             router.push(`${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`);
+            toast.custom((t) => <Toast toast={t} text='👋 Welcome back' />);
         } else {
             setResponseError('Your Email or Password is wrong!');
         }

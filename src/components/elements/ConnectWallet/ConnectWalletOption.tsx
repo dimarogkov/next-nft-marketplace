@@ -1,10 +1,11 @@
 'use client';
+import toast from 'react-hot-toast';
 import { Dispatch, FC, SetStateAction } from 'react';
 import { useSession } from 'next-auth/react';
 import { EnumText } from '@/src/types/enums';
 import { IWalletOption } from '@/src/types/interfaces/WalletOption';
 import { IProfile } from '@/src/types/interfaces/Profile';
-import { ImageLoader, Text } from '../../ui';
+import { ImageLoader, Text, Toast } from '../../ui';
 import { Check } from 'lucide-react';
 import cn from 'classnames';
 
@@ -25,6 +26,7 @@ const ConnectWalletOption: FC<Props> = ({ option, className = '', setIsLoading =
     const toggleWallet = async () => {
         setIsLoading(true);
         await update({ ...currentUser, wallet: option });
+        toast.custom((t) => <Toast toast={t} text={`💵 Add - ${option.name}`} />);
         setIsLoading(false);
     };
 
