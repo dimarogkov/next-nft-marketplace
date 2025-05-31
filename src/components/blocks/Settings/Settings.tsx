@@ -1,8 +1,10 @@
 'use client';
+import toast from 'react-hot-toast';
 import { FC } from 'react';
 import { useSession } from 'next-auth/react';
 import { IProfile } from '@/src/types/interfaces/Profile';
 import { SettingsForm } from '../../elements';
+import { Toast } from '../../ui';
 
 type Props = {
     user: IProfile;
@@ -30,6 +32,8 @@ const Settings: FC<Props> = ({ user }) => {
             info: { ...user.info, links },
             ...updatedData,
         });
+
+        toast.custom((t) => <Toast toast={t} text='🎉 Settings updated!' />);
     };
 
     return (

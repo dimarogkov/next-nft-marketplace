@@ -16,6 +16,7 @@ import SocialLink from './SocialLink';
 import Tabs from './Tabs';
 import Text from './Text';
 import Title from './Title';
+import Toast from './Toast';
 
 export {
     AuthBtn,
@@ -42,4 +43,5 @@ export {
     Tabs,
     Text,
     Title,
+    Toast,
 };

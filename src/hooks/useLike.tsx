@@ -1,8 +1,10 @@
 'use client';
+import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { INFT } from '../types/interfaces/NFT';
 import { IProfile } from '../types/interfaces/Profile';
+import { Toast } from '../components/ui';
 
 const useLike = (nft: INFT) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -20,6 +22,7 @@ const useLike = (nft: INFT) => {
 
         setIsLoading(true);
         await update(newData);
+        toast.custom((t) => <Toast toast={t} text={`❤️ ${!isLiked ? 'Add to Favorite' : 'Remove from Favorite'}`} />);
         setIsLoading(false);
     };
 
