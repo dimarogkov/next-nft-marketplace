@@ -51,11 +51,11 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .section-height-full {
-    @apply sm:min-h-[calc(100vh-112px)] md:min-h-[calc(100vh-128px)] lg:min-h-[calc(100vh-160px)];
+    @apply min-h-[calc(100svh-102px)] sm:min-h-[calc(100svh-112px)] md:min-h-[calc(100svh-128px)] lg:min-h-[calc(100svh-160px)];
 }
 
 .section-height-full-with-breadcrumbs {
-    @apply sm:min-h-[calc(100vh-162px)] md:min-h-[calc(100vh-178px)] lg:min-h-[calc(100vh-210px)];
+    @apply min-h-[calc(100svh-148px)] sm:min-h-[calc(100svh-162px)] md:min-h-[calc(100svh-178px)] lg:min-h-[calc(100svh-210px)];
 }
 
 .section-padding {

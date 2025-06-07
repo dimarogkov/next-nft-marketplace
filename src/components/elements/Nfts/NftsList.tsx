@@ -38,7 +38,7 @@ const NftsList: FC<Props> = ({ data, type = EnumTabs.NFTs, notExistComponent }) 
     const { data: slicedData, ...paginationOptions } = usePagination(filteredData);
 
     return (
-        <div className='relative flex flex-col items-center w-full min-h-[50vh]'>
+        <div className='relative flex flex-col items-center w-full min-h-[50svh]'>
             <div className='container section-padding'>
                 {filteredData.length ? (
                     <div className='w-full'>

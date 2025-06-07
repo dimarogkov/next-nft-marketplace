@@ -13,9 +13,9 @@ const Following = () => {
 
     return (
         <section
-            className={cn('relative w-full', {
-                'pt-16 pb-8 sm:section-padding-top': !isFollowingArtistsExist,
-                'section-padding sm:mt-[50px]': isFollowingArtistsExist,
+            className={cn('relative w-full section-height-full-with-breadcrumbs', {
+                'flex items-center': !isFollowingArtistsExist,
+                'section-padding': isFollowingArtistsExist,
             })}
         >
             <div className='container'>

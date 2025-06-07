@@ -13,7 +13,7 @@ const ConnectWalletPage = () => {
             <div className='relative grid grid-cols-1 md:grid-cols-2 grow items-center justify-between gap-5 sm:gap-7 lg:gap-10 w-full h-full'>
                 <ConnectWallet />
 
-                <ImageLoader className='md:!h-full !pb-[95%] sm:!pb-[50%] md:!pb-0 rounded-lg'>
+                <ImageLoader className='hidden sm:block md:!h-full sm:!pb-[50%] md:!pb-0 rounded-lg'>
                     <ImageLoader.Image src='/new_event.jpg' alt='connect_wallet' />
                 </ImageLoader>
             </div>
