@@ -1,21 +1,32 @@
 import { getNftByQuery } from '@/src/services';
-import { NewEventContent } from '../../elements';
+import { NewEventContent, NewEventInfo, Timer } from '../../elements';
 import { ImageLoader } from '../../ui';
 
 const NewEvent = async () => {
-    const { img, ...content } = await getNftByQuery('name', 'Whispering Blooms');
+    const { img, name, collectionName, description, author, price, highestBid } = await getNftByQuery(
+        'name',
+        'Whispering Blooms'
+    );
+
+    const content = { name, collectionName, description, author };
+    const infoContent = { collectionName, price, highestBid };
 
     return (
         <section className='relative w-full section-padding'>
-            <div className='relative w-full md:h-[600px] lg:h-[700px] xl:h-[800px] bg-gray'>
-                <ImageLoader className='!absolute h-full !pb-0'>
-                    <ImageLoader.Image src={img.src} alt={img.alt} />
-                </ImageLoader>
+            <div className='container'>
+                <div className='grid md:grid-cols-[2fr,1fr] gap-4 sm:gap-5 w-full'>
+                    <div className='grid md:grid-rows-[2fr,1fr] gap-4 sm:gap-5'>
+                        <NewEventContent content={content} />
+                        <NewEventInfo content={infoContent} />
+                    </div>
 
-                <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-violet-600 via-sky-600/80 to-teal-500/60' />
+                    <div className='relative flex flex-col gap-4 sm:gap-5 w-full'>
+                        <ImageLoader className='hidden md:block !pb-[120%] rounded-lg overflow-hidden'>
+                            <ImageLoader.Image src={img.src} alt={img.alt} />
+                        </ImageLoader>
 
-                <div className='relative flex items-end container h-full py-8 sm:py-10 lg:py-[60px] pt-56 md:pt-0'>
-                    <NewEventContent content={content} />
+                        <Timer hours={6} className='!w-full !max-w-full rounded-lg bg-gray' />
+                    </div>
                 </div>
             </div>
         </section>

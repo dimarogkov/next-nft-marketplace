@@ -7,7 +7,7 @@ import { HeaderBurger, HeaderLayer, HeaderLinks, HeaderUser } from './Header';
 import { HeroContent } from './Hero';
 import { HowItWorksCard } from './HowItWorks';
 import { Logo } from './Logo';
-import { NewEventContent } from './NewEvent';
+import { NewEventContent, NewEventInfo } from './NewEvent';
 import { NftCard, NftDetailContent, NftDetailImg, NftDetailTabs, NftsSearch, NftsTabs } from './Nfts';
 import {
     NoFollowingArtistsFound,
@@ -47,6 +47,7 @@ export {
     HowItWorksCard,
     Logo,
     NewEventContent,
+    NewEventInfo,
     NftCard,
     NftDetailContent,
     NftDetailImg,

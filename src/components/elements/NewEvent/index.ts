@@ -1,3 +1,4 @@
 import NewEventContent from './NewEventContent';
+import NewEventInfo from './NewEventInfo';
 
-export { NewEventContent };
+export { NewEventContent, NewEventInfo };
