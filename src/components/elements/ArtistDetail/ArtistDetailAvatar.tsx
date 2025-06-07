@@ -1,14 +1,12 @@
 import { FC } from 'react';
 import { IImage } from '@/src/types/interfaces/Image';
-import { ImageLoader, UploadCircleBtn } from '../../ui';
-import { Camera } from 'lucide-react';
+import { ImageLoader } from '../../ui';
 
 type Props = {
     img: IImage;
-    isUploadImgBtnExist: boolean;
 };
 
-const ArtistDetailAvatar: FC<Props> = ({ img, isUploadImgBtnExist }) => {
+const ArtistDetailAvatar: FC<Props> = ({ img }) => {
     const { src, alt } = img;
 
     return (
@@ -16,10 +14,6 @@ const ArtistDetailAvatar: FC<Props> = ({ img, isUploadImgBtnExist }) => {
             <ImageLoader className='!h-full !pb-0 rounded-full'>
                 <ImageLoader.Image src={src} alt={alt} />
             </ImageLoader>
-
-            {isUploadImgBtnExist && (
-                <UploadCircleBtn icon={Camera} className='!absolute bottom-0 -right-2 md:-right-0.5 lg:right-0.5' />
-            )}
         </div>
     );
 };
