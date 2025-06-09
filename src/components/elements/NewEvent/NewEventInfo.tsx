@@ -21,10 +21,10 @@ const NewEventInfo: FC<Props> = ({ content }) => {
     ];
 
     return (
-        <div className='relative grid sm:grid-cols-3 gap-4 sm:gap-5 w-full'>
+        <div className='relative grid grid-cols-3 gap-5 w-full'>
             <BtnLink
                 href={`${PATHS.MARKETPLACE}/${convertToSnakeCase(collectionName)}`}
-                className='sm:!w-full !h-[92px] sm:!h-full font-semibold !text-xl'
+                className='!w-full !h-full font-semibold !text-xl'
             >
                 Collection
             </BtnLink>
