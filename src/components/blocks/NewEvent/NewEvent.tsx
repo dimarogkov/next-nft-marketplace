@@ -12,7 +12,7 @@ const NewEvent = async () => {
     const infoContent = { collectionName, price, highestBid };
 
     return (
-        <section className='relative w-full section-padding'>
+        <section className='relative hidden md:block w-full section-padding'>
             <div className='container'>
                 <div className='grid md:grid-cols-[2fr,1fr] gap-4 sm:gap-5 w-full'>
                     <div className='grid md:grid-rows-[2fr,1fr] gap-4 sm:gap-5'>
@@ -21,7 +21,7 @@ const NewEvent = async () => {
                     </div>
 
                     <div className='relative flex flex-col gap-4 sm:gap-5 w-full'>
-                        <ImageLoader className='hidden md:block !pb-[120%] rounded-lg overflow-hidden'>
+                        <ImageLoader className='!pb-[120%] rounded-lg overflow-hidden'>
                             <ImageLoader.Image src={img.src} alt={img.alt} />
                         </ImageLoader>
 

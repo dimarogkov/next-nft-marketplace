@@ -12,7 +12,7 @@ import { CircleUser } from 'lucide-react';
 
 const SignInForm = () => {
     const [responseError, setResponseError] = useState('');
-    const router = useRouter();
+    const { replace } = useRouter();
 
     const {
         register,
@@ -26,7 +26,7 @@ const SignInForm = () => {
         const response = await signIn('credentials', { email, password, redirect: false });
 
         if (response && !response.error) {
-            router.push(`${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`);
+            replace(`${PATHS.PROFILE}?tab=${EnumTabs.NFTs}&${PATHS.PARAMS.PAGE}`);
             toast.custom((t) => <Toast toast={t} text='👋 Welcome back' />);
         } else {
             setResponseError('Your Email or Password is wrong!');
