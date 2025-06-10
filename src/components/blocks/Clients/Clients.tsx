@@ -25,7 +25,7 @@ const Clients = () => {
                             <div
                                 key={alt}
                                 className={cn(
-                                    'relative group flex items-center justify-center w-full h-[90px] md:h-[100px] rounded-lg border border-black',
+                                    'relative group flex items-center justify-center w-full h-[90px] md:h-[100px] rounded-lg border-2 border-black opacity-60 transition-opacity duration-300 hover:opacity-100',
                                     {
                                         'hidden md:flex': index > 5 && index < 8,
                                         'hidden lg:flex': index > 7,
