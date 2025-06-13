@@ -30,7 +30,7 @@ const Breadcrumbs: FC<Props> = ({ className = '' }) => {
             };
         });
 
-    const breadcrumbs = useMemo(() => [{ href: `${PATHS.HOME}`, text: 'Home' }, ...pathNames], [pathNames]);
+    const breadcrumbs = [{ href: `${PATHS.HOME}`, text: 'Home' }, ...pathNames];
 
     return (
         <section
